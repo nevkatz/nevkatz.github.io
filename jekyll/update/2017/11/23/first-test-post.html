@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Front-End Web Dev</title>
-  <meta name="description" content="">
+  <title>Testing Jekyll Markdown</title>
+  <meta name="description" content="Ok, let’s see how this drives. Here is a test link. I’m going to write a quick javascript function below. And here is another footnote link.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/">
+  <link rel="canonical" href="/jekyll/update/2017/11/23/first-test-post.html">
   <link rel="alternate" type="application/rss+xml" title="Front-End Web Dev" href="/feed.xml">
   
   
@@ -67,56 +67,64 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Testing Jekyll Markdown</h1>
+    <p class="post-meta">
+      <time datetime="2017-11-23T08:32:24-05:00" itemprop="datePublished">
+        
+        Nov 23, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Ok, let’s see how this drives. Here is a <a href="http://www.google.com" target="_blank">test link</a>. I’m going to write a quick javascript function below. And here is another <a href="http://birdleymedia.com" title="Birdley Media" target="_blank">footnote link</a>.</p>
+
+<blockquote>
+  <p>This is a test blockquote.</p>
+</blockquote>
+
+<p>Today is 2019 Aug</p>
+
+<p>And here is an attempt at an unordered list</p>
+<ol>
+  <li>Nevin Katz
+    <ul>
+      <li>grapes</li>
+      <li>strawberries</li>
+      <li>apples</li>
+    </ul>
+  </li>
+  <li>Jeremy Katz
+    <ol>
+      <li>goombas</li>
+      <li>spike tops</li>
+      <li>koopas</li>
+    </ol>
+  </li>
+  <li>Melissa Katz</li>
+</ol>
+
+<p>Aaaaaaand here is some sample code…</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+	<span class="k">return</span> <span class="nx">n</span><span class="p">;</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        
-        <span class="post-meta">Aug 2, 2019</span>
-
-        <h2>
-          <a class="post-link" href="/codepen/2019/08/02/codepen-test.html">CodePen Test</a>
-        </h2>
-        
-        <p>CodePen Test</p>
-        
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Dec 3, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/codepen/tutorials/2017/12/03/codepen-explore1.html">Making a Space Shooter using Canvas</a>
-        </h2>
-        
-        <p>A test to see how readily I can write a tutorial on an interesting codepen.</p>
-        
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Nov 23, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2017/11/23/first-test-post.html">Testing Jekyll Markdown</a>
-        </h2>
-        
-        <p>A quick test of various Jekyll markdown techniques.</p>
-        
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>

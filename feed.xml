@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-08-03T14:09:56-04:00</updated><id>/</id><title type="html">Front-End Web Dev</title><subtitle></subtitle><entry><title type="html">CodePen Test</title><link href="/codepen/2019/08/02/codepen-test.html" rel="alternate" type="text/html" title="CodePen Test" /><published>2019-08-02T00:00:00-04:00</published><updated>2019-08-02T00:00:00-04:00</updated><id>/codepen/2019/08/02/codepen-test</id><content type="html" xml:base="/codepen/2019/08/02/codepen-test.html">&lt;p&gt;Ok, quick test of codepen embed.&lt;/p&gt;
+
+&lt;p class=&quot;codepen&quot; data-height=&quot;400&quot; data-theme-id=&quot;0&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;nevkatz&quot; data-slug-hash=&quot;pXmOpY&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;Compass SVG Animation &quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/nevkatz/pen/pXmOpY/&quot;&gt;
+  Compass SVG Animation &lt;/a&gt; by Nevin Katz (&lt;a href=&quot;https://codepen.io/nevkatz&quot;&gt;@nevkatz&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://static.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">Ok, quick test of codepen embed.</summary></entry><entry><title type="html">Making a Space Shooter using Canvas</title><link href="/codepen/tutorials/2017/12/03/codepen-explore1.html" rel="alternate" type="text/html" title="Making a Space Shooter using Canvas" /><published>2017-12-03T03:20:00-05:00</published><updated>2017-12-03T03:20:00-05:00</updated><id>/codepen/tutorials/2017/12/03/codepen-explore1</id><content type="html" xml:base="/codepen/tutorials/2017/12/03/codepen-explore1.html">&lt;p&gt;The goal of this tutorial is to create a basic space shooter using HTML5 from the ground up. Along the way, we will learn concepts such as Javascript prototypes and Canvas animation. While we will start initially with the keyboard, we will look at how to make this work on a mobile device.&lt;/p&gt;
+
+&lt;p&gt;Let’s start by creating a triangle, which will be our ship. 
+We will use a separate canvas object for each sprite.&lt;/p&gt;
+
+&lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#text-editors&quot;&gt;Text Editors&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#testing-the-game&quot;&gt;Testing the Game&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-the-html&quot;&gt;Creating the HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-the-directory-structure&quot;&gt;Creating the Directory Structure&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;multiline-test&quot;&gt;Multiline Test&lt;/h3&gt;
+
+&lt;h3 id=&quot;tabs-test&quot;&gt;TABS TEST&lt;/h3&gt;
+
+&lt;ul id=&quot;mylist&quot; class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section3&quot;&gt;JS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1&quot;&gt;
+HTML is here 
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt; 
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nevin&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	placeholder text
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;section2&quot;&gt;
+CSS is here
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;.nevin&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+
+&lt;div id=&quot;section3&quot;&gt;
+JS is here
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;quaf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lorem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	
+	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;quaf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lorem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+
+&lt;h3 id=&quot;end-tabs-test&quot;&gt;END TABS TEST&lt;/h3&gt;
+
+&lt;h2 id=&quot;starting-up&quot;&gt;Starting up&lt;/h2&gt;
+
+&lt;h3 id=&quot;text-editors&quot;&gt;Text editors&lt;/h3&gt;
+
+&lt;p&gt;I have used Sublime Text, but any Text Editors will do. Notepad is also great.&lt;/p&gt;
+
+&lt;h3 id=&quot;testing-the-game&quot;&gt;Testing the Game&lt;/h3&gt;
+
+&lt;p&gt;I recommend testing this in a browser using File &amp;gt; Open and going to your game’s HTML page. I have mainly used Firefox for testing, but it should work in other browsers, such as Chrome and Safari.&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-the-directory-structure&quot;&gt;Creating the Directory Structure&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create an overall directory and call it whatever you want — perhaps &lt;strong&gt;html5_shooter&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Within this directory, create subdirectories: &lt;strong&gt;html&lt;/strong&gt;, &lt;strong&gt;js, and **css.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(Include a diagram of directory structure)&lt;/p&gt;
+
+&lt;h1 id=&quot;creating-the-html&quot;&gt;Creating the HTML&lt;/h1&gt;
+
+&lt;p&gt;First, create a basic HTML template and call it &lt;strong&gt;index.html&lt;/strong&gt;, and save this to your HTML directory. This one below is adapted from this &lt;a href=&quot;https://www.sitepoint.com/a-basic-html5-template/&quot; target=&quot;_blank&quot;&gt;Basic HTML5 Template&lt;/a&gt; from SitePoint.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- this will show up in the browser tab.--&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Space Shooter Game&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;description&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Space Shooter Game&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;author&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Your Name Here&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+ 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ship&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+ 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;game_area&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;creating-the-css-file&quot;&gt;Creating the CSS file&lt;/h1&gt;
+&lt;p&gt;Even though we will be mainly using canvas elements for the sprites and background, Let’s create a file with some basic CSS file for styles such as fonts.&lt;/p&gt;
+
+&lt;h1 id=&quot;creating-the-js-file&quot;&gt;Creating the JS file&lt;/h1&gt;
+
+&lt;h1 id=&quot;creating-the-ship&quot;&gt;Creating the ship&lt;/h1&gt;
+
+&lt;h1 id=&quot;making-the-ship-move-with-some-the-keyboard&quot;&gt;Making the ship move with some the keyboard&lt;/h1&gt;
+
+&lt;h1 id=&quot;shooting-projectiles-from-the-ship&quot;&gt;Shooting Projectiles from the Ship&lt;/h1&gt;
+
+&lt;h1 id=&quot;creating-enemies&quot;&gt;Creating Enemies&lt;/h1&gt;
+
+&lt;h2 id=&quot;enemy-motion&quot;&gt;Enemy Motion&lt;/h2&gt;
+
+&lt;h2 id=&quot;enemy-generation&quot;&gt;Enemy Generation&lt;/h2&gt;
+
+&lt;h2 id=&quot;enemy-ship-collision-detection&quot;&gt;Enemy-Ship Collision Detection&lt;/h2&gt;
+
+&lt;h2 id=&quot;enemy-death-effect&quot;&gt;Enemy Death Effect&lt;/h2&gt;
+
+&lt;h1 id=&quot;ship-death-effect&quot;&gt;Ship Death Effect&lt;/h1&gt;
+
+&lt;h1 id=&quot;stat-panel&quot;&gt;Stat Panel&lt;/h1&gt;
+
+&lt;h1 id=&quot;shooting-the-enemies&quot;&gt;Shooting the Enemies&lt;/h1&gt;
+
+&lt;h1 id=&quot;creating-a-scoreboard&quot;&gt;Creating a Scoreboard&lt;/h1&gt;
+
+&lt;h1 id=&quot;accelerometer-on-mobiles&quot;&gt;Accelerometer on mobiles&lt;/h1&gt;
+
+&lt;h1 id=&quot;saving-high-scores-in-localstorage&quot;&gt;Saving High Scores in LocalStorage&lt;/h1&gt;
+
+&lt;h1 id=&quot;-obstacles&quot;&gt;? Obstacles&lt;/h1&gt;
+
+&lt;p&gt;RANDOM NOTES&lt;/p&gt;
+
+&lt;p&gt;Alright, let’s get a little code window set up…&lt;/p&gt;
+
+&lt;p&gt;Ok, what kinds of concepts can be taught. 
+I’m not sure if I should start with the codepen, or a concept. 
+If I were to start with space invaders, then it gets into how to use that CSS tool. 
+Is that really what I want to create? 
+Or do I want to create a simple game?&lt;/p&gt;
+
+&lt;p&gt;The games are the most captivating. 
+Let’s perhaps try to create a space game using html5 canvas. 
+The only question is whether I should do something SIMPLER and whether I should
+create something easier to understand. 
+Actually, I could publish this for Kim Elliott.&lt;/p&gt;
+
+&lt;p&gt;I could do a DOM approach and an HTML5 Canvas Approach&lt;/p&gt;</content><author><name></name></author><summary type="html">The goal of this tutorial is to create a basic space shooter using HTML5 from the ground up. Along the way, we will learn concepts such as Javascript prototypes and Canvas animation. While we will start initially with the keyboard, we will look at how to make this work on a mobile device.</summary></entry><entry><title type="html">Testing Jekyll Markdown</title><link href="/jekyll/update/2017/11/23/first-test-post.html" rel="alternate" type="text/html" title="Testing Jekyll Markdown" /><published>2017-11-23T08:32:24-05:00</published><updated>2017-11-23T08:32:24-05:00</updated><id>/jekyll/update/2017/11/23/first-test-post</id><content type="html" xml:base="/jekyll/update/2017/11/23/first-test-post.html">&lt;p&gt;Ok, let’s see how this drives. Here is a &lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot;&gt;test link&lt;/a&gt;. I’m going to write a quick javascript function below. And here is another &lt;a href=&quot;http://birdleymedia.com&quot; title=&quot;Birdley Media&quot; target=&quot;_blank&quot;&gt;footnote link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a test blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Today is 2019 Aug&lt;/p&gt;
+
+&lt;p&gt;And here is an attempt at an unordered list&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Nevin Katz
+    &lt;ul&gt;
+      &lt;li&gt;grapes&lt;/li&gt;
+      &lt;li&gt;strawberries&lt;/li&gt;
+      &lt;li&gt;apples&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jeremy Katz
+    &lt;ol&gt;
+      &lt;li&gt;goombas&lt;/li&gt;
+      &lt;li&gt;spike tops&lt;/li&gt;
+      &lt;li&gt;koopas&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Melissa Katz&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Aaaaaaand here is some sample code…&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">Ok, let’s see how this drives. Here is a test link. I’m going to write a quick javascript function below. And here is another footnote link.</summary></entry></feed>
