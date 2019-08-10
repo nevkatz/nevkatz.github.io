@@ -1,0 +1,5 @@
+/* this is pure css so we cannot use sass syntax here.*/
+
+a.site-title {
+  font-style: italic;
+}
