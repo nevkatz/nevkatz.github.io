@@ -1,29 +1,359 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-08-03T14:09:56-04:00</updated><id>/</id><title type="html">Front-End Web Dev</title><subtitle></subtitle><entry><title type="html">CodePen Test</title><link href="/codepen/2019/08/02/codepen-test.html" rel="alternate" type="text/html" title="CodePen Test" /><published>2019-08-02T00:00:00-04:00</published><updated>2019-08-02T00:00:00-04:00</updated><id>/codepen/2019/08/02/codepen-test</id><content type="html" xml:base="/codepen/2019/08/02/codepen-test.html">&lt;p&gt;Ok, quick test of codepen embed.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-10T14:00:56-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NevKatz Media</title><subtitle>I write about front-end web development.</subtitle><entry><title type="html">Drawing a Face with SVG</title><link href="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
-&lt;p class=&quot;codepen&quot; data-height=&quot;400&quot; data-theme-id=&quot;0&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;nevkatz&quot; data-slug-hash=&quot;pXmOpY&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;Compass SVG Animation &quot;&gt;
-  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/nevkatz/pen/pXmOpY/&quot;&gt;
-  Compass SVG Animation &lt;/a&gt; by Nevin Katz (&lt;a href=&quot;https://codepen.io/nevkatz&quot;&gt;@nevkatz&lt;/a&gt;)
-  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
-&lt;/p&gt;
-&lt;script async=&quot;&quot; src=&quot;https://static.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">Ok, quick test of codepen embed.</summary></entry><entry><title type="html">Making a Space Shooter using Canvas</title><link href="/codepen/tutorials/2017/12/03/codepen-explore1.html" rel="alternate" type="text/html" title="Making a Space Shooter using Canvas" /><published>2017-12-03T03:20:00-05:00</published><updated>2017-12-03T03:20:00-05:00</updated><id>/codepen/tutorials/2017/12/03/codepen-explore1</id><content type="html" xml:base="/codepen/tutorials/2017/12/03/codepen-explore1.html">&lt;p&gt;The goal of this tutorial is to create a basic space shooter using HTML5 from the ground up. Along the way, we will learn concepts such as Javascript prototypes and Canvas animation. While we will start initially with the keyboard, we will look at how to make this work on a mobile device.&lt;/p&gt;
+&lt;p&gt;SVG’s contain many different types of child elements, including circles, ellipses, and linear paths.&lt;/p&gt;
 
-&lt;p&gt;Let’s start by creating a triangle, which will be our ship. 
-We will use a separate canvas object for each sprite.&lt;/p&gt;
+&lt;h3 id=&quot;objective&quot;&gt;Objective&lt;/h3&gt;
 
-&lt;h2 id=&quot;contents&quot;&gt;Contents&lt;/h2&gt;
+&lt;p&gt;In this tutorial, we will use the circle we created in the &lt;a href=&quot;#&quot;&gt;previous post&lt;/a&gt; and make it into a face.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#text-editors&quot;&gt;Text Editors&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#testing-the-game&quot;&gt;Testing the Game&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#creating-the-html&quot;&gt;Creating the HTML&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#creating-the-directory-structure&quot;&gt;Creating the Directory Structure&lt;/a&gt;&lt;/li&gt;
+&lt;h4 id=&quot;step-0-recap&quot;&gt;Step 0: Recap&lt;/h4&gt;
+
+&lt;p&gt;In our last tutorial, we drew a circle with properties separated into CSS.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;multiline-test&quot;&gt;Multiline Test&lt;/h3&gt;
+&lt;div id=&quot;section1&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot;/&gt;
+&lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;h3 id=&quot;tabs-test&quot;&gt;TABS TEST&lt;/h3&gt;
+&lt;div id=&quot;section2&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-css&quot;&gt;
+ svg {
+   width: 150px;
+   height: 150px;
+   background-color: #EEEEEE;
+ }
+ circle {
+	fill: #95D6F1;
+	stroke: #000000;
+	stroke-width: 2;
+ }
+ &lt;/code&gt;
+ &lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;ul id=&quot;mylist&quot; class=&quot;css-tabs&quot;&gt;
+&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;h4 id=&quot;step-1-add-the-eyes&quot;&gt;Step 1: Add the eyes&lt;/h4&gt;
+
+&lt;p&gt;We will use ellipses for the eyes. Like circles, ellipses have &lt;code&gt;cx&lt;/code&gt; and &lt;code&gt;cy&lt;/code&gt; attributes that determine where they show up. But while circles have one radius, determined by &lt;code&gt;r&lt;/code&gt;, ellipses have two radii — a vertical one, &lt;code&gt;ry&lt;/code&gt;, and a horizontal one, &lt;code&gt;rx&lt;/code&gt;. I am making &lt;code&gt;ry&lt;/code&gt; larger than &lt;code&gt;rx&lt;/code&gt; because I want “tall” ellipses for these eyes.&lt;/p&gt;
+
+&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot; /&gt;
+&lt;ellipse cx=&quot;60&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot; /&gt;
+&lt;ellipse cx=&quot;90&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;p&gt;Here is the HTML code. (The CSS is the same as before.)&lt;/p&gt;
+
+&lt;pre&gt;
+	&lt;code class=&quot;language-markup&quot;&gt;
+		&lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot;/&gt;
+&lt;ellipse cx=&quot;60&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot;/&gt;
+&lt;ellipse cx=&quot;90&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot;/&gt;
+&lt;/svg&gt;
+        &lt;/script&gt;
+	&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;step-2-add-the-mouth&quot;&gt;Step 2: Add the mouth&lt;/h4&gt;
+
+&lt;h5 id=&quot;a-few-variants&quot;&gt;A few variants&lt;/h5&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;SVG graphics have been around since 1998, and at this point have gained a substantial amount of &lt;a href=&quot;https://caniuse.com/#feat=svg&quot; target=&quot;_blank&quot;&gt;browser support&lt;/a&gt;. They also lend themselves to animation and are naturally responsive.&lt;/p&gt;
+
+&lt;h3 id=&quot;objective&quot;&gt;Objective&lt;/h3&gt;
+
+&lt;p&gt;In this tutorial, I will explain and demonstrate how to draw a simple circle with SVG from the ground up. Before starting, you should already know the fundamentals of HTML and CSS. Let’s dive in!&lt;/p&gt;
+
+&lt;h4 id=&quot;svg-creation&quot;&gt;SVG Creation&lt;/h4&gt;
+
+&lt;p&gt;While SVGs can be created in a software program, my goal for this tutorial is to explain how to draw simple ones in code. This way, you can get a sense of how SVG markup works and reverse-engineer existing SVGs more easily.&lt;/p&gt;
+
+&lt;h4 id=&quot;step-1-drawing-the-initial-circle&quot;&gt;Step 1: Drawing the initial circle&lt;/h4&gt;
+
+&lt;p&gt;Let’s start by drawing an SVG and a circle within it that could be added to a webpage. (SVGs that exist at the roots of documents are discussed &lt;a href=&quot;#&quot;&gt;in this post&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;We will give the SVG one attribute: the &lt;code&gt;viewBox.&lt;/code&gt; The four numbers specify the x and y coordinates, as well as the width and height, of the SVG “window” relative to the art inside of it. I’ll show you what that means shortly.&lt;/p&gt;
+
+&lt;p&gt;We will give the circle an &lt;code&gt;r&lt;/code&gt; attribute, which is its radius. Let’s make the radius 75 — one half of the viewBox’s width and height.&lt;/p&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle r=&quot;75&quot;/&gt;
+&lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+
+&lt;p&gt;If the radius is half the length of the box then it should fit nicely into it, right?&lt;/p&gt;
+
+&lt;p&gt;Not yet.&lt;/p&gt;
+
+&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle r=&quot;75&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;h5 id=&quot;things-to-notice&quot;&gt;Things to notice&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;A circle drawn within an SVG will by default start in the upper left hand corner.&lt;/li&gt;
+  &lt;li&gt;The SVG’s width expands to fill that of the browser or device. This is because the width of the viewBox is relative to the art inside it, not the webpage.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s fix the circle’s location first.&lt;/p&gt;
+
+&lt;h4 id=&quot;step-2-set-the-location-of-the-circle&quot;&gt;Step 2: Set the location of the circle&lt;/h4&gt;
+
+&lt;p&gt;Let’s try to center the circle. We do this with &lt;code&gt;cx&lt;/code&gt; and &lt;code&gt;cy&lt;/code&gt; values, which specify its x and y coordinates in the viewBox. Let’s set them so they are one-half the width of the viewBox dimensions.&lt;/p&gt;
+
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot;/&gt;
+&lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+
+&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;h4 id=&quot;step-3-set-the-width-and-height-of-the-svg&quot;&gt;Step 3: Set the width and height of the SVG&lt;/h4&gt;
+
+&lt;p&gt;Ok — looking better, but we still need to limit the size of this circle by keeping the SVG from filling up the width of the browser. We can do this by adding &lt;code&gt;width&lt;/code&gt; and &lt;code&gt;height&lt;/code&gt; attributes to the svg element.&lt;/p&gt;
+
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
+&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; /&gt;
+&lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+
+&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
+&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;h4 id=&quot;step-4-adding-fill-and-stroke&quot;&gt;Step 4: Adding fill and stroke&lt;/h4&gt;
+
+&lt;p&gt;Rather than &lt;code&gt;background-color&lt;/code&gt; and &lt;code&gt;border&lt;/code&gt; attributes, SVGs have &lt;code&gt;fill&lt;/code&gt; and &lt;code&gt;stroke&lt;/code&gt;. Let’s give the SVG a black outline and a light blue fill color.&lt;/p&gt;
+
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
+&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; fill=&quot;#95D6F1&quot;/&gt;
+&lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+
+&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
+&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; fill=&quot;#95D6F1&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;p&gt;The line is pretty thin, so I’m going to bump up its thickness a bit now by adding a &lt;code&gt;stroke-width&lt;/code&gt; attribute with a value of &lt;code&gt;2&lt;/code&gt; to the circle.&lt;/p&gt;
+
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
+&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; fill=&quot;#95D6F1&quot;/&gt;
+&lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+
+&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
+&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; fill=&quot;#95D6F1&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;p&gt;The elephant in the room, though, is that the circle no longer quite fits into the viewBox. This is because the stroke adds to its existing radius of &lt;code&gt;r=&quot;75&quot;&lt;/code&gt;. So let’s now adjust the radius down to &lt;code&gt;r=&quot;72&quot;&lt;/code&gt;. We keep the &lt;code&gt;cx&lt;/code&gt; and &lt;code&gt;cy&lt;/code&gt; values because we want the circle to exist in the same location.&lt;/p&gt;
+
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
+&lt;circle r=&quot;72&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; fill=&quot;#95D6F1&quot;/&gt;
+&lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+
+&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
+&lt;circle r=&quot;72&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; fill=&quot;#95D6F1&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;h4 id=&quot;step-6-separating-some-properties-into-css&quot;&gt;Step 6: Separating some properties into CSS&lt;/h4&gt;
+
+&lt;p&gt;So far, all our properties have been inline. Now, let’s separate them into the CSS. This can be done either in a separate file or with &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt; tags within your HTML document.&lt;/p&gt;
+
+&lt;p&gt;And just for fun, we’ll make the circle a light shade of purple rather than blue.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot;/&gt;
+&lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-css&quot;&gt;
+ svg {
+   width: 150px;
+   height: 150px;
+   background-color: #EEEEEE;
+ }
+ circle {
+	fill: #95D6F1;
+	stroke: #000000;
+	stroke-width: 2;
+ }
+
+ &lt;/code&gt;
+ &lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;h4 id=&quot;takeaways&quot;&gt;Takeaways&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SVGs consist of one or more elements, such as circles&lt;/li&gt;
+  &lt;li&gt;The viewBox is the SVG “window” and its scale is relative to the art&lt;/li&gt;
+  &lt;li&gt;Without width and height, the SVG will expand to fit the width of the browser or device&lt;/li&gt;
+  &lt;li&gt;The properties of an SVG can be captured in CSS&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Intro to SVGs</title><link href="http://localhost:4000/svg/images/2019/08/06/svg-intro.html" rel="alternate" type="text/html" title="Intro to SVGs" /><published>2019-08-06T00:00:00-04:00</published><updated>2019-08-06T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/06/svg-intro</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/06/svg-intro.html">&lt;p&gt;Ok, body starting here.&lt;/p&gt;
+
+&lt;div class=&quot;callout&quot;&gt;
+&lt;strong&gt;Note:&lt;/strong&gt; You could theoretically complete this tutorial by drawing directly on an SVG document. If you do that, your SVG element is the &quot;root&quot; of your document and should have these attributes: 
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;svg version=&quot;1.1&quot;
+     baseProfile=&quot;full&quot;
+     xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+&lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+Because the SVGs in this demo are intended to be dropped into an HTML page and manipulated with CSS, I will be leaving these attributes out.
+For more information, check out the &lt;a href=&quot;https://www.w3.org/TR/SVG2/struct.html&quot; target=&quot;_blank&quot;&gt;W3Schools SVG reference&lt;/a&gt;.
+&lt;/div&gt;</content><author><name></name></author><summary type="html">Ok, body starting here.</summary></entry><entry><title type="html">Prism Test</title><link href="http://localhost:4000/codepen/tutorials/2019/08/04/prism-test.html" rel="alternate" type="text/html" title="Prism Test" /><published>2019-08-04T00:00:00-04:00</published><updated>2019-08-04T00:00:00-04:00</updated><id>http://localhost:4000/codepen/tutorials/2019/08/04/prism-test</id><content type="html" xml:base="http://localhost:4000/codepen/tutorials/2019/08/04/prism-test.html">&lt;h4 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h4&gt;
+
+&lt;p&gt;Ok, testing prism for the first time here.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section3&quot;&gt;JS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-css&quot;&gt;
+  .nevin {
+        color: black;
+  }
+  #katz {
+        display: flex;
+  }
+  margolis[data-test=&quot;true&quot;] {
+        border: 1px solid red;
+ }
+ &lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-js&quot;&gt;
+  function demo(y) {
+    x = y+1;
+    return x;
+  }
+ &lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section3&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+  &lt;section class=&quot;yo&quot;&gt;
+ 	&lt;img src=&quot;/path/to/img.txt&quot;/&gt;
+  &lt;/section&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">Here we go</summary></entry><entry><title type="html">Jekyll is now working</title><link href="http://localhost:4000/jekyll/2019/08/03/jekyll-working.html" rel="alternate" type="text/html" title="Jekyll is now working" /><published>2019-08-03T19:32:00-04:00</published><updated>2019-08-03T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/03/jekyll-working</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/03/jekyll-working.html">&lt;p&gt;I now have the jekyll site working. At first, the old jekyll was working just fine — I was able to compile and run my own site without problems, and I was surprised to see that I had already gotten codeview working — but I hit a wall when I had to figure out how to install CSS. Thinking that I may need to update jekyll, I tried the update but then my command “jekyll serve” no longer worked.&lt;/p&gt;
+
+&lt;p&gt;I was able to use “bundle exec jekyll serve” but I still was not able to create any new jekyll sites. It seemed that the mac-installed version of ruby was creating permission restrictions, so I tried to download a new version - but ran into a permission issue with the bundle binary files.&lt;/p&gt;
+
+&lt;p&gt;chmodding the binaries to 777 allowed me to install a new version of ruby, which was the breakthrough. I was then able to install the bundler again and then install the latest version of jekyll.&lt;/p&gt;
+
+&lt;p&gt;One thing that perplexes me is that the _sass file is no longer there. Maybe there is a global sass file somewhere from which the minima code is being compiled?&lt;/p&gt;
+
+&lt;p&gt;Nevertheless, I am now able to get the styles working! I just included the style link in index.md. (Wonder what else I can put in there…)&lt;/p&gt;
+
+&lt;p&gt;Now the main thing is to get content working.&lt;/p&gt;
+
+&lt;p&gt;Theoretically I should be able to add “prism” in there as well. I’d like to try that tomorrow.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;install prism&lt;/li&gt;
+  &lt;li&gt;transfer this new site to github pages&lt;/li&gt;
+  &lt;li&gt;write content
+    &lt;ul&gt;
+      &lt;li&gt;smiley face SVG&lt;/li&gt;
+      &lt;li&gt;vodafone? maybe just for fun…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;code a new version of the face tracker&lt;/li&gt;
+  &lt;li&gt;basic viewbox tests&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">I now have the jekyll site working. At first, the old jekyll was working just fine — I was able to compile and run my own site without problems, and I was surprised to see that I had already gotten codeview working — but I hit a wall when I had to figure out how to install CSS. Thinking that I may need to update jekyll, I tried the update but then my command “jekyll serve” no longer worked.</summary></entry><entry><title type="html">Tabs and syntax highlighting test</title><link href="http://localhost:4000/codepen/tutorials/2019/08/03/syntax-highlight.html" rel="alternate" type="text/html" title="Tabs and syntax highlighting test" /><published>2019-08-03T00:00:00-04:00</published><updated>2019-08-03T00:00:00-04:00</updated><id>http://localhost:4000/codepen/tutorials/2019/08/03/syntax-highlight</id><content type="html" xml:base="http://localhost:4000/codepen/tutorials/2019/08/03/syntax-highlight.html">&lt;h4 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h4&gt;
+&lt;h5 id=&quot;ready-or-not&quot;&gt;Ready or not&lt;/h5&gt;
+
+&lt;p&gt;So now that I know how to add Javascript to these pages, I am using a combination of markdown to add a few tabs. The script for the tabs can be found &lt;a href=&quot;/assets/js/script.js&quot;&gt;here&lt;/a&gt;. Using complete Vanilla JS and making liberal use of inner functions.&lt;/p&gt;
+
+&lt;p&gt;The syntax itself was used with a combination of HTML markup and markdown. 
+Very happy that I can make the lists without html markup.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section3&quot;&gt;JS&lt;/a&gt;&lt;/li&gt;
@@ -39,10 +369,10 @@ HTML is here
 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt; 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nevin&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 	placeholder text
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;/div&gt;
-
 &lt;div id=&quot;section2&quot;&gt;
 CSS is here
 
@@ -53,10 +383,10 @@ CSS is here
 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;.nevin&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 	&lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;/div&gt;
-
 &lt;div id=&quot;section3&quot;&gt;
 JS is here
 
@@ -71,155 +401,14 @@ JS is here
 	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;quaf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lorem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;/div&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">Here we go Ready or not</summary></entry><entry><title type="html">CodePen Test</title><link href="http://localhost:4000/codepen/2019/08/02/codepen-test.html" rel="alternate" type="text/html" title="CodePen Test" /><published>2019-08-02T00:00:00-04:00</published><updated>2019-08-02T00:00:00-04:00</updated><id>http://localhost:4000/codepen/2019/08/02/codepen-test</id><content type="html" xml:base="http://localhost:4000/codepen/2019/08/02/codepen-test.html">&lt;p&gt;Ok, quick test of codepen embed.&lt;/p&gt;
 
-&lt;h3 id=&quot;end-tabs-test&quot;&gt;END TABS TEST&lt;/h3&gt;
-
-&lt;h2 id=&quot;starting-up&quot;&gt;Starting up&lt;/h2&gt;
-
-&lt;h3 id=&quot;text-editors&quot;&gt;Text editors&lt;/h3&gt;
-
-&lt;p&gt;I have used Sublime Text, but any Text Editors will do. Notepad is also great.&lt;/p&gt;
-
-&lt;h3 id=&quot;testing-the-game&quot;&gt;Testing the Game&lt;/h3&gt;
-
-&lt;p&gt;I recommend testing this in a browser using File &amp;gt; Open and going to your game’s HTML page. I have mainly used Firefox for testing, but it should work in other browsers, such as Chrome and Safari.&lt;/p&gt;
-
-&lt;h3 id=&quot;creating-the-directory-structure&quot;&gt;Creating the Directory Structure&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Create an overall directory and call it whatever you want — perhaps &lt;strong&gt;html5_shooter&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Within this directory, create subdirectories: &lt;strong&gt;html&lt;/strong&gt;, &lt;strong&gt;js, and **css.&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;(Include a diagram of directory structure)&lt;/p&gt;
-
-&lt;h1 id=&quot;creating-the-html&quot;&gt;Creating the HTML&lt;/h1&gt;
-
-&lt;p&gt;First, create a basic HTML template and call it &lt;strong&gt;index.html&lt;/strong&gt;, and save this to your HTML directory. This one below is adapted from this &lt;a href=&quot;https://www.sitepoint.com/a-basic-html5-template/&quot; target=&quot;_blank&quot;&gt;Basic HTML5 Template&lt;/a&gt; from SitePoint.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- this will show up in the browser tab.--&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Space Shooter Game&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;description&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Space Shooter Game&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;author&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Your Name Here&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
- 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ship&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
- 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;game_area&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;creating-the-css-file&quot;&gt;Creating the CSS file&lt;/h1&gt;
-&lt;p&gt;Even though we will be mainly using canvas elements for the sprites and background, Let’s create a file with some basic CSS file for styles such as fonts.&lt;/p&gt;
-
-&lt;h1 id=&quot;creating-the-js-file&quot;&gt;Creating the JS file&lt;/h1&gt;
-
-&lt;h1 id=&quot;creating-the-ship&quot;&gt;Creating the ship&lt;/h1&gt;
-
-&lt;h1 id=&quot;making-the-ship-move-with-some-the-keyboard&quot;&gt;Making the ship move with some the keyboard&lt;/h1&gt;
-
-&lt;h1 id=&quot;shooting-projectiles-from-the-ship&quot;&gt;Shooting Projectiles from the Ship&lt;/h1&gt;
-
-&lt;h1 id=&quot;creating-enemies&quot;&gt;Creating Enemies&lt;/h1&gt;
-
-&lt;h2 id=&quot;enemy-motion&quot;&gt;Enemy Motion&lt;/h2&gt;
-
-&lt;h2 id=&quot;enemy-generation&quot;&gt;Enemy Generation&lt;/h2&gt;
-
-&lt;h2 id=&quot;enemy-ship-collision-detection&quot;&gt;Enemy-Ship Collision Detection&lt;/h2&gt;
-
-&lt;h2 id=&quot;enemy-death-effect&quot;&gt;Enemy Death Effect&lt;/h2&gt;
-
-&lt;h1 id=&quot;ship-death-effect&quot;&gt;Ship Death Effect&lt;/h1&gt;
-
-&lt;h1 id=&quot;stat-panel&quot;&gt;Stat Panel&lt;/h1&gt;
-
-&lt;h1 id=&quot;shooting-the-enemies&quot;&gt;Shooting the Enemies&lt;/h1&gt;
-
-&lt;h1 id=&quot;creating-a-scoreboard&quot;&gt;Creating a Scoreboard&lt;/h1&gt;
-
-&lt;h1 id=&quot;accelerometer-on-mobiles&quot;&gt;Accelerometer on mobiles&lt;/h1&gt;
-
-&lt;h1 id=&quot;saving-high-scores-in-localstorage&quot;&gt;Saving High Scores in LocalStorage&lt;/h1&gt;
-
-&lt;h1 id=&quot;-obstacles&quot;&gt;? Obstacles&lt;/h1&gt;
-
-&lt;p&gt;RANDOM NOTES&lt;/p&gt;
-
-&lt;p&gt;Alright, let’s get a little code window set up…&lt;/p&gt;
-
-&lt;p&gt;Ok, what kinds of concepts can be taught. 
-I’m not sure if I should start with the codepen, or a concept. 
-If I were to start with space invaders, then it gets into how to use that CSS tool. 
-Is that really what I want to create? 
-Or do I want to create a simple game?&lt;/p&gt;
-
-&lt;p&gt;The games are the most captivating. 
-Let’s perhaps try to create a space game using html5 canvas. 
-The only question is whether I should do something SIMPLER and whether I should
-create something easier to understand. 
-Actually, I could publish this for Kim Elliott.&lt;/p&gt;
-
-&lt;p&gt;I could do a DOM approach and an HTML5 Canvas Approach&lt;/p&gt;</content><author><name></name></author><summary type="html">The goal of this tutorial is to create a basic space shooter using HTML5 from the ground up. Along the way, we will learn concepts such as Javascript prototypes and Canvas animation. While we will start initially with the keyboard, we will look at how to make this work on a mobile device.</summary></entry><entry><title type="html">Testing Jekyll Markdown</title><link href="/jekyll/update/2017/11/23/first-test-post.html" rel="alternate" type="text/html" title="Testing Jekyll Markdown" /><published>2017-11-23T08:32:24-05:00</published><updated>2017-11-23T08:32:24-05:00</updated><id>/jekyll/update/2017/11/23/first-test-post</id><content type="html" xml:base="/jekyll/update/2017/11/23/first-test-post.html">&lt;p&gt;Ok, let’s see how this drives. Here is a &lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot;&gt;test link&lt;/a&gt;. I’m going to write a quick javascript function below. And here is another &lt;a href=&quot;http://birdleymedia.com&quot; title=&quot;Birdley Media&quot; target=&quot;_blank&quot;&gt;footnote link&lt;/a&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This is a test blockquote.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Today is 2019 Aug&lt;/p&gt;
-
-&lt;p&gt;And here is an attempt at an unordered list&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Nevin Katz
-    &lt;ul&gt;
-      &lt;li&gt;grapes&lt;/li&gt;
-      &lt;li&gt;strawberries&lt;/li&gt;
-      &lt;li&gt;apples&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Jeremy Katz
-    &lt;ol&gt;
-      &lt;li&gt;goombas&lt;/li&gt;
-      &lt;li&gt;spike tops&lt;/li&gt;
-      &lt;li&gt;koopas&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Melissa Katz&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Aaaaaaand here is some sample code…&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">Ok, let’s see how this drives. Here is a test link. I’m going to write a quick javascript function below. And here is another footnote link.</summary></entry></feed>
+&lt;p class=&quot;codepen&quot; data-height=&quot;400&quot; data-theme-id=&quot;0&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;nevkatz&quot; data-slug-hash=&quot;pXmOpY&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;Compass SVG Animation &quot;&gt;
+  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/nevkatz/pen/pXmOpY/&quot;&gt;
+  Compass SVG Animation &lt;/a&gt; by Nevin Katz (&lt;a href=&quot;https://codepen.io/nevkatz&quot;&gt;@nevkatz&lt;/a&gt;)
+  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://static.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">Ok, quick test of codepen embed.</summary></entry></feed>
