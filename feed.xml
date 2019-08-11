@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-10T23:48:59-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">My journey with Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-10T19:32:00-04:00</published><updated>2019-08-10T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/10/jekyll-intro</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-10T23:52:24-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">My journey with Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-10T19:32:00-04:00</published><updated>2019-08-10T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/10/jekyll-intro</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
 
 &lt;p&gt;This site is published with Jekyll, a static site generator built in Ruby that auto-publishes raw HTML files using easily authorable assets such as markdown files and templates. Having worked on both Drupal and WordPress sites, and on the other end of the web publishing spectrum, static HTML sites, I chose Jekyll as a midway solution this time around because I wanted a tool that gave me the best of both worlds. As with raw HTML  pages, it allows me to write and publish without the need for security updates and other types of back-end maintenance. And as with a database-driven site, it creates the HTML pages for me in a way that streamlines the amount of code I need to write in order to produce a site site that allows me to sort and publish content with ease. This happy medium has also made Jekyll a useful tool for &lt;a href=&quot;https://jekyllrb.com/showcase/&quot; target=&quot;_blank&quot;&gt;other sites&lt;/a&gt; you may have seen.&lt;/p&gt;
 
@@ -350,70 +350,4 @@
  &lt;/pre&gt;
 Because the SVGs in this demo are intended to be dropped into an HTML page and manipulated with CSS, I will be leaving these attributes out.
 For more information, check out the &lt;a href=&quot;https://www.w3.org/TR/SVG2/struct.html&quot; target=&quot;_blank&quot;&gt;W3Schools SVG reference&lt;/a&gt;.
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Ok, body starting here.</summary></entry><entry><title type="html">Tabs and syntax highlighting test</title><link href="http://localhost:4000/codepen/tutorials/2019/08/03/syntax-highlight.html" rel="alternate" type="text/html" title="Tabs and syntax highlighting test" /><published>2019-08-03T00:00:00-04:00</published><updated>2019-08-03T00:00:00-04:00</updated><id>http://localhost:4000/codepen/tutorials/2019/08/03/syntax-highlight</id><content type="html" xml:base="http://localhost:4000/codepen/tutorials/2019/08/03/syntax-highlight.html">&lt;h4 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h4&gt;
-&lt;h5 id=&quot;ready-or-not&quot;&gt;Ready or not&lt;/h5&gt;
-
-&lt;p&gt;So now that I know how to add Javascript to these pages, I am using a combination of markdown to add a few tabs. The script for the tabs can be found &lt;a href=&quot;/assets/js/script.js&quot;&gt;here&lt;/a&gt;. Using complete Vanilla JS and making liberal use of inner functions.&lt;/p&gt;
-
-&lt;p&gt;The syntax itself was used with a combination of HTML markup and markdown. 
-Very happy that I can make the lists without html markup.&lt;/p&gt;
-
-&lt;ul class=&quot;css-tabs&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section3&quot;&gt;JS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div id=&quot;section1&quot;&gt;
-HTML is here 
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt; 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nevin&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	placeholder text
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;/div&gt;
-&lt;div id=&quot;section2&quot;&gt;
-CSS is here
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nc&quot;&gt;.nevin&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;/div&gt;
-&lt;div id=&quot;section3&quot;&gt;
-JS is here
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;quaf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lorem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	
-	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;quaf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lorem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Here we go Ready or not</summary></entry><entry><title type="html">CodePen Test</title><link href="http://localhost:4000/codepen/2019/08/02/codepen-test.html" rel="alternate" type="text/html" title="CodePen Test" /><published>2019-08-02T00:00:00-04:00</published><updated>2019-08-02T00:00:00-04:00</updated><id>http://localhost:4000/codepen/2019/08/02/codepen-test</id><content type="html" xml:base="http://localhost:4000/codepen/2019/08/02/codepen-test.html">&lt;p&gt;Ok, quick test of codepen embed.&lt;/p&gt;
-
-&lt;p class=&quot;codepen&quot; data-height=&quot;400&quot; data-theme-id=&quot;0&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;nevkatz&quot; data-slug-hash=&quot;pXmOpY&quot; style=&quot;height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot; data-pen-title=&quot;Compass SVG Animation &quot;&gt;
-  &lt;span&gt;See the Pen &lt;a href=&quot;https://codepen.io/nevkatz/pen/pXmOpY/&quot;&gt;
-  Compass SVG Animation &lt;/a&gt; by Nevin Katz (&lt;a href=&quot;https://codepen.io/nevkatz&quot;&gt;@nevkatz&lt;/a&gt;)
-  on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/span&gt;
-&lt;/p&gt;
-&lt;script async=&quot;&quot; src=&quot;https://static.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">Ok, quick test of codepen embed.</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><summary type="html">Ok, body starting here.</summary></entry></feed>
