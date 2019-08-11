@@ -49,9 +49,9 @@
   <div class="post-content e-content" itemprop="articleBody">
     <h4 id="getting-jekyll-working-again-with-the-latest-version-of-ruby">Getting Jekyll working again with the latest version of Ruby</h4>
 
-<p>This site is published with Jekyll, a static site generator built in Ruby that publishes raw HTML files using markdown files and templates. Having worked on both Drupal and WordPress sites as well as static HTML sites, I chose Jekyll this time around because I wanted a solution that gave me the best of both worlds. On the one hand, it allows me to write and publish without the need for security updates and other types of back-end maintenance, and on the other hand, its use of programming logic, markdown, and templating streamlines the amount of code I need to write in order to produce a full site.</p>
+<p>This site is published with Jekyll, a static site generator built in Ruby that auto-publishes raw HTML files using easily authorable assets such as markdown files and templates. Having worked on both Drupal and WordPress sites, and on the other end of the web publishing spectrum, static HTML sites, I chose Jekyll as a midway solution this time around because I wanted a tool that gave me the best of both worlds. As with raw HTML  pages, it allows me to write and publish without the need for security updates and other types of back-end maintenance. And as with a database-driven site, it creates the HTML pages for me in a way that streamlines the amount of code I need to write in order to produce a site site that allows me to sort and publish content with ease. This happy medium has also made Jekyll a useful tool for <a href="https://jekyllrb.com/showcase/" target="_blank">other sites</a> you may have seen.</p>
 
-<p>Before firing up this site, I had briefly experimented with Jekyll in 2017 after learning of it while reviewing Tom Johnson’s <a href="http://www.idratherbewriting.com">I’d Rather Be Writing</a> resources. Now that I have become interested in writing about technology more, I resumed working with Jekyll again this August.</p>
+<p>Before firing up this site on Github Pages, I had briefly experimented with Jekyll in 2017 after learning of it while reviewing Tom Johnson’s <a href="http://www.idratherbewriting.com">I’d Rather Be Writing</a> resources. Now that I have become interested in writing about technology more, I resumed working with Jekyll again this August.</p>
 
 <!-- after hearing a success story by <a href="https://twitter.com/becca9941">Becca Williams</a>, another developer, who uses it to create her <a href="https://becca9941.github.io/">Developer Journal</a>.-->
 
@@ -59,19 +59,19 @@
 
 <p>While there is now a graphical user interface (GUI) for Jekyll known as <a href="https://blog.webjeda.com/jekyll-admin/">Jekyll admin</a>, I have been using Jekyll exclusively through the command-line. And as with other command-line tools, the setup process had a little trickiness with versions and tool chains. After getting things up and running, I have to say that I love the easy deployment process.</p>
 
-<p>Below I’ll detail what it was like.</p>
+<h4 id="my-experience-getting-reoriented">My experience getting (re)oriented</h4>
 
-<p>The first challenge was making sure I had the latest version of Jekyll running, as I had installed Jekyll 3.6.2 two years ago to just try it out. When trying to install 3.8.6 with my Mac’s installed version of Ruby, I ran into permissions issues. So I had to download a version of Ruby that was independent of my Mac version. This proved to be the breakthrough I needed, and I was able to download and run Jekyll 3.8.6.</p>
+<p>The first challenge was making sure I had the latest version of Jekyll running, as I had installed Jekyll 3.6.2 two years ago to just try it out. My initial version still worked great — but when I decided to to update to 3.8.6 with my Mac’s installed version of Ruby, I ran into permissions issues. So downloaded a version of Ruby that was independent of my Mac version and switched to this version with my ruby version manager (rvm). This proved to be the breakthrough I needed, and I was able to download and run Jekyll 3.8.6.</p>
 
 <h4 id="running-the-local-server">Running the local server</h4>
 
-<p>One thing that I found myself adjusting to was the static site generator. It is easy enough to use and <code>jekyll serve</code> starts a server process on your machine, running a local dev site in your browser. A <code>_sites</code> directory is generated containing your output files. One thing to note, though, is that he <code>_sites</code> directory does not load in the CSS if you open it without having jekyll serve running. You need that server process for it to look right.</p>
+<p>One thing that I found myself adjusting to was the necessity of Jekyll’s server process when running pages. It is easy enough to start — after running <code>jekyll create [directoryname]</code>, you can then run <code>jekyll serve</code> or <code>bundle exec jekyll serve</code> from within your new directory. This starts a server process on your machine, running a local dev site that shows up in your browser. The browser renders your pages by parsing the files from a <code>_sites</code> directory that Jekyll generates containing your output files. One thing to note, though, is that the <code>_sites</code> directory does not load in the CSS if you open it without having jekyll serve running. You need that server process for the html page’s filepaths to work properly.</p>
 
 <h4 id="adding-css">Adding CSS</h4>
 
-<p>One thing that initially perplexed me was where to put the styles. Jekyll uses sass and when you run jekyll serve the sass automaticallly compiles - but it was not obvious how to add other styles initially.</p>
+<p>One thing that initially perplexed me was where to put custom styles. Jekyll uses sass and when you run jekyll serve the sass automaticallly compiles - but it was not obvious how to add other styles initially.</p>
 
-<p>I had seen a _sass directory initially in Jekyll 3.x(?) but when I updated to Jekyll 3.8.6,  that the _sass directory was no longer there, nor were other key directories. I read that these were now included in the gem theme, so I used <code>bundle show minima</code> to find its location. I then copied _sass, _layouts, _includes, and assets over from the theme and overrode parts of the templates and styles that I wanted to change.</p>
+<p>I had seen a _sass directory initially in Jekyll 3.6.2 but did not use it during my brief trial run with Jekyll in 2017. When I updated to Jekyll 3.8.6, the _sass directory was no longer there, nor were other key directories. After reviewing the latest documentation on the <a>Jekyll site</a>, I read that these directories were now included in the gem theme, which resided outside my project directory. Typing <code>bundle show minima</code> from within the project directory allowd me to find its location on my machine. I then copied _sass, _layouts, _includes, and assets over from the theme and overrode parts of the templates and styles that I wanted to change.</p>
 
 <p>After exploring the directory, I decided on two approaches for styles:</p>
 <ul>
@@ -79,17 +79,21 @@
   <li>a separate custom.css file</li>
 </ul>
 
-<h4 id="adding-code-views">Adding Code views</h4>
+<h4 id="adding-code-views">Adding Code Views</h4>
 
-<p>Jekyll has natural styles for marking up code, but I wanted something with a little more pop. Becca Williams (include twitter handle) had recommended the Prism Library, so I went ahead and added it.</p>
+<p>I knew that I would want to use styles to show HTML, CSS, and JS in my posts. Jekyll has natural styles for marking up code, but I wanted something that had more color out-of-the-box. Fellow developer <a href="https://twitter.com/becca9941">Becca Williams</a> had recommended the Prism Library, so I went ahead and added it.</p>
 
 <h4 id="tabs">Tabs</h4>
 
-<p>I wrote up a quick script and styles for adding tabs so that viewing HTML would be easy. The script is available here and the styles are on this sheet.</p>
+<p>I also knew I wanted to create some tabs a la CodePen, and I didn’t want to write a codepen for every step of my project. So I wrote up a quick script and styles for adding tabs so that viewing HTML would be easy. The script is available here and the styles are on this sheet.</p>
 
 <h4 id="perils-with-pagination">Perils with Pagination</h4>
 
-<p>There is a new pagination-v2 module that I am now using. After looking at a lot of examples, I eventually used the config 2 module.</p>
+<p>After getting my basic site up and running, I started thinking about how to keep my work expandable. I wanted to find a way to paginate my posts, and started looking around for ways to do it. While the original paginate gem was deprecated, I found the new <a href="https://github.com/sverrirs/jekyll-paginate-v2">Paginate v2</a> module, which I am now using. I found their examples directory to be instrumental in setting up my pagination logic.</p>
+
+<ul>
+  <li>Running <code>Jekyll serve</code></li>
+</ul>
 
 <h4 id="the-banner">The banner</h4>
 
