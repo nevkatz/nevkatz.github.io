@@ -9,13 +9,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Getting Jekyll working again with the latest version of Ruby" />
 <meta property="og:description" content="Getting Jekyll working again with the latest version of Ruby" />
-<link rel="canonical" href="http://localhost:4000/jekyll/2019/08/10/jekyll-working.html" />
-<meta property="og:url" content="http://localhost:4000/jekyll/2019/08/10/jekyll-working.html" />
+<link rel="canonical" href="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html" />
+<meta property="og:url" content="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html" />
 <meta property="og:site_name" content="Nevin’s Dev Pages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-08-10T19:32:00-04:00" />
 <script type="application/ld+json">
-{"description":"Getting Jekyll working again with the latest version of Ruby","@type":"BlogPosting","url":"http://localhost:4000/jekyll/2019/08/10/jekyll-working.html","headline":"My journey with Jekyll","dateModified":"2019-08-10T19:32:00-04:00","datePublished":"2019-08-10T19:32:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/2019/08/10/jekyll-working.html"},"@context":"https://schema.org"}</script>
+{"description":"Getting Jekyll working again with the latest version of Ruby","@type":"BlogPosting","url":"http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html","headline":"My journey with Jekyll","dateModified":"2019-08-10T19:32:00-04:00","datePublished":"2019-08-10T19:32:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/css/prism.css">
@@ -87,12 +87,15 @@
 
 <p>I also knew I wanted to create some tabs a la CodePen, and I didn’t want to write a codepen for every step of my project. So I wrote up a quick script and styles for adding tabs so that viewing HTML would be easy. The script is available here and the styles are on this sheet.</p>
 
-<h4 id="perils-with-pagination">Perils with Pagination</h4>
+<h4 id="pagination">Pagination</h4>
 
 <p>After getting my basic site up and running, I started thinking about how to keep my work expandable. I wanted to find a way to paginate my posts, and started looking around for ways to do it. While the original paginate gem was deprecated, I found the new <a href="https://github.com/sverrirs/jekyll-paginate-v2">Paginate v2</a> module, which I am now using. I found their examples directory to be instrumental in setting up my pagination logic.</p>
 
+<h4 id="mistakes">Mistakes</h4>
+
 <ul>
-  <li>Running <code>Jekyll serve</code></li>
+  <li>Running <code>Jekyll serve</code> from location other than your root directory. This creates a _site folder in the wrong location and can start a slew of unwanted issues.</li>
+  <li>Inadvertently creating a template, such as a default.html or index.html file, in the wrong directory</li>
 </ul>
 
 <h4 id="the-banner">The banner</h4>
@@ -101,20 +104,28 @@
 
 <h4 id="sorting-for-creating-a-course-page">Sorting for creating a course page</h4>
 
-<p>This was fairly easy. I looked at how to assign variables in the jekyll template:</p>
+<p>I wanted my default paginated sorting to be most recent date first, but I wanted the opposite for pages that were meant to house instructional posts on a specific topic. After looking at a bunch of template code, I learned how to assign variables in the jekyll template.</p>
 
-<p><code> assign sorted = .... </code></p>
+<p><code>&#123;% assign sorted = site.categories[page.category] | sort:"date" %&#125;</code></p>
 
-<h4 id="wiring-git-to-github-pages">Wiring Git to Github Pages</h4>
+<p>The command <code>assign</code> takes care of the variable assignment. I am reaching into <code>site.categories</code>, filtering by the specific category of the current page, and then sorting by ascending date. This allows me to sort the posts for one category in ascending order.</p>
+
+<h4 id="wiring-my-jekyll-site-to-github-pages">Wiring my Jekyll site to Github Pages</h4>
 
 <p>I was originally storing my github-pages publishable stuff in a completely different repo and actually copying all the stuff from the _sites directory over to that repo every time I wanted to publish and push. Needless to say, I wanted omsething more efficient.</p>
 
-<p>After reading about other approaches, my approach was to simply wire the _sites directory to Github pages, but because my overall jekyll directory was under site version control, I was worried about having a repo within a repo. Fortunately, .gitignore in my jekyll repo had my back, because it automatically ignores the _sites folder. So I moved the .git directory from github-pages into my _sites folder and voila — the _sites folder was under version control and wired to Git, and I now have all my jekyll assets in one place.</p>
+<p>After reading about other approaches, my approach was to wire the _sites directory to Github pages. Because my overall jekyll directory was under site version control, I was worried about having a repo within a repo. Fortunately, .gitignore in my jekyll repo had my back, because it automatically ignores the _sites folder. So I moved the .git directory from github-pages into my _sites folder and voila — the _sites folder was under version control and wired to Git, and I now have all my jekyll assets in one place.</p>
 
-<p>One thing I found, though, is that running <code>jekyll clean</code> will blow away the git repo, so it’s not something I want to do on a regular basis, but otherwise, the workflow works well.</p>
+<p>One thing I found, though, is that running <code>jekyll clean</code> will blow away the git repo, so it’s not something I want to do on a regular basis. Because I seldom run that command and push my changes on a regular basis, the workflow works well.</p>
+
+<p>There is a gem specifically designed for Github pages, though I have not looked into it yet.</p>
+
+<h4 id="closing-remarks">Closing remarks</h4>
+
+<p>It has been a very interesting week getting started with Jekyll. I look forward to posting additional thoughts as I get to know the tool more.</p>
 
 
-  </div><a class="u-url" href="/jekyll/2019/08/10/jekyll-working.html" hidden></a>
+  </div><a class="u-url" href="/jekyll/2019/08/10/jekyll-intro.html" hidden></a>
 </article>
 
       </div>
