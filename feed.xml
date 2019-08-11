@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-10T21:03:57-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">My journey with Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/10/jekyll-working.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-10T19:32:00-04:00</published><updated>2019-08-10T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/10/jekyll-working</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/10/jekyll-working.html">&lt;h4 id=&quot;getting-jekyll-working-again-with-the-latest-version-of-ruby&quot;&gt;Getting Jekyll working again with the latest version of Ruby&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-10T22:59:37-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">My journey with Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/10/jekyll-working.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-10T19:32:00-04:00</published><updated>2019-08-10T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/10/jekyll-working</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/10/jekyll-working.html">&lt;h4 id=&quot;getting-jekyll-working-again-with-the-latest-version-of-ruby&quot;&gt;Getting Jekyll working again with the latest version of Ruby&lt;/h4&gt;
 
-&lt;p&gt;This site is published with Jekyll, a static site generator that publishes raw HTML files using markdown files and templates.  I wanted a solution that allowed me to write and publish without getting bogged down in security updates and other types of back-end maintenance, but also allowed me to innovate on the front-end when I wanted. I was drawn to Jekyll because of how it enabled me to build a site efficiently.&lt;/p&gt;
+&lt;p&gt;This site is published with Jekyll, a static site generator built in Ruby that publishes raw HTML files using markdown files and templates. Having worked on both Drupal and WordPress sites as well as static HTML sites, I chose Jekyll this time around because I wanted a solution that gave me the best of both worlds. On the one hand, it allows me to write and publish without the need for security updates and other types of back-end maintenance, and on the other hand, its use of programming logic, markdown, and templating streamlines the amount of code I need to write in order to produce a full site.&lt;/p&gt;
 
-&lt;p&gt;Before firing up this site, I had briefly experimented with Jekyll in 2017 after hearing about it on Tom Johnson’s &lt;a href=&quot;http://www.idratherbewriting.com&quot;&gt;I’d Rather Be Writing&lt;/a&gt; site. and then I started it up again this month in 2019 after hearing about Becca Williams, another developer, having success with it.&lt;/p&gt;
+&lt;p&gt;Before firing up this site, I had briefly experimented with Jekyll in 2017 after learning of it while reviewing Tom Johnson’s &lt;a href=&quot;http://www.idratherbewriting.com&quot;&gt;I’d Rather Be Writing&lt;/a&gt; resources. Now that I have become interested in writing about technology more, I resumed working with Jekyll again this August.&lt;/p&gt;
+
+&lt;!-- after hearing a success story by &lt;a href=&quot;https://twitter.com/becca9941&quot;&gt;Becca Williams&lt;/a&gt;, another developer, who uses it to create her &lt;a href=&quot;https://becca9941.github.io/&quot;&gt;Developer Journal&lt;/a&gt;.--&gt;
 
 &lt;h4 id=&quot;jekyll-setup&quot;&gt;Jekyll Setup&lt;/h4&gt;
 
-&lt;p&gt;As with other tools I have run from the command line, the setup process had the usual trickiness with versions and tool chains — but after getting things up and running, I have to say that love the easy deployment process. Below I’ll detail what it was like.&lt;/p&gt;
+&lt;p&gt;While there is now a graphical user interface (GUI) for Jekyll known as &lt;a href=&quot;https://blog.webjeda.com/jekyll-admin/&quot;&gt;Jekyll admin&lt;/a&gt;, I have been using Jekyll exclusively through the command-line. And as with other command-line tools, the setup process had a little trickiness with versions and tool chains. After getting things up and running, I have to say that I love the easy deployment process.&lt;/p&gt;
+
+&lt;p&gt;Below I’ll detail what it was like.&lt;/p&gt;
 
 &lt;p&gt;The first challenge was making sure I had the latest version of Jekyll running, as I had installed Jekyll 3.6.2 two years ago to just try it out. When trying to install 3.8.6 with my Mac’s installed version of Ruby, I ran into permissions issues. So I had to download a version of Ruby that was independent of my Mac version. This proved to be the breakthrough I needed, and I was able to download and run Jekyll 3.8.6.&lt;/p&gt;
 
@@ -54,20 +58,7 @@
 
 &lt;p&gt;After reading about other approaches, my approach was to simply wire the _sites directory to Github pages, but because my overall jekyll directory was under site version control, I was worried about having a repo within a repo. Fortunately, .gitignore in my jekyll repo had my back, because it automatically ignores the _sites folder. So I moved the .git directory from github-pages into my _sites folder and voila — the _sites folder was under version control and wired to Git, and I now have all my jekyll assets in one place.&lt;/p&gt;
 
-&lt;p&gt;One thing I found, though, is that running &lt;code&gt;jekyll clean&lt;/code&gt; will blow away the git repo, so it’s not something I want to do on a regular basis, but otherwise, the workflow works well.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;installing prism&lt;/li&gt;
-  &lt;li&gt;transfer this new site to github pages - a repo within a repo&lt;/li&gt;
-  &lt;li&gt;write content
-    &lt;ul&gt;
-      &lt;li&gt;smiley face SVG&lt;/li&gt;
-      &lt;li&gt;vodafone? maybe just for fun…&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;code a new version of the face tracker&lt;/li&gt;
-  &lt;li&gt;basic viewbox tests&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Getting Jekyll working again with the latest version of Ruby</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;One thing I found, though, is that running &lt;code&gt;jekyll clean&lt;/code&gt; will blow away the git repo, so it’s not something I want to do on a regular basis, but otherwise, the workflow works well.&lt;/p&gt;</content><author><name></name></author><summary type="html">Getting Jekyll working again with the latest version of Ruby</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG’s contain many different types of child elements, including circles, ellipses, and linear paths.&lt;/p&gt;
 
