@@ -526,15 +526,20 @@ svg {
   background-color: #EEEEEE; }
 
 /* custom layout elements */
+h2.post-list-heading {
+  margin: 10px 0px; }
+
 .callout {
   padding: 20px;
   background-color: lightblue; }
 
 .categories {
+  margin: 6px 0px; }
+
+.categories a {
+  font-weight: bold;
   font-size: 14px;
-  color: maroon;
-  margin: 6px 0px;
-  font-weight: bold; }
+  color: maroon; }
 
 /* widgets */
 ul.css-tabs {
