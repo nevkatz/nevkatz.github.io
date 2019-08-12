@@ -526,9 +526,6 @@ svg {
   background-color: #EEEEEE; }
 
 /* custom layout elements */
-h2.post-list-heading {
-  margin: 10px 0px; }
-
 .callout {
   padding: 20px;
   background-color: lightblue; }
