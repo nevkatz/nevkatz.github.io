@@ -533,14 +533,6 @@ h2.post-list-heading {
   padding: 20px;
   background-color: lightblue; }
 
-.categories {
-  margin: 6px 0px; }
-
-.categories a {
-  font-weight: bold;
-  font-size: 14px;
-  color: maroon; }
-
 /* widgets */
 ul.css-tabs {
   list-style-type: none;
@@ -590,3 +582,9 @@ svg ellipse.dragon {
   svg#dragons-sky {
     max-width: none;
     left: 0px; } }
+.categories {
+  margin: 6px 0px; }
+  .categories a {
+    font-weight: bold;
+    font-size: 14px;
+    color: maroon; }
