@@ -1,17 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-11T21:35:27-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Key Themes</title><link href="http://localhost:4000/themes/2019/08/11/core-ideas.html" rel="alternate" type="text/html" title="Key Themes" /><published>2019-08-11T00:00:00-04:00</published><updated>2019-08-11T00:00:00-04:00</updated><id>http://localhost:4000/themes/2019/08/11/core-ideas</id><content type="html" xml:base="http://localhost:4000/themes/2019/08/11/core-ideas.html">&lt;p&gt;There are a few key themes I anticipate exploring as I find myself writing these dev pages. Not sure they will show up in every post, but I think they will be popping up frequently.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Art and Technology are two sides of the same coin&lt;/li&gt;
-  &lt;li&gt;Solving problems is easier when the problem is communicated somewhere (code-verbal brain communication)&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Breaking problems down into manageable chunks is a good way to teach something&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Creating art with code and vice-versa&lt;/li&gt;
-  &lt;li&gt;Connecting the verbal and coding sides of the brain&lt;/li&gt;
-  &lt;li&gt;Breaking problems down into manageable chunks&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There is something about the verbal part of my brain that&lt;/p&gt;</content><author><name></name></author><summary type="html">There are a few key themes I anticipate exploring as I find myself writing these dev pages. Not sure they will show up in every post, but I think they will be popping up frequently.</summary></entry><entry><title type="html">My journey with Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-10T19:32:00-04:00</published><updated>2019-08-10T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/10/jekyll-intro</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-13T22:30:22-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">My journey with Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-10T19:32:00-04:00</published><updated>2019-08-10T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/10/jekyll-intro</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
 
 &lt;p&gt;This site is published with Jekyll, a static site generator built in Ruby that auto-publishes raw HTML files using easily authorable assets such as markdown files and templates. Having worked on both Drupal and WordPress sites, and on the other end of the web publishing spectrum, static HTML sites, I chose Jekyll as a midway solution this time around because I wanted a tool that gave me the best of both worlds. As with raw HTML  pages, it allows me to write and publish without the need for security updates and other types of back-end maintenance. And as with a database-driven site, it creates the HTML pages for me in a way that streamlines the amount of code I need to write in order to produce a site site that allows me to sort and publish content with ease. This happy medium has also made Jekyll a useful tool for &lt;a href=&quot;https://jekyllrb.com/showcase/&quot; target=&quot;_blank&quot;&gt;other sites&lt;/a&gt; you may have seen.&lt;/p&gt;
 
@@ -167,7 +154,55 @@
 
 &lt;h4 id=&quot;step-2-add-the-mouth&quot;&gt;Step 2: Add the mouth&lt;/h4&gt;
 
-&lt;h5 id=&quot;a-few-variants&quot;&gt;A few variants&lt;/h5&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;I want the option of a curved mouth, so to draw this one, I am going to use the &lt;code&gt;path&lt;/code&gt; element. Here is how it will look:&lt;/p&gt;
+
+&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
+&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot; /&gt;
+&lt;ellipse cx=&quot;60&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot; /&gt;
+&lt;ellipse cx=&quot;90&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot; /&gt;
+ &lt;path d=&quot;M42,85 Q73,141 103,85&quot; fill=&quot;transparent&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; /&gt;
+&lt;/svg&gt;
+
+&lt;p&gt;The path element has three attributes we are familiar with:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;fill&lt;/code&gt;, which we will set to “transparent”&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;stroke&amp;lt;/code, which we will set to #000000&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;stroke-width&lt;/code&gt;, which we will set to 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But in addition, there is a new property to set, which determines the length and curvature of the path. This is known as &lt;code&gt;d&lt;/code&gt;. This is what the code snippet will look like for the path with &lt;code&gt;d&lt;/code&gt; incorporated.&lt;/p&gt;
+
+&lt;pre&gt;
+	&lt;code class=&quot;language-markup&quot;&gt;
+		&lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;path d=&quot;M42,85 Q73,141 103,85&quot; fill=&quot;transparent&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot;/&gt;
+		&lt;/script&gt;
+	&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Chris Coyier wrote a &lt;code&gt;terrific tutorial&lt;/code&gt; on the &lt;code&gt;d&lt;/code&gt; attribute that I encourage you to take a look at. While I will not be covering the &lt;code&gt;d attribute in nearly as much depth, I wanted to discuss the commands used in my example.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Each letter in the &lt;code&gt;d&lt;/code&gt; attribute is a command, and each command has a set of arguments that are passed into it. For instance, the &lt;code&gt;M&lt;/code&gt; value has &lt;code&gt;42,85&lt;/code&gt; passed into it.&lt;/p&gt;
+
+&lt;p&gt;Let’s take a closer look at this &lt;code&gt;d&lt;/code&gt; attribute’s two commands.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;M42,85:&lt;/code&gt; the M refers to “moveTo”; in other words, where you “move” the pen before you put it down to draw. In this case, we are moving it to coordinates &lt;code&gt;42,85&amp;lt;/code.&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Q73,141 103,85&lt;/code&gt;: This is a quadratic curve control point. Its first point is used to a bezier point used to control the line’s curvature; the second point, &lt;code&gt;103,85&lt;/code&gt;, is the right side of the smile.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are bezier curve generators out there that you can use to generate code like this. Here is one of them that I used to generate the mouth.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blogs.sitepointstatic.com/examples/tech/svg-curves/quadratic-curve.html&quot;&gt;SVG Quadratic Curve Example&lt;/a&gt;, blogs.sitepoint.com&lt;/p&gt;
+
+&lt;p&gt;You can also draw cubic curves with the &lt;code&gt;C&lt;/code&gt;command. As a follow-up exercise, you could try to replace the quadratic curve command with a cubic curve command. Here is another generator from SitePoint that you may find helpful.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blogs.sitepointstatic.com/examples/tech/svg-curves/cubic-curve.html&quot;&gt;SVG Cubic Bézier Curve Example&lt;/a&gt;, blogs.sitepoint.com&lt;/p&gt;
+
+&lt;h4 id=&quot;next-up&quot;&gt;Next up&lt;/h4&gt;
+
+&lt;p&gt;In our next tutorial, we will cover how to make the face change expressions with the click of a mouse.&lt;/p&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG graphics have been around since 1998, and at this point have gained a substantial amount of &lt;a href=&quot;https://caniuse.com/#feat=svg&quot; target=&quot;_blank&quot;&gt;browser support&lt;/a&gt;. They also lend themselves to animation and are naturally responsive.&lt;/p&gt;
 

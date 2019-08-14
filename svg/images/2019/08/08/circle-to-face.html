@@ -123,29 +123,58 @@
 
 <h4 id="step-2-add-the-mouth">Step 2: Add the mouth</h4>
 
-<h5 id="a-few-variants">A few variants</h5>
+<p>I want the option of a curved mouth, so to draw this one, I am going to use the <code>path</code> element. Here is how it will look:</p>
+
+<svg width="150px" height="150px" viewBox="0 0 150 150">
+<circle fill="#f0c6f9" stroke="#000000" stroke-width="2" cx="75" cy="75" r="72" />
+<ellipse cx="60" cy="51" rx="6" ry="15" />
+<ellipse cx="90" cy="51" rx="6" ry="15" />
+ <path d="M42,85 Q73,141 103,85" fill="transparent" stroke="#000000" stroke-width="2" />
+</svg>
+
+<p>The path element has three attributes we are familiar with:</p>
+
+<ul>
+  <li><code>fill</code>, which we will set to “transparent”</li>
+  <li><code>stroke&lt;/code, which we will set to #000000"</code></li>
+  <li><code>stroke-width</code>, which we will set to 2</li>
+</ul>
+
+<p>But in addition, there is a new property to set, which determines the length and curvature of the path. This is known as <code>d</code>. This is what the code snippet will look like for the path with <code>d</code> incorporated.</p>
+
+<pre>
+	<code class="language-markup">
+		<script type="prism-html-markup">
+<path d="M42,85 Q73,141 103,85" fill="transparent" stroke="#000000" stroke-width="2"/>
+		</script>
+	</code>
+</pre>
+
+<p>Chris Coyier wrote a <code>terrific tutorial</code> on the <code>d</code> attribute that I encourage you to take a look at. While I will not be covering the <code>d attribute in nearly as much depth, I wanted to discuss the commands used in my example.</code></p>
+
+<p>Each letter in the <code>d</code> attribute is a command, and each command has a set of arguments that are passed into it. For instance, the <code>M</code> value has <code>42,85</code> passed into it.</p>
+
+<p>Let’s take a closer look at this <code>d</code> attribute’s two commands.</p>
+
+<ul>
+  <li><code>M42,85:</code> the M refers to “moveTo”; in other words, where you “move” the pen before you put it down to draw. In this case, we are moving it to coordinates <code>42,85&lt;/code.</code></li>
+  <li><code>Q73,141 103,85</code>: This is a quadratic curve control point. Its first point is used to a bezier point used to control the line’s curvature; the second point, <code>103,85</code>, is the right side of the smile.</li>
+</ul>
+
+<p>There are bezier curve generators out there that you can use to generate code like this. Here is one of them that I used to generate the mouth.</p>
+
+<p><a href="http://blogs.sitepointstatic.com/examples/tech/svg-curves/quadratic-curve.html">SVG Quadratic Curve Example</a>, blogs.sitepoint.com</p>
+
+<p>You can also draw cubic curves with the <code>C</code>command. As a follow-up exercise, you could try to replace the quadratic curve command with a cubic curve command. Here is another generator from SitePoint that you may find helpful.</p>
+
+<p><a href="http://blogs.sitepointstatic.com/examples/tech/svg-curves/cubic-curve.html">SVG Cubic Bézier Curve Example</a>, blogs.sitepoint.com</p>
+
+<h4 id="next-up">Next up</h4>
+
+<p>In our next tutorial, we will cover how to make the face change expressions with the click of a mouse.</p>
 
 
-  </div><div id="disqus_thread"></div>
-    <script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = 'https://nevkatz.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/svg/images/2019/08/08/circle-to-face.html" hidden></a>
+  </div><a class="u-url" href="/svg/images/2019/08/08/circle-to-face.html" hidden></a>
 </article>
 
       </div>
