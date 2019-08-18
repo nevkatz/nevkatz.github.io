@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-08-13T22:33:39-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">My journey with Jekyll</title><link href="/jekyll/2019/08/10/jekyll-intro.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-10T19:32:00-04:00</published><updated>2019-08-10T19:32:00-04:00</updated><id>/jekyll/2019/08/10/jekyll-intro</id><content type="html" xml:base="/jekyll/2019/08/10/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-18T16:30:08-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">My journey with Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-10T19:32:00-04:00</published><updated>2019-08-10T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/10/jekyll-intro</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/10/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
 
 &lt;p&gt;This site is published with Jekyll, a static site generator built in Ruby that auto-publishes raw HTML files using easily authorable assets such as markdown files and templates. Having worked on both Drupal and WordPress sites, and on the other end of the web publishing spectrum, static HTML sites, I chose Jekyll as a midway solution this time around because I wanted a tool that gave me the best of both worlds. As with raw HTML  pages, it allows me to write and publish without the need for security updates and other types of back-end maintenance. And as with a database-driven site, it creates the HTML pages for me in a way that streamlines the amount of code I need to write in order to produce a site site that allows me to sort and publish content with ease. This happy medium has also made Jekyll a useful tool for &lt;a href=&quot;https://jekyllrb.com/showcase/&quot; target=&quot;_blank&quot;&gt;other sites&lt;/a&gt; you may have seen.&lt;/p&gt;
 
@@ -78,7 +78,7 @@
 &lt;p&gt;I would be remiss if I did not mention how helpful it has been to learn some &lt;a href=&quot;https://shopify.github.io/liquid/&quot; target=&quot;_blank&quot;&gt;Liquid&lt;/a&gt;, the programming language used for Jekyll templates.&lt;/p&gt;
 &lt;h4 id=&quot;closing-remarks&quot;&gt;Closing remarks&lt;/h4&gt;
 
-&lt;p&gt;It has been a very interesting week getting started with Jekyll. I look forward to posting additional thoughts as I get to know the tool more.&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducing Jekyll</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;It has been a very interesting week getting started with Jekyll. I look forward to posting additional thoughts as I get to know the tool more.&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducing Jekyll</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG’s contain many different types of child elements, including circles, ellipses, and linear paths.&lt;/p&gt;
 
@@ -202,7 +202,7 @@
 
 &lt;h4 id=&quot;next-up&quot;&gt;Next up&lt;/h4&gt;
 
-&lt;p&gt;In our next tutorial, we will cover how to make the face change expressions with the click of a mouse.&lt;/p&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="/svg/images/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>/svg/images/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="/svg/images/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;In our next tutorial, we will cover how to make the face change expressions with the click of a mouse.&lt;/p&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG graphics have been around since 1998, and at this point have gained a substantial amount of &lt;a href=&quot;https://caniuse.com/#feat=svg&quot; target=&quot;_blank&quot;&gt;browser support&lt;/a&gt;. They also lend themselves to animation and are naturally responsive.&lt;/p&gt;
 
@@ -385,20 +385,107 @@
   &lt;li&gt;The viewBox is the SVG “window” and its scale is relative to the art&lt;/li&gt;
   &lt;li&gt;Without width and height, the SVG will expand to fit the width of the browser or device&lt;/li&gt;
   &lt;li&gt;The properties of an SVG can be captured in CSS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Intro to SVGs</title><link href="/svg/images/2019/08/06/svg-intro.html" rel="alternate" type="text/html" title="Intro to SVGs" /><published>2019-08-06T00:00:00-04:00</published><updated>2019-08-06T00:00:00-04:00</updated><id>/svg/images/2019/08/06/svg-intro</id><content type="html" xml:base="/svg/images/2019/08/06/svg-intro.html">&lt;p&gt;Ok, body starting here.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Intro to SVGs</title><link href="http://localhost:4000/svg/images/2019/08/06/svg-intro.html" rel="alternate" type="text/html" title="Intro to SVGs" /><published>2019-08-06T00:00:00-04:00</published><updated>2019-08-06T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/06/svg-intro</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/06/svg-intro.html">&lt;p&gt;The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.&lt;/p&gt;
 
-&lt;div class=&quot;callout&quot;&gt;
-&lt;strong&gt;Note:&lt;/strong&gt; You could theoretically complete this tutorial by drawing directly on an SVG document. If you do that, your SVG element is the &quot;root&quot; of your document and should have these attributes: 
+&lt;p&gt;Having first been developed in 1999, SVG graphics were not always well supported in browsers. that said, they have now have developed a &lt;a href=&quot;#&quot;&gt;robust amount of browser support&lt;/a&gt;. In this post, we will cover SVG fundamentals that will be helpful for ensuing tutorials.&lt;/p&gt;
+
+&lt;h3 id=&quot;overview&quot;&gt;Overview&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What is an SVG?&lt;/li&gt;
+  &lt;li&gt;Creating and editing an SVG&lt;/li&gt;
+  &lt;li&gt;Standalone SVGs versus SVGs embedded in webpages&lt;/li&gt;
+  &lt;li&gt;SVG’s, CSS, and JS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-is-an-svg&quot;&gt;What is an SVG?&lt;/h3&gt;
+
+&lt;h4 id=&quot;svgs-maintain-their-sharpness-regardless-of-their-size&quot;&gt;SVG’s maintain their sharpness regardless of their size.&lt;/h4&gt;
+
+&lt;p&gt;Because SVG’s are made up of lines and shapes drawn mathematically, they do not lose quality when magnified like their pixel-based counterparts that are coded in bitmaps, such as JPG, PNG, and GIF. Look at how this SVG is rendered. Compare this SVG to a PNG graphic.&lt;/p&gt;
+
+&lt;p&gt;(Image examples)&lt;/p&gt;
+
+&lt;p&gt;Now let’s enlarge them both. Notice that the SVG doesn’t lose any quality.&lt;/p&gt;
+
+&lt;p&gt;(Image examples)&lt;/p&gt;
+
+&lt;h4 id=&quot;svgs-are-made-up-of-one-or-more-shapes-drawn-mathematically-in-code&quot;&gt;SVG’s are made up of one or more shapes drawn mathematically in code.&lt;/h4&gt;
+
+&lt;p&gt;You will see some code samples in the SVG tutorials code examples for drawing SVG graphics. The code is actually a set of commands for various types of lines that fit to particular types of math functions, such as linear, quadratic, and cubic, as well as shapes, such as circles.&lt;/p&gt;
+
+&lt;h3 id=&quot;creatinga-and-editing-svgs&quot;&gt;Creatinga and Editing SVGs&lt;/h3&gt;
+
+&lt;h4 id=&quot;image-editors-like-adobe-illustrator-and-inkscape-can-output-svg-graphics&quot;&gt;Image Editors like Adobe Illustrator and Inkscape can output SVG graphics.&lt;/h4&gt;
+
+&lt;p&gt;Image applications like Illustrator and Inkscape can output SVG graphics that maintain color, layer order, positioning, and other properties. In many cases, meta data is left in the file that can be stripped out either via export settings or after the fact in a text editor. Just be careful about the settings and make sure you test when you open them up in a browser.&lt;/p&gt;
+
+&lt;h4 id=&quot;svgs-can-be-opened-in-both-a-browser-window-and-a-text-editor&quot;&gt;SVG’s can be opened in both a browser window and a text editor.&lt;/h4&gt;
+
+&lt;p&gt;Because SVG’s are drawn in code, they can be opened up in a text Editor like TextEdit, Notepad, TextWrangler or Sublime Text, and edited directly there.&lt;/p&gt;
+
+&lt;h4 id=&quot;standalone-svg-files&quot;&gt;Standalone SVG files&lt;/h4&gt;
+
+&lt;p&gt;SVG code can either exist in its own file as the file’s root element or they can exist within an HTML document. The URLs to SVG files can then be used as &lt;code&gt;src&lt;/code&gt; attributes of &lt;code&gt;img&lt;/code&gt; elements.&lt;/p&gt;
+
+&lt;p&gt;You could theoretically complete the ensuing tutorials by drawing directly on an SVG document. If you do that, your SVG element is the “root” of your document and should have these attributes:&lt;/p&gt;
+
 &lt;pre&gt;
  &lt;code class=&quot;language-markup&quot;&gt;
   &lt;script type=&quot;prism-html-markup&quot;&gt;
 &lt;svg version=&quot;1.1&quot;
      baseProfile=&quot;full&quot;
      xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+     &lt;circle/&gt;
+     &lt;path/&gt;
+
 &lt;/svg&gt;
   &lt;/script&gt;
  &lt;/code&gt;
  &lt;/pre&gt;
-Because the SVGs in this demo are intended to be dropped into an HTML page and manipulated with CSS, I will be leaving these attributes out.
-For more information, check out the &lt;a href=&quot;https://www.w3.org/TR/SVG2/struct.html&quot; target=&quot;_blank&quot;&gt;W3Schools SVG reference&lt;/a&gt;.
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Ok, body starting here.</summary></entry></feed>
+
+&lt;p&gt;The link to the standalone SVG is &lt;a href=&quot;#&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You will notice in this sample that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/p&gt;
+
+&lt;p&gt;And below is how you might link to this SVG in an HTML file. Notice that it is the same way you would with a PNG, GIF, or JPG, using the filename in the &lt;code&gt;src&lt;/code&gt; attribute.&lt;/p&gt;
+
+&lt;pre&gt;
+	&lt;code class=&quot;language-markup&quot;&gt;
+		&lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;div class=&quot;image-container&quot;
+&lt;img src=&quot;/path/to/image.svg&quot; alt=&quot;my image&quot;/&gt;
+&lt;/div&gt;
+  &lt;/script&gt;
+	&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;As with other image types, I rarely if ever am directed to standalone SVGs on the web, but it is nice to be able to open them sometimes and see how they look by themselves in a browser.&lt;/p&gt;
+
+&lt;h3 id=&quot;svgs-in-a-webpage&quot;&gt;SVGs in a webpage&lt;/h3&gt;
+
+&lt;p&gt;SVG’s could also be embedded in an HTML page. Here is a super-small HTML page with the SVG, and the link to the page can be found &lt;a href=&quot;#&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;While this adds more code to your HTML page, I usually take this approach right now so the sub-elements of an SVG can be more easily animated with Javascript and CSS.&lt;/p&gt;
+
+&lt;p&gt;Because the SVGs in my SVG demos are intended to be dropped into an HTML page and manipulated with CSS, you will see code looking more like the SVG part of the second example, with &lt;code&gt;version&lt;/code&gt;, &lt;code&gt;baseProfile&lt;/code&gt;, and &lt;code&gt;xlmns&lt;/code&gt; attributes dropped out.&lt;/p&gt;
+
+&lt;p&gt;For more information, check out the &lt;a href=&quot;https://www.w3.org/TR/SVG2/struct.html&quot; target=&quot;_blank&quot;&gt;W3Schools SVG reference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For a complete course on SVG, check out Chris Coiyer’s course on &lt;a href=&quot;&quot;&gt;Everything you need to know about SVG&lt;/a&gt; on CSS-Tricks.&lt;/p&gt;
+
+&lt;h3 id=&quot;svg-and-css&quot;&gt;SVG and CSS&lt;/h3&gt;
+
+&lt;p&gt;If an SVG code is put directly into an HTML page then its sub elements, such as &lt;code&gt;path&lt;/code&gt;, &lt;code&gt;circle&lt;/code&gt;, and &amp;lt;/code&amp;gt;line&amp;lt;/code&amp;gt;, can be manipulated with CSS and Javascript. This is highly useful for keeping properties like fill and stroke uniform, as well as animating their subpaths. Here is an example here.&lt;/p&gt;
+
+&lt;h3 id=&quot;key-takeaways&quot;&gt;Key Takeaways&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SVG’s maintain their sharpness regardless of their size.&lt;/li&gt;
+  &lt;li&gt;SVG’s are made up of one or more shapes or lines drawn in code.&lt;/li&gt;
+  &lt;li&gt;Image Editors like Adobe Illustrator can output SVG graphics.&lt;/li&gt;
+  &lt;li&gt;SVG’s can be opened in both a browser window and a text editor.&lt;/li&gt;
+  &lt;li&gt;SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/li&gt;
+  &lt;li&gt;SVG code can either exist in its own file as the file’s root element or they can exist within an HTML document.&lt;/li&gt;
+  &lt;li&gt;SVG’s respond to CSS.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</summary></entry></feed>
