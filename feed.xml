@@ -1,84 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-08-18T16:34:52-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">My journey with Jekyll</title><link href="/jekyll/2019/08/10/jekyll-intro.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-10T19:32:00-04:00</published><updated>2019-08-10T19:32:00-04:00</updated><id>/jekyll/2019/08/10/jekyll-intro</id><content type="html" xml:base="/jekyll/2019/08/10/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
-
-&lt;p&gt;This site is published with Jekyll, a static site generator built in Ruby that auto-publishes raw HTML files using easily authorable assets such as markdown files and templates. Having worked on both Drupal and WordPress sites, and on the other end of the web publishing spectrum, static HTML sites, I chose Jekyll as a midway solution this time around because I wanted a tool that gave me the best of both worlds. As with raw HTML  pages, it allows me to write and publish without the need for security updates and other types of back-end maintenance. And as with a database-driven site, it creates the HTML pages for me in a way that streamlines the amount of code I need to write in order to produce a site site that allows me to sort and publish content with ease. This happy medium has also made Jekyll a useful tool for &lt;a href=&quot;https://jekyllrb.com/showcase/&quot; target=&quot;_blank&quot;&gt;other sites&lt;/a&gt; you may have seen.&lt;/p&gt;
-
-&lt;h4 id=&quot;first-encounter&quot;&gt;First encounter&lt;/h4&gt;
-
-&lt;p&gt;Before firing up this site on Github Pages, I had briefly experimented with Jekyll in 2017 after learning of it while reviewing Tom Johnson’s &lt;a href=&quot;http://www.idratherbewriting.com&quot; target=&quot;_blank&quot;&gt;I’d Rather Be Writing&lt;/a&gt; resources. I set up Jekyll 3.6.2 on a Mac and experimented a bit. Now that I have become interested in writing about technology more, I resumed working with Jekyll again this August in hopes of using it on a regular basis.&lt;/p&gt;
-
-&lt;!-- after hearing a success story by &lt;a href=&quot;https://twitter.com/becca9941&quot;&gt;Becca Williams&lt;/a&gt;, another developer, who uses it to create her &lt;a href=&quot;https://becca9941.github.io/&quot;&gt;Developer Journal&lt;/a&gt;.--&gt;
-
-&lt;h4 id=&quot;getting-jekyll-working-again-with-the-latest-version-of-ruby&quot;&gt;Getting Jekyll working again with the latest version of Ruby&lt;/h4&gt;
-
-&lt;p&gt;While there is now a graphical user interface (GUI) for Jekyll known as &lt;a href=&quot;https://blog.webjeda.com/jekyll-admin/&quot;&gt;Jekyll admin&lt;/a&gt;, I have been using Jekyll exclusively through the command-line. And as with other command-line tools, the setup process had a little trickiness with versions and tool chains. After getting things up and running, I have to say that I love the easy deployment process.&lt;/p&gt;
-
-&lt;h4 id=&quot;my-experience-getting-reoriented&quot;&gt;My experience getting (re)oriented&lt;/h4&gt;
-
-&lt;p&gt;The first challenge was making sure I had the latest version of Jekyll running, as I had installed Jekyll 3.6.2 two years ago to just try it out. My initial version still worked great — but when I decided to to update to 3.8.6 with my Mac’s installed version of Ruby, I ran into permissions issues. So downloaded a version of Ruby that was independent of my Mac version and switched to this version with my ruby version manager (rvm). This proved to be the breakthrough I needed, and I was able to download and run Jekyll 3.8.6.&lt;/p&gt;
-
-&lt;h4 id=&quot;running-the-local-server&quot;&gt;Running the local server&lt;/h4&gt;
-
-&lt;p&gt;One thing that I found myself adjusting to was the necessity of Jekyll’s server process when running pages. It is easy enough to start — after running &lt;code&gt;jekyll create [directoryname]&lt;/code&gt;, you can then run &lt;code&gt;jekyll serve&lt;/code&gt; or &lt;code&gt;bundle exec jekyll serve&lt;/code&gt; from within your new directory. This starts a server process on your machine, running a local dev site that shows up in your browser. The browser renders your pages by parsing the files from a &lt;code&gt;_sites&lt;/code&gt; directory that Jekyll generates containing your output files. One thing to note, though, is that the &lt;code&gt;_sites&lt;/code&gt; directory does not load in the CSS if you open it without having jekyll serve running. You need that server process for the html page’s filepaths to work properly.&lt;/p&gt;
-
-&lt;h4 id=&quot;adding-css&quot;&gt;Adding CSS&lt;/h4&gt;
-
-&lt;p&gt;One thing that initially perplexed me was where to put custom styles. Jekyll uses sass and when you run jekyll serve the sass automaticallly compiles - but it was not obvious how to add other styles initially.&lt;/p&gt;
-
-&lt;p&gt;I had seen a _sass directory initially in Jekyll 3.6.2 but did not use it during my brief trial run with Jekyll in 2017. When I updated to Jekyll 3.8.6, the _sass directory was no longer there, nor were other key directories. After reviewing the latest documentation on the &lt;a&gt;Jekyll site&lt;/a&gt;, I read that these directories were now included in the gem theme, which resided outside my project directory. Typing &lt;code&gt;bundle show minima&lt;/code&gt; from within the project directory allowd me to find its location on my machine. I then copied &lt;code&gt;_sass&lt;/code&gt;, &lt;code&gt;_layouts&lt;/code&gt;, &lt;code&gt;_includes&lt;/code&gt;, and &lt;code&gt;assets&lt;/code&gt; over from the theme and overrode parts of the templates and styles that I wanted to change.&lt;/p&gt;
-
-&lt;p&gt;After exploring the directory, I decided on two approaches for styles:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;a custom.scss file that is imported so the css shows up in main.css&lt;/li&gt;
-  &lt;li&gt;a separate custom.css file&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;adding-code-views&quot;&gt;Adding Code Views&lt;/h4&gt;
-
-&lt;p&gt;I knew that I would want to use styles to show HTML, CSS, and JS in my posts. Jekyll has natural styles for marking up code, but I wanted something that had more color out-of-the-box. Fellow developer &lt;a href=&quot;https://twitter.com/becca9941&quot;&gt;Becca Williams&lt;/a&gt; had recommended the Prism Library, so I went ahead and added it.&lt;/p&gt;
-
-&lt;h4 id=&quot;tabs&quot;&gt;Tabs&lt;/h4&gt;
-
-&lt;p&gt;I also knew I wanted to create some tabs a la CodePen, and I didn’t want to write a codepen for every step of my project. So I wrote up a quick script and styles for adding tabs so that viewing HTML would be easy. The script is available here and the styles are on this sheet.&lt;/p&gt;
-
-&lt;h4 id=&quot;pagination&quot;&gt;Pagination&lt;/h4&gt;
-
-&lt;p&gt;After getting my basic site up and running, I started thinking about how to keep my work expandable. I wanted to find a way to paginate my posts, and started looking around for ways to do it. While the original paginate gem was deprecated, I found the new &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;Paginate v2&lt;/a&gt; module, which I am now using. I found their examples directory to be instrumental in setting up my pagination logic.&lt;/p&gt;
-
-&lt;h4 id=&quot;mistakes&quot;&gt;Mistakes&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Running &lt;code&gt;Jekyll serve&lt;/code&gt; from location other than your root directory. This creates a _site folder in the wrong location and can start a slew of unwanted issues.&lt;/li&gt;
-  &lt;li&gt;Inadvertently creating a template, such as a default.html or index.html file, in the wrong directory&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;the-banner&quot;&gt;The banner&lt;/h4&gt;
-
-&lt;p&gt;As I was really into SVGs and I’ve been on a dragon illustration kick for the past year, I wanted to create an SVG banner with a dragon. The trickiest thing was figuring out CSS to get it to look responsive. Right now it’s coming along but not finished yet.&lt;/p&gt;
-
-&lt;h4 id=&quot;sorting-for-creating-a-course-page&quot;&gt;Sorting for creating a course page&lt;/h4&gt;
-
-&lt;p&gt;I wanted my default paginated sorting to be most recent date first, but I wanted the opposite for pages that were meant to house instructional posts on a specific topic. After looking at a bunch of template code, I learned how to assign variables in the jekyll template.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&amp;#123;% assign sorted = site.categories[page.category] | sort:&quot;date&quot; %&amp;#125;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The command &lt;code&gt;assign&lt;/code&gt; takes care of the variable assignment. I am reaching into &lt;code&gt;site.categories&lt;/code&gt;, filtering by the specific category of the current page, and then sorting by ascending date. This allows me to sort the posts for one category in ascending order.&lt;/p&gt;
-
-&lt;h4 id=&quot;wiring-my-jekyll-site-to-github-pages&quot;&gt;Wiring my Jekyll site to Github Pages&lt;/h4&gt;
-
-&lt;p&gt;I was originally storing my github-pages publishable stuff in a completely different repo and actually copying all the stuff from the _sites directory over to that repo every time I wanted to publish and push. Needless to say, I wanted omsething more efficient.&lt;/p&gt;
-
-&lt;p&gt;After reading about other approaches, my approach was to wire the _sites directory to Github pages. Because my overall jekyll directory was under site version control, I was worried about having a repo within a repo. Fortunately, .gitignore in my jekyll repo had my back, because it automatically ignores the _sites folder. So I moved the .git directory from github-pages into my _sites folder and voila — the _sites folder was under version control and wired to Git, and I now have all my jekyll assets in one place.&lt;/p&gt;
-
-&lt;p&gt;One thing I found, though, is that running &lt;code&gt;jekyll clean&lt;/code&gt; will blow away the git repo, so it’s not something I want to do on a regular basis. Because I seldom run that command and push my changes on a regular basis, the workflow works well.&lt;/p&gt;
-
-&lt;p&gt;There is a gem specifically designed for Github pages, though I have not looked into it yet.&lt;/p&gt;
-
-&lt;h4 id=&quot;liquid-syntax&quot;&gt;Liquid Syntax&lt;/h4&gt;
-
-&lt;p&gt;I would be remiss if I did not mention how helpful it has been to learn some &lt;a href=&quot;https://shopify.github.io/liquid/&quot; target=&quot;_blank&quot;&gt;Liquid&lt;/a&gt;, the programming language used for Jekyll templates.&lt;/p&gt;
-&lt;h4 id=&quot;closing-remarks&quot;&gt;Closing remarks&lt;/h4&gt;
-
-&lt;p&gt;It has been a very interesting week getting started with Jekyll. I look forward to posting additional thoughts as I get to know the tool more.&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducing Jekyll</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-08-25T17:43:07-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Drawing a Face with SVG</title><link href="/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG’s contain many different types of child elements, including circles, ellipses, and linear paths.&lt;/p&gt;
 
@@ -448,7 +368,9 @@
 
 &lt;p&gt;You will notice in this sample that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/p&gt;
 
-&lt;p&gt;And below is how you might link to this SVG in an HTML file. Notice that it is the same way you would with a PNG, GIF, or JPG, using the filename in the &lt;code&gt;src&lt;/code&gt; attribute.&lt;/p&gt;
+&lt;h3 id=&quot;svg-as-a-src-attribute-in-an-img-element&quot;&gt;SVG as a &lt;code&gt;src&lt;/code&gt; attribute in an &lt;code&gt;img&lt;/code&gt; element&lt;/h3&gt;
+
+&lt;p&gt;Below is how you might use an SVG as an image’s &lt;code&gt;src&lt;/code&gt; attribute an HTML file. You simply add an SVG’s filename to the &lt;code&gt;src&lt;/code&gt; attribute of an &lt;code&gt;img&lt;/code&gt; element in the markup in the same way you would with a PNG, GIF, or JPG.&lt;/p&gt;
 
 &lt;pre&gt;
 	&lt;code class=&quot;language-markup&quot;&gt;
@@ -476,7 +398,7 @@
 
 &lt;h3 id=&quot;svg-and-css&quot;&gt;SVG and CSS&lt;/h3&gt;
 
-&lt;p&gt;If an SVG code is put directly into an HTML page then its sub elements, such as &lt;code&gt;path&lt;/code&gt;, &lt;code&gt;circle&lt;/code&gt;, and &amp;lt;/code&amp;gt;line&amp;lt;/code&amp;gt;, can be manipulated with CSS and Javascript. This is highly useful for keeping properties like fill and stroke uniform, as well as animating their subpaths. Here is an example here.&lt;/p&gt;
+&lt;p&gt;If an SVG code is put directly into an HTML page then its sub elements, such as &lt;code&gt;path&lt;/code&gt;, &lt;code&gt;circle&lt;/code&gt;, and &lt;code&gt;line&lt;/code&gt;, can be manipulated with CSS and Javascript. This is highly useful for keeping properties like fill and stroke uniform, as well as animating their subpaths. Here is an example here.&lt;/p&gt;
 
 &lt;h3 id=&quot;key-takeaways&quot;&gt;Key Takeaways&lt;/h3&gt;
 
@@ -488,4 +410,105 @@
   &lt;li&gt;SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/li&gt;
   &lt;li&gt;SVG code can either exist in its own file as the file’s root element or they can exist within an HTML document.&lt;/li&gt;
   &lt;li&gt;SVG’s respond to CSS.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</summary></entry><entry><title type="html">My journey with Jekyll</title><link href="/jekyll/2019/08/05/jekyll-intro-2.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-05T19:33:00-04:00</published><updated>2019-08-05T19:33:00-04:00</updated><id>/jekyll/2019/08/05/jekyll-intro-2</id><content type="html" xml:base="/jekyll/2019/08/05/jekyll-intro-2.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
+
+&lt;p&gt;This site is published with Jekyll, a static site generator. For more info on Jekyll, go to the post right before this one.&lt;/p&gt;
+
+&lt;h4 id=&quot;first-encounter&quot;&gt;First encounter&lt;/h4&gt;
+
+&lt;p&gt;I had been drawn to Jekyll after hearing about it on&lt;/p&gt;
+
+&lt;p&gt;Before firing up this site on Github Pages, I had briefly experimented with Jekyll in 2017 after learning of it while reviewing Tom Johnson’s &lt;a href=&quot;http://www.idratherbewriting.com&quot; target=&quot;_blank&quot;&gt;I’d Rather Be Writing&lt;/a&gt; resources. I set up Jekyll 3.6.2 on a Mac and experimented a bit. Now that I have become interested in writing about technology more, I resumed working with Jekyll again this August in hopes of using it on a regular basis.&lt;/p&gt;
+
+&lt;h4 id=&quot;getting-jekyll-working-again-with-the-latest-version-of-ruby&quot;&gt;Getting Jekyll working again with the latest version of Ruby&lt;/h4&gt;
+
+&lt;p&gt;While there is now a graphical user interface (GUI) for Jekyll known as &lt;a href=&quot;https://blog.webjeda.com/jekyll-admin/&quot;&gt;Jekyll admin&lt;/a&gt;, I have been using Jekyll exclusively through the command-line. And as with other command-line tools, the setup process had a little trickiness with versions and tool chains. After getting things up and running, I have to say that I love the easy deployment process.&lt;/p&gt;
+
+&lt;h4 id=&quot;my-experience-getting-reoriented&quot;&gt;My experience getting (re)oriented&lt;/h4&gt;
+
+&lt;p&gt;The first challenge was making sure I had the latest version of Jekyll running, as I had installed Jekyll 3.6.2 two years ago to just try it out. My initial version still worked great — but when I decided to to update to 3.8.6 with my Mac’s installed version of Ruby, I ran into permissions issues. So downloaded a version of Ruby that was independent of my Mac version and switched to this version with my ruby version manager (rvm). This proved to be the breakthrough I needed, and I was able to download and run Jekyll 3.8.6.&lt;/p&gt;
+
+&lt;h4 id=&quot;running-the-local-server&quot;&gt;Running the local server&lt;/h4&gt;
+
+&lt;p&gt;One thing that I found myself adjusting to was the necessity of Jekyll’s server process when running pages. It is easy enough to start — after running &lt;code&gt;jekyll create [directoryname]&lt;/code&gt;, you can then run &lt;code&gt;jekyll serve&lt;/code&gt; or &lt;code&gt;bundle exec jekyll serve&lt;/code&gt; from within your new directory. This starts a server process on your machine, running a local dev site that shows up in your browser. The browser renders your pages by parsing the files from a &lt;code&gt;_sites&lt;/code&gt; directory that Jekyll generates containing your output files. One thing to note, though, is that the &lt;code&gt;_sites&lt;/code&gt; directory does not load in the CSS if you open it without having jekyll serve running. You need that server process for the html page’s filepaths to work properly.&lt;/p&gt;
+
+&lt;h4 id=&quot;adding-css&quot;&gt;Adding CSS&lt;/h4&gt;
+
+&lt;p&gt;One thing that initially perplexed me was where to put custom styles. Jekyll uses sass and when you run jekyll serve the sass automaticallly compiles - but it was not obvious how to add other styles initially.&lt;/p&gt;
+
+&lt;p&gt;I had seen a _sass directory initially in Jekyll 3.6.2 but did not use it during my brief trial run with Jekyll in 2017. When I updated to Jekyll 3.8.6, the _sass directory was no longer there, nor were other key directories. After reviewing the latest documentation on the &lt;a&gt;Jekyll site&lt;/a&gt;, I read that these directories were now included in the gem theme, which resided outside my project directory. Typing &lt;code&gt;bundle show minima&lt;/code&gt; from within the project directory allowd me to find its location on my machine. I then copied &lt;code&gt;_sass&lt;/code&gt;, &lt;code&gt;_layouts&lt;/code&gt;, &lt;code&gt;_includes&lt;/code&gt;, and &lt;code&gt;assets&lt;/code&gt; over from the theme and overrode parts of the templates and styles that I wanted to change.&lt;/p&gt;
+
+&lt;p&gt;After exploring the directory, I decided on two approaches for styles:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;a custom.scss file that is imported so the css shows up in main.css&lt;/li&gt;
+  &lt;li&gt;a separate custom.css file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;adding-code-views&quot;&gt;Adding Code Views&lt;/h4&gt;
+
+&lt;p&gt;I knew that I would want to use styles to show HTML, CSS, and JS in my posts. Jekyll has natural styles for marking up code, but I wanted something that had more color out-of-the-box. Fellow developer &lt;a href=&quot;https://twitter.com/becca9941&quot;&gt;Becca Williams&lt;/a&gt; had recommended the Prism Library, so I went ahead and added it.&lt;/p&gt;
+
+&lt;h4 id=&quot;tabs&quot;&gt;Tabs&lt;/h4&gt;
+
+&lt;p&gt;I also knew I wanted to create some tabs a la CodePen, and I didn’t want to write a codepen for every step of my project. So I wrote up a quick script and styles for adding tabs so that viewing HTML would be easy. The script is available here and the styles are on this sheet.&lt;/p&gt;
+
+&lt;h4 id=&quot;pagination&quot;&gt;Pagination&lt;/h4&gt;
+
+&lt;p&gt;After getting my basic site up and running, I started thinking about how to keep my work expandable. I wanted to find a way to paginate my posts, and started looking around for ways to do it. While the original paginate gem was deprecated, I found the new &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;Paginate v2&lt;/a&gt; module, which I am now using. I found their examples directory to be instrumental in setting up my pagination logic.&lt;/p&gt;
+
+&lt;h4 id=&quot;mistakes&quot;&gt;Mistakes&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Running &lt;code&gt;Jekyll serve&lt;/code&gt; from location other than your root directory. This creates a _site folder in the wrong location and can start a slew of unwanted issues.&lt;/li&gt;
+  &lt;li&gt;Inadvertently creating a template, such as a default.html or index.html file, in the wrong directory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;the-banner&quot;&gt;The banner&lt;/h4&gt;
+
+&lt;p&gt;As I was really into SVGs and I’ve been on a dragon illustration kick for the past year, I wanted to create an SVG banner with a dragon. The trickiest thing was figuring out CSS to get it to look responsive. Right now it’s coming along but not finished yet.&lt;/p&gt;
+
+&lt;h4 id=&quot;sorting-for-creating-a-course-page&quot;&gt;Sorting for creating a course page&lt;/h4&gt;
+
+&lt;p&gt;I wanted my default paginated sorting to be most recent date first, but I wanted the opposite for pages that were meant to house instructional posts on a specific topic. After looking at a bunch of template code, I learned how to assign variables in the jekyll template.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;#123;% assign sorted = site.categories[page.category] | sort:&quot;date&quot; %&amp;#125;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The command &lt;code&gt;assign&lt;/code&gt; takes care of the variable assignment. I am reaching into &lt;code&gt;site.categories&lt;/code&gt;, filtering by the specific category of the current page, and then sorting by ascending date. This allows me to sort the posts for one category in ascending order.&lt;/p&gt;
+
+&lt;h4 id=&quot;wiring-my-jekyll-site-to-github-pages&quot;&gt;Wiring my Jekyll site to Github Pages&lt;/h4&gt;
+
+&lt;p&gt;I was originally storing my github-pages publishable stuff in a completely different repo and actually copying all the stuff from the _sites directory over to that repo every time I wanted to publish and push. Needless to say, I wanted omsething more efficient.&lt;/p&gt;
+
+&lt;p&gt;After reading about other approaches, my approach was to wire the _sites directory to Github pages. Because my overall jekyll directory was under site version control, I was worried about having a repo within a repo. Fortunately, .gitignore in my jekyll repo had my back, because it automatically ignores the _sites folder. So I moved the .git directory from github-pages into my _sites folder and voila — the _sites folder was under version control and wired to Git, and I now have all my jekyll assets in one place.&lt;/p&gt;
+
+&lt;p&gt;One thing I found, though, is that running &lt;code&gt;jekyll clean&lt;/code&gt; will blow away the git repo, so it’s not something I want to do on a regular basis. Because I seldom run that command and push my changes on a regular basis, the workflow works well.&lt;/p&gt;
+
+&lt;p&gt;There is a gem specifically designed for Github pages, though I have not looked into it yet.&lt;/p&gt;
+
+&lt;h4 id=&quot;liquid-syntax&quot;&gt;Liquid Syntax&lt;/h4&gt;
+
+&lt;p&gt;I would be remiss if I did not mention how helpful it has been to learn some &lt;a href=&quot;https://shopify.github.io/liquid/&quot; target=&quot;_blank&quot;&gt;Liquid&lt;/a&gt;, the programming language used for Jekyll templates.&lt;/p&gt;
+&lt;h4 id=&quot;closing-remarks&quot;&gt;Closing remarks&lt;/h4&gt;
+
+&lt;p&gt;It has been a very interesting week getting started with Jekyll. I look forward to posting additional thoughts as I get to know the tool more.&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducing Jekyll</summary></entry><entry><title type="html">Intro to Jekyll</title><link href="/jekyll/2019/08/04/jekyll-intro.html" rel="alternate" type="text/html" title="Intro to Jekyll" /><published>2019-08-04T19:32:00-04:00</published><updated>2019-08-04T19:32:00-04:00</updated><id>/jekyll/2019/08/04/jekyll-intro</id><content type="html" xml:base="/jekyll/2019/08/04/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
+
+&lt;p&gt;This site is published with Jekyll, a static site generator built in Ruby that auto-publishes raw HTML files, taking care of a lot of repetition and granular markup that you would otherwise have to do by hand if you wanted to create a static HTML site.&lt;/p&gt;
+
+&lt;h4 id=&quot;how-it-works&quot;&gt;How it works&lt;/h4&gt;
+
+&lt;p&gt;Say I wanted to add a header that shows up everywhere — without a server-side language like PHP I would either have to copy and paste that header on every page of my site, or find a way to pull it in. Copying and pasting is super hard to maintain and just feels yucky. Javascript requires extra front-end code, can take noticeably more time for the user. With a static generator like Jekyll, I can create the footer once and Jekyll will put that footer everywhere once the site is compiled.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;jekyll serve&lt;/code&gt; fires up a local server that locally updates your site.
+&lt;code&gt;jekyll build&lt;/code&gt; deploys your site, which can be tossed up to Github Pages.&lt;/p&gt;
+
+&lt;p&gt;(diagram of authorable file =&amp;gt; final site compilation)&lt;/p&gt;
+
+&lt;p&gt;How does Jekyll do this? Well, it has this tool called the markdown file, which allows you to just write using shorthand syntax, such as ### for &lt;code&gt;h2&lt;/code&gt; headers.&lt;/p&gt;
+
+&lt;p&gt;(diagram of markdown vs html)&lt;/p&gt;
+
+&lt;p&gt;#### Why Jekyll?&lt;/p&gt;
+
+&lt;p&gt;Having worked on both Drupal and WordPress sites, and on the other end of the web publishing spectrum, static HTML sites, I chose Jekyll as a midway solution this time around because I wanted a tool that gave me the best of both worlds. As with raw HTML pages, it allows me to write and publish without the need for security updates and other types of back-end maintenance. And as with a database-driven site, it creates the HTML pages for me in a way that streamlines the amount of code I need to write in order to produce a site site that allows me to sort and publish content with ease. This happy medium has also made Jekyll a useful tool for &lt;a href=&quot;https://jekyllrb.com/showcase/&quot; target=&quot;_blank&quot;&gt;other sites&lt;/a&gt; you may have seen.&lt;/p&gt;
+
+&lt;p&gt;Those are the basics of how it works. For an in-depth look at my personal story with Jekyll, go &lt;a href=&quot;#&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducing Jekyll</summary></entry></feed>

@@ -522,7 +522,7 @@ code {
   background-color: #e6e2e2;
   padding: 2px 2px; }
 
-svg {
+svg.lightgrey-background {
   background-color: #EEEEEE; }
 
 /* custom layout elements */
@@ -588,3 +588,34 @@ svg ellipse.dragon {
     font-weight: bold;
     font-size: 14px;
     color: maroon; }
+
+img#dragon {
+  position: relative;
+  top: 0px;
+  width: 620px;
+  transition: 0.4s ease; }
+
+div#dragon-container {
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+@media screen and (max-width: 620px) {
+  img#dragon {
+    top: 30px;
+    width: 500px;
+    transition: 0.4s ease; } }
+@media screen and (max-width: 520px) {
+  img#dragon {
+    top: 50px;
+    width: 400px;
+    transition: 0.4s ease; } }
+@media screen and (max-width: 420px) {
+  img#dragon {
+    top: 60px;
+    width: 300px;
+    transition: 0.4s ease; } }
