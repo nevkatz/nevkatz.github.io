@@ -534,6 +534,9 @@ h2.post-list-heading {
   background-color: lightblue; }
 
 /* widgets */
+.site-nav {
+  z-index: 10; }
+
 ul.css-tabs {
   list-style-type: none;
   margin-left: 0px;
@@ -591,31 +594,40 @@ svg ellipse.dragon {
 
 img#dragon {
   position: relative;
-  top: 0px;
-  width: 620px;
-  transition: 0.4s ease; }
+  top: 20px;
+  max-width: 620px;
+  width: 130%;
+  transition: 0.4s ease;
+  display: block;
+  left: -10%; }
 
 div#dragon-container {
   position: absolute;
-  top: -10px;
+  top: 0px;
   left: 0px;
-  width: 100%;
+  width: 130%;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  height: 300px;
+  overflow: hidden; }
 
+/*
 @media screen and (max-width: 620px) {
-  img#dragon {
-    top: 30px;
-    width: 500px;
-    transition: 0.4s ease; } }
-@media screen and (max-width: 520px) {
-  img#dragon {
-    top: 50px;
-    width: 400px;
-    transition: 0.4s ease; } }
+    img#dragon {
+        top: 0px;
+        width: 500px;
+        transition: 0.4s ease;
+    }
+}
+
 @media screen and (max-width: 420px) {
-  img#dragon {
-    top: 60px;
-    width: 300px;
-    transition: 0.4s ease; } }
+    img#dragon {
+        transition: 0.4s ease;
+        max-width: none;
+        width: 130%;
+        top: 20px;
+        border: 1px solid red;
+        background-color: yellow;
+    }
+}*/
