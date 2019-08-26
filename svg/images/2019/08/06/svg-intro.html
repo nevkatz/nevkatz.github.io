@@ -141,9 +141,9 @@
 
 <p>Now I will say that I do use a <a href="/assets/images/dragon-v3-wide-more-clouds.svg">standalone SVG</a> for this site’s dragon banner. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning. It is also a very large and complex SVG and I wanted to keep my markup code unobtrusive.</p>
 
-<p>If I ever wanted to animate specific parts of it, I would most likely add it with Javascript somehow. This would keep all that SVG code from cluttering my page, but by adding it dynamically as an inline SVG, I would still be able to, say, make its wings flap, its head, arms, and legs move, or its mouth breathe fire.</p>
+<p>As with other image file types, using an SVG as the <code>src</code> attribute of an image does have the penalty of an additional server request, so depending on connection speed our intrepid website visitor may need to wait for just a fraction of a second before that dragon shows up.</p>
 
-<p>This does have the penalty of an additional server request, so depending on connection speed you may need to wait for just a fraction of a second before that dragon shows up.</p>
+<p>If I ever wanted to animate specific parts of it, I would most likely add it with Javascript somehow. This would keep all that SVG code from cluttering my page, but by adding it dynamically as an inline SVG, I would still be able to, say, make its wings flap, its head, arms, and legs move, or its mouth breathe fire.</p>
 
 <h3 id="svg-as-a-background-image-within-css">SVG as a background image within CSS</h3>
 
