@@ -509,10 +509,10 @@ table {
 body, .nav-trigger {
   background-color: #f1eaea; }
 
-.menu-icon,
-nav.site-nav {
-  background-color: #f9f4f2; }
-
+@media screen and (max-width: 600px) {
+  .menu-icon,
+  nav.site-nav {
+    background-color: #f9f4f2; } }
 /* site header */
 header.site-header a {
   text-decoration: none;
