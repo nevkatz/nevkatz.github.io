@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-08-26T10:09:52-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Drawing a Face with SVG</title><link href="/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-08-26T10:30:31-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Drawing a Face with SVG</title><link href="/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG’s contain many different types of child elements, including circles, ellipses, and linear paths.&lt;/p&gt;
 
@@ -338,7 +338,7 @@
 
 &lt;p&gt;You will see some code samples in the SVG tutorials code examples for drawing SVG graphics. The code is actually a set of commands for various types of lines that fit to particular types of math functions, such as linear, quadratic, and cubic, as well as shapes, such as circles.&lt;/p&gt;
 
-&lt;h3 id=&quot;creatinga-and-editing-svgs&quot;&gt;Creatinga and Editing SVGs&lt;/h3&gt;
+&lt;h3 id=&quot;creating-and-editing-svgs&quot;&gt;Creating and Editing SVGs&lt;/h3&gt;
 
 &lt;h4 id=&quot;image-editors-like-adobe-illustrator-and-inkscape-can-output-svg-graphics&quot;&gt;Image Editors like Adobe Illustrator and Inkscape can output SVG graphics.&lt;/h4&gt;
 
@@ -350,9 +350,9 @@
 
 &lt;h4 id=&quot;standalone-svg-files&quot;&gt;Standalone SVG files&lt;/h4&gt;
 
-&lt;p&gt;SVG code can either exist in its own file as the file’s root element or they can exist within an HTML document. The URLs to SVG files can then be used as &lt;code&gt;src&lt;/code&gt; attributes of &lt;code&gt;img&lt;/code&gt; elements.&lt;/p&gt;
+&lt;p&gt;While my SVG tutorials mainly involve SVG elements embeded in an HTML document, SVG code can also exist in its own file as the file’s “root element.” The URLs to SVG files can then be used as &lt;code&gt;src&lt;/code&gt; attributes for &lt;code&gt;img&lt;/code&gt; elements.&lt;/p&gt;
 
-&lt;p&gt;You could theoretically complete the ensuing tutorials by drawing directly on an SVG document. If you do that, your SVG element is the “root” of your document and should have these attributes:&lt;/p&gt;
+&lt;p&gt;You could theoretically complete at least parts of the ensuing tutorials by drawing directly on an SVG document. If you do that, your SVG element is the “root” of your document and should have these attributes:&lt;/p&gt;
 
 &lt;pre&gt;
  &lt;code class=&quot;language-markup&quot;&gt;
@@ -376,6 +376,11 @@
 
 &lt;p&gt;As with GIFs, JPGs, and PNGs, standalone SVG’s can be used as images. Below is how you might use an SVG as an image’s &lt;code&gt;src&lt;/code&gt; attribute an HTML file. You simply add an SVG’s filename to the &lt;code&gt;src&lt;/code&gt; attribute of an &lt;code&gt;img&lt;/code&gt; element in the markup in the same way you would with a PNG, GIF, or JPG.&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;The upside is less markup in your document page. With an embedded, SVG, the markup can become especially obtrusive if the SVG is very large and complex.&lt;/li&gt;
+  &lt;li&gt;The downside is that you cannot use CSS and JS to reach in and style or animate circles, paths, ellipses, and other elements of an SVG.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;pre&gt;
 	&lt;code class=&quot;language-markup&quot;&gt;
 		&lt;script type=&quot;prism-html-markup&quot;&gt;
@@ -387,6 +392,8 @@
 &lt;/pre&gt;
 
 &lt;p&gt;Now I will say that I do use a &lt;a href=&quot;/assets/images/dragon-v3-wide-more-clouds.svg&quot;&gt;standalone SVG&lt;/a&gt; for this site’s dragon banner. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning. It is also a very large and complex SVG and I wanted to keep my markup code unobtrusive.&lt;/p&gt;
+
+&lt;p&gt;If I ever wanted to animate specific parts of it, I would most likely add it with Javascript somehow. This would keep all that SVG code from cluttering my page, but by adding it dynamically as an inline SVG, I would still be able to, say, make its wings flap, its head, arms, and legs move, or its mouth breathe fire.&lt;/p&gt;
 
 &lt;p&gt;This does have the penalty of an additional server request, so depending on connection speed you may need to wait for just a fraction of a second before that dragon shows up.&lt;/p&gt;
 

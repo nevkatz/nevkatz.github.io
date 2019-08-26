@@ -86,7 +86,7 @@
 
 <p>You will see some code samples in the SVG tutorials code examples for drawing SVG graphics. The code is actually a set of commands for various types of lines that fit to particular types of math functions, such as linear, quadratic, and cubic, as well as shapes, such as circles.</p>
 
-<h3 id="creatinga-and-editing-svgs">Creatinga and Editing SVGs</h3>
+<h3 id="creating-and-editing-svgs">Creating and Editing SVGs</h3>
 
 <h4 id="image-editors-like-adobe-illustrator-and-inkscape-can-output-svg-graphics">Image Editors like Adobe Illustrator and Inkscape can output SVG graphics.</h4>
 
@@ -98,9 +98,9 @@
 
 <h4 id="standalone-svg-files">Standalone SVG files</h4>
 
-<p>SVG code can either exist in its own file as the file’s root element or they can exist within an HTML document. The URLs to SVG files can then be used as <code>src</code> attributes of <code>img</code> elements.</p>
+<p>While my SVG tutorials mainly involve SVG elements embeded in an HTML document, SVG code can also exist in its own file as the file’s “root element.” The URLs to SVG files can then be used as <code>src</code> attributes for <code>img</code> elements.</p>
 
-<p>You could theoretically complete the ensuing tutorials by drawing directly on an SVG document. If you do that, your SVG element is the “root” of your document and should have these attributes:</p>
+<p>You could theoretically complete at least parts of the ensuing tutorials by drawing directly on an SVG document. If you do that, your SVG element is the “root” of your document and should have these attributes:</p>
 
 <pre>
  <code class="language-markup">
@@ -124,6 +124,11 @@
 
 <p>As with GIFs, JPGs, and PNGs, standalone SVG’s can be used as images. Below is how you might use an SVG as an image’s <code>src</code> attribute an HTML file. You simply add an SVG’s filename to the <code>src</code> attribute of an <code>img</code> element in the markup in the same way you would with a PNG, GIF, or JPG.</p>
 
+<ul>
+  <li>The upside is less markup in your document page. With an embedded, SVG, the markup can become especially obtrusive if the SVG is very large and complex.</li>
+  <li>The downside is that you cannot use CSS and JS to reach in and style or animate circles, paths, ellipses, and other elements of an SVG.</li>
+</ul>
+
 <pre>
 	<code class="language-markup">
 		<script type="prism-html-markup">
@@ -135,6 +140,8 @@
 </pre>
 
 <p>Now I will say that I do use a <a href="/assets/images/dragon-v3-wide-more-clouds.svg">standalone SVG</a> for this site’s dragon banner. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning. It is also a very large and complex SVG and I wanted to keep my markup code unobtrusive.</p>
+
+<p>If I ever wanted to animate specific parts of it, I would most likely add it with Javascript somehow. This would keep all that SVG code from cluttering my page, but by adding it dynamically as an inline SVG, I would still be able to, say, make its wings flap, its head, arms, and legs move, or its mouth breathe fire.</p>
 
 <p>This does have the penalty of an additional server request, so depending on connection speed you may need to wait for just a fraction of a second before that dragon shows up.</p>
 
