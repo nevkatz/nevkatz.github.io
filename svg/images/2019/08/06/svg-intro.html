@@ -116,15 +116,13 @@
  </code>
  </pre>
 
-<p>The link to the standalone SVG used for the banner is <a href="/assets/images/dragon-v3-wide-more-clouds.svg">here</a>. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning and keeping the unobtrusive.</p>
+<p>You will notice in this above sample snippet that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.</p>
 
-<p>You will notice in this sample that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.</p>
+<p>As with other image types, I rarely if ever am directed to standalone SVGs on the web — normally they are embedded in a page via an <code>img</code> element or CSS background property, which I cover below - but it is nice to be able to open them sometimes and see how they look by themselves in a browser.</p>
 
-<p>As with other image types, I rarely if ever am directed to standalone SVGs on the web, but it is nice to be able to open them sometimes and see how they look by themselves in a browser.</p>
+<h3 id="using-standalone-svgs-as-the-src-of-an-img-element">Using standalone SVG’s as the <code>src</code> of an <code>img</code> element</h3>
 
-<h3 id="svg-as-the-src-of-an-img-element">SVG as the <code>src</code> of an <code>img</code> element</h3>
-
-<p>Below is how you might use an SVG as an image’s <code>src</code> attribute an HTML file. You simply add an SVG’s filename to the <code>src</code> attribute of an <code>img</code> element in the markup in the same way you would with a PNG, GIF, or JPG.</p>
+<p>As with GIFs, JPGs, and PNGs, standalone SVG’s can be used as images. Below is how you might use an SVG as an image’s <code>src</code> attribute an HTML file. You simply add an SVG’s filename to the <code>src</code> attribute of an <code>img</code> element in the markup in the same way you would with a PNG, GIF, or JPG.</p>
 
 <pre>
 	<code class="language-markup">
@@ -136,6 +134,10 @@
 	</code>
 </pre>
 
+<p>Now I will say that I do use a <a href="/assets/images/dragon-v3-wide-more-clouds.svg">standalone SVG</a> for this site’s dragon banner. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning. It is also a very large and complex SVG and I wanted to keep my markup code unobtrusive.</p>
+
+<p>This does have the penalty of an additional server request, so depending on connection speed you may need to wait for just a fraction of a second before that dragon shows up.</p>
+
 <h3 id="svg-as-a-background-image-within-css">SVG as a background image within CSS</h3>
 
 <p>SVG can be used as a background image of an element via CSS. This allows you to use other properties:</p>
@@ -145,6 +147,8 @@
   <li><code>background-size</code></li>
   <li><code>background-position</code></li>
 </ul>
+
+<p>I could theoretically use a nice background to create some repeating mountains under the dragon.</p>
 
 <h3 id="inline-svgs">Inline SVG’s</h3>
 

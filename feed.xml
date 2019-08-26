@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-08-26T09:53:49-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Drawing a Face with SVG</title><link href="/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-08-26T10:09:52-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Drawing a Face with SVG</title><link href="/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG’s contain many different types of child elements, including circles, ellipses, and linear paths.&lt;/p&gt;
 
@@ -368,15 +368,13 @@
  &lt;/code&gt;
  &lt;/pre&gt;
 
-&lt;p&gt;The link to the standalone SVG used for the banner is &lt;a href=&quot;/assets/images/dragon-v3-wide-more-clouds.svg&quot;&gt;here&lt;/a&gt;. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning and keeping the unobtrusive.&lt;/p&gt;
+&lt;p&gt;You will notice in this above sample snippet that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/p&gt;
 
-&lt;p&gt;You will notice in this sample that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/p&gt;
+&lt;p&gt;As with other image types, I rarely if ever am directed to standalone SVGs on the web — normally they are embedded in a page via an &lt;code&gt;img&lt;/code&gt; element or CSS background property, which I cover below - but it is nice to be able to open them sometimes and see how they look by themselves in a browser.&lt;/p&gt;
 
-&lt;p&gt;As with other image types, I rarely if ever am directed to standalone SVGs on the web, but it is nice to be able to open them sometimes and see how they look by themselves in a browser.&lt;/p&gt;
+&lt;h3 id=&quot;using-standalone-svgs-as-the-src-of-an-img-element&quot;&gt;Using standalone SVG’s as the &lt;code&gt;src&lt;/code&gt; of an &lt;code&gt;img&lt;/code&gt; element&lt;/h3&gt;
 
-&lt;h3 id=&quot;svg-as-the-src-of-an-img-element&quot;&gt;SVG as the &lt;code&gt;src&lt;/code&gt; of an &lt;code&gt;img&lt;/code&gt; element&lt;/h3&gt;
-
-&lt;p&gt;Below is how you might use an SVG as an image’s &lt;code&gt;src&lt;/code&gt; attribute an HTML file. You simply add an SVG’s filename to the &lt;code&gt;src&lt;/code&gt; attribute of an &lt;code&gt;img&lt;/code&gt; element in the markup in the same way you would with a PNG, GIF, or JPG.&lt;/p&gt;
+&lt;p&gt;As with GIFs, JPGs, and PNGs, standalone SVG’s can be used as images. Below is how you might use an SVG as an image’s &lt;code&gt;src&lt;/code&gt; attribute an HTML file. You simply add an SVG’s filename to the &lt;code&gt;src&lt;/code&gt; attribute of an &lt;code&gt;img&lt;/code&gt; element in the markup in the same way you would with a PNG, GIF, or JPG.&lt;/p&gt;
 
 &lt;pre&gt;
 	&lt;code class=&quot;language-markup&quot;&gt;
@@ -388,6 +386,10 @@
 	&lt;/code&gt;
 &lt;/pre&gt;
 
+&lt;p&gt;Now I will say that I do use a &lt;a href=&quot;/assets/images/dragon-v3-wide-more-clouds.svg&quot;&gt;standalone SVG&lt;/a&gt; for this site’s dragon banner. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning. It is also a very large and complex SVG and I wanted to keep my markup code unobtrusive.&lt;/p&gt;
+
+&lt;p&gt;This does have the penalty of an additional server request, so depending on connection speed you may need to wait for just a fraction of a second before that dragon shows up.&lt;/p&gt;
+
 &lt;h3 id=&quot;svg-as-a-background-image-within-css&quot;&gt;SVG as a background image within CSS&lt;/h3&gt;
 
 &lt;p&gt;SVG can be used as a background image of an element via CSS. This allows you to use other properties:&lt;/p&gt;
@@ -397,6 +399,8 @@
   &lt;li&gt;&lt;code&gt;background-size&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;background-position&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;I could theoretically use a nice background to create some repeating mountains under the dragon.&lt;/p&gt;
 
 &lt;h3 id=&quot;inline-svgs&quot;&gt;Inline SVG’s&lt;/h3&gt;
 
