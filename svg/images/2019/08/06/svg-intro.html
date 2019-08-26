@@ -120,9 +120,13 @@
 
 <p>You will notice in this sample that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.</p>
 
-<h3 id="svg-as-a-src-attribute-in-an-img-element">SVG as a <code>src</code> attribute in an <code>img</code> element</h3>
+<p>As with other image types, I rarely if ever am directed to standalone SVGs on the web, but it is nice to be able to open them sometimes and see how they look by themselves in a browser.</p>
+
+<h3 id="svg-as-the-src-of-an-img-element">SVG as the <code>src</code> of an <code>img</code> element</h3>
 
 <p>Below is how you might use an SVG as an image’s <code>src</code> attribute an HTML file. You simply add an SVG’s filename to the <code>src</code> attribute of an <code>img</code> element in the markup in the same way you would with a PNG, GIF, or JPG.</p>
+
+<p>(dragon?)</p>
 
 <pre>
 	<code class="language-markup">
@@ -134,11 +138,21 @@
 	</code>
 </pre>
 
-<p>As with other image types, I rarely if ever am directed to standalone SVGs on the web, but it is nice to be able to open them sometimes and see how they look by themselves in a browser.</p>
+<h3 id="svg-as-a-background-image-within-css">SVG as a background image within CSS</h3>
 
-<h3 id="svgs-in-a-webpage">SVGs in a webpage</h3>
+<p>SVG can be used as a background image of an element via CSS. This allows you to use other properties:  (try this with the dragon banner?)</p>
 
-<p>SVG’s could also be embedded in an HTML page. Here is a super-small HTML page with the SVG, and the link to the page can be found <a href="#">here</a>.</p>
+<ul>
+  <li><code>background-repeat</code></li>
+  <li><code>background-size</code></li>
+  <li></li>
+</ul>
+
+<h3 id="inline-svgs">Inline SVG’s</h3>
+
+<p>SVG’s could also be embedded in an HTML page as an inline SVG. This eliminates the need for an HTTP request since all the image info is in the DOM. It is also super powerful because you now have the ability to manipulate different elements of the SVG with CSS and JS.</p>
+
+<p>Here is a super-small HTML page with the SVG, and the link to the page can be found <a href="#">here</a>.</p>
 
 <p>While this adds more code to your HTML page, I usually take this approach right now so the sub-elements of an SVG can be more easily animated with Javascript and CSS.</p>
 
@@ -165,7 +179,26 @@
 </ul>
 
 
-  </div><a class="u-url" href="/svg/images/2019/08/06/svg-intro.html" hidden></a>
+  </div><div id="disqus_thread"></div>
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://nevkatz.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/svg/images/2019/08/06/svg-intro.html" hidden></a>
 </article>
 
       </div>
