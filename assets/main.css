@@ -505,6 +505,28 @@ table {
     color: #099; }
 
 /* we need to update minima on a regular basis. */
+/* sitewide colors */
+body, .nav-trigger {
+  background-color: #f1eaea; }
+
+.menu-icon,
+nav.site-nav {
+  background-color: #f9f4f2; }
+
+/* site header */
+header.site-header a {
+  text-decoration: none;
+  transition: 0.3s ease; }
+
+header.site-header a:hover {
+  color: dodgerblue;
+  transition: 0.3s ease; }
+
+/* page content */
+.page-content {
+  margin-top: 0px;
+  padding-top: 0px; }
+
 /* headers */
 h4 {
   font-size: 18px;
@@ -518,9 +540,22 @@ h5 {
   margin: 10px 0px; }
 
 /* basic elements */
+a {
+  transition: color 0.3s ease;
+  text-decoration: none; }
+
+/* code */
+div.wrapper pre[class*="language"] {
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
 code {
   background-color: #e6e2e2;
-  padding: 2px 2px; }
+  padding: 2px 2px;
+  background-color: white; }
+
+h3 code {
+  font-size: 1em; }
 
 svg.lightgrey-background {
   background-color: #EEEEEE; }
@@ -547,12 +582,16 @@ ul.css-tabs {
     margin-left: 3px;
     margin-right: 3px;
     background-color: lightgrey;
+    border: 1px solid lightgrey;
     padding: 4px 12px 3px 12px;
     text-decoration: none;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative;
+    top: -1px;
+    border-bottom-width: 0px; }
   ul.css-tabs li a.active {
     padding-bottom: 4px;
-    background-color: #fdfdfd;
+    background-color: #f1eaea;
     border: 1px solid #999;
     border-bottom-width: 0px; }
 
@@ -574,6 +613,7 @@ svg#dragons-sky {
   position: relative;
   left: calc(50% - 370px); }
 
+/* basic clouds */
 svg ellipse.cloud {
   fill: white;
   opacity: 0.9; }
@@ -581,10 +621,28 @@ svg ellipse.cloud {
 svg ellipse.dragon {
   fill: #37d637; }
 
+/* footer */
+div#copyright {
+  text-align: center;
+  font-size: 14px;
+  background-color: #828282;
+  color: white;
+  padding: 15px;
+  position: relative;
+  bottom: 0px; }
+  div#copyright p {
+    margin: 0px;
+    padding: 0px; }
+
+.site-footer {
+  padding-bottom: 0px; }
+
+/* banner - not sure what this does */
 @media screen and (max-width: 700px) {
   svg#dragons-sky {
     max-width: none;
     left: 0px; } }
+/* category links */
 .categories {
   margin: 6px 0px; }
   .categories a {
@@ -593,13 +651,15 @@ svg ellipse.dragon {
     color: maroon; }
 
 img#dragon {
-  position: relative;
   top: 20px;
   max-width: 620px;
   width: 100%;
+  position: relative;
   transition: 0.4s ease; }
 
 div#dragon-container {
+  border-top: 5px solid #9fc8d6;
+  border-bottom: 5px solid #9fc8d6;
   position: absolute;
   top: 0px;
   left: 0px;
