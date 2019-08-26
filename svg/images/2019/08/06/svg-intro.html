@@ -59,7 +59,7 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</p>
 
-<p>Having first been developed in 1999, SVG graphics were not always well supported in browsers. that said, they have now have developed a <a href="#">robust amount of browser support</a>. In this post, we will cover SVG fundamentals that will be helpful for ensuing tutorials.</p>
+<p>Having first been developed in 1999, SVG graphics were not always well supported in browsers. that said, they have now have developed a <a href="https://caniuse.com/#feat=svg">robust amount of browser support</a>. In this post, we will cover SVG fundamentals that will be helpful for ensuing tutorials.</p>
 
 <h3 id="overview">Overview</h3>
 
@@ -116,7 +116,7 @@
  </code>
  </pre>
 
-<p>The link to the standalone SVG is <a href="#">here</a>.</p>
+<p>The link to the standalone SVG used for the banner is <a href="/assets/images/dragon-v3-wide-more-clouds.svg">here</a>. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning and keeping the unobtrusive.</p>
 
 <p>You will notice in this sample that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.</p>
 
@@ -125,8 +125,6 @@
 <h3 id="svg-as-the-src-of-an-img-element">SVG as the <code>src</code> of an <code>img</code> element</h3>
 
 <p>Below is how you might use an SVG as an image’s <code>src</code> attribute an HTML file. You simply add an SVG’s filename to the <code>src</code> attribute of an <code>img</code> element in the markup in the same way you would with a PNG, GIF, or JPG.</p>
-
-<p>(dragon?)</p>
 
 <pre>
 	<code class="language-markup">
@@ -140,12 +138,12 @@
 
 <h3 id="svg-as-a-background-image-within-css">SVG as a background image within CSS</h3>
 
-<p>SVG can be used as a background image of an element via CSS. This allows you to use other properties:  (try this with the dragon banner?)</p>
+<p>SVG can be used as a background image of an element via CSS. This allows you to use other properties:</p>
 
 <ul>
   <li><code>background-repeat</code></li>
   <li><code>background-size</code></li>
-  <li></li>
+  <li><code>background-position</code></li>
 </ul>
 
 <h3 id="inline-svgs">Inline SVG’s</h3>
