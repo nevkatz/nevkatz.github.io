@@ -610,7 +610,8 @@ div.banner {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: lightblue; }
+  background-color: lightblue;
+  overflow: hidden; }
 
 svg#dragons-sky {
   height: 300px;
