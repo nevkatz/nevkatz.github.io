@@ -507,7 +507,7 @@ table {
 /* we need to update minima on a regular basis. */
 /* sitewide colors */
 body {
-  background-color: darkgrey; }
+  background-color: #204161; }
 
 header, main, footer, .nav-trigger {
   background-color: #f1eaea; }
