@@ -523,6 +523,15 @@ a.site-title {
   font-size: 30px;
   padding-top: 5px; }
 
+footer {
+  background-color: #c5e8e8; }
+
+h2.footer-heading {
+  font-family: 'Kalam'; }
+
+footer .footer-col p {
+  color: #543647; }
+
 @media screen and (max-width: 600px) {
   .menu-icon,
   nav.site-nav {
