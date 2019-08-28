@@ -504,25 +504,39 @@ table {
   .highlight .il {
     color: #099; }
 
+@font-face {
+  font-family: 'Kalam';
+  src: url("fonts/kalam/Kalam-Regular.ttf"); }
+@font-face {
+  font-family: 'Kalam Bold';
+  src: url("fonts/kalam/Kalam-Bold.ttf"); }
 /* we need to update minima on a regular basis. */
 /* sitewide colors */
 body {
   background-color: #204161; }
 
 header, main, footer, .nav-trigger {
-  background-color: #f1eaea; }
+  background-color: #83cece; }
+
+a.site-title {
+  font-family: 'Kalam';
+  font-size: 30px;
+  padding-top: 5px; }
 
 @media screen and (max-width: 600px) {
   .menu-icon,
   nav.site-nav {
-    background-color: #f9f4f2; } }
+    background-color: #83cece; } }
 /* site header */
+header.site-header {
+  border-bottom: 0px solid transparent; }
+
 header.site-header a {
   text-decoration: none;
   transition: 0.3s ease; }
 
 header.site-header a:hover {
-  color: dodgerblue;
+  color: white;
   transition: 0.3s ease; }
 
 /* page content */
@@ -547,7 +561,24 @@ a {
   transition: color 0.3s ease;
   text-decoration: none; }
 
-/* code */
+/* post layout */
+h2.post-list-heading {
+  text-align: center; }
+
+h2.post-list-heading,
+h1.post-title {
+  color: #543647; }
+
+.post-meta {
+  color: #684a5b;
+  font-weight: bold; }
+
+ul.post-list li,
+div.post-content {
+  background-color: #ffffff;
+  padding: 20px; }
+
+/* demo code styles */
 div.wrapper pre[class*="language"] {
   padding-top: 0px;
   padding-bottom: 0px; }
@@ -555,7 +586,7 @@ div.wrapper pre[class*="language"] {
 code {
   background-color: #e6e2e2;
   padding: 2px 2px;
-  background-color: white; }
+  /*background-color: white;*/ }
 
 h3 code {
   font-size: 1em; }
@@ -598,14 +629,14 @@ ul.css-tabs {
     border-bottom-width: 0px; }
   ul.css-tabs li a.active {
     padding-bottom: 4px;
-    background-color: #f1eaea;
+    background-color: #ffffff;
     border: 1px solid #999;
     border-bottom-width: 0px; }
 
 @-moz-document url-prefix() {
   ul.css-tabs li a {
     top: -1px; } }
-/* front top matter */
+/* dragon banner */
 div.banner {
   width: 100vw;
   position: relative;
@@ -613,16 +644,36 @@ div.banner {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: lightblue;
+  background-color: #148793;
   overflow: hidden; }
 
 svg#dragons-sky {
-  height: 300px;
+  height: 304px;
   width: 100%;
   max-width: 740px;
   background-color: transparent;
   position: relative;
   left: calc(50% - 370px); }
+
+img#dragon {
+  top: 20px;
+  max-width: 620px;
+  width: 100%;
+  position: relative;
+  transition: 0.4s ease; }
+
+div#dragon-container {
+  border-top: 5px solid #97e8f1;
+  border-bottom: 5px solid #85e4ee;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  overflow: hidden; }
 
 /* basic clouds */
 svg ellipse.cloud {
@@ -661,46 +712,7 @@ div#copyright {
     font-size: 14px;
     color: maroon; }
 
-img#dragon {
-  top: 20px;
-  max-width: 620px;
-  width: 100%;
-  position: relative;
-  transition: 0.4s ease; }
-
-div#dragon-container {
-  border-top: 5px solid #9fc8d6;
-  border-bottom: 5px solid #9fc8d6;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  overflow: hidden; }
-
 @media screen and (max-width: 620px) {
   div#dragon-container {
     width: 130%;
     margin-left: -15%; } }
-/*
-@media screen and (max-width: 620px) {
-    img#dragon {
-        top: 0px;
-        width: 500px;
-        transition: 0.4s ease;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    img#dragon {
-        transition: 0.4s ease;
-        max-width: none;
-        width: 130%;
-        top: 20px;
-        border: 1px solid red;
-        background-color: yellow;
-    }
-}*/
