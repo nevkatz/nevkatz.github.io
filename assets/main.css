@@ -506,7 +506,10 @@ table {
 
 /* we need to update minima on a regular basis. */
 /* sitewide colors */
-body, .nav-trigger {
+body {
+  background-color: darkgrey; }
+
+header, main, footer, .nav-trigger {
   background-color: #f1eaea; }
 
 @media screen and (max-width: 600px) {
