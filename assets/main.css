@@ -515,7 +515,7 @@ table {
 body {
   background-color: #204161; }
 
-header, main, footer, .nav-trigger {
+header, main, footer {
   background-color: #83cece; }
 
 a.site-title {
@@ -526,7 +526,7 @@ a.site-title {
 @media screen and (max-width: 600px) {
   .menu-icon,
   nav.site-nav {
-    background-color: #83cece; } }
+    background-color: #ccebeb; } }
 /* site header */
 header.site-header {
   border-bottom: 0px solid transparent; }
