@@ -653,7 +653,7 @@ div.banner {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: #148793;
+  background-color: #204a8b;
   overflow: hidden; }
 
 svg#dragons-sky {
@@ -672,8 +672,8 @@ img#dragon {
   transition: 0.4s ease; }
 
 div#dragon-container {
-  border-top: 5px solid #97e8f1;
-  border-bottom: 5px solid #85e4ee;
+  border-top: 5px solid #c5e8e8;
+  border-bottom: 5px solid #c5e8e8;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -696,7 +696,7 @@ svg ellipse.dragon {
 div#copyright {
   text-align: center;
   font-size: 14px;
-  background-color: #828282;
+  background-color: #148793;
   color: white;
   padding: 15px;
   position: relative;
