@@ -1,47 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-04T08:39:35-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="/svg/images/2019/09/03/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-03T00:00:00-04:00</published><updated>2019-09-03T00:00:00-04:00</updated><id>/svg/images/2019/09/03/svg-omg</id><content type="html" xml:base="/svg/images/2019/09/03/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-04T09:30:45-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="/svg/images/2019/09/04/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-04T00:00:00-04:00</published><updated>2019-09-04T00:00:00-04:00</updated><id>/svg/images/2019/09/04/svg-omg</id><content type="html" xml:base="/svg/images/2019/09/04/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
-&lt;p&gt;Graphics Programs like Inkscape and Illustrator are terrific for creating SVG images, but the resulting code can be bloated with a lot of unnecessary code such as metadata. Optimizing your SVG can make it enormously more readable and reduce its size by several boat loads, but getting your optimization settings just right can be tricky.&lt;/p&gt;
+&lt;p&gt;I was planning to write today about looking at SVG code within some facial expressions I drew up in Inkscape, but that will have to wait. Upon trying the SVG optimization tool known as  &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt;, I realized I had to write about this first!&lt;/p&gt;
 
-&lt;p&gt;Fortunately, the free online tool &lt;a href=&quot;#&quot;&gt;SVG OMG&lt;/a&gt; has you covered if your export settings aren’t doing the whole job. In this post, we’ll look at SVG OMG and compare some code snippets from the “before” image and the “after” image.&lt;/p&gt;
+&lt;p&gt;Vector graphics applications like Inkscape and Illustrator are terrific for creating SVG images, but the resulting code can be bloated with a lot of unnecessary code (I’m looking at you, metadata.) Optimizing your SVG can make it a million times more readable and reduce its overall size tremendously, but getting your optimization settings just right can be tricky.&lt;/p&gt;
 
-&lt;h4 id=&quot;drawing-process&quot;&gt;Drawing Process&lt;/h4&gt;
+&lt;p&gt;Fortunately, the free online tool &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt; has you covered if your export settings aren’t doing the whole job. (And even if they are, this is worth checking out.) In this post, we’ll look at SVG OMG and compare the memory size of the “before” image with that of the “after” image.&lt;/p&gt;
 
-&lt;p&gt;The face in the last post was drawn completely with code. Here are twelve faces drawn in Inkscape. (Make them colored…)&lt;/p&gt;
+&lt;h4 id=&quot;what-is-svg-omg&quot;&gt;What is SVG OMG?&lt;/h4&gt;
 
-&lt;p&gt;First, I sat down completely meaning to write a post on how to analyze code done in Inkscape, but then sat down to find that the Inkscape-generated code was unreadable. So&lt;/p&gt;
+&lt;p&gt;SVG OMG is an application maintained by Jake Archibald that is a GUI (Graphic User Interface) version of &lt;a href=&quot;https://github.com/svg/svgo&quot;&gt;svgo&lt;/a&gt;, an SVG optimization tool. In addition to the online version I used, there is an offline version with additional features. It is a node.js tool, so it can be installed with the node package manager (npm).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/svg-omg-1.svg&quot; /&gt;&amp;lt;&lt;/p&gt;
+&lt;div class=&quot;section-separator&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;The inkscape file was 20.14K and had a lot of unnecessary data in it. Immediately I wanted to optimize the file, so I remembered the &lt;a href=&quot;#&quot;&gt;SVG OMG&lt;/a&gt; tool from a podcast by SVG Expert Sarah Soueidan.&lt;/p&gt;
+&lt;h3 id=&quot;diving-in&quot;&gt;Diving in&lt;/h3&gt;
+&lt;h4 id=&quot;the-image&quot;&gt;The Image&lt;/h4&gt;
 
-&lt;h4 id=&quot;a-little-background&quot;&gt;A little background&lt;/h4&gt;
+&lt;p&gt;While the face in my &lt;a href=&quot;/svg/images/2019/08/08/circle-to-face.html&quot; target=&quot;_blank&quot;&gt;circle to face&lt;/a&gt; tutorial was drawn completely with code, I’ve drawn the faces below using the open source vector art application known as &lt;a href=&quot;http://www.inkscape.org&quot; target=&quot;_blank&quot;&gt;Inkscape&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;SVG OMG is an application created by Jake Archibald that is a GUI (Graphic User Interface) version of SVGO, an SVG optimization tool in node.js. You can download an offline version from his &lt;a href=&quot;#&quot;&gt;Github&lt;/a&gt; and&lt;/p&gt;
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/images/faces/12-faces-omg.svg&quot; /&gt;
+&lt;/div&gt;
 
-&lt;p&gt;I uploaded my file. While keeping the default settings, I found that SVG OMG reduced the file size from 20.14k to 4.22k — 20.93% of its original size.&lt;/p&gt;
+&lt;p&gt;We’ll look at the SVG code of this image in an upcoming tutorial.&lt;/p&gt;
 
-&lt;p&gt;NOTE: Finder shows that the file size is larger.&lt;/p&gt;
+&lt;p&gt;Now what I have above is the optimized image. The off-the-shelf unoptimized image below that is directly generated by Inkscape has minimal to no discernable difference from its optimized counterpart above.&lt;/p&gt;
 
-&lt;p&gt;Upon opening the file in Sublime Text, the extra unnecessary data was gone. The code looks readable, as if someone could have drawn these lines in code.&lt;/p&gt;
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;img src=&quot;/assets/images/faces/12-faces-inkscape.svg&quot; /&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Here is the &lt;a href=&quot;#&quot;&gt;original file&lt;/a&gt; and the &lt;a href=&quot;#&quot;&gt;optimized file&lt;/a&gt; for reference.&lt;/p&gt;
+&lt;h4 id=&quot;first-impressions-of-the-initial-file-in-a-text-editor&quot;&gt;First Impressions of the Initial File in a Text Editor&lt;/h4&gt;
 
-&lt;p&gt;One thing I see is that all the circles are grouped together, so I will be separating these faces into different SVG objects once we start taking a closer look at the code under the hood.&lt;/p&gt;
+&lt;p&gt;But while the difference is at least mostly invisible to the human eye, the differences between the two show up in stark relief when both these images are opened in a text editor. Indeed I found that in the original image, the Inkscape-generated code had loads of unfamiliar, Inkscape-specific syntax, with many more lines of code that were hard to parse out, even by SVG standards. To be fair, some of this is due to the modern conveniences that Inkscape offers (ex. layers) but as with the layers and other niceties in a Photoshop file, I didn’t want all that in my final image. And most importantly for upcoming posts, I wanted the SVG code to be limited to only the essential syntax.&lt;/p&gt;
+
+&lt;p&gt;I wanted to optimize the file, and I remembered the &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot;&gt;SVG OMG&lt;/a&gt; tool from &lt;a href=&quot;http://syntax.fm&quot;&gt;syntax.fm&lt;/a&gt; episode with amazing SVG Expert and web developer extraordinaire &lt;a href=&quot;https://www.sarasoueidan.com/&quot;&gt;Sarah Soueidan&lt;/a&gt;. (Thank you, Wes Bos and Scott Tolinski, for the terrific episode.)&lt;/p&gt;
+
+&lt;h4 id=&quot;file-size-comparison&quot;&gt;File Size Comparison&lt;/h4&gt;
+
+&lt;p&gt;So I uploaded my file to SVG OMG. While keeping the default settings, the application told me that SVG OMG reduced the file size from 20.14k to 4.22k — 20.93% of its original size. While the file sizes came out as larger after I downloaded them, the reduction was even more significant: 13KB compared with the original 99KB, or 13% of its original size.&lt;/p&gt;
 
 &lt;div class=&quot;callout&quot;&gt;
   Optimizing SVG's can remove Inkscape layers. Makes perfect sense but I didn't automatically think of it. In my case I didn't mind, but this may cause issues if you want to go back and edit your image. So hold on to those original files in case you want to go back to your layers. 
 &lt;/div&gt;
 
-&lt;h3 id=&quot;the-dragon&quot;&gt;The dragon&lt;/h3&gt;
+&lt;h4 id=&quot;text-editor-comparison&quot;&gt;Text Editor Comparison&lt;/h4&gt;
 
-&lt;p&gt;After that, I tried it on the dragon image. THis reduced the size of the SVG by 50%.&lt;/p&gt;
+&lt;p&gt;Upon opening the file in Sublime Text and comparing it with the original file, I found that the extra unnecessary data was gone. The only code there was the code meant to render the image, so it was compact and more readable.&lt;/p&gt;
 
-&lt;h3 id=&quot;takeaways&quot;&gt;Takeaways&lt;/h3&gt;
+&lt;p&gt;Here is the &lt;a href=&quot;/assets/images/faces/12-faces-inkscape.svg&quot;&gt;original file&lt;/a&gt; and the &lt;a href=&quot;/assets/images/faces/12-faces-omg.svg&quot;&gt;optimized file&lt;/a&gt; in case you want to have a closer look. Predictably, similar elements across the twelve faces are grouped together, so I will be separating these faces into different SVG objects once we start taking a closer look at the code under the hood.&lt;/p&gt;
+&lt;h4 id=&quot;overall-impression&quot;&gt;Overall Impression&lt;/h4&gt;
+
+&lt;p&gt;After this experience, I will definitely be using SVG OMG as my go-to for SVG image optimization, and might even check out its older command-line cousin, SVGO.&lt;/p&gt;
+
+&lt;div class=&quot;section-separator&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;takeaways-and-additional-notes&quot;&gt;Takeaways and Additional Notes&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;SVG OMG is a terrific tool for optimizing images created with a graphics editor.&lt;/li&gt;
-  &lt;li&gt;There is an online version and an offline version.&lt;/li&gt;
-  &lt;li&gt;There are tons of settings that I recommend playing around with.&lt;/li&gt;
+  &lt;li&gt;In addition to the online version I used, there is an offline version with additional features.&lt;/li&gt;
+  &lt;li&gt;There are tons of settings that I recommend experimenting with.&lt;/li&gt;
+  &lt;li&gt;For those of you interested in a CLI tool, try SVGO.&lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Where coding meets cartooning: Facial Expressions with SVGs</title><link href="/svg/images/2019/09/03/facial-expressions-1.html" rel="alternate" type="text/html" title="Where coding meets cartooning&amp;#58; Facial Expressions with SVGs" /><published>2019-09-03T00:00:00-04:00</published><updated>2019-09-03T00:00:00-04:00</updated><id>/svg/images/2019/09/03/facial-expressions-1</id><content type="html" xml:base="/svg/images/2019/09/03/facial-expressions-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;In our last tutorial, we looked at how to draw a simple emoji-like SVG face by adding a circle, two ellipses, and paths and looking at their various attributes. In this tutorial, we’ll investigate how other emoji-like expressions look as SVG code.&lt;/p&gt;

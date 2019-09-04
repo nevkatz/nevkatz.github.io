@@ -668,6 +668,13 @@ div.banner {
   background-position: 60% 0%;
   overflow: hidden; }
 
+.center-children {
+  text-align: center; }
+
+.image-container {
+  text-align: center;
+  margin-bottom: 20px; }
+
 svg#dragons-sky {
   height: 304px;
   width: 100%;
