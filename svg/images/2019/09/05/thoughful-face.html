@@ -13,19 +13,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Creating an emoji with clean SVG code | Nevin’s Dev Pages</title>
+<title>Creating an animated emoji with squeaky clean SVG code | Nevin’s Dev Pages</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="Creating an emoji with clean SVG code" />
+<meta property="og:title" content="Creating an animated emoji with squeaky clean SVG code" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience." />
-<meta property="og:description" content="The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience." />
+<meta name="description" content="Egads! The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts." />
+<meta property="og:description" content="Egads! The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts." />
 <link rel="canonical" href="/svg/images/2019/09/05/thoughful-face.html" />
 <meta property="og:url" content="/svg/images/2019/09/05/thoughful-face.html" />
 <meta property="og:site_name" content="Nevin’s Dev Pages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-09-05T00:00:00-04:00" />
 <script type="application/ld+json">
-{"description":"The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience.","@type":"BlogPosting","url":"/svg/images/2019/09/05/thoughful-face.html","headline":"Creating an emoji with clean SVG code","dateModified":"2019-09-05T00:00:00-04:00","datePublished":"2019-09-05T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"/svg/images/2019/09/05/thoughful-face.html"},"@context":"https://schema.org"}</script>
+{"description":"Egads! The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts.","@type":"BlogPosting","url":"/svg/images/2019/09/05/thoughful-face.html","headline":"Creating an animated emoji with squeaky clean SVG code","dateModified":"2019-09-05T00:00:00-04:00","datePublished":"2019-09-05T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"/svg/images/2019/09/05/thoughful-face.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/css/prism.css">
@@ -53,18 +53,18 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Creating an emoji with clean SVG code</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Creating an animated emoji with squeaky clean SVG code</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2019-09-05T00:00:00-04:00" itemprop="datePublished">Sep 5, 2019
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience.</p>
+    <p>Egads! The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts.</p>
 
-<p>He starts out as only mildly surprised, but like most of us, this emoji will be taken aback if you get in its face! Mousedown or hold a tap on the face and it will get even more surprised.</p>
+<p>The emoji we’ll be focusing on is below. Sure, it starts out as only mildly surprised, but it will be taken aback if you get in its face. Mousedown or hold a tap on the face and it should get even more surprised.</p>
 
-<p>In this post, we’ll look at how it was optimized and how this simple animation was added to it.</p>
+<p>In this post, we’ll look at how we pulled this off – how the image was optimized and how this simple animation was added to it.</p>
 
 <div class="image-container">
 <svg class="face" ontouchstart="" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
@@ -95,6 +95,8 @@
   <li><a href="https://jakearchibald.github.io/svgomg/" target="_blank">SVG OMG</a>(Jake Archibald), an image optimization tool</li>
 </ul>
 
+<p>It was also super helpful to have the <strong>Safari Technology Preview</strong> application for live testing on my iPhone.</p>
+
 <h4 id="process">Process</h4>
 <p>Below is the general process, followed by a few tips.</p>
 
@@ -124,19 +126,33 @@
   <li>In SVG OMG itself, I kept the default settings except for unchecking “remove viewbox.” It looks like viewbox still shows up either way but I like to have this setting unchecked just in case.</li>
   <li>Check “prettify markup” to make the code easy to edit.</li>
   <li>Uncheck “merge paths” if you want to keep particular elements separate. This can be important if you want to animate, say, a mouth by itself and don’t want it merged with the nose.</li>
+  <li>After downloading the SVG OMG file, I pasted in the markup directly and added a few classes for animation.</li>
 </ul>
 
 <div class="callout">
-<strong>Note on illustration:</strong> I use a Wacom Graphics tablet for this one, but except for the mouth, which has a little nuance to it, the rest could have been done fairly easily without it. I mainly used the ellipse tool for the face and eyes and the freehand draw tool for the other facial features, though the Bezier tool is worth trying for the eyebrows and nose.
+<strong>Note on illustration:</strong> I use a Wacom Graphics tablet for drawing the face, but except for the mouth, which has a little nuance to it, the rest could have been done fairly easily without it. I mainly used the ellipse tool for the face and eyes and the freehand draw tool for the other facial features, though the Bezier tool is worth trying for the eyebrows and nose.
 </div>
 
-<p>Here is the code. Notice that I have an ellipse for the overall face, paths for the eyebrows, nose, and mouth, and circles for the eyes.</p>
+<h4 id="a-word-on-svg-technique">A word on SVG technique</h4>
 
-<p>I have also added a class of “face” to the SVG and a class of “eyebrow” to each eyebrow path, which I will use for the animation.</p>
+<p>You’ll see that we are “inlining” the SVG, or putting the code right into the HTML. This is so we can animate its sub-elements.</p>
+
+<h4 id="notes-on-testing">Notes on testing</h4>
+
+<p>A few things I found out the hard way when testing on my iPhone.</p>
+<ul>
+  <li>If you are testing on an iPhone Safari, go to Safari &gt; Advanced &gt; Experimental Features and make sure all features are turned off. I had these turned on during the first stretch of my testing and it caused the CSS animations to not work on mobile.</li>
+  <li>If you are working on your own code, I encourage you to view in private browser tabs, which will help you to pull in your latest changes to your markup and CSS.</li>
+  <li>You can get a lot of mileage out of “web technology preview” in Safari.</li>
+  <li>Changing the colors of elements can hep you make sure you pulled in the latest change can be helpful if you suspect your browser may be remembering old stuff.</li>
+</ul>
+
+<p>You’ll see the code for just the HTML and SVG markup below. After downloading the file from SVG OMG&lt;  added a class of “face” to the SVG and a class of “eyebrow” to each eyebrow path, which I will use for the animation. I also have an “ontouchstart” listener on the main SVG element, which is absolutely essential for making it respond on mobile safari.</p>
+
 <pre>
  <code class="language-markup">
   <script type="prism-html-markup">
-  <svg class="face" id="my-face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
+  <svg ontouchstart="" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
   <!-- the shape of the face -->
   <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529"/>
   <!-- left eyebrow -->
@@ -161,9 +177,9 @@
 
   <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529" />
 
-  <path class="eyebrow eyebrow-left" d="M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
+  <path class="eyebrow" d="M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
 
-  <path class="eyebrow eyebrow-right" d="M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
+  <path class="eyebrow" d="M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
 
   <path d="M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
 

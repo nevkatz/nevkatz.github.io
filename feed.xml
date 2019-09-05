@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-05T11:22:21-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-05T11:34:03-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an animated emoji with squeaky clean SVG code</title><link href="/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an animated emoji with squeaky clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;Egads! The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts.&lt;/p&gt;
 
-&lt;p&gt;He starts out as only mildly surprised, but like most of us, this emoji will be taken aback if you get in its face! Mousedown or hold a tap on the face and it will get even more surprised.&lt;/p&gt;
+&lt;p&gt;The emoji we’ll be focusing on is below. Sure, it starts out as only mildly surprised, but it will be taken aback if you get in its face. Mousedown or hold a tap on the face and it should get even more surprised.&lt;/p&gt;
 
-&lt;p&gt;In this post, we’ll look at how it was optimized and how this simple animation was added to it.&lt;/p&gt;
+&lt;p&gt;In this post, we’ll look at how we pulled this off – how the image was optimized and how this simple animation was added to it.&lt;/p&gt;
 
 &lt;div class=&quot;image-container&quot;&gt;
 &lt;svg class=&quot;face&quot; ontouchstart=&quot;&quot; width=&quot;146.667&quot; height=&quot;146.667&quot; viewBox=&quot;0 0 38.806 38.806&quot;&gt;
@@ -33,6 +33,8 @@
   &lt;li&gt;&lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt;(Jake Archibald), an image optimization tool&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;It was also super helpful to have the &lt;strong&gt;Safari Technology Preview&lt;/strong&gt; application for live testing on my iPhone.&lt;/p&gt;
+
 &lt;h4 id=&quot;process&quot;&gt;Process&lt;/h4&gt;
 &lt;p&gt;Below is the general process, followed by a few tips.&lt;/p&gt;
 
@@ -62,19 +64,33 @@
   &lt;li&gt;In SVG OMG itself, I kept the default settings except for unchecking “remove viewbox.” It looks like viewbox still shows up either way but I like to have this setting unchecked just in case.&lt;/li&gt;
   &lt;li&gt;Check “prettify markup” to make the code easy to edit.&lt;/li&gt;
   &lt;li&gt;Uncheck “merge paths” if you want to keep particular elements separate. This can be important if you want to animate, say, a mouth by itself and don’t want it merged with the nose.&lt;/li&gt;
+  &lt;li&gt;After downloading the SVG OMG file, I pasted in the markup directly and added a few classes for animation.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;callout&quot;&gt;
-&lt;strong&gt;Note on illustration:&lt;/strong&gt; I use a Wacom Graphics tablet for this one, but except for the mouth, which has a little nuance to it, the rest could have been done fairly easily without it. I mainly used the ellipse tool for the face and eyes and the freehand draw tool for the other facial features, though the Bezier tool is worth trying for the eyebrows and nose.
+&lt;strong&gt;Note on illustration:&lt;/strong&gt; I use a Wacom Graphics tablet for drawing the face, but except for the mouth, which has a little nuance to it, the rest could have been done fairly easily without it. I mainly used the ellipse tool for the face and eyes and the freehand draw tool for the other facial features, though the Bezier tool is worth trying for the eyebrows and nose.
 &lt;/div&gt;
 
-&lt;p&gt;Here is the code. Notice that I have an ellipse for the overall face, paths for the eyebrows, nose, and mouth, and circles for the eyes.&lt;/p&gt;
+&lt;h4 id=&quot;a-word-on-svg-technique&quot;&gt;A word on SVG technique&lt;/h4&gt;
 
-&lt;p&gt;I have also added a class of “face” to the SVG and a class of “eyebrow” to each eyebrow path, which I will use for the animation.&lt;/p&gt;
+&lt;p&gt;You’ll see that we are “inlining” the SVG, or putting the code right into the HTML. This is so we can animate its sub-elements.&lt;/p&gt;
+
+&lt;h4 id=&quot;notes-on-testing&quot;&gt;Notes on testing&lt;/h4&gt;
+
+&lt;p&gt;A few things I found out the hard way when testing on my iPhone.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;If you are testing on an iPhone Safari, go to Safari &amp;gt; Advanced &amp;gt; Experimental Features and make sure all features are turned off. I had these turned on during the first stretch of my testing and it caused the CSS animations to not work on mobile.&lt;/li&gt;
+  &lt;li&gt;If you are working on your own code, I encourage you to view in private browser tabs, which will help you to pull in your latest changes to your markup and CSS.&lt;/li&gt;
+  &lt;li&gt;You can get a lot of mileage out of “web technology preview” in Safari.&lt;/li&gt;
+  &lt;li&gt;Changing the colors of elements can hep you make sure you pulled in the latest change can be helpful if you suspect your browser may be remembering old stuff.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You’ll see the code for just the HTML and SVG markup below. After downloading the file from SVG OMG&amp;lt;  added a class of “face” to the SVG and a class of “eyebrow” to each eyebrow path, which I will use for the animation. I also have an “ontouchstart” listener on the main SVG element, which is absolutely essential for making it respond on mobile safari.&lt;/p&gt;
+
 &lt;pre&gt;
  &lt;code class=&quot;language-markup&quot;&gt;
   &lt;script type=&quot;prism-html-markup&quot;&gt;
-  &lt;svg class=&quot;face&quot; id=&quot;my-face&quot; width=&quot;146.667&quot; height=&quot;146.667&quot; viewBox=&quot;0 0 38.806 38.806&quot;&gt;
+  &lt;svg ontouchstart=&quot;&quot; width=&quot;146.667&quot; height=&quot;146.667&quot; viewBox=&quot;0 0 38.806 38.806&quot;&gt;
   &lt;!-- the shape of the face --&gt;
   &lt;ellipse cx=&quot;19.089&quot; cy=&quot;19.429&quot; rx=&quot;18.235&quot; ry=&quot;18.39&quot; fill=&quot;#fea&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot;/&gt;
   &lt;!-- left eyebrow --&gt;
@@ -99,9 +115,9 @@
 
   &lt;ellipse cx=&quot;19.089&quot; cy=&quot;19.429&quot; rx=&quot;18.235&quot; ry=&quot;18.39&quot; fill=&quot;#fea&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; /&gt;
 
-  &lt;path class=&quot;eyebrow eyebrow-left&quot; d=&quot;M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
 
-  &lt;path class=&quot;eyebrow eyebrow-right&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
 
   &lt;path d=&quot;M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
 
@@ -191,7 +207,7 @@
 
 &lt;p&gt;It has occurred to me that it would be cool to reduce the size of these and show how they might be used inline with some text. If you’d like to see how I’d do that, let me know.&lt;/p&gt;
 
-&lt;p&gt;I hope you’ve found this helpful. In upcoming posts, we’ll take a look at a few other emojis, how they look in code, and how they can be animated.&lt;/p&gt;</content><author><name></name></author><summary type="html">The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience.</summary></entry><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="/svg/images/2019/09/04/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-04T00:00:00-04:00</published><updated>2019-09-04T00:00:00-04:00</updated><id>/svg/images/2019/09/04/svg-omg</id><content type="html" xml:base="/svg/images/2019/09/04/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;I hope you’ve found this helpful. In upcoming posts, we’ll take a look at a few other emojis, how they look in code, and how they can be animated.&lt;/p&gt;</content><author><name></name></author><summary type="html">Egads! The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts.</summary></entry><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="/svg/images/2019/09/04/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-04T00:00:00-04:00</published><updated>2019-09-04T00:00:00-04:00</updated><id>/svg/images/2019/09/04/svg-omg</id><content type="html" xml:base="/svg/images/2019/09/04/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;I was planning to write today about looking at SVG code within some facial expressions I drew up in Inkscape, but that will have to wait. Upon trying the SVG optimization tool known as  &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt;, I realized I had to write about this first!&lt;/p&gt;
 
