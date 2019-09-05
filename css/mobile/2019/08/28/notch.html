@@ -62,7 +62,7 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.</p>
 
-<p>I will admit that I got into a little “alligator wrestling” with CSS, trying to get it to span the full width of the page by moving margins. I thought initially it was something in the CSS, so I gradually commented it all out. The issue was still there.</p>
+<p>I got into a little “alligator wrestling” with CSS, trying to get it to span the full width of the page by moving margins. I thought initially it was something in the CSS, so I gradually commented it all out. The issue was still there.</p>
 
 <p>I then took a quick look at all number of other sites in iPhone landscape, including my other site, <a href="http://www.birdleymedia.com">birdleymedia.com</a>. I noticed that all of the other sites had this same issue, where the content did not cover the full width. And then it dawned on me — it is probably because of the notch on the iPhone.</p>
 
@@ -86,6 +86,8 @@
   </script>
  </code>
  </pre>
+
+<p>I ultimately decided not to use the <code>viewport-fit=cover</code> technique because I just want to make sure that the notch doesn’t obscure anything. But I do see a lot of potential for apps and for sites that need to create an immersive experience.</p>
 
 <p>More info on the notch and CSS can be found in <a href="https://css-tricks.com/the-notch-and-css/">this article</a> on CSS Tricks by Chris Coiyer.</p>
 
