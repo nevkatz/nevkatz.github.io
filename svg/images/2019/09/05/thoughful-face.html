@@ -155,7 +155,7 @@
  </pre>
 
 <div class="image-container">
-  <svg class="face" ontouchstart="surprise(this);" ontouchend="calmdown(this);" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
+  <svg class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
 
   <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529" />
 
@@ -180,72 +180,16 @@
   transform: translateY(0px);
   -webkit-transform:translateY(0px);
 }
-.face.surprised .eyebrow,
-.face:hover .eyebrow {
-  fill: blue;
+
+.face:active .eyebrow {
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
 }
-/*
-.face.surprised .eyebrow-left {
-  animation: surpriseme 1s linear;
-}*/
-/*
-@-webkit-keyframes surpriseme {
-  0% {
-      transform: translateY(0px);
-      -webkit-transform: translateY(0px); 
-  }
-  20% {
-      transform: translateY(-1px);
-      -webkit-transform: translateY(-1px);
-    
-  }
-  40% {
-      transform: translateY(-2px);
-      -webkit-transform: translateY(-2px);
-    
-  }
-  60% {
-      transform: translateY(-3px);
-      -webkit-transform: translateY(-3px);
-
-  }
-  80% {
-      transform: translateY(-2px);
-      -webkit-transform: translateY(-2px);
-
-  }
-  90% {
-      transform: translateY(-1px);
-      -webkit-transform: translateY(-1px);
-
-  }
-  100% {
-      transform: translateY(0px);
-     -webkit-transform: translateY(0px);
-  }*/
-}
 </style>
 
-<script>
-/*
-function surprise(el) {
-
-  el.className.baseVal = 'face surprised';
-
-}
-function calmdown(el) {
-  window.setTimeout(function() {
-      el.className.baseVal = 'face';
-},1500);
-
-}*/
-</script>
-
-<p>Here is how I animated it.</p>
+<p>Here is how I animated it. If you are testing using an iPhone, make sure that the experimental features are</p>
 
 <ul>
   <li>I am using the “hover” pseudo selector to the face SVG because the eyebrows are children of that element.</li>
@@ -292,7 +236,7 @@ function calmdown(el) {
     transform: translateY(0px);
 
   }
-  .face:hover .eyebrow {
+  .face:active.eyebrow {
     transition: 0.3s ease-out;
     transform: translateY(-3px);
 

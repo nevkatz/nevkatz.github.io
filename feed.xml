@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-05T11:03:18-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-05T11:10:47-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.&lt;/p&gt;
 
 &lt;p&gt;In this post, we’ll look at how it was optimized and how this simple animation was added to it.&lt;/p&gt;
 
@@ -93,7 +93,7 @@
  &lt;/pre&gt;
 
 &lt;div class=&quot;image-container&quot;&gt;
-  &lt;svg class=&quot;face&quot; ontouchstart=&quot;surprise(this);&quot; ontouchend=&quot;calmdown(this);&quot; width=&quot;146.667&quot; height=&quot;146.667&quot; viewBox=&quot;0 0 38.806 38.806&quot;&gt;
+  &lt;svg class=&quot;face&quot; width=&quot;146.667&quot; height=&quot;146.667&quot; viewBox=&quot;0 0 38.806 38.806&quot;&gt;
 
   &lt;ellipse cx=&quot;19.089&quot; cy=&quot;19.429&quot; rx=&quot;18.235&quot; ry=&quot;18.39&quot; fill=&quot;#fea&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; /&gt;
 
@@ -118,72 +118,16 @@
   transform: translateY(0px);
   -webkit-transform:translateY(0px);
 }
-.face.surprised .eyebrow,
-.face:hover .eyebrow {
-  fill: blue;
+
+.face:active .eyebrow {
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
 }
-/*
-.face.surprised .eyebrow-left {
-  animation: surpriseme 1s linear;
-}*/
-/*
-@-webkit-keyframes surpriseme {
-  0% {
-      transform: translateY(0px);
-      -webkit-transform: translateY(0px); 
-  }
-  20% {
-      transform: translateY(-1px);
-      -webkit-transform: translateY(-1px);
-    
-  }
-  40% {
-      transform: translateY(-2px);
-      -webkit-transform: translateY(-2px);
-    
-  }
-  60% {
-      transform: translateY(-3px);
-      -webkit-transform: translateY(-3px);
-
-  }
-  80% {
-      transform: translateY(-2px);
-      -webkit-transform: translateY(-2px);
-
-  }
-  90% {
-      transform: translateY(-1px);
-      -webkit-transform: translateY(-1px);
-
-  }
-  100% {
-      transform: translateY(0px);
-     -webkit-transform: translateY(0px);
-  }*/
-}
 &lt;/style&gt;
 
-&lt;script&gt;
-/*
-function surprise(el) {
-
-  el.className.baseVal = 'face surprised';
-
-}
-function calmdown(el) {
-  window.setTimeout(function() {
-      el.className.baseVal = 'face';
-},1500);
-
-}*/
-&lt;/script&gt;
-
-&lt;p&gt;Here is how I animated it.&lt;/p&gt;
+&lt;p&gt;Here is how I animated it. If you are testing using an iPhone, make sure that the experimental features are&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;I am using the “hover” pseudo selector to the face SVG because the eyebrows are children of that element.&lt;/li&gt;
@@ -230,7 +174,7 @@ function calmdown(el) {
     transform: translateY(0px);
 
   }
-  .face:hover .eyebrow {
+  .face:active.eyebrow {
     transition: 0.3s ease-out;
     transform: translateY(-3px);
 
