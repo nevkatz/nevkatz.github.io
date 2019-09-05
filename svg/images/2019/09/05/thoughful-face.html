@@ -187,7 +187,7 @@
   -webkit-transform: translateY(-3px);
 }
 .face.surprised .eyebrow {
-  animation: surpriseme 1s normal ease-in-out;
+  animation: surpriseme 1s normal ease;
 }
 @keyframes surpriseme {
   0% {
@@ -195,9 +195,29 @@
       -webkit-transform: translateY(0px);
     
   }
-  50% {
+  20% {
+      transform: translateY(-1px);
+      -webkit-transform: translateY(-1px);
+    
+  }
+  40% {
+      transform: translateY(-2px);
+      -webkit-transform: translateY(-2px);
+    
+  }
+  60% {
       transform: translateY(-3px);
       -webkit-transform: translateY(-3px);
+
+  }
+  80% {
+      transform: translateY(-2px);
+      -webkit-transform: translateY(-2px);
+
+  }
+  90% {
+      transform: translateY(-1px);
+      -webkit-transform: translateY(-1px);
 
   }
   100% {
