@@ -94,15 +94,23 @@
 </ul>
 
 <h4 id="tools">Tools:</h4>
+
+<p>I found the tools below to be helpful, though you could complete this whole thing with a text editor and a browser. The most essential tool is SVG OMG.</p>
+
 <ul>
   <li><a href="https://inkscape.org" target="_blank">Inkscape</a>, a free open-source vector image editor</li>
-  <li><a href="https://jakearchibald.github.io/svgomg/" target="_blank">SVG OMG</a>(Jake Archibald), a free image optimization tool</li>
-  <li>For testing, was also super helpful to have the <strong>Safari Technology Preview</strong> application for live testing on an iPhone.</li>
-  <li>For illustration, I used a Wacom Graphics tablet.</li>
+  <li><a href="https://jakearchibald.github.io/svgomg/" target="_blank">SVG OMG</a> (Jake Archibald), a free online image optimization tool</li>
+  <li><a href="https://developer.apple.com/safari/technology-preview/" target="_blank">Safari Technology Preview</a>, a Mac OS application for live testing on an iPhone.</li>
+  <li>A Wacom Intuos Graphics tablet for the illustration.</li>
+  <li>Sublime Text 2 for the coding.</li>
 </ul>
 
+<div class="section-separator"></div>
+
+<h3 id="and-here-we-go">And here we go</h3>
+
 <h4 id="process">Process</h4>
-<p>Below is the general process, followed by a few tips.</p>
+<p>Below is the general process I used, followed by a few tips.</p>
 
 <ul>
   <li>Create the image in Inkscape</li>
@@ -120,7 +128,7 @@
 <ul>
   <li>Right off the bat, it helps to go to file &gt; document properties and modify the document to fit the image. After a little experimenting, I ultimately made the document 110px by 110px.</li>
   <li>Inkscape has a “relative move” setting which can make the resulting code more complex. So with all objects selected, go to the &lt;/strong&gt;transform&lt;/strong&gt; panel. Uncheck <strong>relative move</strong> and check <strong>apply to each object separately</strong>. This will help to prevent some unnecessary transforms from showing up in your SVG code.</li>
-  <li>To preview how the art will look in code, go to edit &gt; XML editor and keep that editor open as you work so you can check for unnecessary transforms being applied to your image elements.</li>
+  <li>To preview how the art will look in code, go to <strong>edit &gt; XML editor</strong> and keep that editor open as you work so you can check for unnecessary transforms being applied to your image elements.</li>
   <li>Every so often and especially towards the end, I find it helpful to click through each object, remove any transforms, and reposition the object if necessary.</li>
   <li>For layers that already have transformed applied to them, I have found it useful to just create a new layer, cut the objects out of the old layer, and paste them into the new one.</li>
   <li>Keeping your paths ungrouped will help to make them easier to edit and animate later.</li>
@@ -138,10 +146,15 @@
 </ul>
 
 <div class="callout">
-<strong>Note on illustration:</strong> I use a Wacom Graphics tablet for drawing the face, but except for the mouth, which has a little nuance to it, the rest could have been done fairly easily without it. I mainly used the ellipse tool for the face and eyes and the freehand draw tool for the other facial features, though the Bezier tool is worth trying for the eyebrows and nose.
+<strong>A note on illustration:</strong> As I mentioned above, I used a Wacom Graphics tablet for drawing the face, but except for the mouth, which has a little nuance to it, the rest could have been done fairly easily without it. In Inkscape, I mainly used the ellipse tool for the face and eyes and the freehand draw tool for the other facial features, though the Bezier tool is worth trying for the eyebrows and nose.
 </div>
 
-<h4 id="a-primer-on-the-code">A primer on the code</h4>
+<div class="section-separator"></div>
+
+<h3 id="the-code-up-close">The code up close</h3>
+
+<h4 id="a-primer-on-the-markup">A primer on the markup</h4>
+
 <ul>
   <li>You’ll see the code for just the HTML and SVG markup below. After downloading the file from SVG OMG  added a class of “face” to the SVG and a class of “eyebrow” to each eyebrow path, which I will use for the animation.</li>
   <li>I also have an “ontouchstart” listener on the main SVG element, which is absolutely essential for making it respond on mobile Safari.</li>
@@ -211,11 +224,11 @@
 
 <h4 id="animating-with-css">Animating with CSS</h4>
 
-<p>Here is how I animated it.</p>
+<p>Here is how I animated the face with CSS.</p>
 <ul>
-  <li>I am using the “active” pseudo selector to the face SVG because the eyebrows are children of that element. You could use the “hover” pseudo-selector, but it does not work as well on mobile devices — it often just stays in its hover state after you tap it, which would leave the face in a state of perpetual shock.</li>
-  <li>For both active and non-active states, we add a transition with a 0.3s and an ease of “ease-out,” which gives it a quicker start and a slower end.</li>
-  <li>We are using webkit variants of CSS so that the styles work well Chrome, Safari, and other browsers that use the webkit browser engine.</li>
+  <li>I used the “active” pseudo selector to the face SVG because the eyebrows are children of that element. You could use the “hover” pseudo-selector, but it does not work as well on mobile devices — it often just stays in its hover state after you tap it, which would leave the face in a state of perpetual shock.</li>
+  <li>For both active and non-active states, I added a transition with a 0.3s and an ease of “ease-out,” which gives it a quicker start and a slower end.</li>
+  <li>You’ll see in the CSS that I used webkit variants of transforms and transitions so that the styles work well Chrome, Safari, and other browsers that use the webkit browser engine.</li>
   <li>To move the eyebrows up, we use a “transform” of translateY and just bring it up by 3 pixels. Even though SVG’s are not made of pixels they are still handy to use as measurements in the CSS!</li>
 </ul>
 
@@ -270,6 +283,8 @@
  </code>
  </pre>
 </div>
+
+<div class="section-separator"></div>
 <h3 id="final-thoughts">Final Thoughts</h3>
 
 <p>I was originally thinking of writing about 12 faces in one post, but one emoji at a time is clearly the way to go since so much learning happens with each one. The main thing I have found is that getting this first face to be easily authorable in an SVG document takes a few techniques.</p>
