@@ -182,7 +182,7 @@
   -webkit-transform:translateY(0px);
 
 }
-.face.surprised,
+.face.surprised .eyebrow,
 .face:hover:active:focus .eyebrow {
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
@@ -193,14 +193,14 @@
 
 <script>
 function surprise(el) {
- 
-  el.className = 'face surprised';
-  alert(el.className);
+
+  el.className.baseVal = 'face surprised';
+
 }
 function calmdown(el) {
   window.setTimeout(function() {
-      el.className = 'face';
-  },1000);
+      el.className.baseVal = 'face';
+},1000);
 
 }
 </script>
