@@ -159,9 +159,9 @@
 
   <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529" />
 
-  <path class="eyebrow" d="M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
+  <path class="eyebrow eyebrow-left" d="M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
 
-  <path class="eyebrow" d="M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
+  <path class="eyebrow eyebrow-right" d="M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
 
   <path d="M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
 
@@ -186,8 +186,8 @@
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
 }
-.face.surprised .eyebrow {
-  animation: surpriseme 1s normal ease;
+.face.surprised .eyebrow-left {
+  animation: surpriseme 1s linear;
 }
 @keyframes surpriseme {
   0% {
@@ -236,7 +236,7 @@ function surprise(el) {
 function calmdown(el) {
   window.setTimeout(function() {
       el.className.baseVal = 'face';
-},2000);
+},1500);
 
 }
 </script>

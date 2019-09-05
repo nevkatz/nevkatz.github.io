@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-05T10:24:24-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-05T10:29:44-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.&lt;/p&gt;
 
 &lt;p&gt;In this post, we’ll look at how it was optimized and how this simple animation was added to it.&lt;/p&gt;
 
@@ -97,9 +97,9 @@
 
   &lt;ellipse cx=&quot;19.089&quot; cy=&quot;19.429&quot; rx=&quot;18.235&quot; ry=&quot;18.39&quot; fill=&quot;#fea&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; /&gt;
 
-  &lt;path class=&quot;eyebrow&quot; d=&quot;M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+  &lt;path class=&quot;eyebrow eyebrow-left&quot; d=&quot;M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
 
-  &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+  &lt;path class=&quot;eyebrow eyebrow-right&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
 
   &lt;path d=&quot;M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
 
@@ -124,8 +124,8 @@
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
 }
-.face.surprised .eyebrow {
-  animation: surpriseme 1s normal ease;
+.face.surprised .eyebrow-left {
+  animation: surpriseme 1s linear;
 }
 @keyframes surpriseme {
   0% {
@@ -174,7 +174,7 @@ function surprise(el) {
 function calmdown(el) {
   window.setTimeout(function() {
       el.className.baseVal = 'face';
-},2000);
+},1500);
 
 }
 &lt;/script&gt;
