@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-05T11:01:11-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-05T11:03:18-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.&lt;/p&gt;
 
 &lt;p&gt;In this post, we’ll look at how it was optimized and how this simple animation was added to it.&lt;/p&gt;
 
@@ -120,6 +120,7 @@
 }
 .face.surprised .eyebrow,
 .face:hover .eyebrow {
+  fill: blue;
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
   transform: translateY(-3px);
@@ -168,6 +169,7 @@
 &lt;/style&gt;
 
 &lt;script&gt;
+/*
 function surprise(el) {
 
   el.className.baseVal = 'face surprised';
@@ -178,7 +180,7 @@ function calmdown(el) {
       el.className.baseVal = 'face';
 },1500);
 
-}
+}*/
 &lt;/script&gt;
 
 &lt;p&gt;Here is how I animated it.&lt;/p&gt;
