@@ -134,7 +134,7 @@
 <pre>
  <code class="language-markup">
   <script type="prism-html-markup">
-  <svg class="face"  width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
+  <svg class="face" id="my-face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
   <!-- the shape of the face -->
   <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529"/>
   <!-- left eyebrow -->
@@ -193,11 +193,15 @@
 
 <script>
 function surprise(el) {
-  alert('hello');
+ 
   el.className = 'face surprised';
+  alert(el.className);
 }
 function calmdown(el) {
-  el.className = 'face';
+  window.setTimeout(function() {
+      el.className = 'face';
+  },1000);
+
 }
 </script>
 
