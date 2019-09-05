@@ -618,7 +618,8 @@ h2.post-list-heading {
 
 .callout {
   padding: 20px;
-  background-color: lightblue; }
+  background-color: lightblue;
+  margin-bottom: 20px; }
 
 /*
  *  widgets

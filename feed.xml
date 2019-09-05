@@ -1,4 +1,190 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-04T09:33:23-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="/svg/images/2019/09/04/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-04T00:00:00-04:00</published><updated>2019-09-04T00:00:00-04:00</updated><id>/svg/images/2019/09/04/svg-omg</id><content type="html" xml:base="/svg/images/2019/09/04/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-05T08:59:46-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="http://localhost:4000/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.&lt;/p&gt;
+
+&lt;p&gt;In this post, we’ll look at how it was optimized and how this simple animation was added to it.&lt;/p&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+&lt;svg class=&quot;face&quot; width=&quot;146.667&quot; height=&quot;146.667&quot; viewBox=&quot;0 0 38.806 38.806&quot;&gt;
+  &lt;ellipse cx=&quot;19.089&quot; cy=&quot;19.429&quot; rx=&quot;18.235&quot; ry=&quot;18.39&quot; fill=&quot;#fea&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; /&gt;
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+  &lt;path d=&quot;M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+  &lt;path d=&quot;M20.842 27.726a3.805 3.805 0 0 0-2.408-.99 3.033 3.033 0 0 0-1.367.248 2.18 2.18 0 0 0-1.02.925 1.98 1.98 0 0 0-.226 1.092 2.148 2.148 0 0 0 .382 1.05c.25.357.599.634.963.874s.749.447 1.104.7c.16.113.322.24.515.277a.49.49 0 0 0 .289-.025.366.366 0 0 0 .12-.084.315.315 0 0 0 .073-.126.345.345 0 0 0 .007-.153.531.531 0 0 0-.05-.147c-.045-.092-.11-.174-.167-.26-.16-.247-.248-.533-.344-.811-.087-.251-.182-.5-.235-.76-.053-.261-.06-.537.027-.788.108-.312.357-.562.647-.721.29-.159.618-.234.946-.272.247-.03.496-.04.744-.03z&quot; fill=&quot;#280b0b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; stroke-opacity=&quot;.926&quot; /&gt;
+  &lt;circle cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+  &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+&lt;/svg&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In comparison to my earlier face, which I did with a “code first” approach, it is a bit more expressive and detailed with eyebrows and a nose.&lt;/p&gt;
+
+&lt;h4 id=&quot;objectives&quot;&gt;Objectives&lt;/h4&gt;
+
+&lt;p&gt;In this tutorial we’ll look at a few things:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;look at tips for optimizing this face in Inkscape and SVG OMG so we get rid of unnecessary code “under the hood.”&lt;/li&gt;
+  &lt;li&gt;reverse-engineer some of the style attributes.&lt;/li&gt;
+  &lt;li&gt;animate the eyebrows on hover with a simple CSS transform.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;tools&quot;&gt;Tools:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://inkscape.org&quot; target=&quot;_blank&quot;&gt;Inkscape&lt;/a&gt;, an open-source vector image editor&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt;(Jake Archibald), an image optimization tool&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;process&quot;&gt;Process&lt;/h4&gt;
+&lt;p&gt;Below is the general process, followed by a few tips.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create the image in Inkscape&lt;/li&gt;
+  &lt;li&gt;Modify the document settings and remove unnnecessary transforms (see below)&lt;/li&gt;
+  &lt;li&gt;Upload the image to SVG OMG&lt;/li&gt;
+  &lt;li&gt;Admire the memory size reduction&lt;/li&gt;
+  &lt;li&gt;Download the optimized file&lt;/li&gt;
+  &lt;li&gt;Embed the image by pasting the code into your HTML file, markdown file, or HTML editor&lt;/li&gt;
+  &lt;li&gt;Removed the &lt;code&gt;xlmns&lt;/code&gt; attribute from the &lt;code&gt;svg&lt;/code&gt; object&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Below I have a few tips on setting dimensions and eliminating unnecessary “transform” attributes during the Inkscape creation step.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Right off the bat, it helps to go to file &amp;gt; document properties and modify the document to fit the image. After a little experimenting, I ultimately made the document 110px by 110px.&lt;/li&gt;
+  &lt;li&gt;Inkscape has a “relative move” setting which can make the resulting code more complex. So with all objects selected, go to the &amp;lt;/strong&amp;gt;transform&amp;lt;/strong&amp;gt; panel. Uncheck &lt;strong&gt;relative move&lt;/strong&gt; and check &lt;strong&gt;apply to each object separately&lt;/strong&gt;. This will help to prevent some unnecessary transforms from showing up in your SVG code.&lt;/li&gt;
+  &lt;li&gt;To preview how the art will look in code, go to edit &amp;gt; XML editor and keep that editor open as you work so you can check for unnecessary transforms being applied to your image elements.&lt;/li&gt;
+  &lt;li&gt;Every so often and especially towards the end, I find it helpful to click through each object, remove any transforms, and reposition the object if necessary.&lt;/li&gt;
+  &lt;li&gt;For layers that already have transformed applied to them, I have found it useful to just create a new layer, cut the objects out of the old layer, and paste them into the new one.&lt;/li&gt;
+  &lt;li&gt;Keeping your paths ungrouped will help to make them easier to edit and animate later.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And here are a few tips on SVG OMG.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;In terms of getting the image ready for the OMG step, I found that converting the units from pt to px in Inkscape was necessary for not cutting off the image in the SVG OMG editor.&lt;/li&gt;
+  &lt;li&gt;In SVG OMG itself, I kept the default settings except for unchecking “remove viewbox.” It looks like viewbox still shows up either way but I like to have this setting unchecked just in case.&lt;/li&gt;
+  &lt;li&gt;Check “prettify markup” to make the code easy to edit.&lt;/li&gt;
+  &lt;li&gt;Uncheck “merge paths” if you want to keep particular elements separate. This can be important if you want to animate, say, a mouth by itself and don’t want it merged with the nose.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;callout&quot;&gt;
+&lt;strong&gt;Note on illustration:&lt;/strong&gt; I use a Wacom Graphics tablet for this one, but except for the mouth, which has a little nuance to it, the rest could have been done fairly easily without it. I mainly used the ellipse tool for the face and eyes and the freehand draw tool for the other facial features, though the Bezier tool is worth trying for the eyebrows and nose.
+&lt;/div&gt;
+
+&lt;p&gt;Here is the code. Notice that I have an ellipse for the overall face, paths for the eyebrows, nose, and mouth, and circles for the eyes.&lt;/p&gt;
+
+&lt;p&gt;I have also added a class of “face” to the SVG and a class of “eyebrow” to each eyebrow path, which I will use for the animation.&lt;/p&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+  &lt;svg class=&quot;face&quot;  width=&quot;146.667&quot; height=&quot;146.667&quot; viewBox=&quot;0 0 38.806 38.806&quot;&gt;
+  &lt;!-- the shape of the face --&gt;
+  &lt;ellipse cx=&quot;19.089&quot; cy=&quot;19.429&quot; rx=&quot;18.235&quot; ry=&quot;18.39&quot; fill=&quot;#fea&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot;/&gt;
+  &lt;!-- left eyebrow --&gt;
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot;/&gt;
+  &lt;!-- right eyebrow --&gt;
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot;/&gt;
+  &lt;!-- nose --&gt;
+  &lt;path d=&quot;M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot;/&gt;
+  &lt;!-- the mouth --&gt;
+  &lt;path d=&quot;M20.842 27.726a3.805 3.805 0 0 0-2.408-.99 3.033 3.033 0 0 0-1.367.248 2.18 2.18 0 0 0-1.02.925 1.98 1.98 0 0 0-.226 1.092 2.148 2.148 0 0 0 .382 1.05c.25.357.599.634.963.874s.749.447 1.104.7c.16.113.322.24.515.277a.49.49 0 0 0 .289-.025.366.366 0 0 0 .12-.084.315.315 0 0 0 .073-.126.345.345 0 0 0 .007-.153.531.531 0 0 0-.05-.147c-.045-.092-.11-.174-.167-.26-.16-.247-.248-.533-.344-.811-.087-.251-.182-.5-.235-.76-.053-.261-.06-.537.027-.788.108-.312.357-.562.647-.721.29-.159.618-.234.946-.272.247-.03.496-.04.744-.03z&quot; fill=&quot;#280b0b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; stroke-opacity=&quot;.926&quot;/&gt;
+  &lt;!-- right eye --&gt;
+  &lt;circle cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+  &lt;!-- left eye --&gt;
+  &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+  &lt;/svg&gt;
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+
+&lt;div class=&quot;image-container&quot;&gt;
+  &lt;svg class=&quot;face&quot; width=&quot;146.667&quot; height=&quot;146.667&quot; viewBox=&quot;0 0 38.806 38.806&quot;&gt;
+
+  &lt;ellipse cx=&quot;19.089&quot; cy=&quot;19.429&quot; rx=&quot;18.235&quot; ry=&quot;18.39&quot; fill=&quot;#fea&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; /&gt;
+
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+
+  &lt;path d=&quot;M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; /&gt;
+
+  &lt;path d=&quot;M20.842 27.726a3.805 3.805 0 0 0-2.408-.99 3.033 3.033 0 0 0-1.367.248 2.18 2.18 0 0 0-1.02.925 1.98 1.98 0 0 0-.226 1.092 2.148 2.148 0 0 0 .382 1.05c.25.357.599.634.963.874s.749.447 1.104.7c.16.113.322.24.515.277a.49.49 0 0 0 .289-.025.366.366 0 0 0 .12-.084.315.315 0 0 0 .073-.126.345.345 0 0 0 .007-.153.531.531 0 0 0-.05-.147c-.045-.092-.11-.174-.167-.26-.16-.247-.248-.533-.344-.811-.087-.251-.182-.5-.235-.76-.053-.261-.06-.537.027-.788.108-.312.357-.562.647-.721.29-.159.618-.234.946-.272.247-.03.496-.04.744-.03z&quot; fill=&quot;#280b0b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; stroke-opacity=&quot;.926&quot; /&gt;
+
+  &lt;circle cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+
+  &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.face .eyebrow {
+  transition: 0.3s ease-out;
+  transform: translateY(0px);
+
+}
+.face:hover .eyebrow {
+  transition: 0.3s ease-out;
+  transform: translateY(-3px);
+}
+&lt;/style&gt;
+
+&lt;p&gt;Here is how I animated it.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I am using the “hover” pseudo selector to the face SVG because the eyebrows are children of that element.&lt;/li&gt;
+  &lt;li&gt;For both hover and non-hover states, we add a transition with a 0.3s and an ease of “ease-out,” which gives it a quicker start and a slower end.&lt;/li&gt;
+  &lt;li&gt;To move the eyebrows up, we use a “transform” of translateY and just bring it up by 3 pixels. Even though SVG’s are not made of pixels they are still handy to use as measurements in the CSS!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+  &lt;svg class=&quot;face&quot; width=&quot;146.667&quot; height=&quot;146.667&quot; viewBox=&quot;0 0 38.806 38.806&quot;&gt;
+  &lt;!-- the shape of the face --&gt;
+   &lt;ellipse cx=&quot;19.089&quot; cy=&quot;19.429&quot; rx=&quot;18.235&quot; ry=&quot;18.39&quot; fill=&quot;#fea&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot;/&gt;
+  &lt;!-- left eyebrow --&gt;
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot;/&gt;
+  &lt;!-- right eyebrow --&gt;
+  &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot;/&gt;
+  &lt;!-- nose --&gt;
+  &lt;path d=&quot;M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot;/&gt;
+  &lt;!-- the mouth --&gt;
+  &lt;path d=&quot;M20.842 27.726a3.805 3.805 0 0 0-2.408-.99 3.033 3.033 0 0 0-1.367.248 2.18 2.18 0 0 0-1.02.925 1.98 1.98 0 0 0-.226 1.092 2.148 2.148 0 0 0 .382 1.05c.25.357.599.634.963.874s.749.447 1.104.7c.16.113.322.24.515.277a.49.49 0 0 0 .289-.025.366.366 0 0 0 .12-.084.315.315 0 0 0 .073-.126.345.345 0 0 0 .007-.153.531.531 0 0 0-.05-.147c-.045-.092-.11-.174-.167-.26-.16-.247-.248-.533-.344-.811-.087-.251-.182-.5-.235-.76-.053-.261-.06-.537.027-.788.108-.312.357-.562.647-.721.29-.159.618-.234.946-.272.247-.03.496-.04.744-.03z&quot; fill=&quot;#280b0b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;square&quot; stroke-opacity=&quot;.926&quot;/&gt;
+  &lt;!-- right eye --&gt;
+  &lt;circle cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+  &lt;!-- left eye --&gt;
+  &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+  &lt;/svg&gt;
+
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-css&quot;&gt;
+  .face .eyebrow {
+    transition: 0.3s ease-out;
+    transform: translateY(0px);
+
+  }
+  .face:hover .eyebrow {
+    transition: 0.3s ease-out;
+    transform: translateY(-3px);
+  }
+
+ &lt;/code&gt;
+ &lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;/h3&gt;
+
+&lt;p&gt;I was originally thinking of writing about 12 faces in one post, but one emoji at a time is clearly the way to go since so much learning happens with each one. The main thing I have found is that getting this first face to be easily authorable in an SVG document takes a few techniques.&lt;/p&gt;
+
+&lt;p&gt;It has occurred to me that it would be cool to reduce the size of these and show how they might be used inline with some text. If you’d like to see how I’d do that, let me know.&lt;/p&gt;
+
+&lt;p&gt;I hope you’ve found this helpful. In upcoming posts, we’ll take a look at a few other emojis, how they look in code, and how they can be animated.&lt;/p&gt;</content><author><name></name></author><summary type="html">The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.</summary></entry><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="http://localhost:4000/svg/images/2019/09/04/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-04T00:00:00-04:00</published><updated>2019-09-04T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/09/04/svg-omg</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/09/04/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;I was planning to write today about looking at SVG code within some facial expressions I drew up in Inkscape, but that will have to wait. Upon trying the SVG optimization tool known as  &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt;, I realized I had to write about this first!&lt;/p&gt;
 
@@ -61,7 +247,7 @@
   &lt;li&gt;In addition to the online version I used, there is an offline version with additional features.&lt;/li&gt;
   &lt;li&gt;There are tons of settings that I recommend experimenting with.&lt;/li&gt;
   &lt;li&gt;For those of you interested in a CLI tool, try SVGO.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Where coding meets cartooning: Facial Expressions with SVGs</title><link href="/svg/images/2019/09/03/facial-expressions-1.html" rel="alternate" type="text/html" title="Where coding meets cartooning&amp;#58; Facial Expressions with SVGs" /><published>2019-09-03T00:00:00-04:00</published><updated>2019-09-03T00:00:00-04:00</updated><id>/svg/images/2019/09/03/facial-expressions-1</id><content type="html" xml:base="/svg/images/2019/09/03/facial-expressions-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Where coding meets cartooning: Facial Expressions with SVGs</title><link href="http://localhost:4000/svg/images/2019/09/03/facial-expressions-1.html" rel="alternate" type="text/html" title="Where coding meets cartooning&amp;#58; Facial Expressions with SVGs" /><published>2019-09-03T00:00:00-04:00</published><updated>2019-09-03T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/09/03/facial-expressions-1</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/09/03/facial-expressions-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;In our last tutorial, we looked at how to draw a simple emoji-like SVG face by adding a circle, two ellipses, and paths and looking at their various attributes. In this tutorial, we’ll investigate how other emoji-like expressions look as SVG code.&lt;/p&gt;
 
@@ -145,7 +331,7 @@
   &lt;li&gt;The viewBox is the SVG “window” and its scale is relative to the art&lt;/li&gt;
   &lt;li&gt;Without width and height, the SVG will expand to fit the width of the browser or device&lt;/li&gt;
   &lt;li&gt;The properties of an SVG can be captured in CSS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">iPhone X landscape and the notch</title><link href="/css/mobile/2019/08/28/notch.html" rel="alternate" type="text/html" title="iPhone X landscape and the notch" /><published>2019-08-28T00:00:00-04:00</published><updated>2019-08-28T00:00:00-04:00</updated><id>/css/mobile/2019/08/28/notch</id><content type="html" xml:base="/css/mobile/2019/08/28/notch.html">&lt;p&gt;So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">iPhone X landscape and the notch</title><link href="http://localhost:4000/css/mobile/2019/08/28/notch.html" rel="alternate" type="text/html" title="iPhone X landscape and the notch" /><published>2019-08-28T00:00:00-04:00</published><updated>2019-08-28T00:00:00-04:00</updated><id>http://localhost:4000/css/mobile/2019/08/28/notch</id><content type="html" xml:base="http://localhost:4000/css/mobile/2019/08/28/notch.html">&lt;p&gt;So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.&lt;/p&gt;
 
 &lt;p&gt;I will admit that I got into a little “alligator wrestling” with CSS, trying to get it to span the full width of the page by moving margins. I thought initially it was something in the CSS, so I gradually commented it all out. The issue was still there.&lt;/p&gt;
 
@@ -172,7 +358,7 @@
  &lt;/code&gt;
  &lt;/pre&gt;
 
-&lt;p&gt;More info on the notch and CSS can be found in &lt;a href=&quot;https://css-tricks.com/the-notch-and-css/&quot;&gt;this article&lt;/a&gt; on CSS Tricks by Chris Coiyer.&lt;/p&gt;</content><author><name></name></author><summary type="html">So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;More info on the notch and CSS can be found in &lt;a href=&quot;https://css-tricks.com/the-notch-and-css/&quot;&gt;this article&lt;/a&gt; on CSS Tricks by Chris Coiyer.&lt;/p&gt;</content><author><name></name></author><summary type="html">So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG’s contain many different types of child elements, including circles, ellipses, and linear paths.&lt;/p&gt;
 
@@ -298,7 +484,7 @@
 
 &lt;h3 id=&quot;next-up&quot;&gt;Next up&lt;/h3&gt;
 
-&lt;p&gt;In our next few tutorials, I will go over how to adjust the face expression wtih different SVG techniques and how to make the face change expressions with the click of a mouse.&lt;/p&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="/svg/images/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>/svg/images/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="/svg/images/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;In our next few tutorials, I will go over how to adjust the face expression wtih different SVG techniques and how to make the face change expressions with the click of a mouse.&lt;/p&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG graphics have been around since 1998, and at this point have gained a substantial amount of &lt;a href=&quot;https://caniuse.com/#feat=svg&quot; target=&quot;_blank&quot;&gt;browser support&lt;/a&gt;. They also lend themselves to animation and are naturally responsive.&lt;/p&gt;
 
@@ -483,7 +669,7 @@
   &lt;li&gt;The viewBox is the SVG “window” and its scale is relative to the art&lt;/li&gt;
   &lt;li&gt;Without width and height, the SVG will expand to fit the width of the browser or device&lt;/li&gt;
   &lt;li&gt;The properties of an SVG can be captured in CSS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Intro to SVGs</title><link href="/svg/images/2019/08/06/svg-intro.html" rel="alternate" type="text/html" title="Intro to SVGs" /><published>2019-08-06T00:00:00-04:00</published><updated>2019-08-06T00:00:00-04:00</updated><id>/svg/images/2019/08/06/svg-intro</id><content type="html" xml:base="/svg/images/2019/08/06/svg-intro.html">&lt;p&gt;The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Intro to SVGs</title><link href="http://localhost:4000/svg/images/2019/08/06/svg-intro.html" rel="alternate" type="text/html" title="Intro to SVGs" /><published>2019-08-06T00:00:00-04:00</published><updated>2019-08-06T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/06/svg-intro</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/06/svg-intro.html">&lt;p&gt;The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.&lt;/p&gt;
 
 &lt;p&gt;Having first been developed in 1999, SVG graphics were not always well supported in browsers. that said, they have now have developed a &lt;a href=&quot;https://caniuse.com/#feat=svg&quot;&gt;robust amount of browser support&lt;/a&gt;. In this post, we will cover SVG fundamentals that will be helpful for ensuing tutorials.&lt;/p&gt;
 
@@ -581,7 +767,9 @@
   &lt;li&gt;&lt;code&gt;background-position&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;While backgrounds are not the only solution for this, I could see the background image method being useful for creating repeating images or patterns. For instance, I could theoretically use a single mountain image and then use &lt;code&gt;background-repeat: repeat-x&lt;/code&gt; to create some repeating mountains under the dragon. (And I just may do it!)&lt;/p&gt;
+&lt;p&gt;Note that &lt;code&gt;background-repeat&lt;/code&gt; only works if &lt;code&gt;background-size&lt;/code&gt; is not set to a percentage. While I was considering making the clouds repeat in my dragon banner, I dropped this idea in favor of using a percentage for &lt;code&gt;background-size&lt;/code&gt; so that the clouds would scale based on browser width.&lt;/p&gt;
+
+&lt;p&gt;While backgrounds are not the only solution for this, I could see the background image method being useful for creating repeating images or patterns. For instance, I could theoretically use a single mountain image and then use &lt;code&gt;background-repeat: repeat-x&lt;/code&gt; to create some repeating mountains under the dragon.&lt;/p&gt;
 
 &lt;h3 id=&quot;inline-svgs&quot;&gt;Inline SVG’s&lt;/h3&gt;
 
@@ -613,7 +801,7 @@
   &lt;li&gt;SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/li&gt;
   &lt;li&gt;SVG code can either exist in its own file as the file’s root element or they can exist within an HTML document.&lt;/li&gt;
   &lt;li&gt;SVG’s respond to CSS.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</summary></entry><entry><title type="html">My journey with Jekyll</title><link href="/jekyll/2019/08/05/jekyll-intro-2.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-05T19:33:00-04:00</published><updated>2019-08-05T19:33:00-04:00</updated><id>/jekyll/2019/08/05/jekyll-intro-2</id><content type="html" xml:base="/jekyll/2019/08/05/jekyll-intro-2.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</summary></entry><entry><title type="html">My journey with Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/05/jekyll-intro-2.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-05T19:33:00-04:00</published><updated>2019-08-05T19:33:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/05/jekyll-intro-2</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/05/jekyll-intro-2.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
 
 &lt;p&gt;This site is published with Jekyll, a static site generator. For more info on Jekyll, go to the post right before this one.&lt;/p&gt;
 
@@ -693,7 +881,7 @@
 &lt;p&gt;I would be remiss if I did not mention how helpful it has been to learn some &lt;a href=&quot;https://shopify.github.io/liquid/&quot; target=&quot;_blank&quot;&gt;Liquid&lt;/a&gt;, the programming language used for Jekyll templates.&lt;/p&gt;
 &lt;h4 id=&quot;closing-remarks&quot;&gt;Closing remarks&lt;/h4&gt;
 
-&lt;p&gt;It has been a very interesting week getting started with Jekyll. I look forward to posting additional thoughts as I get to know the tool more.&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducing Jekyll</summary></entry><entry><title type="html">Intro to Jekyll</title><link href="/jekyll/2019/08/04/jekyll-intro.html" rel="alternate" type="text/html" title="Intro to Jekyll" /><published>2019-08-04T19:32:00-04:00</published><updated>2019-08-04T19:32:00-04:00</updated><id>/jekyll/2019/08/04/jekyll-intro</id><content type="html" xml:base="/jekyll/2019/08/04/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
+&lt;p&gt;It has been a very interesting week getting started with Jekyll. I look forward to posting additional thoughts as I get to know the tool more.&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducing Jekyll</summary></entry><entry><title type="html">Intro to Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/04/jekyll-intro.html" rel="alternate" type="text/html" title="Intro to Jekyll" /><published>2019-08-04T19:32:00-04:00</published><updated>2019-08-04T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/04/jekyll-intro</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/04/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
 
 &lt;p&gt;This site is published with Jekyll, a static site generator built in Ruby that auto-publishes raw HTML files, taking care of a lot of repetition and granular markup that you would otherwise have to do by hand if you wanted to create a static HTML site.&lt;/p&gt;
 
