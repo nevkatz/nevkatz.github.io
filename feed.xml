@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-05T10:04:45-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="http://localhost:4000/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-05T10:09:23-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an emoji with clean SVG code</title><link href="/svg/images/2019/09/05/thoughful-face.html" rel="alternate" type="text/html" title="Creating an emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/svg/images/2019/09/05/thoughful-face</id><content type="html" xml:base="/svg/images/2019/09/05/thoughful-face.html">&lt;p&gt;The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.&lt;/p&gt;
 
 &lt;p&gt;In this post, we’ll look at how it was optimized and how this simple animation was added to it.&lt;/p&gt;
 
@@ -127,7 +127,23 @@
   -webkit-transform: translateY(-3px);
 }
 .face.surprised .eyebrow {
+  animation: surpriseme 1s normal ease-in-out;
+}
+@keyframes .surprised {
+  0% {
+      transform: translateY(-3px);
+      -webkit-transform: translateY(-3px);
+    
+  }
+  50% {
+      transform: translateY(-3px);
+      -webkit-transform: translateY(-3px);
 
+  }
+  100% {
+      transform: translateY(-3px);
+     -webkit-transform: translateY(-3px);
+  }
 }
 &lt;/style&gt;
 
@@ -140,7 +156,7 @@ function surprise(el) {
 function calmdown(el) {
   window.setTimeout(function() {
       el.className.baseVal = 'face';
-},1000);
+},2000);
 
 }
 &lt;/script&gt;
@@ -207,7 +223,7 @@ function calmdown(el) {
 
 &lt;p&gt;It has occurred to me that it would be cool to reduce the size of these and show how they might be used inline with some text. If you’d like to see how I’d do that, let me know.&lt;/p&gt;
 
-&lt;p&gt;I hope you’ve found this helpful. In upcoming posts, we’ll take a look at a few other emojis, how they look in code, and how they can be animated.&lt;/p&gt;</content><author><name></name></author><summary type="html">The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.</summary></entry><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="http://localhost:4000/svg/images/2019/09/04/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-04T00:00:00-04:00</published><updated>2019-09-04T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/09/04/svg-omg</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/09/04/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;I hope you’ve found this helpful. In upcoming posts, we’ll take a look at a few other emojis, how they look in code, and how they can be animated.&lt;/p&gt;</content><author><name></name></author><summary type="html">The amount of knowledge that can come out of a single emoji is astounding. That is why I decided to create this “mildly surprised” SVG emoji to see what I could glean from the experience. Hover the cursor or tap the face and it will get even more surprised.</summary></entry><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="/svg/images/2019/09/04/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-04T00:00:00-04:00</published><updated>2019-09-04T00:00:00-04:00</updated><id>/svg/images/2019/09/04/svg-omg</id><content type="html" xml:base="/svg/images/2019/09/04/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;I was planning to write today about looking at SVG code within some facial expressions I drew up in Inkscape, but that will have to wait. Upon trying the SVG optimization tool known as  &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt;, I realized I had to write about this first!&lt;/p&gt;
 
@@ -270,7 +286,7 @@ function calmdown(el) {
   &lt;li&gt;In addition to the online version I used, there is an offline version with additional features.&lt;/li&gt;
   &lt;li&gt;There are tons of settings that I recommend experimenting with.&lt;/li&gt;
   &lt;li&gt;For those of you interested in a CLI tool, try SVGO.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Where coding meets cartooning: Facial Expressions with SVGs</title><link href="http://localhost:4000/svg/images/2019/09/03/facial-expressions-1.html" rel="alternate" type="text/html" title="Where coding meets cartooning&amp;#58; Facial Expressions with SVGs" /><published>2019-09-03T00:00:00-04:00</published><updated>2019-09-03T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/09/03/facial-expressions-1</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/09/03/facial-expressions-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Where coding meets cartooning: Facial Expressions with SVGs</title><link href="/svg/images/2019/09/03/facial-expressions-1.html" rel="alternate" type="text/html" title="Where coding meets cartooning&amp;#58; Facial Expressions with SVGs" /><published>2019-09-03T00:00:00-04:00</published><updated>2019-09-03T00:00:00-04:00</updated><id>/svg/images/2019/09/03/facial-expressions-1</id><content type="html" xml:base="/svg/images/2019/09/03/facial-expressions-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;In our last tutorial, we looked at how to draw a simple emoji-like SVG face by adding a circle, two ellipses, and paths and looking at their various attributes. In this tutorial, we’ll investigate how other emoji-like expressions look as SVG code.&lt;/p&gt;
 
@@ -354,7 +370,7 @@ function calmdown(el) {
   &lt;li&gt;The viewBox is the SVG “window” and its scale is relative to the art&lt;/li&gt;
   &lt;li&gt;Without width and height, the SVG will expand to fit the width of the browser or device&lt;/li&gt;
   &lt;li&gt;The properties of an SVG can be captured in CSS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">iPhone X landscape and the notch</title><link href="http://localhost:4000/css/mobile/2019/08/28/notch.html" rel="alternate" type="text/html" title="iPhone X landscape and the notch" /><published>2019-08-28T00:00:00-04:00</published><updated>2019-08-28T00:00:00-04:00</updated><id>http://localhost:4000/css/mobile/2019/08/28/notch</id><content type="html" xml:base="http://localhost:4000/css/mobile/2019/08/28/notch.html">&lt;p&gt;So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">iPhone X landscape and the notch</title><link href="/css/mobile/2019/08/28/notch.html" rel="alternate" type="text/html" title="iPhone X landscape and the notch" /><published>2019-08-28T00:00:00-04:00</published><updated>2019-08-28T00:00:00-04:00</updated><id>/css/mobile/2019/08/28/notch</id><content type="html" xml:base="/css/mobile/2019/08/28/notch.html">&lt;p&gt;So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.&lt;/p&gt;
 
 &lt;p&gt;I will admit that I got into a little “alligator wrestling” with CSS, trying to get it to span the full width of the page by moving margins. I thought initially it was something in the CSS, so I gradually commented it all out. The issue was still there.&lt;/p&gt;
 
@@ -381,7 +397,7 @@ function calmdown(el) {
  &lt;/code&gt;
  &lt;/pre&gt;
 
-&lt;p&gt;More info on the notch and CSS can be found in &lt;a href=&quot;https://css-tricks.com/the-notch-and-css/&quot;&gt;this article&lt;/a&gt; on CSS Tricks by Chris Coiyer.&lt;/p&gt;</content><author><name></name></author><summary type="html">So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;More info on the notch and CSS can be found in &lt;a href=&quot;https://css-tricks.com/the-notch-and-css/&quot;&gt;this article&lt;/a&gt; on CSS Tricks by Chris Coiyer.&lt;/p&gt;</content><author><name></name></author><summary type="html">So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="/svg/images/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/svg/images/2019/08/08/circle-to-face</id><content type="html" xml:base="/svg/images/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG’s contain many different types of child elements, including circles, ellipses, and linear paths.&lt;/p&gt;
 
@@ -507,7 +523,7 @@ function calmdown(el) {
 
 &lt;h3 id=&quot;next-up&quot;&gt;Next up&lt;/h3&gt;
 
-&lt;p&gt;In our next few tutorials, I will go over how to adjust the face expression wtih different SVG techniques and how to make the face change expressions with the click of a mouse.&lt;/p&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;In our next few tutorials, I will go over how to adjust the face expression wtih different SVG techniques and how to make the face change expressions with the click of a mouse.&lt;/p&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="/svg/images/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>/svg/images/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="/svg/images/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;SVG graphics have been around since 1998, and at this point have gained a substantial amount of &lt;a href=&quot;https://caniuse.com/#feat=svg&quot; target=&quot;_blank&quot;&gt;browser support&lt;/a&gt;. They also lend themselves to animation and are naturally responsive.&lt;/p&gt;
 
@@ -692,7 +708,7 @@ function calmdown(el) {
   &lt;li&gt;The viewBox is the SVG “window” and its scale is relative to the art&lt;/li&gt;
   &lt;li&gt;Without width and height, the SVG will expand to fit the width of the browser or device&lt;/li&gt;
   &lt;li&gt;The properties of an SVG can be captured in CSS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Intro to SVGs</title><link href="http://localhost:4000/svg/images/2019/08/06/svg-intro.html" rel="alternate" type="text/html" title="Intro to SVGs" /><published>2019-08-06T00:00:00-04:00</published><updated>2019-08-06T00:00:00-04:00</updated><id>http://localhost:4000/svg/images/2019/08/06/svg-intro</id><content type="html" xml:base="http://localhost:4000/svg/images/2019/08/06/svg-intro.html">&lt;p&gt;The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Intro to SVGs</title><link href="/svg/images/2019/08/06/svg-intro.html" rel="alternate" type="text/html" title="Intro to SVGs" /><published>2019-08-06T00:00:00-04:00</published><updated>2019-08-06T00:00:00-04:00</updated><id>/svg/images/2019/08/06/svg-intro</id><content type="html" xml:base="/svg/images/2019/08/06/svg-intro.html">&lt;p&gt;The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.&lt;/p&gt;
 
 &lt;p&gt;Having first been developed in 1999, SVG graphics were not always well supported in browsers. that said, they have now have developed a &lt;a href=&quot;https://caniuse.com/#feat=svg&quot;&gt;robust amount of browser support&lt;/a&gt;. In this post, we will cover SVG fundamentals that will be helpful for ensuing tutorials.&lt;/p&gt;
 
@@ -824,7 +840,7 @@ function calmdown(el) {
   &lt;li&gt;SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/li&gt;
   &lt;li&gt;SVG code can either exist in its own file as the file’s root element or they can exist within an HTML document.&lt;/li&gt;
   &lt;li&gt;SVG’s respond to CSS.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</summary></entry><entry><title type="html">My journey with Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/05/jekyll-intro-2.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-05T19:33:00-04:00</published><updated>2019-08-05T19:33:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/05/jekyll-intro-2</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/05/jekyll-intro-2.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</summary></entry><entry><title type="html">My journey with Jekyll</title><link href="/jekyll/2019/08/05/jekyll-intro-2.html" rel="alternate" type="text/html" title="My journey with Jekyll" /><published>2019-08-05T19:33:00-04:00</published><updated>2019-08-05T19:33:00-04:00</updated><id>/jekyll/2019/08/05/jekyll-intro-2</id><content type="html" xml:base="/jekyll/2019/08/05/jekyll-intro-2.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
 
 &lt;p&gt;This site is published with Jekyll, a static site generator. For more info on Jekyll, go to the post right before this one.&lt;/p&gt;
 
@@ -904,7 +920,7 @@ function calmdown(el) {
 &lt;p&gt;I would be remiss if I did not mention how helpful it has been to learn some &lt;a href=&quot;https://shopify.github.io/liquid/&quot; target=&quot;_blank&quot;&gt;Liquid&lt;/a&gt;, the programming language used for Jekyll templates.&lt;/p&gt;
 &lt;h4 id=&quot;closing-remarks&quot;&gt;Closing remarks&lt;/h4&gt;
 
-&lt;p&gt;It has been a very interesting week getting started with Jekyll. I look forward to posting additional thoughts as I get to know the tool more.&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducing Jekyll</summary></entry><entry><title type="html">Intro to Jekyll</title><link href="http://localhost:4000/jekyll/2019/08/04/jekyll-intro.html" rel="alternate" type="text/html" title="Intro to Jekyll" /><published>2019-08-04T19:32:00-04:00</published><updated>2019-08-04T19:32:00-04:00</updated><id>http://localhost:4000/jekyll/2019/08/04/jekyll-intro</id><content type="html" xml:base="http://localhost:4000/jekyll/2019/08/04/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
+&lt;p&gt;It has been a very interesting week getting started with Jekyll. I look forward to posting additional thoughts as I get to know the tool more.&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducing Jekyll</summary></entry><entry><title type="html">Intro to Jekyll</title><link href="/jekyll/2019/08/04/jekyll-intro.html" rel="alternate" type="text/html" title="Intro to Jekyll" /><published>2019-08-04T19:32:00-04:00</published><updated>2019-08-04T19:32:00-04:00</updated><id>/jekyll/2019/08/04/jekyll-intro</id><content type="html" xml:base="/jekyll/2019/08/04/jekyll-intro.html">&lt;h4 id=&quot;introducing-jekyll&quot;&gt;Introducing Jekyll&lt;/h4&gt;
 
 &lt;p&gt;This site is published with Jekyll, a static site generator built in Ruby that auto-publishes raw HTML files, taking care of a lot of repetition and granular markup that you would otherwise have to do by hand if you wanted to create a static HTML site.&lt;/p&gt;
 
