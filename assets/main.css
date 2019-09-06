@@ -558,8 +558,9 @@ footer .footer-col p {
 
 /* site header */
 header.site-header {
-  border-top-color: #272d39;
-  background-color: #272d39;
+  border-top-color: #005a84;
+  background-color: #00486a;
+  /*#00486a */
   border-bottom: 0px solid transparent; }
   header.site-header a.site-title,
   header.site-header a,
