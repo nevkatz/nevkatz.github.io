@@ -570,7 +570,7 @@ header.site-header {
     transition: 0.3s ease; }
   header.site-header a:hover,
   header.site-header nav.site-nav a.page-link:hover {
-    color: #9fc9f2;
+    color: #04afff;
     transition: 0.3s ease; }
 
 /* page content */
@@ -603,7 +603,7 @@ h2.post-list-heading {
 
 h2.post-list-heading,
 h1.post-title {
-  color: #543647; }
+  color: #00486a; }
 
 .post-meta {
   color: #684a5b;
