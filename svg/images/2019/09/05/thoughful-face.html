@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/css/prism.css">
   <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin's Dev Pages" /></head>
-<body><header class="site-header" role="banner">
+<body ><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">Nevin&#39;s Dev Pages</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -66,17 +66,22 @@
 
 <p>The emoji to which I am referring is below. Give it a tap or a click to see what happens.</p>
 
-<div class="image-container">
-<svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
-  <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529" />
+<div class="image-container"><svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
+  <!-- the shape of the face -->
+   <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529" />
+  <!-- right eyebrow -->
   <path class="eyebrow" d="M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
+  <!-- left eyebrow -->
   <path class="eyebrow" d="M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
+  <!-- nose -->
   <path d="M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
+  <!-- the mouth -->
   <path d="M20.842 27.726a3.805 3.805 0 0 0-2.408-.99 3.033 3.033 0 0 0-1.367.248 2.18 2.18 0 0 0-1.02.925 1.98 1.98 0 0 0-.226 1.092 2.148 2.148 0 0 0 .382 1.05c.25.357.599.634.963.874s.749.447 1.104.7c.16.113.322.24.515.277a.49.49 0 0 0 .289-.025.366.366 0 0 0 .12-.084.315.315 0 0 0 .073-.126.345.345 0 0 0 .007-.153.531.531 0 0 0-.05-.147c-.045-.092-.11-.174-.167-.26-.16-.247-.248-.533-.344-.811-.087-.251-.182-.5-.235-.76-.053-.261-.06-.537.027-.788.108-.312.357-.562.647-.721.29-.159.618-.234.946-.272.247-.03.496-.04.744-.03z" fill="#280b0b" stroke="#000" stroke-width=".529" stroke-linecap="square" stroke-opacity=".926" />
+  <!-- right eye -->
   <circle cx="24.064" cy="13.095" r="1.587" />
+  <!-- left eye -->
   <circle cx="14.27" cy="13.095" r="1.587" />
-</svg>
-</div>
+  </svg></div>
 
 <p>In comparison to my <a href="/svg/images/2019/08/08/circle-to-face.html">earlier face</a>, which I created via coding instead of drawing, I created this one in Inkscape and optimized the code with SVG OMG. So it is a bit more expressive and detailed with eyebrows, a nose, and a more nuanced mouth.</p>
 
@@ -159,15 +164,14 @@
   <li>You’ll see the code for just the HTML and SVG markup below. After downloading the file from SVG OMG  added a class of “face” to the SVG and a class of “eyebrow” to each eyebrow path, which I will use for the animation.</li>
   <li>I also have an “ontouchstart” listener on the main SVG element, which is absolutely essential for making it respond on mobile Safari.</li>
   <li>You’ll from viewing the source see that we are “inlining” the SVG, or putting the code right into the HTML, rather than using an <code>img</code> element or a <code>background</code> property. This is so we can animate its sub-elements — in this case, the two eyebrows.</li>
-  <li>The CSS for the animation is further down.</li>
+  <li>The same svg markup is paired with the CSS further down.</li>
 </ul>
 
 <pre>
  <code class="language-markup">
-  <script type="prism-html-markup">
-  <svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
+  <script type="prism-html-markup"><svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
   <!-- the shape of the face -->
-  <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529"/>
+   <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529"/>
   <!-- right eyebrow -->
   <path class="eyebrow" d="M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square"/>
   <!-- left eyebrow -->
@@ -180,34 +184,30 @@
   <circle cx="24.064" cy="13.095" r="1.587"/>
   <!-- left eye -->
   <circle cx="14.27" cy="13.095" r="1.587"/>
-  </svg>
-  </script>
+  </svg></script>
  </code>
  </pre>
 
-<p>Here is the face again so you can see it right after the code.</p>
+<p>Here is the face again so you can see it right after the svg markup.</p>
 
-<div class="image-container">
-  <svg class="face" ontouchstart="" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
-
-  <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529" />
-
+<div class="image-container"><svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
+  <!-- the shape of the face -->
+   <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529" />
+  <!-- right eyebrow -->
   <path class="eyebrow" d="M28.57 10.592a3.767 3.767 0 0 0-1.877-1.528c-.775-.285-1.63-.305-2.443-.163a6.348 6.348 0 0 0-1.11.302" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
-
+  <!-- left eyebrow -->
   <path class="eyebrow" d="M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
-
+  <!-- nose -->
   <path d="M20.109 21.608a2.22 2.22 0 0 0 .584-1.133 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164" fill="none" stroke="#000" stroke-width=".529" stroke-linecap="square" />
-
+  <!-- the mouth -->
   <path d="M20.842 27.726a3.805 3.805 0 0 0-2.408-.99 3.033 3.033 0 0 0-1.367.248 2.18 2.18 0 0 0-1.02.925 1.98 1.98 0 0 0-.226 1.092 2.148 2.148 0 0 0 .382 1.05c.25.357.599.634.963.874s.749.447 1.104.7c.16.113.322.24.515.277a.49.49 0 0 0 .289-.025.366.366 0 0 0 .12-.084.315.315 0 0 0 .073-.126.345.345 0 0 0 .007-.153.531.531 0 0 0-.05-.147c-.045-.092-.11-.174-.167-.26-.16-.247-.248-.533-.344-.811-.087-.251-.182-.5-.235-.76-.053-.261-.06-.537.027-.788.108-.312.357-.562.647-.721.29-.159.618-.234.946-.272.247-.03.496-.04.744-.03z" fill="#280b0b" stroke="#000" stroke-width=".529" stroke-linecap="square" stroke-opacity=".926" />
-
+  <!-- right eye -->
   <circle cx="24.064" cy="13.095" r="1.587" />
-
+  <!-- left eye -->
   <circle cx="14.27" cy="13.095" r="1.587" />
-  </svg>
-</div>
+  </svg></div>
 
-<style>
-.face .eyebrow {
+<style>.face .eyebrow {
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
   transform: translateY(0px);
@@ -219,8 +219,7 @@
   -webkit-transition: 0.3s ease-out;
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
-}
-</style>
+}</style>
 
 <h4 id="animating-with-css">Animating with CSS</h4>
 
@@ -240,8 +239,7 @@
 <div id="section1">
 <pre>
  <code class="language-markup">
-  <script type="prism-html-markup">
-  <svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
+  <script type="prism-html-markup"><svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
   <!-- the shape of the face -->
    <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529"/>
   <!-- right eyebrow -->
@@ -256,17 +254,14 @@
   <circle cx="24.064" cy="13.095" r="1.587"/>
   <!-- left eye -->
   <circle cx="14.27" cy="13.095" r="1.587"/>
-  </svg>
-
-  </script>
+  </svg></script>
  </code>
  </pre>
 </div>
 
 <div id="section2">
 <pre>
- <code class="language-css">
- .face .eyebrow {
+ <code class="language-css">.face .eyebrow {
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
   transform: translateY(0px);
@@ -278,9 +273,7 @@
   -webkit-transition: 0.3s ease-out;
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
-}
-
- </code>
+}</code>
  </pre>
 </div>
 
