@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146443473-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146443473-1');
+</script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Optimizing an SVG Image with SVG OMG | Nevin’s Dev Pages</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Optimizing an SVG Image with SVG OMG" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Background" />
+<meta property="og:description" content="Background" />
+<link rel="canonical" href="/2019/09/04/svg-omg.html" />
+<meta property="og:url" content="/2019/09/04/svg-omg.html" />
+<meta property="og:site_name" content="Nevin’s Dev Pages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-04T00:00:00-04:00" />
+<script type="application/ld+json">
+{"description":"Background","@type":"BlogPosting","url":"/2019/09/04/svg-omg.html","headline":"Optimizing an SVG Image with SVG OMG","dateModified":"2019-09-04T00:00:00-04:00","datePublished":"2019-09-04T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2019/09/04/svg-omg.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/css/prism.css">
+  <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin's Dev Pages" /></head>
+<body ><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nevin&#39;s Dev Pages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <!--<a class="page-link" href="/about/">About</a><a class="page-link" href="/index.html">Nevin&#39;s Dev Pages</a>-->
+           <a class="page-link" href="/about">About</a>
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Optimizing an SVG Image with SVG OMG</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-09-04T00:00:00-04:00" itemprop="datePublished">Sep 4, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="background">Background</h3>
+
+<p>I was planning to write today about looking at SVG code within some facial expressions I drew up in Inkscape, but that will have to wait. Upon trying the SVG optimization tool known as  <a href="https://jakearchibald.github.io/svgomg/" target="_blank">SVG OMG</a>, I realized I had to write about this first!</p>
+
+<p>Vector graphics applications like Inkscape and Illustrator are terrific for creating SVG images, but the resulting code can be bloated with a lot of unnecessary code (I’m looking at you, metadata.) Optimizing your SVG can make it a million times more readable and reduce its overall size tremendously, but getting your optimization settings just right can be tricky.</p>
+
+<p>Fortunately, the free online tool <a href="https://jakearchibald.github.io/svgomg/" target="_blank">SVG OMG</a> has you covered if your export settings aren’t doing the whole job. (And even if they are, this is worth checking out.) In this post, we’ll look at SVG OMG and compare the memory size of the “before” image with that of the “after” image.</p>
+
+<h4 id="what-is-svg-omg">What is SVG OMG?</h4>
+
+<p>SVG OMG is an application maintained by Jake Archibald that is a GUI (Graphic User Interface) version of <a href="https://github.com/svg/svgo">svgo</a>, an SVG optimization tool. In addition to the online version I used, there is an offline version with additional features. It is a node.js tool, so it can be installed with the node package manager (npm).</p>
+
+<div class="section-separator"></div>
+
+<h3 id="diving-in">Diving in</h3>
+<h4 id="the-image">The Image</h4>
+
+<p>While the face in my <a href="/svg/images/2019/08/08/circle-to-face.html" target="_blank">circle to face</a> tutorial was drawn completely with code, I’ve drawn the faces below using the open source vector art application known as <a href="http://www.inkscape.org" target="_blank">Inkscape</a>.</p>
+
+<div class="image-container">
+<img src="/assets/images/faces/12-faces-omg.svg" />
+</div>
+
+<p>We’ll look at the SVG code of this image in an upcoming tutorial.</p>
+
+<p>Now what I have above is the optimized image. The off-the-shelf unoptimized image below that is directly generated by Inkscape has minimal to no discernable difference from its optimized counterpart above.</p>
+
+<div class="image-container">
+<img src="/assets/images/faces/12-faces-inkscape.svg" />
+</div>
+
+<h4 id="first-impressions-of-the-initial-file-in-a-text-editor">First Impressions of the Initial File in a Text Editor</h4>
+
+<p>But while the difference is at least mostly invisible to the human eye, the differences between the two show up in stark relief when both these images are opened in a text editor. Indeed I found that in the original image, the Inkscape-generated code had loads of unfamiliar, Inkscape-specific syntax, with many more lines of code that were hard to parse out, even by SVG standards. To be fair, some of this is due to the modern conveniences that Inkscape offers (ex. layers) but as with the layers and other niceties in a Photoshop file, I didn’t want all that in my final image. And most importantly for upcoming posts, I wanted the SVG code to be limited to only the essential syntax.</p>
+
+<p>I wanted to optimize the file, and I remembered the <a href="https://jakearchibald.github.io/svgomg/">SVG OMG</a> tool from <a href="http://syntax.fm">syntax.fm</a> episode with amazing SVG Expert and web developer extraordinaire <a href="https://www.sarasoueidan.com/">Sarah Soueidan</a>. (Thank you, Wes Bos and Scott Tolinski, for the terrific episode.)</p>
+
+<h4 id="file-size-comparison">File Size Comparison</h4>
+
+<p>So I uploaded my file to SVG OMG. While keeping the default settings, the application told me that SVG OMG reduced the file size from 20.14k to 4.22k — 20.93% of its original size. While the file sizes came out as larger after I downloaded them, the reduction was even more significant: 13KB compared with the original 99KB, or 13% of its original size.</p>
+
+<div class="callout">
+  Optimizing SVG's can remove Inkscape layers. Makes perfect sense but I didn't automatically think of it. In my case I didn't mind, but this may cause issues if you want to go back and edit your image. So hold on to those original files in case you want to go back to your layers. 
+</div>
+
+<h4 id="text-editor-comparison">Text Editor Comparison</h4>
+
+<p>Upon opening the file in Sublime Text and comparing it with the original file, I found that the extra unnecessary data was gone. The only code there was the code meant to render the image, so it was compact and more readable.</p>
+
+<p>Here is the <a href="/assets/images/faces/12-faces-inkscape.svg">original file</a> and the <a href="/assets/images/faces/12-faces-omg.svg">optimized file</a> in case you want to have a closer look. Predictably, similar elements across the twelve faces are grouped together, so I will be separating these faces into different SVG objects once we start taking a closer look at the code under the hood.</p>
+<h4 id="overall-impression">Overall Impression</h4>
+
+<p>After this experience, I will definitely be using SVG OMG as my go-to for SVG image optimization, and might even check out its older command-line cousin, SVGO.</p>
+
+<div class="section-separator"></div>
+
+<h3 id="takeaways-and-additional-notes">Takeaways and Additional Notes</h3>
+
+<ul>
+  <li>SVG OMG is a terrific tool for optimizing images created with a graphics editor.</li>
+  <li>In addition to the online version I used, there is an offline version with additional features.</li>
+  <li>There are tons of settings that I recommend experimenting with.</li>
+  <li>For those of you interested in a CLI tool, try SVGO.</li>
+</ul>
+
+
+  </div><div id="disqus_thread"></div>
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://nevkatz.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/2019/09/04/svg-omg.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Nevin&#39;s Dev Pages</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"><!-- Nevin&#39;s Dev Pages --></li><li><a class="u-email" href="mailto:nevkatz@gmail.com">nevkatz@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">nevkatz</span></a></li><li><a href="https://www.twitter.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">nevkatz</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I write about web and app development.</p>
+      </div>
+
+      
+    </div>
+   
+
+  </div>
+   <div id="copyright">
+    <p>Copyright &copy; 2019 Nevin Katz. All Rights Reserved.</p>
+   </div>
+
+</footer>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

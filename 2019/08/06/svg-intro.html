@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146443473-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146443473-1');
+</script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Intro to SVGs | Nevin’s Dev Pages</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Intro to SVGs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web." />
+<meta property="og:description" content="The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web." />
+<link rel="canonical" href="/2019/08/06/svg-intro.html" />
+<meta property="og:url" content="/2019/08/06/svg-intro.html" />
+<meta property="og:site_name" content="Nevin’s Dev Pages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-08-06T00:00:00-04:00" />
+<script type="application/ld+json">
+{"description":"The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.","@type":"BlogPosting","url":"/2019/08/06/svg-intro.html","headline":"Intro to SVGs","dateModified":"2019-08-06T00:00:00-04:00","datePublished":"2019-08-06T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2019/08/06/svg-intro.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/css/prism.css">
+  <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin's Dev Pages" /></head>
+<body ><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nevin&#39;s Dev Pages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <!--<a class="page-link" href="/about/">About</a><a class="page-link" href="/index.html">Nevin&#39;s Dev Pages</a>-->
+           <a class="page-link" href="/about">About</a>
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Intro to SVGs</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-08-06T00:00:00-04:00" itemprop="datePublished">Aug 6, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</p>
+
+<p>Having first been developed in 1999, SVG graphics were not always well supported in browsers. that said, they have now have developed a <a href="https://caniuse.com/#feat=svg">robust amount of browser support</a>. In this post, we will cover SVG fundamentals that will be helpful for ensuing tutorials.</p>
+
+<h3 id="overview">Overview</h3>
+
+<ul>
+  <li>What is an SVG?</li>
+  <li>Creating and editing an SVG</li>
+  <li>Standalone SVGs versus SVGs embedded in webpages</li>
+  <li>SVG’s, CSS, and JS</li>
+</ul>
+
+<h3 id="what-is-an-svg">What is an SVG?</h3>
+
+<h4 id="svgs-maintain-their-sharpness-regardless-of-their-size">SVG’s maintain their sharpness regardless of their size.</h4>
+
+<p>Because SVG’s are made up of lines and shapes drawn mathematically, they do not lose quality when magnified like their pixel-based counterparts that are coded in bitmaps, such as JPG, PNG, and GIF. Look at how this SVG is rendered. Compare this SVG to a PNG graphic.</p>
+
+<p>(Image examples)</p>
+
+<p>Now let’s enlarge them both. Notice that the SVG doesn’t lose any quality.</p>
+
+<p>(Image examples)</p>
+
+<h4 id="svgs-are-made-up-of-one-or-more-shapes-drawn-mathematically-in-code">SVG’s are made up of one or more shapes drawn mathematically in code.</h4>
+
+<p>You will see some code samples in the SVG tutorials code examples for drawing SVG graphics. The code is actually a set of commands for various types of lines that fit to particular types of math functions, such as linear, quadratic, and cubic, as well as shapes, such as circles.</p>
+
+<h3 id="creating-and-editing-svgs">Creating and Editing SVGs</h3>
+
+<h4 id="image-editors-like-adobe-illustrator-and-inkscape-can-output-svg-graphics">Image Editors like Adobe Illustrator and Inkscape can output SVG graphics.</h4>
+
+<p>Image applications like Illustrator and Inkscape can output SVG graphics that maintain color, layer order, positioning, and other properties. In many cases, meta data is left in the file that can be stripped out either via export settings or after the fact in a text editor. Just be careful about the settings and make sure you test when you open them up in a browser.</p>
+
+<h4 id="svgs-can-be-opened-in-both-a-browser-window-and-a-text-editor">SVG’s can be opened in both a browser window and a text editor.</h4>
+
+<p>Because SVG’s are drawn in code, they can be opened up in a text Editor like TextEdit, Notepad, TextWrangler or Sublime Text, and edited directly there.</p>
+
+<h4 id="standalone-svg-files">Standalone SVG files</h4>
+
+<p>While my SVG tutorials mainly involve SVG elements embeded in an HTML document, SVG code can also exist in its own file as the file’s “root element.” The URLs to SVG files can then be used as <code>src</code> attributes for <code>img</code> elements.</p>
+
+<p>You could theoretically complete at least parts of the ensuing tutorials by drawing directly on an SVG document. If you do that, your SVG element is the “root” of your document and should have these attributes:</p>
+
+<pre>
+ <code class="language-markup">
+  <script type="prism-html-markup">
+<svg version="1.1"
+     baseProfile="full"
+     xmlns="http://www.w3.org/2000/svg">
+     <circle/>
+     <path/>
+
+</svg>
+  </script>
+ </code>
+ </pre>
+
+<p>You will notice in this above sample snippet that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.</p>
+
+<p>As with other image types, I rarely if ever am directed to standalone SVGs on the web — normally they are embedded in a page via an <code>img</code> element or CSS background property, which I cover below - but it is nice to be able to open them sometimes and see how they look by themselves in a browser.</p>
+
+<h3 id="using-standalone-svgs-as-the-src-of-an-img-element">Using standalone SVG’s as the <code>src</code> of an <code>img</code> element</h3>
+
+<p>As with GIFs, JPGs, and PNGs, standalone SVG’s can be used as images. Below is how you might use an SVG as an image’s <code>src</code> attribute an HTML file. You simply add an SVG’s filename to the <code>src</code> attribute of an <code>img</code> element in the markup in the same way you would with a PNG, GIF, or JPG.</p>
+
+<ul>
+  <li>The upside is less markup in your document page. With an embedded SVG, the markup can become especially obtrusive if the SVG is very large and complex.</li>
+  <li>The downside is that you cannot use CSS and JS to reach in and style or animate circles, paths, ellipses, and other elements of an SVG.</li>
+</ul>
+
+<pre>
+	<code class="language-markup">
+		<script type="prism-html-markup">
+<div class="image-container"
+<img src="/path/to/image.svg" alt="my image"/>
+</div>
+  </script>
+	</code>
+</pre>
+
+<p>Now I will say that I do use a <a href="/assets/images/dragon-v3-wide-more-clouds.svg">standalone SVG</a> for this site’s dragon banner. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning. It is also a very large and complex SVG and I wanted to keep my markup code unobtrusive.</p>
+
+<p>As with other image file types, using an SVG as the <code>src</code> attribute of an image does have the penalty of an additional server request, so depending on connection speed our intrepid website visitor may need to wait for just a fraction of a second before that dragon shows up.</p>
+
+<p>If I ever wanted to animate specific parts of it, I would most likely add it with Javascript somehow. This would keep all that SVG code from cluttering my page, but by adding it dynamically as an inline SVG, I would still be able to, say, make its wings flap, its head, arms, and legs move, or its mouth breathe fire.</p>
+
+<h3 id="svg-as-a-background-image-within-css">SVG as a background image within CSS</h3>
+
+<p>SVG can be used as a background image of an element via CSS. This allows you to use other properties:</p>
+
+<ul>
+  <li><code>background-repeat</code></li>
+  <li><code>background-size</code></li>
+  <li><code>background-position</code></li>
+</ul>
+
+<p>Note that <code>background-repeat</code> only works if <code>background-size</code> is not set to a percentage. While I was considering making the clouds repeat in my dragon banner, I dropped this idea in favor of using a percentage for <code>background-size</code> so that the clouds would scale based on browser width.</p>
+
+<p>While backgrounds are not the only solution for this, I could see the background image method being useful for creating repeating images or patterns. For instance, I could theoretically use a single mountain image and then use <code>background-repeat: repeat-x</code> to create some repeating mountains under the dragon.</p>
+
+<h3 id="inline-svgs">Inline SVG’s</h3>
+
+<p>SVG’s could also be embedded in an HTML page as an inline SVG. This eliminates the need for an HTTP request since all the image info is in the DOM. It is also super powerful because you now have the ability to manipulate different elements of the SVG with CSS and JS.</p>
+
+<p>Here is a super-small HTML page with the SVG, and the link to the page can be found <a href="#">here</a>.</p>
+
+<p>While this adds more code to your HTML page, I usually take this approach right now so the sub-elements of an SVG can be more easily animated with Javascript and CSS.</p>
+
+<p>Because the SVGs in my SVG demos are intended to be dropped into an HTML page and manipulated with CSS, you will see code looking more like the SVG part of the second example, with <code>version</code>, <code>baseProfile</code>, and <code>xlmns</code> attributes dropped out.</p>
+
+<p>For more information, check out the <a href="https://www.w3.org/TR/SVG2/struct.html" target="_blank">W3Schools SVG reference</a>.</p>
+
+<p>For a complete course on SVG, check out Chris Coiyer’s course on <a href="">Everything you need to know about SVG</a> on CSS-Tricks.</p>
+
+<h3 id="svg-and-css">SVG and CSS</h3>
+
+<p>If an SVG code is put directly into an HTML page then its sub elements, such as <code>path</code>, <code>circle</code>, and <code>line</code>, can be manipulated with CSS and Javascript. This is highly useful for keeping properties like fill and stroke uniform, as well as animating their subpaths.</p>
+
+<p>I have a quick, simple example of how I control an SVG with CSS at the end of <a href="/svg/images/2019/08/07/svg-circle-buildup.html">Drawing a Circle with SVG</a>. The post is then recapped in <a href="/svg/images/2019/08/08/circle-to-face.html">Drawing a Face with SVG</a>, as the HTML and CSS is then used as a basis for starting the face.</p>
+
+<h3 id="key-takeaways">Key Takeaways</h3>
+
+<ul>
+  <li>SVG’s maintain their sharpness regardless of their size.</li>
+  <li>SVG’s are made up of one or more shapes or lines drawn in code.</li>
+  <li>Image Editors like Adobe Illustrator can output SVG graphics.</li>
+  <li>SVG’s can be opened in both a browser window and a text editor.</li>
+  <li>SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.</li>
+  <li>SVG code can either exist in its own file as the file’s root element or they can exist within an HTML document.</li>
+  <li>SVG’s respond to CSS.</li>
+</ul>
+
+
+  </div><div id="disqus_thread"></div>
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://nevkatz.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/2019/08/06/svg-intro.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Nevin&#39;s Dev Pages</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"><!-- Nevin&#39;s Dev Pages --></li><li><a class="u-email" href="mailto:nevkatz@gmail.com">nevkatz@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">nevkatz</span></a></li><li><a href="https://www.twitter.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">nevkatz</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I write about web and app development.</p>
+      </div>
+
+      
+    </div>
+   
+
+  </div>
+   <div id="copyright">
+    <p>Copyright &copy; 2019 Nevin Katz. All Rights Reserved.</p>
+   </div>
+
+</footer>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>
