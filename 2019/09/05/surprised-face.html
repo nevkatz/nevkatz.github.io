@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en"><!-- http://jovandeginste.github.io/2016/05/18/add-metadata-tags-to-jekyll-blog-posts.html   -->
+<head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146443473-1"></script>
 <script>
@@ -12,7 +13,11 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Begin Jekyll SEO tag v2.6.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="/2019/09/05/surprised-face.html" />
+  
+  <meta itemprop="keywords" content="svg,images,css,animation">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Creating an animated emoji with clean SVG code | Nevin’s Dev Pages</title>
 <meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Creating an animated emoji with clean SVG code" />
@@ -247,7 +252,7 @@
 .face:active .mouth {
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
-  /* enlarge the mouth and move it slightly upwards */
+  /* enlarge the mouth; move it slightly right and upward by a lot */
   transform:  translateX(1px) translateY(-22px) scale(3);
   -webkit-transform: translateX(1px) translateY(-22px) scale(3);
 
@@ -262,6 +267,7 @@
   <li>You’ll see in the CSS that I used webkit variants of transforms and transitions so that the styles work well Chrome, Safari, and other browsers that use the webkit browser engine.</li>
   <li>To move the eyebrows up, we use a “transform” of translateY and just bring it up by 3 pixels. Even though SVG’s are not made of pixels they are still handy to use as measurements in the CSS!</li>
   <li>To enlarge the mouth, I use a “transform” of both scale and translateY. Notice also that I am using transform-origin to center the mouth.</li>
+  <li>I had to use an integer for the radius of the mouth in order to achieve a smooth animation.</li>
 </ul>
 
 <ul class="css-tabs">
@@ -330,7 +336,7 @@
 .face:active .mouth {
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
-  /* enlarge the mouth and move it slightly upwards */
+  /* enlarge the mouth; move it slightly right and upward by a lot */
   transform:  translateX(1px) translateY(-22px) scale(3);
   -webkit-transform: translateX(1px) translateY(-22px) scale(3);
 
