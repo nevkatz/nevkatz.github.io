@@ -545,7 +545,7 @@ footer .footer-col p {
 @media screen and (max-width: 600px) {
   .menu-icon,
   nav.site-nav {
-    background-color: #505d76;
+    background-color: #006b9d;
     color: white; }
     .menu-icon svg path,
     nav.site-nav svg path {
@@ -558,9 +558,8 @@ footer .footer-col p {
 
 /* site header */
 header.site-header {
-  border-top-color: #005a84;
+  border-top-color: #00486a;
   background-color: #00486a;
-  /*#00486a */
   border-bottom: 0px solid transparent; }
   header.site-header a.site-title,
   header.site-header a,
@@ -570,7 +569,7 @@ header.site-header {
     transition: 0.3s ease; }
   header.site-header a:hover,
   header.site-header nav.site-nav a.page-link:hover {
-    color: #84d8ff;
+    color: #cce2f8;
     transition: 0.3s ease; }
 
 /* page content */
@@ -737,7 +736,7 @@ svg ellipse.dragon {
 div#copyright {
   text-align: center;
   font-size: 14px;
-  background-color: #148793;
+  background-color: #272d39;
   color: white;
   padding: 15px;
   position: relative;
