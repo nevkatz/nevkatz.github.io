@@ -81,7 +81,7 @@
    <!-- right eye -->
    <circle cx="14.27" cy="13.095" r="1.587" />
    <!-- mouth -->
-   <path class="mouth" d="M22.244 30.686c-.348-1.226-.97-2.741-2.315-3.26-2.502-.965-4.737 4.53-1.37 3.638.834-.22 3.91.907 3.685-.378z" fill="#280b0b" />
+   <circle class="mouth" cx="19" cy="30" fill="#000000" r="1" />
   </svg>
 </div>
 
@@ -163,7 +163,7 @@
 <h4 id="a-primer-on-the-markup">A primer on the markup</h4>
 
 <ul>
-  <li>You’ll see the code for just the HTML and SVG markup below. After downloading the file from SVG OMG  added a class of <code>face</code> to the SVG, a class of <code>mouth</code> to the mouth, and a class of <code>eyebrow<code> to each eyebrow path, all of which I will use for the animation.</code></code></li>
+  <li>You’ll see the code for just the HTML and SVG markup below. After downloading the file from SVG OMG  added a class of <code>face</code> to the SVG, a class of <code>mouth</code> to the mouth, and a class of <code>eyebrow</code> to each eyebrow path, all of which I will use for the animation.</li>
   <li>I also have an <code>ontouchstart</code> listener on the main SVG element, which is absolutely essential for making the SVG respond to touch on mobile Safari.</li>
   <li>You’ll see from viewing the source code of this page that we are “inlining” the SVG, or putting the code right into the HTML, rather than using an <code>img</code> element or a <code>background</code> property. This is so we can animate its sub-elements — in this case, the mouth and the two eyebrows.</li>
   <li>The same svg markup is paired with the CSS further down.</li>
@@ -186,7 +186,7 @@
    <!-- right eye -->
    <circle cx="14.27" cy="13.095" r="1.587"/>
    <!-- mouth -->
-   <path class="mouth" d="M22.244 30.686c-.348-1.226-.97-2.741-2.315-3.26-2.502-.965-4.737 4.53-1.37 3.638.834-.22 3.91.907 3.685-.378z" fill="#280b0b"/>
+   <circle class="mouth" cx="19" cy="30" fill="#000000" r="1"/>
   </svg>
 </script>
  </code>
@@ -209,7 +209,7 @@
    <!-- right eye -->
    <circle cx="14.27" cy="13.095" r="1.587" />
    <!-- mouth -->
-   <path class="mouth" d="M22.244 30.686c-.348-1.226-.97-2.741-2.315-3.26-2.502-.965-4.737 4.53-1.37 3.638.834-.22 3.91.907 3.685-.378z" fill="#280b0b" />
+   <circle class="mouth" cx="19" cy="30" fill="#000000" r="1" />
   </svg>
 </div>
 
@@ -221,6 +221,8 @@
   /* the default state of the transform */
   transform: translateY(0px);
   -webkit-transform:translateY(0px);
+  transform-origin: center center;
+
 }
 .face .mouth {
   /* duration and easing is same as eyebrow */
@@ -231,6 +233,7 @@
   -webkit-transform:translateY(0px) scale(1);
    /* keep the mouth centered during the transform */
   transform-origin: center center;
+  -webkit-transform-origin: center center;
 }
 
 .face:active .eyebrow {
@@ -245,8 +248,8 @@
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
   /* enlarge the mouth and move it slightly upwards */
-  transform: translateY(-2px) scale(1.2);
-  -webkit-transform: translateY(-2px) scale(1.2);
+  transform:  translateX(1px) translateY(-22px) scale(3);
+  -webkit-transform: translateX(1px) translateY(-22px) scale(3);
 
 }</style>
 
@@ -284,7 +287,7 @@
    <!-- right eye -->
    <circle cx="14.27" cy="13.095" r="1.587"/>
    <!-- mouth -->
-   <path class="mouth" d="M22.244 30.686c-.348-1.226-.97-2.741-2.315-3.26-2.502-.965-4.737 4.53-1.37 3.638.834-.22 3.91.907 3.685-.378z" fill="#280b0b"/>
+   <circle class="mouth" cx="19" cy="30" fill="#000000" r="1"/>
   </svg>
 </script>
  </code>
@@ -301,6 +304,8 @@
   /* the default state of the transform */
   transform: translateY(0px);
   -webkit-transform:translateY(0px);
+  transform-origin: center center;
+
 }
 .face .mouth {
   /* duration and easing is same as eyebrow */
@@ -311,6 +316,7 @@
   -webkit-transform:translateY(0px) scale(1);
    /* keep the mouth centered during the transform */
   transform-origin: center center;
+  -webkit-transform-origin: center center;
 }
 
 .face:active .eyebrow {
@@ -325,8 +331,8 @@
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
   /* enlarge the mouth and move it slightly upwards */
-  transform: translateY(-2px) scale(1.2);
-  -webkit-transform: translateY(-2px) scale(1.2);
+  transform:  translateX(1px) translateY(-22px) scale(3);
+  -webkit-transform: translateX(1px) translateY(-22px) scale(3);
 
 }</code>
  </pre>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-07T13:11:11-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an animated emoji with clean SVG code</title><link href="/2019/09/05/surprised-face.html" rel="alternate" type="text/html" title="Creating an animated emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/2019/09/05/surprised-face</id><content type="html" xml:base="/2019/09/05/surprised-face.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-07T17:34:58-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an animated emoji with clean SVG code</title><link href="/2019/09/05/surprised-face.html" rel="alternate" type="text/html" title="Creating an animated emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/2019/09/05/surprised-face</id><content type="html" xml:base="/2019/09/05/surprised-face.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;When it comes to creating an SVG for the web, drawing it is only the beginning. If you don’t have a process down, you still may need to clear the hurdles of optimization, animation, and cross-device testing. To practice these steps, I decided this week to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts.&lt;/p&gt;
 
@@ -19,7 +19,7 @@
    &lt;!-- right eye --&gt;
    &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
    &lt;!-- mouth --&gt;
-   &lt;path class=&quot;mouth&quot; d=&quot;M22.244 30.686c-.348-1.226-.97-2.741-2.315-3.26-2.502-.965-4.737 4.53-1.37 3.638.834-.22 3.91.907 3.685-.378z&quot; fill=&quot;#280b0b&quot; /&gt;
+   &lt;circle class=&quot;mouth&quot; cx=&quot;19&quot; cy=&quot;30&quot; fill=&quot;#000000&quot; r=&quot;1&quot; /&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
 
@@ -101,7 +101,7 @@
 &lt;h4 id=&quot;a-primer-on-the-markup&quot;&gt;A primer on the markup&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;You’ll see the code for just the HTML and SVG markup below. After downloading the file from SVG OMG  added a class of &lt;code&gt;face&lt;/code&gt; to the SVG, a class of &lt;code&gt;mouth&lt;/code&gt; to the mouth, and a class of &lt;code&gt;eyebrow&lt;code&gt; to each eyebrow path, all of which I will use for the animation.&lt;/code&gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;You’ll see the code for just the HTML and SVG markup below. After downloading the file from SVG OMG  added a class of &lt;code&gt;face&lt;/code&gt; to the SVG, a class of &lt;code&gt;mouth&lt;/code&gt; to the mouth, and a class of &lt;code&gt;eyebrow&lt;/code&gt; to each eyebrow path, all of which I will use for the animation.&lt;/li&gt;
   &lt;li&gt;I also have an &lt;code&gt;ontouchstart&lt;/code&gt; listener on the main SVG element, which is absolutely essential for making the SVG respond to touch on mobile Safari.&lt;/li&gt;
   &lt;li&gt;You’ll see from viewing the source code of this page that we are “inlining” the SVG, or putting the code right into the HTML, rather than using an &lt;code&gt;img&lt;/code&gt; element or a &lt;code&gt;background&lt;/code&gt; property. This is so we can animate its sub-elements — in this case, the mouth and the two eyebrows.&lt;/li&gt;
   &lt;li&gt;The same svg markup is paired with the CSS further down.&lt;/li&gt;
@@ -124,7 +124,7 @@
    &lt;!-- right eye --&gt;
    &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
    &lt;!-- mouth --&gt;
-   &lt;path class=&quot;mouth&quot; d=&quot;M22.244 30.686c-.348-1.226-.97-2.741-2.315-3.26-2.502-.965-4.737 4.53-1.37 3.638.834-.22 3.91.907 3.685-.378z&quot; fill=&quot;#280b0b&quot;/&gt;
+   &lt;circle class=&quot;mouth&quot; cx=&quot;19&quot; cy=&quot;30&quot; fill=&quot;#000000&quot; r=&quot;1&quot;/&gt;
   &lt;/svg&gt;
 &lt;/script&gt;
  &lt;/code&gt;
@@ -147,7 +147,7 @@
    &lt;!-- right eye --&gt;
    &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
    &lt;!-- mouth --&gt;
-   &lt;path class=&quot;mouth&quot; d=&quot;M22.244 30.686c-.348-1.226-.97-2.741-2.315-3.26-2.502-.965-4.737 4.53-1.37 3.638.834-.22 3.91.907 3.685-.378z&quot; fill=&quot;#280b0b&quot; /&gt;
+   &lt;circle class=&quot;mouth&quot; cx=&quot;19&quot; cy=&quot;30&quot; fill=&quot;#000000&quot; r=&quot;1&quot; /&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
 
@@ -159,6 +159,8 @@
   /* the default state of the transform */
   transform: translateY(0px);
   -webkit-transform:translateY(0px);
+  transform-origin: center center;
+
 }
 .face .mouth {
   /* duration and easing is same as eyebrow */
@@ -169,6 +171,7 @@
   -webkit-transform:translateY(0px) scale(1);
    /* keep the mouth centered during the transform */
   transform-origin: center center;
+  -webkit-transform-origin: center center;
 }
 
 .face:active .eyebrow {
@@ -183,8 +186,8 @@
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
   /* enlarge the mouth and move it slightly upwards */
-  transform: translateY(-2px) scale(1.2);
-  -webkit-transform: translateY(-2px) scale(1.2);
+  transform:  translateX(1px) translateY(-22px) scale(3);
+  -webkit-transform: translateX(1px) translateY(-22px) scale(3);
 
 }&lt;/style&gt;
 
@@ -222,7 +225,7 @@
    &lt;!-- right eye --&gt;
    &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
    &lt;!-- mouth --&gt;
-   &lt;path class=&quot;mouth&quot; d=&quot;M22.244 30.686c-.348-1.226-.97-2.741-2.315-3.26-2.502-.965-4.737 4.53-1.37 3.638.834-.22 3.91.907 3.685-.378z&quot; fill=&quot;#280b0b&quot;/&gt;
+   &lt;circle class=&quot;mouth&quot; cx=&quot;19&quot; cy=&quot;30&quot; fill=&quot;#000000&quot; r=&quot;1&quot;/&gt;
   &lt;/svg&gt;
 &lt;/script&gt;
  &lt;/code&gt;
@@ -239,6 +242,8 @@
   /* the default state of the transform */
   transform: translateY(0px);
   -webkit-transform:translateY(0px);
+  transform-origin: center center;
+
 }
 .face .mouth {
   /* duration and easing is same as eyebrow */
@@ -249,6 +254,7 @@
   -webkit-transform:translateY(0px) scale(1);
    /* keep the mouth centered during the transform */
   transform-origin: center center;
+  -webkit-transform-origin: center center;
 }
 
 .face:active .eyebrow {
@@ -263,8 +269,8 @@
   transition: 0.3s ease-out;
   -webkit-transition: 0.3s ease-out;
   /* enlarge the mouth and move it slightly upwards */
-  transform: translateY(-2px) scale(1.2);
-  -webkit-transform: translateY(-2px) scale(1.2);
+  transform:  translateX(1px) translateY(-22px) scale(3);
+  -webkit-transform: translateX(1px) translateY(-22px) scale(3);
 
 }&lt;/code&gt;
  &lt;/pre&gt;
