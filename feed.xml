@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-07T18:11:50-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an animated emoji with clean SVG code</title><link href="/2019/09/05/surprised-face.html" rel="alternate" type="text/html" title="Creating an animated emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/2019/09/05/surprised-face</id><content type="html" xml:base="/2019/09/05/surprised-face.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-08T12:12:37-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an animated emoji with clean SVG code</title><link href="/2019/09/05/surprised-face.html" rel="alternate" type="text/html" title="Creating an animated emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/2019/09/05/surprised-face</id><content type="html" xml:base="/2019/09/05/surprised-face.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;When it comes to creating an SVG for the web, drawing it is only the beginning. If you don’t have a process down, you still may need to clear the hurdles of optimization, animation, and cross-device testing. To practice these steps, I decided this week to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts.&lt;/p&gt;
 
@@ -13,11 +13,11 @@
    &lt;!-- left eyebrow --&gt;
    &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot; /&gt;
    &lt;!-- nose --&gt;
-   &lt;path d=&quot;M20.109 21.08a2.22 2.22 0 0 0 .584-1.134 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot; /&gt;
-   &lt;!-- left eye --&gt;
-   &lt;circle cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+   &lt;path class=&quot;nose&quot; d=&quot;M20.109 21.08a2.22 2.22 0 0 0 .584-1.134 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot; /&gt;
    &lt;!-- right eye --&gt;
-   &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+   &lt;circle class=&quot;eye eye-right&quot; cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+   &lt;!-- left eye --&gt;
+   &lt;circle class=&quot;eye eye-left&quot; cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
    &lt;!-- mouth --&gt;
    &lt;circle class=&quot;mouth&quot; cx=&quot;19&quot; cy=&quot;30&quot; fill=&quot;#000000&quot; r=&quot;1&quot; /&gt;
   &lt;/svg&gt;
@@ -118,11 +118,11 @@
    &lt;!-- left eyebrow --&gt;
    &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot;/&gt;
    &lt;!-- nose --&gt;
-   &lt;path d=&quot;M20.109 21.08a2.22 2.22 0 0 0 .584-1.134 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot;/&gt;
-   &lt;!-- left eye --&gt;
-   &lt;circle cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+   &lt;path class=&quot;nose&quot; d=&quot;M20.109 21.08a2.22 2.22 0 0 0 .584-1.134 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot;/&gt;
    &lt;!-- right eye --&gt;
-   &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+   &lt;circle class=&quot;eye eye-right&quot; cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+   &lt;!-- left eye --&gt;
+   &lt;circle class=&quot;eye eye-left&quot; cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
    &lt;!-- mouth --&gt;
    &lt;circle class=&quot;mouth&quot; cx=&quot;19&quot; cy=&quot;30&quot; fill=&quot;#000000&quot; r=&quot;1&quot;/&gt;
   &lt;/svg&gt;
@@ -141,31 +141,54 @@
    &lt;!-- left eyebrow --&gt;
    &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot; /&gt;
    &lt;!-- nose --&gt;
-   &lt;path d=&quot;M20.109 21.08a2.22 2.22 0 0 0 .584-1.134 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot; /&gt;
-   &lt;!-- left eye --&gt;
-   &lt;circle cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+   &lt;path class=&quot;nose&quot; d=&quot;M20.109 21.08a2.22 2.22 0 0 0 .584-1.134 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot; /&gt;
    &lt;!-- right eye --&gt;
-   &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+   &lt;circle class=&quot;eye eye-right&quot; cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
+   &lt;!-- left eye --&gt;
+   &lt;circle class=&quot;eye eye-left&quot; cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot; /&gt;
    &lt;!-- mouth --&gt;
    &lt;circle class=&quot;mouth&quot; cx=&quot;19&quot; cy=&quot;30&quot; fill=&quot;#000000&quot; r=&quot;1&quot; /&gt;
   &lt;/svg&gt;
 &lt;/div&gt;
 
-&lt;style&gt;.face .eyebrow {
-  /* specify duration and easing style */
+&lt;style&gt;
+/*
+ * Set up transition duration and easing styles
+ */
+.ellipse, .eyebrow, .nose, .mouth {
+
   transition: 0.3s ease-out;
-  /* for browsers that use the webkit browser engine */
   -webkit-transition: 0.3s ease-out;
-  /* the default state of the transform */
-  transform: translateY(0px);
-  -webkit-transform:translateY(0px);
-  transform-origin: center center;
+}
+/* Do the same for active states */
+.face:active .ellipse,
+.face:active .eye,
+.face:active .nose, 
+.face:active .mouth, 
+.faceactive .eyebrow {
+  transition: 0.3s ease-out;
+  -webkit-transition: 0.3s ease-out;
 
 }
+/*
+ *  Circular Outline of Face
+ */
+.face ellipse {
+  transition: fill 0.3s ease;
+}
+.face:active ellipse {
+  fill: #FFFFDD;
+  transition: fill 0.3s ease;
+}
+
+/* Eyebrow animation */
+.face:active .eyebrow {
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+}
+/* Mouth */
 .face .mouth {
-  /* duration and easing is same as eyebrow */
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
+
   /* using both scale and translateY in the default state */
   transform: translateY(0px) scale(1);
   -webkit-transform:translateY(0px) scale(1);
@@ -173,33 +196,43 @@
   transform-origin: center center;
   -webkit-transform-origin: center center;
 }
-
-.face:active .eyebrow {
-  /* set up transitions and default transforms */
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
-  transform: translateY(-3px);
-  -webkit-transform: translateY(-3px);
-
-}
+/* Enlarge mouth and move it to keep it centered */
 .face:active .mouth {
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
-  /* enlarge the mouth; move it slightly right and upward by a lot */
   transform:  translateX(1px) translateY(-22px) scale(3);
   -webkit-transform: translateX(1px) translateY(-22px) scale(3);
 
+}
+/* Defaults for eyes and nose */
+.eye, .nose {
+  transform-origin: center center;
+  transition: 0.3s ease-out;
+}
+/* Stretch nose */
+.face:active .nose {
+  transform:scale(1,1.2);
+}
+/*  Enlarge eyes */
+.face:active .eye-left {
+  transform:translateX(1px) scale(1.1);
+  -webkit-transform:translateX(0.5px) scale(1.1);
+  transition: 0.3s ease-out;
+}
+.face:active .eye-right {
+  transform:translateX(-1px) scale(1.1); 
+  -webkit-transform: translateX(-0.5px) scale(1.1);
+  transition: 0.3s ease-out;
 }&lt;/style&gt;
 
 &lt;h4 id=&quot;animating-with-css&quot;&gt;Animating with CSS&lt;/h4&gt;
 
 &lt;p&gt;Here is how I animated the face with CSS.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;I used the “active” pseudo selector to the face SVG because the eyebrows and mouth are children of that element. You could use the “hover” pseudo-selector, but it does not work as well on mobile devices — it often just stays in its hover state after you tap it, which would leave the face in a state of perpetual shock.&lt;/li&gt;
+  &lt;li&gt;I used the “active” pseudo selector to the face SVG because the ellipse, eyebrows, eyes, nose, and mouth are all children of that element. You could use the “hover” pseudo-selector, but it does not work as well on mobile devices — it often just stays in its hover state after you tap it, which would leave the face in a state of perpetual shock.&lt;/li&gt;
   &lt;li&gt;For both active and non-active states, I added a transition with a 0.3s and an ease of “ease-out,” which gives it a quicker start and a slower end.&lt;/li&gt;
   &lt;li&gt;You’ll see in the CSS that I used webkit variants of transforms and transitions so that the styles work well Chrome, Safari, and other browsers that use the webkit browser engine.&lt;/li&gt;
   &lt;li&gt;To move the eyebrows up, we use a “transform” of translateY and just bring it up by 3 pixels. Even though SVG’s are not made of pixels they are still handy to use as measurements in the CSS!&lt;/li&gt;
-  &lt;li&gt;To enlarge the mouth, I use a “transform” of both scale and translateY. Notice also that I am using transform-origin to center the mouth.&lt;/li&gt;
+  &lt;li&gt;To enlarge the mouth and eyes, I use a “transform” of both scale and translateY. Notice also that I am using transform-origin to center the mouth.&lt;/li&gt;
+  &lt;li&gt;To stretch the nose, I use &lt;code&gt;scale(1,1.2)&lt;/code&gt; to stretch only on the vertical axis.&lt;/li&gt;
   &lt;li&gt;I had to use an integer for the radius of the mouth in order to achieve a smooth animation.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -220,11 +253,11 @@
    &lt;!-- left eyebrow --&gt;
    &lt;path class=&quot;eyebrow&quot; d=&quot;M15.436 9.455a5.56 5.56 0 0 0-3.56-.316 5.53 5.53 0 0 0-1.997.948&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot;/&gt;
    &lt;!-- nose --&gt;
-   &lt;path d=&quot;M20.109 21.08a2.22 2.22 0 0 0 .584-1.134 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot;/&gt;
-   &lt;!-- left eye --&gt;
-   &lt;circle cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+   &lt;path class=&quot;nose&quot; d=&quot;M20.109 21.08a2.22 2.22 0 0 0 .584-1.134 2.22 2.22 0 0 0-.14-1.267 2.194 2.194 0 0 0-1.04-1.098 2.16 2.16 0 0 0-1.425-.164&quot; fill=&quot;none&quot; stroke=&quot;#000&quot; stroke-width=&quot;.529&quot; stroke-linecap=&quot;round&quot;/&gt;
    &lt;!-- right eye --&gt;
-   &lt;circle cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+   &lt;circle class=&quot;eye eye-right&quot; cx=&quot;24.064&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
+   &lt;!-- left eye --&gt;
+   &lt;circle class=&quot;eye eye-left&quot; cx=&quot;14.27&quot; cy=&quot;13.095&quot; r=&quot;1.587&quot;/&gt;
    &lt;!-- mouth --&gt;
    &lt;circle class=&quot;mouth&quot; cx=&quot;19&quot; cy=&quot;30&quot; fill=&quot;#000000&quot; r=&quot;1&quot;/&gt;
   &lt;/svg&gt;
@@ -235,21 +268,44 @@
 
 &lt;div id=&quot;section2&quot;&gt;
 &lt;pre&gt;
- &lt;code class=&quot;language-css&quot;&gt;.face .eyebrow {
-  /* specify duration and easing style */
+ &lt;code class=&quot;language-css&quot;&gt;
+/*
+ * Set up transition duration and easing styles
+ */
+.ellipse, .eyebrow, .nose, .mouth {
+
   transition: 0.3s ease-out;
-  /* for browsers that use the webkit browser engine */
   -webkit-transition: 0.3s ease-out;
-  /* the default state of the transform */
-  transform: translateY(0px);
-  -webkit-transform:translateY(0px);
-  transform-origin: center center;
+}
+/* Do the same for active states */
+.face:active .ellipse,
+.face:active .eye,
+.face:active .nose, 
+.face:active .mouth, 
+.faceactive .eyebrow {
+  transition: 0.3s ease-out;
+  -webkit-transition: 0.3s ease-out;
 
 }
+/*
+ *  Circular Outline of Face
+ */
+.face ellipse {
+  transition: fill 0.3s ease;
+}
+.face:active ellipse {
+  fill: #FFFFDD;
+  transition: fill 0.3s ease;
+}
+
+/* Eyebrow animation */
+.face:active .eyebrow {
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+}
+/* Mouth */
 .face .mouth {
-  /* duration and easing is same as eyebrow */
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
+
   /* using both scale and translateY in the default state */
   transform: translateY(0px) scale(1);
   -webkit-transform:translateY(0px) scale(1);
@@ -257,22 +313,31 @@
   transform-origin: center center;
   -webkit-transform-origin: center center;
 }
-
-.face:active .eyebrow {
-  /* set up transitions and default transforms */
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
-  transform: translateY(-3px);
-  -webkit-transform: translateY(-3px);
-
-}
+/* Enlarge mouth and move it to keep it centered */
 .face:active .mouth {
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
-  /* enlarge the mouth; move it slightly right and upward by a lot */
   transform:  translateX(1px) translateY(-22px) scale(3);
   -webkit-transform: translateX(1px) translateY(-22px) scale(3);
 
+}
+/* Defaults for eyes and nose */
+.eye, .nose {
+  transform-origin: center center;
+  transition: 0.3s ease-out;
+}
+/* Stretch nose */
+.face:active .nose {
+  transform:scale(1,1.2);
+}
+/*  Enlarge eyes */
+.face:active .eye-left {
+  transform:translateX(1px) scale(1.1);
+  -webkit-transform:translateX(0.5px) scale(1.1);
+  transition: 0.3s ease-out;
+}
+.face:active .eye-right {
+  transform:translateX(-1px) scale(1.1); 
+  -webkit-transform: translateX(-0.5px) scale(1.1);
+  transition: 0.3s ease-out;
 }&lt;/code&gt;
  &lt;/pre&gt;
 &lt;/div&gt;
