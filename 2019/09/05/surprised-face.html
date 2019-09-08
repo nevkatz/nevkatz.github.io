@@ -71,7 +71,8 @@
 
 <p>The emoji to which I am referring is below. Give it a tap or a click to see what happens.</p>
 
-<div class="image-container"><!-- using the ontouchstart listener so the SVG responds to touch on mobile safari -->
+<div class="image-container">
+  <!-- ontouchstart listener for mobile safari -->
   <svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
    <!-- the shape of the face -->
    <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529" />
@@ -176,7 +177,8 @@
 
 <pre>
  <code class="language-markup">
-  <script type="prism-html-markup"><!-- using the ontouchstart listener so the SVG responds to touch on mobile safari -->
+  <script type="prism-html-markup">
+  <!-- ontouchstart listener for mobile safari -->
   <svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
    <!-- the shape of the face -->
    <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529"/>
@@ -199,7 +201,8 @@
 
 <p>Here is the face again so you can see it right after the svg markup.</p>
 
-<div class="image-container"><!-- using the ontouchstart listener so the SVG responds to touch on mobile safari -->
+<div class="image-container">
+  <!-- ontouchstart listener for mobile safari -->
   <svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
    <!-- the shape of the face -->
    <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529" />
@@ -218,41 +221,33 @@
   </svg>
 </div>
 
-<style>
-/*
- * Set up transition duration and easing styles
- */
-.ellipse, .eyebrow, .nose, .mouth {
-
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
-}
-/* Do the same for active states */
-.face:active .ellipse,
-.face:active .eye,
-.face:active .nose, 
-.face:active .mouth, 
-.faceactive .eyebrow {
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
-
-}
-/*
- *  Circular Outline of Face
- */
+<style>/* face */
 .face ellipse {
   transition: fill 0.3s ease;
+  -webkit-transition: fill 0.3s ease;
 }
 .face:active ellipse {
   fill: #FFFFDD;
   transition: fill 0.3s ease;
+  -webkit-transition: fill 0.3s ease;
 }
+/* eyebrow and mouth defaults */
+.eyebrow, .mouth {
+  transition: 0.3s ease-out;
+  -webkit-transition: 0.3s ease-out;
+}
+.face:active .mouth, 
+.face:active .eyebrow {
+  transition: 0.3s ease-out;
+  -webkit-transition: 0.3s ease-out;
 
-/* Eyebrow animation */
+}
+/* eyebrows */
 .face:active .eyebrow {
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
 }
+
 /* Mouth */
 .face .mouth {
 
@@ -265,43 +260,109 @@
 }
 /* Enlarge mouth and move it to keep it centered */
 .face:active .mouth {
-  transform:  translateX(1px) translateY(-22px) scale(3);
-  -webkit-transform: translateX(1px) translateY(-22px) scale(3);
+  transform:  translate(1px,-22px) scale(3);
+  -webkit-transform: translate(1px,-22px) scale(3);
 
 }
-/* Defaults for eyes and nose */
-.eye, .nose {
-  transform-origin: center center;
-  transition: 0.3s ease-out;
+
+/* eyes */
+.face .eye {
+  stroke-width: 0px;
+  stroke: #000000;
+  transition: stroke-width 0.3s ease-out;
 }
-/* Stretch nose */
-.face:active .nose {
-  transform:scale(1,1.2);
+.face:active .eye {
+   stroke-width: 0.5px;
+   transition: stroke-width 0.3s ease-out;
 }
-/*  Enlarge eyes */
-.face:active .eye-left {
-  transform:translateX(1px) scale(1.1);
-  -webkit-transform:translateX(0.5px) scale(1.1);
-  transition: 0.3s ease-out;
-}
-.face:active .eye-right {
-  transform:translateX(-1px) scale(1.1); 
-  -webkit-transform: translateX(-0.5px) scale(1.1);
-  transition: 0.3s ease-out;
-}</style>
+</style>
 
 <h4 id="animating-with-css">Animating with CSS</h4>
 
 <p>Here is how I animated the face with CSS.</p>
+
+<h5 id="the-active-pseudo-selector">The “active” Pseudo-selector</h5>
+<p>I used the “active” pseudo selector to the face SVG because the ellipse, eyebrows, eyes, nose, and mouth are all children of that element. You could use the “hover” pseudo-selector, but it does not work as well on mobile devices — it often just stays in its hover state after you tap it, which would leave the face in a state of perpetual shock.</p>
+
+<h5 id="transition">Transition</h5>
 <ul>
-  <li>I used the “active” pseudo selector to the face SVG because the ellipse, eyebrows, eyes, nose, and mouth are all children of that element. You could use the “hover” pseudo-selector, but it does not work as well on mobile devices — it often just stays in its hover state after you tap it, which would leave the face in a state of perpetual shock.</li>
-  <li>For both active and non-active states, I added a transition with a 0.3s and an ease of “ease-out,” which gives it a quicker start and a slower end.</li>
+  <li>For both active and non-active states of most elements, I added a transition with a 0.3s and an ease of “ease-out,” which gives it a quicker start and a slower end.</li>
   <li>You’ll see in the CSS that I used webkit variants of transforms and transitions so that the styles work well Chrome, Safari, and other browsers that use the webkit browser engine.</li>
-  <li>To move the eyebrows up, we use a “transform” of translateY and just bring it up by 3 pixels. Even though SVG’s are not made of pixels they are still handy to use as measurements in the CSS!</li>
-  <li>To enlarge the mouth and eyes, I use a “transform” of both scale and translateY. Notice also that I am using transform-origin to center the mouth.</li>
-  <li>To stretch the nose, I use <code>scale(1,1.2)</code> to stretch only on the vertical axis.</li>
+</ul>
+
+<p>Beyond these general approaches, here is how I animated specific parts of the SVG.</p>
+
+<h5 id="face-color-change">Face color change</h5>
+<p>To achieve the “face getting pale” effect I change the fill color of the ellipse, which is the outline of the face. Note that the fill color of <code>#ffeeaa</code> is in the svg itself, so I only specify the color of the face in the <code>:active</code> svg.</p>
+
+<pre>
+	<code class="language-css">
+.face ellipse {
+  transition: fill 0.3s ease;
+  -webkit-transition: fill 0.3s ease;
+}
+.face:active ellipse {
+  fill: #FFFFDD;
+  transition: fill 0.3s ease;
+  -webkit-transition: fill 0.3s ease;
+}
+    </code>
+</pre>
+
+<h5 id="eyebrows">Eyebrows</h5>
+<p>To move the eyebrows up, I used a “transform” of translateY and just bring it up by 3 pixels. Even though SVG’s are not made of pixels they are still handy to use as measurements in the CSS!</p>
+<pre>
+	<code class="language-css">
+.face:active .eyebrow {
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+}
+    </code>
+</pre>
+
+<h5 id="eyes">Eyes</h5>
+<p>The eyes were an interesting case, in that it was challenging to get a scale transform to work smoothly in Firefox. However I tried it, it came out choppy. I ended up animating the <code>stroke-width</code> and targeted this property specifically with my transition, which gave me solid results across Chrome, Safari, and Firefox browsers.</p>
+
+<pre>
+	<code class="language-css">
+.face .eye {
+  stroke-width: 0px;
+  stroke: #000000;
+  transition: stroke-width 0.3s ease-out;
+}
+.face:active .eye {
+   stroke-width: 0.5px;
+   transition: stroke-width 0.3s ease-out;
+}
+	</code>
+</pre>
+
+<h5 id="mouth">Mouth</h5>
+<ul>
+  <li>To enlarge the mouth, I use a “transform” of both <code>scale</code> and <code>translate</code>.</li>
+  <li>Notice also that I am using transform-origin to center the mouth, but it’s not enough — I also need <code>translate</code> to keep it centered properly. I am still looking into the reason for this.</li>
   <li>I had to use an integer for the radius of the mouth in order to achieve a smooth animation.</li>
 </ul>
+
+<pre>
+	<code class="language-css">
+.face .mouth {
+  transform: translateY(0px) scale(1);
+  -webkit-transform:translateY(0px) scale(1);
+
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+}
+.face:active .mouth {
+  transform:  translate(1px,-22px) scale(3);
+  -webkit-transform: translate(1px,-22px) scale(3);
+}
+	</code>
+</pre>
+
+<h4 id="putting-it-all-together">Putting it all together</h4>
+
+<p>Here is the complete markup and CSS.</p>
 
 <ul class="css-tabs">
   <li><a href="#section1">HTML</a></li>
@@ -311,7 +372,8 @@
 <div id="section1">
 <pre>
  <code class="language-markup">
-  <script type="prism-html-markup"><!-- using the ontouchstart listener so the SVG responds to touch on mobile safari -->
+  <script type="prism-html-markup">
+  <!-- ontouchstart listener for mobile safari -->
   <svg ontouchstart="" class="face" width="146.667" height="146.667" viewBox="0 0 38.806 38.806">
    <!-- the shape of the face -->
    <ellipse cx="19.089" cy="19.429" rx="18.235" ry="18.39" fill="#fea" stroke="#000" stroke-width=".529"/>
@@ -335,41 +397,33 @@
 
 <div id="section2">
 <pre>
- <code class="language-css">
-/*
- * Set up transition duration and easing styles
- */
-.ellipse, .eyebrow, .nose, .mouth {
-
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
-}
-/* Do the same for active states */
-.face:active .ellipse,
-.face:active .eye,
-.face:active .nose, 
-.face:active .mouth, 
-.faceactive .eyebrow {
-  transition: 0.3s ease-out;
-  -webkit-transition: 0.3s ease-out;
-
-}
-/*
- *  Circular Outline of Face
- */
+ <code class="language-css">/* face */
 .face ellipse {
   transition: fill 0.3s ease;
+  -webkit-transition: fill 0.3s ease;
 }
 .face:active ellipse {
   fill: #FFFFDD;
   transition: fill 0.3s ease;
+  -webkit-transition: fill 0.3s ease;
 }
+/* eyebrow and mouth defaults */
+.eyebrow, .mouth {
+  transition: 0.3s ease-out;
+  -webkit-transition: 0.3s ease-out;
+}
+.face:active .mouth, 
+.face:active .eyebrow {
+  transition: 0.3s ease-out;
+  -webkit-transition: 0.3s ease-out;
 
-/* Eyebrow animation */
+}
+/* eyebrows */
 .face:active .eyebrow {
   transform: translateY(-3px);
   -webkit-transform: translateY(-3px);
 }
+
 /* Mouth */
 .face .mouth {
 
@@ -382,30 +436,22 @@
 }
 /* Enlarge mouth and move it to keep it centered */
 .face:active .mouth {
-  transform:  translateX(1px) translateY(-22px) scale(3);
-  -webkit-transform: translateX(1px) translateY(-22px) scale(3);
+  transform:  translate(1px,-22px) scale(3);
+  -webkit-transform: translate(1px,-22px) scale(3);
 
 }
-/* Defaults for eyes and nose */
-.eye, .nose {
-  transform-origin: center center;
-  transition: 0.3s ease-out;
+
+/* eyes */
+.face .eye {
+  stroke-width: 0px;
+  stroke: #000000;
+  transition: stroke-width 0.3s ease-out;
 }
-/* Stretch nose */
-.face:active .nose {
-  transform:scale(1,1.2);
+.face:active .eye {
+   stroke-width: 0.5px;
+   transition: stroke-width 0.3s ease-out;
 }
-/*  Enlarge eyes */
-.face:active .eye-left {
-  transform:translateX(1px) scale(1.1);
-  -webkit-transform:translateX(0.5px) scale(1.1);
-  transition: 0.3s ease-out;
-}
-.face:active .eye-right {
-  transform:translateX(-1px) scale(1.1); 
-  -webkit-transform: translateX(-0.5px) scale(1.1);
-  transition: 0.3s ease-out;
-}</code>
+</code>
  </pre>
 </div>
 
