@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-08T17:18:00-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an animated emoji with clean SVG code</title><link href="/2019/09/05/surprised-face.html" rel="alternate" type="text/html" title="Creating an animated emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/2019/09/05/surprised-face</id><content type="html" xml:base="/2019/09/05/surprised-face.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-08T17:23:17-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an animated emoji with clean SVG code</title><link href="/2019/09/05/surprised-face.html" rel="alternate" type="text/html" title="Creating an animated emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/2019/09/05/surprised-face</id><content type="html" xml:base="/2019/09/05/surprised-face.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;When it comes to creating an SVG for the web, drawing it is only the beginning. If you don’t have a process down, you still may need to clear the hurdles of optimization, animation, and cross-device testing. To practice these steps, I decided this week to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts.&lt;/p&gt;
 
@@ -24,19 +24,16 @@
   &lt;/svg&gt;
 &lt;/div&gt;
 
-&lt;p&gt;In comparison to my &lt;a href=&quot;/svg/images/2019/08/08/circle-to-face.html&quot;&gt;earlier face&lt;/a&gt;, which I created via coding instead of drawing, I created this one in Inkscape and optimized the code with SVG OMG. So it is a bit more expressive and detailed with eyebrows, a nose, and a more nuanced mouth.&lt;/p&gt;
-
-&lt;p&gt;And sure, it starts out as only mildly surprised, but it will be taken aback if you get in its face with a tap or a click.&lt;/p&gt;
-
-&lt;p&gt;In this post, we’ll look at how we pulled this off – how the image was optimized and how this simple animation of the eyebrows and mouth was added to it.&lt;/p&gt;
+&lt;p&gt;In comparison to my &lt;a href=&quot;/svg/images/2019/08/08/circle-to-face.html&quot;&gt;earlier face&lt;/a&gt;, which I created via coding instead of drawing, I created this one in Inkscape and optimized the code with SVG OMG. So it is a bit more expressive and detailed with eyebrows and a nose.&lt;/p&gt;
 
 &lt;h4 id=&quot;objectives&quot;&gt;Objectives&lt;/h4&gt;
 
-&lt;p&gt;In this tutorial we’ll do a few things:&lt;/p&gt;
+&lt;p&gt;In this tutorial, we’ll look at examine the image was optimized and how the face color, eyebrows, eyes, and mouth were animated. This will involve several steps:&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;optimize the face in Inkscape and SVG OMG so we get rid of unnecessary code “under the hood.”&lt;/li&gt;
-  &lt;li&gt;identify the various elements in this SVG&lt;/li&gt;
-  &lt;li&gt;animate the eyebrows and mouth on tap with a simple CSS transform&lt;/li&gt;
+  &lt;li&gt;optimizing the face in Inkscape and SVG OMG so we get rid of unnecessary code “under the hood.”&lt;/li&gt;
+  &lt;li&gt;identifying the various elements in this SVG&lt;/li&gt;
+  &lt;li&gt;animating the eyebrows and mouth on tap with a simple CSS transform&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;tools&quot;&gt;Tools:&lt;/h4&gt;
