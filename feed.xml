@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-08T17:27:24-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an animated emoji with clean SVG code</title><link href="/2019/09/05/surprised-face.html" rel="alternate" type="text/html" title="Creating an animated emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/2019/09/05/surprised-face</id><content type="html" xml:base="/2019/09/05/surprised-face.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-09T07:08:22-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating an animated emoji with clean SVG code</title><link href="/2019/09/05/surprised-face.html" rel="alternate" type="text/html" title="Creating an animated emoji with clean SVG code" /><published>2019-09-05T00:00:00-04:00</published><updated>2019-09-05T00:00:00-04:00</updated><id>/2019/09/05/surprised-face</id><content type="html" xml:base="/2019/09/05/surprised-face.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;When it comes to creating an SVG for the web, drawing it is only the beginning. If you don’t have a process down, you still may need to clear the hurdles of optimization, animation, and cross-device testing. To practice these steps, I decided this week to create this SVG emoji to see what I could glean from the experience, and what I could share with other artists, web developers, and technology enthusiasts.&lt;/p&gt;
 
@@ -44,7 +44,7 @@
   &lt;li&gt;&lt;a href=&quot;https://inkscape.org&quot; target=&quot;_blank&quot;&gt;Inkscape&lt;/a&gt;, a free open-source vector image editor&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt; (Jake Archibald), a free online image optimization tool&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/safari/technology-preview/&quot; target=&quot;_blank&quot;&gt;Safari Technology Preview&lt;/a&gt;, a Mac OS application for live testing on an iPhone&lt;/li&gt;
-  &lt;li&gt;a &lt;a href=&quot;https://www.amazon.com/Wacom-Intuos-Touch-Tablet-Version/dp/B00EN27U9U&quot; target=&quot;_blank&quot;&gt;Wacom Intuos CTH-480&lt;/a&gt; graphics tablet for the illustration&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Wacom-Intuos-Touch-Tablet-Version/dp/B00EN27U9U&quot; target=&quot;_blank&quot;&gt;Wacom Intuos CTH-480&lt;/a&gt; graphics tablet for the illustration&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.sublimetext.com/2&quot; target=&quot;_blank&quot;&gt;Sublime Text 2&lt;/a&gt; for the coding&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -178,23 +178,19 @@
   -webkit-transform: translateY(-3px);
 }
 
-/* Mouth */
+/* mouth */
 .face .mouth {
-
-  /* using both scale and translateY in the default state */
   transform: translateY(0px) scale(1);
   -webkit-transform:translateY(0px) scale(1);
-   /* keep the mouth centered during the transform */
   transform-origin: center center;
   -webkit-transform-origin: center center;
 }
-/* Enlarge mouth and move it to keep it centered */
+/* enlarge mouth and move it to keep it centered */
 .face:active .mouth {
   transform:  translate(1px,-22px) scale(3);
   -webkit-transform: translate(1px,-22px) scale(3);
 
 }
-
 /* eyes */
 .face .eye {
   stroke-width: 0px;
@@ -354,23 +350,19 @@
   -webkit-transform: translateY(-3px);
 }
 
-/* Mouth */
+/* mouth */
 .face .mouth {
-
-  /* using both scale and translateY in the default state */
   transform: translateY(0px) scale(1);
   -webkit-transform:translateY(0px) scale(1);
-   /* keep the mouth centered during the transform */
   transform-origin: center center;
   -webkit-transform-origin: center center;
 }
-/* Enlarge mouth and move it to keep it centered */
+/* enlarge mouth and move it to keep it centered */
 .face:active .mouth {
   transform:  translate(1px,-22px) scale(3);
   -webkit-transform: translate(1px,-22px) scale(3);
 
 }
-
 /* eyes */
 .face .eye {
   stroke-width: 0px;

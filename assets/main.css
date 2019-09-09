@@ -685,8 +685,8 @@ div.banner {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: #9fc9f2;
-  background-image: url("/assets/images/dragon-banner/clouds-only-optimized.svg");
+  background-color: #85c3e0;
+  background-image: url("/assets/images/dragon-banner/clouds-only-solid.svg");
   background-size: 116% 116%;
   background-position: 60% 0%;
   overflow: hidden; }
