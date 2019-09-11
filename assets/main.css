@@ -556,6 +556,12 @@ footer .footer-col p {
 .site-nav .menu-icon > svg {
   fill: white; }
 
+ul.double-spaced li {
+  margin-bottom: 16px; }
+
+ul.bullet-hidden li {
+  list-style-type: none; }
+
 /* site header */
 header.site-header {
   border-top-color: #00486a;
