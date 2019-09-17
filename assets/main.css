@@ -629,6 +629,14 @@ div.section-separator {
   margin-bottom: 20px;
   margin-top: 20px; }
 
+pre[class*="language-"].no-padding {
+  padding: 0px;
+  display: flex; }
+
+pre.no-padding code {
+  display: flex;
+  padding: 12px; }
+
 code {
   background-color: #e6e2e2;
   padding: 2px 2px;
@@ -699,6 +707,12 @@ div.banner {
 
 .center-children {
   text-align: center; }
+
+.margin-bottom {
+  margin-bottom: 16px; }
+
+.border {
+  border: 1px solid #000000; }
 
 .image-container {
   text-align: center;
