@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="146.66667"
+   height="146.66667"
+   viewBox="0 0 38.805558 38.805556"
+   version="1.1"
+   id="svg549"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="stern-face.svg">
+  <defs
+     id="defs543" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="20.069239"
+     inkscape:cy="103.24122"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="808"
+     inkscape:window-x="80"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata546">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-258.19446)">
+    <circle
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.52914876"
+       cx="19.384317"
+       cy="277.69666"
+       r="18.3897"
+       id="circle513" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.52914876;stroke-linecap:round"
+       d="m 11.551758,285.37022 q 8.173201,-2.89489 16.082751,0"
+       id="path515" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.52914876;stroke-linecap:square"
+       d="m 11.237485,265.25598 c 1.397091,-1.21359 4.442531,1.3056 5.430174,2.39923 m 10.73905,-3.00484 c -1.39735,-1.21359 -4.44305,1.3056 -5.43069,2.39923"
+       id="path517" />
+    <circle
+       style="stroke-width:0.26365161"
+       cx="23.813944"
+       cy="-271.45892"
+       r="1.5874463"
+       transform="scale(1,-1)"
+       id="circle519" />
+    <circle
+       style="stroke-width:0.26365161"
+       cx="14.954711"
+       cy="-271.29572"
+       r="1.5874463"
+       transform="scale(1,-1)"
+       id="circle521" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.52914876;stroke-linecap:square"
+       d="m 20.654599,278.07946 a 2.2199467,2.2199467 0 0 0 0.58477,-1.13343 2.2199467,2.2199467 0 0 0 -0.14079,-1.26738 2.1938451,2.1938451 0 0 0 -1.03905,-1.09811 2.160625,2.160625 0 0 0 -1.4253,-0.16346"
+       id="path523" />
+  </g>
+</svg>
