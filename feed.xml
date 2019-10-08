@@ -1,4 +1,184 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-09-17T23:33:25-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">SVG Character Sheet: Fuzzy Alien Critter</title><link href="/2019/09/17/critter-character-sheet.html" rel="alternate" type="text/html" title="SVG Character Sheet: Fuzzy Alien Critter" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/critter-character-sheet</id><content type="html" xml:base="/2019/09/17/critter-character-sheet.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-08T18:11:53-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Working with a large codebase</title><link href="/2019/10/08/big-codebase.html" rel="alternate" type="text/html" title="Working with a large codebase" /><published>2019-10-08T00:00:00-04:00</published><updated>2019-10-08T00:00:00-04:00</updated><id>/2019/10/08/big-codebase</id><content type="html" xml:base="/2019/10/08/big-codebase.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;In recent weeks I have stepped away from SVG animation in order to focus on getting cordova mobile apps ready for rollout. The app codebase, which is built in Javascript, is quite large. Over time, I have developed some strategies for keeping the large codebase manageable and flexible. Below are a few tips:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Keep the code modular.&lt;/strong&gt; Break the code into different modules, each comprising one or more files, and give each module a specific purpose. Give each module a name that describes that purpose. If two modules are in a similar realm but have distinct purposes, I often start them with the same word (ex. &lt;code&gt;user_save&lt;/code&gt; and &lt;code&gt;user_retrieve&lt;/code&gt;) so they show up together when my files are sorted alphabetically. I started with just a few modules and as the number of modules proliferated, the code in that first modules ended up getting dispersed into more specific modules.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Name functions according to the modules they are in.&lt;/strong&gt; I have over 100 modules in the app, and each module starts with something like &lt;code&gt;current_activity&lt;/code&gt;. When I look at a function, I like to see what module it is a part of, so I now make all my functions start with the name of the module (or close to it.) (ex. &lt;code&gt;current_activity_setup&lt;/code&gt;.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Make variable names descriptive.&lt;/strong&gt; Make sure your variables are recognizable. Think about what you would recognize if you came back to the code after a long break.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Map out function trees for a given module.&lt;/strong&gt; To keep a bird’s eye view of how the different functions relate in a module, I have create a README.txt file for each module and map out the key functions in that module. In its most basic form, it looks something like this:&lt;/p&gt;
+
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+  lesson_download_cycle
+  |
+  *--lesson_download_activities
+       |
+       *--lesson_download_activity_overview_file
+       |
+       *--lesson_download_activity_assets
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+
+&lt;p&gt;You can also expand this format to include other parts of the code you want to be able to see, such as the arguments, for loops, and indicators of whether some functions are synchronous or asynchronous. I use &lt;code&gt;async / await&lt;/code&gt; logic a lot, so including the &lt;code&gt;await&lt;/code&gt; before the function name helps me remember that those functions are asynchronous.&lt;/p&gt;
+
+&lt;p&gt;Also notice that I have added a divider to show when I am calling a function in another module.&lt;/p&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+  lesson_download(lesson_id)
+  |
+  *--await lesson_download_activities(lesson_id)
+      |
+      *--for loop (activity_array)
+           |
+           |
+           *--await lesson_download_activity_overview_file(activity_id)
+           |
+           *--await lesson_download_activity_assets(activity_id)
+               |
+        =============== asset module ===============
+               |
+               *----await download_image asset
+
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Use Git to your advantage.&lt;/strong&gt; Especially with large codebases I like to leverage the following tools in Git:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;checking &lt;code&gt;git log&lt;/code&gt; often to get re-oriented, especially after the weekend&lt;/li&gt;
+  &lt;li&gt;using git branches to separate out stable points in the build&lt;/li&gt;
+  &lt;li&gt;tagging important releases with version number and description&lt;/li&gt;
+  &lt;li&gt;making detailed git commit messages&lt;/li&gt;
+  &lt;li&gt;using &lt;code&gt;git diff&lt;/code&gt; when making a detailed commit to see what has changed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If I am making a short commit, I will just use &lt;code&gt;git commit -m &amp;lt;message&amp;gt;&lt;/code&gt;.
+If I make a lot of changes in a lot of places, I will type &lt;code&gt;git commit&lt;/code&gt;, which takes me into the command-line text editor. I then use &lt;code&gt;git diff&lt;/code&gt; to view all my new changes. While going through my diff, I write a detailed commit message and make a detailed list of all my changes.&lt;/p&gt;
+
+&lt;p&gt;I also try to &lt;code&gt;git tag&lt;/code&gt; each version to keep track of what versions I am at, and I while I work mainly on a &lt;code&gt;devel&lt;/code&gt; branch, have a few git branches that I know are at a stable point in development.&lt;/p&gt;
+
+&lt;p&gt;Large codebases don’t have to feel like a jenga tower that is about to topple over! If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you are not afraid to come back to and work on. I hope you have found this helpful.
+&amp;lt;!–
+ But it can be expanded to&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use object literals to group functions with common tasks&lt;/li&gt;
+  &lt;li&gt;Coming up with broad categories for your modules
+    &lt;ul&gt;
+      &lt;li&gt;modules that control specific screens in the app&lt;/li&gt;
+      &lt;li&gt;modules that interact with the file system&lt;/li&gt;
+      &lt;li&gt;modules that interact with a website API&lt;/li&gt;
+      &lt;li&gt;back-end data modules&lt;/li&gt;
+      &lt;li&gt;data handling modules&lt;/li&gt;
+      &lt;li&gt;synchronous versus asynchronous modules&lt;/li&gt;
+      &lt;li&gt;modules that interact with user data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What happens when you have worked with a codebase so long that you keep wanting to change everything?&lt;/p&gt;
+
+&lt;p&gt;Write notes and comments about things you would like to change a later.&lt;/p&gt;
+
+&lt;p&gt;for-loops for contacting an API. callbacks =&amp;gt; async await loops
+jquerymobile screen transitions =&amp;gt; CSS transforms
+relying on localStorage less&lt;/p&gt;
+
+&lt;p&gt;When does optimization become important?&lt;/p&gt;
+
+&lt;p&gt;Improving user experience and touch responsiveness
+Making pages load faster
+Making pages respond faster–&amp;gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating an SVG Mouth Expression with Greensock</title><link href="/2019/09/17/tween.html" rel="alternate" type="text/html" title="Animating an SVG Mouth Expression with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/tween</id><content type="html" xml:base="/2019/09/17/tween.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;In a previous post, I animated an emoji face with CSS animations only. This is a reasonable method if you only need CSS transforms and are getting good results across browsers. However, if you need to do something more complex such as change the path of an &lt;svg&gt; line or have a sequence of animations, then it is best to use a Javascript library designed for web animation.&lt;/svg&gt;&lt;/p&gt;
+
+&lt;p&gt;One such library is GreenSock’s &lt;a href=&quot;#&quot;&gt;GSAP&lt;/a&gt; (GreenSock Animation Platform). It is a robust Javascript library that can aspects of an SVG that transforms cannot, like the curvature of paths in SVG elements. It has both free features as well as more advanced features that come with a Greensock Club Membership.&lt;/p&gt;
+
+&lt;p&gt;Let’s use GSAP to animate the curvature of of an SVG path. To do this, we will animate the d-attribute, which determines how the path curves. (Reference Chris Coiyer’s CSS Tricks piece.)&lt;/p&gt;
+
+&lt;p&gt;Without an animation library, this is how it looks when you click the button. Here, I am just using &lt;code&gt;setAttribute&lt;/code&gt;.&lt;/p&gt;
+
+&lt;demo&gt;
+&lt;code&gt;
+
+What Greensock can help you do is tween the animation, or show a smooth transition from the smile to the open mouth. It does that by interpolating the frames in between the starting and ending frames of the animation. Here is what it looks like with Greensock.
+
+&lt;demo&gt;
+
+However, it doesn't always do this perfectly. Check out the animation below.
+
+&lt;demo&gt;
+
+In the animation that works, there are enough similarities between the starting and ending d-attributes of the mouth path so that Greensock makes an acceptable interpolation.
+
+The problematic animation was the one I came up with first. 
+
+In Inkscape, a path is made up of points called nodes. The more nodes you have, the more complex the path equation is. 
+
+&lt;screenshot&gt;&lt;pathcode&gt;
+	
+
+What I ended up doing was back-tracking to the first mouth I drew in Inkscape and drawing a small mouth expression that was not as drastic a transition to the smile. Here is the code: 
+
+&lt;code&gt;
+
+* I kept the number of nodes the same
+* Make small incremental changes and test them often. 
+* I avoided rotating the mouth; I only resized it
+* I would change the control points on the nodes, but I would not reorder the sequence of nodes at all
+
+MorphSVG makes this easier, but it is not for free. You can try it on codepen, though. 
+
+&lt;demo&gt;
+
+ You need to be a member of the &quot;Shockingly Green&quot; subscription, which is $100 per year. For now, I'm fine with counting my nodes. 
+
+
+
+
+
+&lt;/demo&gt;&lt;/code&gt;&lt;/pathcode&gt;&lt;/screenshot&gt;&lt;/demo&gt;&lt;/demo&gt;&lt;/code&gt;&lt;/demo&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating SVG Mouth Expressions with Greensock</title><link href="/2019/09/17/greensock.html" rel="alternate" type="text/html" title="Animating SVG Mouth Expressions with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/greensock</id><content type="html" xml:base="/2019/09/17/greensock.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;Have you ever wanted to animate something on the web?&lt;/p&gt;
+
+&lt;p&gt;I had been thinking about this post for weeks. I had created an alien creature and after making a range of expressions, I wanted to simply make my alien creature go from a smile to a surprised expression.&lt;/p&gt;
+
+&lt;p&gt;Here is the completed animation, done with Greensock animation library.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;transition-1-we-need-a-library&quot;&gt;Transition 1: We need a library&lt;/h4&gt;
+
+&lt;p&gt;My first approach on a CodePen was using the setAttribute command in Javscript for the &lt;code&gt;d&lt;/code&gt; attribute of the mouth path.&lt;/p&gt;
+
+&lt;p&gt;I had heard from Sara Soudaian and Sarah Drasner that animation libraries are key for complex animations, so after my first try didn’t work, I immediately went to try Greensock. The syntax is super easy. Here are the commands I tried:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tweenlite - use for single simple animations&lt;/li&gt;
+  &lt;li&gt;TweenMax - use for single robust animations (?)&lt;/li&gt;
+  &lt;li&gt;TimelineMax - use for multiple animations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;MorphSVG makes this easier, but it is not for free. You need to be a member of the “Shockingly Green” subscription, which is $100. For now, I’m fine with counting my nodes.&lt;/p&gt;
+
+&lt;p&gt;I had initially created a round mouth and got unsatisfactory results - GreenSock (again, without the paid-for MorphSVG) was unable to tween the transition. It either looked like a pretzel or the mouth disappeared.&lt;/p&gt;
+
+&lt;p&gt;What I ended up doing was back-tracking to the first mouth I drew in Inkscape and drawing a small mouth expression that was not as drastic a transition to the smile.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I kept the number of nodes the same&lt;/li&gt;
+  &lt;li&gt;I avoided rotating the mouth; I only resized it&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I would change the control points on the nodes, but I would not reorder the sequence of nodes at all&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Make small incremental changes and test them often.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">SVG Character Sheet: Fuzzy Alien Critter</title><link href="/2019/09/17/critter-character-sheet.html" rel="alternate" type="text/html" title="SVG Character Sheet: Fuzzy Alien Critter" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/critter-character-sheet</id><content type="html" xml:base="/2019/09/17/critter-character-sheet.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;Rediscovering SVG’s has been an absolute joy because of their responsiveness, their editability in text editors, and their ability to look sharp no matter how they are scaled. It occurred to me that I want to step away from circular emoji faces as I embark on my next round of SVG animation posts, so I developed a character sheet for this fuzzy critter over the weekend for an upcoming post on animating an SVG path’s &lt;code&gt;d&lt;/code&gt; attribute.&lt;/p&gt;
 
@@ -669,447 +849,4 @@
 
 &lt;p&gt;I ultimately decided not to use the &lt;code&gt;viewport-fit=cover&lt;/code&gt; technique because I just want to make sure that the notch doesn’t obscure anything. But I do see a lot of potential for apps and for sites that need to create an immersive experience.&lt;/p&gt;
 
-&lt;p&gt;More info on the notch and CSS can be found in &lt;a href=&quot;https://css-tricks.com/the-notch-and-css/&quot;&gt;this article&lt;/a&gt; on CSS Tricks by Chris Coiyer.&lt;/p&gt;</content><author><name></name></author><summary type="html">So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.</summary></entry><entry><title type="html">Drawing a Face with SVG</title><link href="/2019/08/08/circle-to-face.html" rel="alternate" type="text/html" title="Drawing a Face with SVG" /><published>2019-08-08T00:00:00-04:00</published><updated>2019-08-08T00:00:00-04:00</updated><id>/2019/08/08/circle-to-face</id><content type="html" xml:base="/2019/08/08/circle-to-face.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
-
-&lt;p&gt;SVG’s contain many different types of child elements, including circles, ellipses, and linear paths.&lt;/p&gt;
-
-&lt;h3 id=&quot;objective&quot;&gt;Objective&lt;/h3&gt;
-
-&lt;p&gt;In this tutorial, we will use the circle we created in the &lt;a href=&quot;/svg/images/2019/08/07/svg-circle-buildup.html&quot;&gt;previous post&lt;/a&gt; and make it into a face.&lt;/p&gt;
-
-&lt;h3 id=&quot;process&quot;&gt;Process&lt;/h3&gt;
-
-&lt;h4 id=&quot;step-0-recap&quot;&gt;Step 0: Recap&lt;/h4&gt;
-
-&lt;p&gt;In our last tutorial, we drew a circle with properties separated into CSS.&lt;/p&gt;
-
-&lt;ul class=&quot;css-tabs&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div id=&quot;section1&quot;&gt;
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot;/&gt;
-&lt;/svg&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div id=&quot;section2&quot;&gt;
-&lt;pre&gt;
- &lt;code class=&quot;language-css&quot;&gt;
- svg {
-   width: 150px;
-   height: 150px;
-   background-color: #EEEEEE;
- }
- circle {
-	fill: #95D6F1;
-	stroke: #000000;
-	stroke-width: 2;
- }
- &lt;/code&gt;
- &lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;h4 id=&quot;step-1-add-the-eyes&quot;&gt;Step 1: Add the eyes&lt;/h4&gt;
-
-&lt;p&gt;We will use ellipses for the eyes. Like circles, ellipses have &lt;code&gt;cx&lt;/code&gt; and &lt;code&gt;cy&lt;/code&gt; attributes that determine where they show up. But while circles have one radius, determined by &lt;code&gt;r&lt;/code&gt;, ellipses have two radii — a vertical one, &lt;code&gt;ry&lt;/code&gt;, and a horizontal one, &lt;code&gt;rx&lt;/code&gt;. I am making &lt;code&gt;ry&lt;/code&gt; larger than &lt;code&gt;rx&lt;/code&gt; because I want “tall” ellipses for these eyes.&lt;/p&gt;
-
-&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot; /&gt;
-&lt;ellipse cx=&quot;60&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot; /&gt;
-&lt;ellipse cx=&quot;90&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;p&gt;Here is the HTML code. (The CSS is the same as before.)&lt;/p&gt;
-
-&lt;pre&gt;
-	&lt;code class=&quot;language-markup&quot;&gt;
-		&lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot;/&gt;
-&lt;ellipse cx=&quot;60&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot;/&gt;
-&lt;ellipse cx=&quot;90&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot;/&gt;
-&lt;/svg&gt;
-        &lt;/script&gt;
-	&lt;/code&gt;
-&lt;/pre&gt;
-
-&lt;h4 id=&quot;step-2-add-the-mouth&quot;&gt;Step 2: Add the mouth&lt;/h4&gt;
-
-&lt;p&gt;I want the option of a curved mouth, so to draw this one, I am going to use the &lt;code&gt;path&lt;/code&gt; element. Here is how it will look:&lt;/p&gt;
-
-&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot; /&gt;
-&lt;ellipse cx=&quot;60&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot; /&gt;
-&lt;ellipse cx=&quot;90&quot; cy=&quot;51&quot; rx=&quot;6&quot; ry=&quot;15&quot; /&gt;
- &lt;path d=&quot;M42,85 Q73,141 103,85&quot; fill=&quot;transparent&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;p&gt;The path element has three attributes we are familiar with:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;fill&lt;/code&gt;, which we will set to “transparent”&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;stroke&lt;/code&gt;, which we will set to #000000”&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;stroke-width&lt;/code&gt;, which we will set to 2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;But in addition, there is a new property to set, which determines the length and curvature of the path. This is known as &lt;code&gt;d&lt;/code&gt;. This is what the code snippet will look like for the path with &lt;code&gt;d&lt;/code&gt; incorporated.&lt;/p&gt;
-
-&lt;pre&gt;
-	&lt;code class=&quot;language-markup&quot;&gt;
-		&lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;path d=&quot;M42,85 Q73,141 103,85&quot; fill=&quot;transparent&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot;/&gt;
-		&lt;/script&gt;
-	&lt;/code&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Chris Coyier wrote a &lt;code&gt;terrific tutorial&lt;/code&gt; on the &lt;code&gt;d&lt;/code&gt; attribute that I encourage you to take a look at. While I will not be covering the &lt;code&gt;d attribute in nearly as much depth, I wanted to discuss the commands used in my example.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Each letter in the &lt;code&gt;d&lt;/code&gt; attribute is a command, and each command has a set of arguments that are passed into it. For instance, the &lt;code&gt;M&lt;/code&gt; value has &lt;code&gt;42,85&lt;/code&gt; passed into it.&lt;/p&gt;
-
-&lt;p&gt;Let’s take a closer look at this &lt;code&gt;d&lt;/code&gt; attribute’s two commands.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;M42,85:&lt;/code&gt; the M refers to “moveTo”; in other words, where you “move” the pen before you put it down to draw. In this case, we are moving it to coordinates &lt;code&gt;42,85&amp;lt;/code.&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Q73,141 103,85&lt;/code&gt;: This is a quadratic curve control point. Its first point is used to a bezier point used to control the line’s curvature; the second point, &lt;code&gt;103,85&lt;/code&gt;, is the right side of the smile.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are bezier curve generators out there that you can use to generate code like this. Here is one of them that I used to generate the mouth.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blogs.sitepointstatic.com/examples/tech/svg-curves/quadratic-curve.html&quot;&gt;SVG Quadratic Curve Example&lt;/a&gt;, blogs.sitepoint.com&lt;/p&gt;
-
-&lt;p&gt;You can also draw cubic curves with the &lt;code&gt;C&lt;/code&gt;command. As a follow-up exercise, you could try to replace the quadratic curve command with a cubic curve command. Here is another generator from SitePoint that you may find helpful.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blogs.sitepointstatic.com/examples/tech/svg-curves/cubic-curve.html&quot;&gt;SVG Cubic Bézier Curve Example&lt;/a&gt;, blogs.sitepoint.com&lt;/p&gt;
-
-&lt;h3 id=&quot;next-up&quot;&gt;Next up&lt;/h3&gt;
-
-&lt;p&gt;In our next few tutorials, I will go over how to adjust the face expression wtih different SVG techniques and how to make the face change expressions with the click of a mouse.&lt;/p&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Drawing a Circle with SVG</title><link href="/2019/08/07/svg-circle-buildup.html" rel="alternate" type="text/html" title="Drawing a Circle with SVG" /><published>2019-08-07T00:00:00-04:00</published><updated>2019-08-07T00:00:00-04:00</updated><id>/2019/08/07/svg-circle-buildup</id><content type="html" xml:base="/2019/08/07/svg-circle-buildup.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
-
-&lt;p&gt;SVG graphics have been around since 1998, and at this point have gained a substantial amount of &lt;a href=&quot;https://caniuse.com/#feat=svg&quot; target=&quot;_blank&quot;&gt;browser support&lt;/a&gt;. They also lend themselves to animation and are naturally responsive.&lt;/p&gt;
-
-&lt;h3 id=&quot;objective&quot;&gt;Objective&lt;/h3&gt;
-
-&lt;p&gt;In this tutorial, I will explain and demonstrate how to draw a simple circle with SVG from the ground up. Before starting, you should already know the fundamentals of HTML and CSS. Let’s dive in!&lt;/p&gt;
-
-&lt;h4 id=&quot;why-draw-with-code&quot;&gt;Why draw with code?&lt;/h4&gt;
-
-&lt;p&gt;While SVGs can be created in a software program, my goal for this tutorial is to explain how to draw simple ones in code. This way, you can get a sense of how SVG markup works and reverse-engineer existing SVGs more easily. This will especially come in handy when you want to animate specific parts of an SVG.&lt;/p&gt;
-
-&lt;h3 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h3&gt;
-
-&lt;h4 id=&quot;step-1-drawing-the-initial-circle&quot;&gt;Step 1: Drawing the initial circle&lt;/h4&gt;
-
-&lt;p&gt;Let’s start by drawing an SVG and a circle within it that could be added to a webpage. (SVGs that exist at the roots of documents are discussed &lt;a href=&quot;#&quot;&gt;in this post&lt;/a&gt;.)&lt;/p&gt;
-
-&lt;p&gt;We will give the SVG one attribute: the &lt;code&gt;viewBox.&lt;/code&gt; The four numbers specify the x and y coordinates, as well as the width and height, of the SVG “window” relative to the art inside of it. I’ll show you what that means shortly.&lt;/p&gt;
-
-&lt;p&gt;We will give the circle an &lt;code&gt;r&lt;/code&gt; attribute, which is its radius. Let’s make the radius 75 — one half of the viewBox’s width and height.&lt;/p&gt;
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle r=&quot;75&quot;/&gt;
-&lt;/svg&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;p&gt;If the radius is half the length of the box then it should fit nicely into it, right?&lt;/p&gt;
-
-&lt;p&gt;Not yet.&lt;/p&gt;
-
-&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle r=&quot;75&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;h5 id=&quot;things-to-notice&quot;&gt;Things to notice&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;A circle drawn within an SVG will by default start in the upper left hand corner.&lt;/li&gt;
-  &lt;li&gt;The SVG’s width expands to fill that of the browser or device. This is because the width of the viewBox is relative to the art inside it, not the webpage.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Let’s fix the circle’s location first.&lt;/p&gt;
-
-&lt;h4 id=&quot;step-2-set-the-location-of-the-circle&quot;&gt;Step 2: Set the location of the circle&lt;/h4&gt;
-
-&lt;p&gt;Let’s try to center the circle. We do this with &lt;code&gt;cx&lt;/code&gt; and &lt;code&gt;cy&lt;/code&gt; values, which specify its x and y coordinates in the viewBox. Let’s set them so they are one-half the width of the viewBox dimensions.&lt;/p&gt;
-
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot;/&gt;
-&lt;/svg&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;h4 id=&quot;step-3-set-the-width-and-height-of-the-svg&quot;&gt;Step 3: Set the width and height of the SVG&lt;/h4&gt;
-
-&lt;p&gt;Ok — looking better, but we still need to limit the size of this circle by keeping the SVG from filling up the width of the browser. We can do this by adding &lt;code&gt;width&lt;/code&gt; and &lt;code&gt;height&lt;/code&gt; attributes to the svg element.&lt;/p&gt;
-
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
-&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; /&gt;
-&lt;/svg&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
-&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;h4 id=&quot;step-4-adding-fill-and-stroke&quot;&gt;Step 4: Adding fill and stroke&lt;/h4&gt;
-
-&lt;p&gt;Rather than &lt;code&gt;background-color&lt;/code&gt; and &lt;code&gt;border&lt;/code&gt; attributes, SVGs have &lt;code&gt;fill&lt;/code&gt; and &lt;code&gt;stroke&lt;/code&gt;. Let’s give the SVG a black outline and a light blue fill color.&lt;/p&gt;
-
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
-&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; fill=&quot;#95D6F1&quot;/&gt;
-&lt;/svg&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
-&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; fill=&quot;#95D6F1&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;p&gt;The line is pretty thin, so I’m going to bump up its thickness a bit now by adding a &lt;code&gt;stroke-width&lt;/code&gt; attribute with a value of &lt;code&gt;2&lt;/code&gt; to the circle.&lt;/p&gt;
-
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
-&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; fill=&quot;#95D6F1&quot;/&gt;
-&lt;/svg&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
-&lt;circle r=&quot;75&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; fill=&quot;#95D6F1&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;p&gt;The elephant in the room, though, is that the circle no longer quite fits into the viewBox. This is because the stroke adds to its existing radius of &lt;code&gt;r=&quot;75&quot;&lt;/code&gt;. So let’s now adjust the radius down to &lt;code&gt;r=&quot;72&quot;&lt;/code&gt;. We keep the &lt;code&gt;cx&lt;/code&gt; and &lt;code&gt;cy&lt;/code&gt; values because we want the circle to exist in the same location.&lt;/p&gt;
-
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
-&lt;circle r=&quot;72&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; fill=&quot;#95D6F1&quot;/&gt;
-&lt;/svg&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;svg viewBox=&quot;0 0 150 150&quot; width=&quot;150&quot; height=&quot;150&quot;&gt;
-&lt;circle r=&quot;72&quot; cx=&quot;75&quot; cy=&quot;75&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; fill=&quot;#95D6F1&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;h4 id=&quot;step-6-separating-some-properties-into-css&quot;&gt;Step 6: Separating some properties into CSS&lt;/h4&gt;
-
-&lt;p&gt;So far, all our properties have been inline. Now, let’s separate them into the CSS. This can be done either in a separate file or with &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt; tags within your HTML document.&lt;/p&gt;
-
-&lt;p&gt;And just for fun, we’ll make the circle a light shade of purple rather than blue.&lt;/p&gt;
-
-&lt;ul class=&quot;css-tabs&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div id=&quot;section1&quot;&gt;
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot;/&gt;
-&lt;/svg&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div id=&quot;section2&quot;&gt;
-&lt;pre&gt;
- &lt;code class=&quot;language-css&quot;&gt;
- svg {
-   width: 150px;
-   height: 150px;
-   background-color: #EEEEEE;
- }
- circle {
-	fill: #95D6F1;
-	stroke: #000000;
-	stroke-width: 2;
- }
-
- &lt;/code&gt;
- &lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; viewBox=&quot;0 0 150 150&quot;&gt;
-&lt;circle fill=&quot;#f0c6f9&quot; stroke=&quot;#000000&quot; stroke-width=&quot;2&quot; cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;72&quot; /&gt;
-&lt;/svg&gt;
-
-&lt;h3 id=&quot;takeaways&quot;&gt;Takeaways&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SVGs consist of one or more elements, such as circles&lt;/li&gt;
-  &lt;li&gt;The viewBox is the SVG “window” and its scale is relative to the art&lt;/li&gt;
-  &lt;li&gt;Without width and height, the SVG will expand to fit the width of the browser or device&lt;/li&gt;
-  &lt;li&gt;The properties of an SVG can be captured in CSS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Intro to SVGs</title><link href="/2019/08/06/svg-intro.html" rel="alternate" type="text/html" title="Intro to SVGs" /><published>2019-08-06T00:00:00-04:00</published><updated>2019-08-06T00:00:00-04:00</updated><id>/2019/08/06/svg-intro</id><content type="html" xml:base="/2019/08/06/svg-intro.html">&lt;p&gt;The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.&lt;/p&gt;
-
-&lt;p&gt;Having first been developed in 1999, SVG graphics were not always well supported in browsers. that said, they have now have developed a &lt;a href=&quot;https://caniuse.com/#feat=svg&quot;&gt;robust amount of browser support&lt;/a&gt;. In this post, we will cover SVG fundamentals that will be helpful for ensuing tutorials.&lt;/p&gt;
-
-&lt;h3 id=&quot;overview&quot;&gt;Overview&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;What is an SVG?&lt;/li&gt;
-  &lt;li&gt;Creating and editing an SVG&lt;/li&gt;
-  &lt;li&gt;Standalone SVGs versus SVGs embedded in webpages&lt;/li&gt;
-  &lt;li&gt;SVG’s, CSS, and JS&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;what-is-an-svg&quot;&gt;What is an SVG?&lt;/h3&gt;
-
-&lt;h4 id=&quot;svgs-maintain-their-sharpness-regardless-of-their-size&quot;&gt;SVG’s maintain their sharpness regardless of their size.&lt;/h4&gt;
-
-&lt;p&gt;Because SVG’s are made up of lines and shapes drawn mathematically, they do not lose quality when magnified like their pixel-based counterparts that are coded in bitmaps, such as JPG, PNG, and GIF. Look at how this SVG is rendered. Compare this SVG to a PNG graphic.&lt;/p&gt;
-
-&lt;p&gt;(Image examples)&lt;/p&gt;
-
-&lt;p&gt;Now let’s enlarge them both. Notice that the SVG doesn’t lose any quality.&lt;/p&gt;
-
-&lt;p&gt;(Image examples)&lt;/p&gt;
-
-&lt;h4 id=&quot;svgs-are-made-up-of-one-or-more-shapes-drawn-mathematically-in-code&quot;&gt;SVG’s are made up of one or more shapes drawn mathematically in code.&lt;/h4&gt;
-
-&lt;p&gt;You will see some code samples in the SVG tutorials code examples for drawing SVG graphics. The code is actually a set of commands for various types of lines that fit to particular types of math functions, such as linear, quadratic, and cubic, as well as shapes, such as circles.&lt;/p&gt;
-
-&lt;h3 id=&quot;creating-and-editing-svgs&quot;&gt;Creating and Editing SVGs&lt;/h3&gt;
-
-&lt;h4 id=&quot;image-editors-like-adobe-illustrator-and-inkscape-can-output-svg-graphics&quot;&gt;Image Editors like Adobe Illustrator and Inkscape can output SVG graphics.&lt;/h4&gt;
-
-&lt;p&gt;Image applications like Illustrator and Inkscape can output SVG graphics that maintain color, layer order, positioning, and other properties. In many cases, meta data is left in the file that can be stripped out either via export settings or after the fact in a text editor. Just be careful about the settings and make sure you test when you open them up in a browser.&lt;/p&gt;
-
-&lt;h4 id=&quot;svgs-can-be-opened-in-both-a-browser-window-and-a-text-editor&quot;&gt;SVG’s can be opened in both a browser window and a text editor.&lt;/h4&gt;
-
-&lt;p&gt;Because SVG’s are drawn in code, they can be opened up in a text Editor like TextEdit, Notepad, TextWrangler or Sublime Text, and edited directly there.&lt;/p&gt;
-
-&lt;h4 id=&quot;standalone-svg-files&quot;&gt;Standalone SVG files&lt;/h4&gt;
-
-&lt;p&gt;While my SVG tutorials mainly involve SVG elements embeded in an HTML document, SVG code can also exist in its own file as the file’s “root element.” The URLs to SVG files can then be used as &lt;code&gt;src&lt;/code&gt; attributes for &lt;code&gt;img&lt;/code&gt; elements.&lt;/p&gt;
-
-&lt;p&gt;You could theoretically complete at least parts of the ensuing tutorials by drawing directly on an SVG document. If you do that, your SVG element is the “root” of your document and should have these attributes:&lt;/p&gt;
-
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;svg version=&quot;1.1&quot;
-     baseProfile=&quot;full&quot;
-     xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-     &lt;circle/&gt;
-     &lt;path/&gt;
-
-&lt;/svg&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;p&gt;You will notice in this above sample snippet that SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/p&gt;
-
-&lt;p&gt;As with other image types, I rarely if ever am directed to standalone SVGs on the web — normally they are embedded in a page via an &lt;code&gt;img&lt;/code&gt; element or CSS background property, which I cover below - but it is nice to be able to open them sometimes and see how they look by themselves in a browser.&lt;/p&gt;
-
-&lt;h3 id=&quot;using-standalone-svgs-as-the-src-of-an-img-element&quot;&gt;Using standalone SVG’s as the &lt;code&gt;src&lt;/code&gt; of an &lt;code&gt;img&lt;/code&gt; element&lt;/h3&gt;
-
-&lt;p&gt;As with GIFs, JPGs, and PNGs, standalone SVG’s can be used as images. Below is how you might use an SVG as an image’s &lt;code&gt;src&lt;/code&gt; attribute an HTML file. You simply add an SVG’s filename to the &lt;code&gt;src&lt;/code&gt; attribute of an &lt;code&gt;img&lt;/code&gt; element in the markup in the same way you would with a PNG, GIF, or JPG.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The upside is less markup in your document page. With an embedded SVG, the markup can become especially obtrusive if the SVG is very large and complex.&lt;/li&gt;
-  &lt;li&gt;The downside is that you cannot use CSS and JS to reach in and style or animate circles, paths, ellipses, and other elements of an SVG.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;
-	&lt;code class=&quot;language-markup&quot;&gt;
-		&lt;script type=&quot;prism-html-markup&quot;&gt;
-&lt;div class=&quot;image-container&quot;
-&lt;img src=&quot;/path/to/image.svg&quot; alt=&quot;my image&quot;/&gt;
-&lt;/div&gt;
-  &lt;/script&gt;
-	&lt;/code&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;Now I will say that I do use a &lt;a href=&quot;/assets/images/dragon-v3-wide-more-clouds.svg&quot;&gt;standalone SVG&lt;/a&gt; for this site’s dragon banner. I chose to not embed it because I did not want to animate it at this point, and instead wanted to focus on CSS positioning. It is also a very large and complex SVG and I wanted to keep my markup code unobtrusive.&lt;/p&gt;
-
-&lt;p&gt;As with other image file types, using an SVG as the &lt;code&gt;src&lt;/code&gt; attribute of an image does have the penalty of an additional server request, so depending on connection speed our intrepid website visitor may need to wait for just a fraction of a second before that dragon shows up.&lt;/p&gt;
-
-&lt;p&gt;If I ever wanted to animate specific parts of it, I would most likely add it with Javascript somehow. This would keep all that SVG code from cluttering my page, but by adding it dynamically as an inline SVG, I would still be able to, say, make its wings flap, its head, arms, and legs move, or its mouth breathe fire.&lt;/p&gt;
-
-&lt;h3 id=&quot;svg-as-a-background-image-within-css&quot;&gt;SVG as a background image within CSS&lt;/h3&gt;
-
-&lt;p&gt;SVG can be used as a background image of an element via CSS. This allows you to use other properties:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;background-repeat&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;background-size&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;background-position&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Note that &lt;code&gt;background-repeat&lt;/code&gt; only works if &lt;code&gt;background-size&lt;/code&gt; is not set to a percentage. While I was considering making the clouds repeat in my dragon banner, I dropped this idea in favor of using a percentage for &lt;code&gt;background-size&lt;/code&gt; so that the clouds would scale based on browser width.&lt;/p&gt;
-
-&lt;p&gt;While backgrounds are not the only solution for this, I could see the background image method being useful for creating repeating images or patterns. For instance, I could theoretically use a single mountain image and then use &lt;code&gt;background-repeat: repeat-x&lt;/code&gt; to create some repeating mountains under the dragon.&lt;/p&gt;
-
-&lt;h3 id=&quot;inline-svgs&quot;&gt;Inline SVG’s&lt;/h3&gt;
-
-&lt;p&gt;SVG’s could also be embedded in an HTML page as an inline SVG. This eliminates the need for an HTTP request since all the image info is in the DOM. It is also super powerful because you now have the ability to manipulate different elements of the SVG with CSS and JS.&lt;/p&gt;
-
-&lt;p&gt;Here is a super-small HTML page with the SVG, and the link to the page can be found &lt;a href=&quot;#&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;While this adds more code to your HTML page, I usually take this approach right now so the sub-elements of an SVG can be more easily animated with Javascript and CSS.&lt;/p&gt;
-
-&lt;p&gt;Because the SVGs in my SVG demos are intended to be dropped into an HTML page and manipulated with CSS, you will see code looking more like the SVG part of the second example, with &lt;code&gt;version&lt;/code&gt;, &lt;code&gt;baseProfile&lt;/code&gt;, and &lt;code&gt;xlmns&lt;/code&gt; attributes dropped out.&lt;/p&gt;
-
-&lt;p&gt;For more information, check out the &lt;a href=&quot;https://www.w3.org/TR/SVG2/struct.html&quot; target=&quot;_blank&quot;&gt;W3Schools SVG reference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;For a complete course on SVG, check out Chris Coiyer’s course on &lt;a href=&quot;&quot;&gt;Everything you need to know about SVG&lt;/a&gt; on CSS-Tricks.&lt;/p&gt;
-
-&lt;h3 id=&quot;svg-and-css&quot;&gt;SVG and CSS&lt;/h3&gt;
-
-&lt;p&gt;If an SVG code is put directly into an HTML page then its sub elements, such as &lt;code&gt;path&lt;/code&gt;, &lt;code&gt;circle&lt;/code&gt;, and &lt;code&gt;line&lt;/code&gt;, can be manipulated with CSS and Javascript. This is highly useful for keeping properties like fill and stroke uniform, as well as animating their subpaths.&lt;/p&gt;
-
-&lt;p&gt;I have a quick, simple example of how I control an SVG with CSS at the end of &lt;a href=&quot;/svg/images/2019/08/07/svg-circle-buildup.html&quot;&gt;Drawing a Circle with SVG&lt;/a&gt;. The post is then recapped in &lt;a href=&quot;/svg/images/2019/08/08/circle-to-face.html&quot;&gt;Drawing a Face with SVG&lt;/a&gt;, as the HTML and CSS is then used as a basis for starting the face.&lt;/p&gt;
-
-&lt;h3 id=&quot;key-takeaways&quot;&gt;Key Takeaways&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SVG’s maintain their sharpness regardless of their size.&lt;/li&gt;
-  &lt;li&gt;SVG’s are made up of one or more shapes or lines drawn in code.&lt;/li&gt;
-  &lt;li&gt;Image Editors like Adobe Illustrator can output SVG graphics.&lt;/li&gt;
-  &lt;li&gt;SVG’s can be opened in both a browser window and a text editor.&lt;/li&gt;
-  &lt;li&gt;SVG’s have their own document object model (DOM), consisting of a root element and sub-elements like an HTML file.&lt;/li&gt;
-  &lt;li&gt;SVG code can either exist in its own file as the file’s root element or they can exist within an HTML document.&lt;/li&gt;
-  &lt;li&gt;SVG’s respond to CSS.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">The use of Scalar Vector Graphics (SVG) on the web has had a meteoric rise in usability over the past decade, and has quickly become a favorite for web elements because of their responsiveness, their ability to stay sharp regardless of zoom level or device resolution, and their capacity for animation on the web.</summary></entry></feed>
+&lt;p&gt;More info on the notch and CSS can be found in &lt;a href=&quot;https://css-tricks.com/the-notch-and-css/&quot;&gt;this article&lt;/a&gt; on CSS Tricks by Chris Coiyer.&lt;/p&gt;</content><author><name></name></author><summary type="html">So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.</summary></entry></feed>
