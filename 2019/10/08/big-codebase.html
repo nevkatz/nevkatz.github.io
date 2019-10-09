@@ -69,13 +69,17 @@
 
 <p>In recent weeks I have stepped away from SVG animation in order to focus on getting cordova mobile apps ready for rollout. The app codebase, which is built in Javascript, is quite large. Over time, I have developed some strategies for keeping the large codebase manageable and flexible. Below are a few tips:</p>
 
-<p><strong>Keep the code modular.</strong> Break the code into different modules, each comprising one or more files, and give each module a specific purpose. Give each module a name that describes that purpose. If two modules are in a similar realm but have distinct purposes, I often start them with the same word (ex. <code>user_save</code> and <code>user_retrieve</code>) so they show up together when my files are sorted alphabetically. I started with just a few modules and as the number of modules proliferated, the code in that first modules ended up getting dispersed into more specific modules.</p>
+<p><strong>Keep the code modular.</strong> Break the code into different modules, each comprising one or more files, and give each module a specific purpose. In the early days of the codebase, I started with one main module — but as the number of modules proliferated, the code in that first modules ended up getting dispersed into more specific modules.</p>
 
-<p><strong>Name functions according to the modules they are in.</strong> I have over 100 modules in the app, and each module starts with something like <code>current_activity</code>. When I look at a function, I like to see what module it is a part of, so I now make all my functions start with the name of the module (or close to it.) (ex. <code>current_activity_setup</code>.)</p>
+<p>I recommend giving each module a name that describes that purpose. And if two modules are in a similar realm but have distinct purposes, I often start them with the same word (ex. <code>user_save</code> and <code>user_retrieve</code>) so they show up together when my files are sorted alphabetically.</p>
 
-<p><strong>Make variable names descriptive.</strong> Make sure your variables are recognizable. Think about what you would recognize if you came back to the code after a long break.</p>
+<p><strong>Name functions according to the modules they are in.</strong> I have over 100 modules in the app, and each module starts with something like <code>current_activity</code>. When I look at a function, I like to see what module it is a part of, so I recommend naming all functions so that they start with the name of their module. (ex. <code>current_activity_setup</code>.)</p>
 
-<p><strong>Map out function trees for a given module.</strong> To keep a bird’s eye view of how the different functions relate in a module, I have create a README.txt file for each module and map out the key functions in that module. In its most basic form, it looks something like this:</p>
+<p><strong>Comment where necessary but be selective.&lt;/code&gt; As long sa the volume of comments is something you can maintain, they are helpful, but older comments can become outdated. I recommend placing comments at the top of a given file and above your functions.</strong></p>
+
+<p><strong>Make variable names descriptive.</strong> Make sure your variables are recognizable. Think about what you would recognize if you came back to the code after a long break. When returning to a long block of code, would you rather come back to <code>let x = 5</code> or <code>let starting_accounts = 5</code>? Good variable names can eliminate the need for commenting, which can often become outdated.</p>
+
+<p><strong>Map out function trees for a given module.</strong> To keep a bird’s eye view of how the different functions relate in a module, I create a README.txt file for each module. In that file, I describe the module’s purpose and map out the key functions in that module. In its most basic form, a function map looks something like this:</p>
 
 <pre>
  <code class="language-markup">
@@ -127,11 +131,11 @@
 </ul>
 
 <p>If I am making a short commit, I will just use <code>git commit -m &lt;message&gt;</code>.
-If I make a lot of changes in a lot of places, I will type <code>git commit</code>, which takes me into the command-line text editor. I then use <code>git diff</code> to view all my new changes. While going through my diff, I write a detailed commit message and make a detailed list of all my changes.</p>
+If I make a lot of changes in a lot of places, I will type <code>git commit</code>, which takes me into the command-line text editor. I then use <code>git diff</code> to view all my new changes. While going through my diff, I write a detailed commit message and make a detailed list of all my key changes.</p>
 
-<p>I also try to <code>git tag</code> each version to keep track of what versions I am at, and I while I work mainly on a <code>devel</code> branch, have a few git branches that I know are at a stable point in development.</p>
+<p>I also try to <code>git tag</code> each version of the codebase to keep track of what versions I am at, and I while I work mainly on a <code>devel</code> branch, have a few git branches that I know are at a stable point in development.</p>
 
-<p>Large codebases don’t have to feel like a jenga tower that is about to topple over! If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you are not afraid to come back to and work on. I hope you have found this helpful.</p>
+<p>Large codebases don’t have to feel like a jenga tower that is about to topple over. If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you enjoy coming back to and working on.</p>
 
   </div><div id="disqus_thread"></div>
     <script>
