@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-09T06:50:45-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Working with a large codebase</title><link href="/2019/10/08/big-codebase.html" rel="alternate" type="text/html" title="Working with a large codebase" /><published>2019-10-08T00:00:00-04:00</published><updated>2019-10-08T00:00:00-04:00</updated><id>/2019/10/08/big-codebase</id><content type="html" xml:base="/2019/10/08/big-codebase.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-09T06:52:45-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Working with a large codebase</title><link href="/2019/10/08/big-codebase.html" rel="alternate" type="text/html" title="Working with a large codebase" /><published>2019-10-08T00:00:00-04:00</published><updated>2019-10-08T00:00:00-04:00</updated><id>/2019/10/08/big-codebase</id><content type="html" xml:base="/2019/10/08/big-codebase.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;In recent weeks I have stepped away from SVG animation in order to focus on getting cordova mobile apps ready for rollout. The app codebase, which is built in Javascript, is quite large. Over time, I have developed some strategies for keeping the large codebase manageable and flexible. Below are a few tips:&lt;/p&gt;
 
@@ -64,37 +64,7 @@ If I make a lot of changes in a lot of places, I will type &lt;code&gt;git commi
 
 &lt;p&gt;I also try to &lt;code&gt;git tag&lt;/code&gt; each version to keep track of what versions I am at, and I while I work mainly on a &lt;code&gt;devel&lt;/code&gt; branch, have a few git branches that I know are at a stable point in development.&lt;/p&gt;
 
-&lt;p&gt;Large codebases don’t have to feel like a jenga tower that is about to topple over! If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you are not afraid to come back to and work on. I hope you have found this helpful.
-&amp;lt;!–
- But it can be expanded to&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Use object literals to group functions with common tasks&lt;/li&gt;
-  &lt;li&gt;Coming up with broad categories for your modules
-    &lt;ul&gt;
-      &lt;li&gt;modules that control specific screens in the app&lt;/li&gt;
-      &lt;li&gt;modules that interact with the file system&lt;/li&gt;
-      &lt;li&gt;modules that interact with a website API&lt;/li&gt;
-      &lt;li&gt;back-end data modules&lt;/li&gt;
-      &lt;li&gt;data handling modules&lt;/li&gt;
-      &lt;li&gt;synchronous versus asynchronous modules&lt;/li&gt;
-      &lt;li&gt;modules that interact with user data&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;What happens when you have worked with a codebase so long that you keep wanting to change everything?&lt;/p&gt;
-
-&lt;p&gt;Write notes and comments about things you would like to change a later.&lt;/p&gt;
-
-&lt;p&gt;for-loops for contacting an API. callbacks =&amp;gt; async await loops
-jquerymobile screen transitions =&amp;gt; CSS transforms
-relying on localStorage less&lt;/p&gt;
-
-&lt;p&gt;When does optimization become important?&lt;/p&gt;
-
-&lt;p&gt;Improving user experience and touch responsiveness
-Making pages load faster
-Making pages respond faster–&amp;gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating an SVG Mouth Expression with Greensock</title><link href="/2019/09/17/tween.html" rel="alternate" type="text/html" title="Animating an SVG Mouth Expression with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/tween</id><content type="html" xml:base="/2019/09/17/tween.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+&lt;p&gt;Large codebases don’t have to feel like a jenga tower that is about to topple over! If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you are not afraid to come back to and work on. I hope you have found this helpful.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating an SVG Mouth Expression with Greensock</title><link href="/2019/09/17/tween.html" rel="alternate" type="text/html" title="Animating an SVG Mouth Expression with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/tween</id><content type="html" xml:base="/2019/09/17/tween.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;In a previous post, I animated an emoji face with CSS animations only. This is a reasonable method if you only need CSS transforms and are getting good results across browsers. However, if you need to do something more complex such as change the path of an &lt;svg&gt; line or have a sequence of animations, then it is best to use a Javascript library designed for web animation.&lt;/svg&gt;&lt;/p&gt;
 
