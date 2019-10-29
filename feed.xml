@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-09T07:34:17-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Working with a large codebase</title><link href="/2019/10/08/big-codebase.html" rel="alternate" type="text/html" title="Working with a large codebase" /><published>2019-10-08T00:00:00-04:00</published><updated>2019-10-08T00:00:00-04:00</updated><id>/2019/10/08/big-codebase</id><content type="html" xml:base="/2019/10/08/big-codebase.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-29T19:30:26-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Careers in Educational Technology &amp;amp; Media</title><link href="/2019/10/29/edtech-roles.html" rel="alternate" type="text/html" title="Careers in Educational Technology &amp;amp; Media" /><published>2019-10-29T00:00:00-04:00</published><updated>2019-10-29T00:00:00-04:00</updated><id>/2019/10/29/edtech-roles</id><content type="html" xml:base="/2019/10/29/edtech-roles.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;The specific roles and job titles in Educational Technology can seem nebulous if you are just starting to look around. The field is also very broad, and technology is changing at a rapid pace. All these factors can make figuring out a good role challenging.&lt;/p&gt;
+
+&lt;p&gt;It is never to early to learn about the various roles that you may want to apply for. And if you are not a coder, fear not — while EdTech teams may have highly technical roles like web developer or software engineer, you definitely do &lt;strong&gt;not&lt;strong&gt; have to be a coder to land a gig in the field of educational technology. Here are some of the roles on various teams I have been on that do not have to directly involve coding but are vital to the team’s success.&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Below are some roles that frequently occur on teams building educational media. Notice that only small fraction of them involve coding! Also keep in mind that I am focusing primarily on the design of products I have worked on, such as websites, apps, animated videos, app-website systems, and online courses — there are of course other types of media out there, the creative endeavors for which would involve additional roles.&lt;/p&gt;
+
+&lt;p&gt;Here we go:&lt;/p&gt;
+
+&lt;h3 id=&quot;management&quot;&gt;Management&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;project manager&lt;/li&gt;
+  &lt;li&gt;technical lead&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;roels-geared-towards-online-courses&quot;&gt;Roels geared towards online courses&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;online course developer&lt;/li&gt;
+  &lt;li&gt;online course facilitator&lt;/li&gt;
+  &lt;li&gt;instructional designer&lt;/li&gt;
+  &lt;li&gt;learning management system (LMS) specialist&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;roles-that-involve-design-and-planning-of-the-overall-experience&quot;&gt;Roles that involve design and planning of the overall experience.&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;visual designer&lt;/li&gt;
+  &lt;li&gt;user experience designer&lt;/li&gt;
+  &lt;li&gt;learning experience designer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;roles-for-creating-elements-within-sites-and-online-courses&quot;&gt;Roles for creating elements within sites and online Courses&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;animator&lt;/li&gt;
+  &lt;li&gt;graphic artist&lt;/li&gt;
+  &lt;li&gt;web interactive developer&lt;/li&gt;
+  &lt;li&gt;videographer&lt;/li&gt;
+  &lt;li&gt;illustrator&lt;/li&gt;
+  &lt;li&gt;voice actor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;technical-roles-focused-on-the-overall-product&quot;&gt;Technical roles focused on the overall product&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;web developer&lt;/li&gt;
+  &lt;li&gt;app developer&lt;/li&gt;
+  &lt;li&gt;database administrator&lt;/li&gt;
+  &lt;li&gt;content management system (CMS) specialist&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;testing--data-gathering&quot;&gt;Testing &amp;amp; Data Gathering&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;quality assurance specialist&lt;/li&gt;
+  &lt;li&gt;monitoring and evaluation specialist&lt;/li&gt;
+  &lt;li&gt;technical consultant&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are many cases where somone would play more than one role.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;an app developer may also work on an online content management system that an app communicates with.&lt;/li&gt;
+  &lt;li&gt;a project manager may also be a technical lead.&lt;/li&gt;
+  &lt;li&gt;a front-end web developer may also create some animated elements.&lt;/li&gt;
+  &lt;li&gt;a web interactive developer may do some of his/her own quality assurance.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When considering what roles you would be the ideal fit for, do some research and try to connect with people who have these roles. Arrange for a brief informational interview to get a sense of what skills to build for each role, and what “a day in the of” looks like. Then, give some thought as to which roles involve skills that are a logical extension of your talents.&lt;/p&gt;
+
+&lt;p&gt;In upcoming posts, I will spotlight some of these roles and discuss the types skills that a given role (or group of roles) require, and the types of tools that are useful to have for it.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Working with a large codebase</title><link href="/2019/10/08/big-codebase.html" rel="alternate" type="text/html" title="Working with a large codebase" /><published>2019-10-08T00:00:00-04:00</published><updated>2019-10-08T00:00:00-04:00</updated><id>/2019/10/08/big-codebase</id><content type="html" xml:base="/2019/10/08/big-codebase.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;In recent weeks I have stepped away from SVG animation in order to focus on getting cordova mobile apps ready for rollout. The app codebase, which is built in Javascript, is quite large. Over time, I have developed some strategies for keeping the large codebase manageable and flexible. Below are a few tips:&lt;/p&gt;
 
@@ -78,56 +144,7 @@ If I make a lot of changes in a lot of places, I will type &lt;code&gt;git commi
 
 &lt;h3 id=&quot;takeaway&quot;&gt;Takeaway&lt;/h3&gt;
 
-&lt;p&gt;Large codebases don’t have to feel like a jenga tower that is about to topple over. If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you enjoy coming back to and working on.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating an SVG Mouth Expression with Greensock</title><link href="/2019/09/17/tween.html" rel="alternate" type="text/html" title="Animating an SVG Mouth Expression with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/tween</id><content type="html" xml:base="/2019/09/17/tween.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
-
-&lt;p&gt;In a previous post, I animated an emoji face with CSS animations only. This is a reasonable method if you only need CSS transforms and are getting good results across browsers. However, if you need to do something more complex such as change the path of an &lt;svg&gt; line or have a sequence of animations, then it is best to use a Javascript library designed for web animation.&lt;/svg&gt;&lt;/p&gt;
-
-&lt;p&gt;One such library is GreenSock’s &lt;a href=&quot;#&quot;&gt;GSAP&lt;/a&gt; (GreenSock Animation Platform). It is a robust Javascript library that can aspects of an SVG that transforms cannot, like the curvature of paths in SVG elements. It has both free features as well as more advanced features that come with a Greensock Club Membership.&lt;/p&gt;
-
-&lt;p&gt;Let’s use GSAP to animate the curvature of of an SVG path. To do this, we will animate the d-attribute, which determines how the path curves. (Reference Chris Coiyer’s CSS Tricks piece.)&lt;/p&gt;
-
-&lt;p&gt;Without an animation library, this is how it looks when you click the button. Here, I am just using &lt;code&gt;setAttribute&lt;/code&gt;.&lt;/p&gt;
-
-&lt;demo&gt;
-&lt;code&gt;
-
-What Greensock can help you do is tween the animation, or show a smooth transition from the smile to the open mouth. It does that by interpolating the frames in between the starting and ending frames of the animation. Here is what it looks like with Greensock.
-
-&lt;demo&gt;
-
-However, it doesn't always do this perfectly. Check out the animation below.
-
-&lt;demo&gt;
-
-In the animation that works, there are enough similarities between the starting and ending d-attributes of the mouth path so that Greensock makes an acceptable interpolation.
-
-The problematic animation was the one I came up with first. 
-
-In Inkscape, a path is made up of points called nodes. The more nodes you have, the more complex the path equation is. 
-
-&lt;screenshot&gt;&lt;pathcode&gt;
-	
-
-What I ended up doing was back-tracking to the first mouth I drew in Inkscape and drawing a small mouth expression that was not as drastic a transition to the smile. Here is the code: 
-
-&lt;code&gt;
-
-* I kept the number of nodes the same
-* Make small incremental changes and test them often. 
-* I avoided rotating the mouth; I only resized it
-* I would change the control points on the nodes, but I would not reorder the sequence of nodes at all
-
-MorphSVG makes this easier, but it is not for free. You can try it on codepen, though. 
-
-&lt;demo&gt;
-
- You need to be a member of the &quot;Shockingly Green&quot; subscription, which is $100 per year. For now, I'm fine with counting my nodes. 
-
-
-
-
-
-&lt;/demo&gt;&lt;/code&gt;&lt;/pathcode&gt;&lt;/screenshot&gt;&lt;/demo&gt;&lt;/demo&gt;&lt;/code&gt;&lt;/demo&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating SVG Mouth Expressions with Greensock</title><link href="/2019/09/17/greensock.html" rel="alternate" type="text/html" title="Animating SVG Mouth Expressions with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/greensock</id><content type="html" xml:base="/2019/09/17/greensock.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+&lt;p&gt;Large codebases don’t have to feel like a jenga tower that is about to topple over. If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you enjoy coming back to and working on.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating SVG Mouth Expressions with Greensock</title><link href="/2019/09/17/greensock.html" rel="alternate" type="text/html" title="Animating SVG Mouth Expressions with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/greensock</id><content type="html" xml:base="/2019/09/17/greensock.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;Have you ever wanted to animate something on the web?&lt;/p&gt;
 
@@ -222,7 +239,56 @@ MorphSVG makes this easier, but it is not for free. You can try it on codepen, t
   &lt;li&gt;You could include an SVG as an &lt;code&gt;object&lt;/code&gt; element and use a PNG fallback.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I will plan to write about some or all of these techniques in some upcoming posts. I am especially looking forward to animating the mouth by changing the d-attribute of the mouth path with JS. More to come!&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Unmasking Decoupled Drupal</title><link href="/2019/09/13/decoupled-drupal-vue.html" rel="alternate" type="text/html" title="Unmasking Decoupled Drupal" /><published>2019-09-13T00:00:00-04:00</published><updated>2019-09-13T00:00:00-04:00</updated><id>/2019/09/13/decoupled-drupal-vue</id><content type="html" xml:base="/2019/09/13/decoupled-drupal-vue.html">&lt;h4 id=&quot;what-is-decoupled-drupal&quot;&gt;What is Decoupled Drupal?&lt;/h4&gt;
+&lt;p&gt;I will plan to write about some or all of these techniques in some upcoming posts. I am especially looking forward to animating the mouth by changing the d-attribute of the mouth path with JS. More to come!&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating an SVG Mouth Expression with Greensock</title><link href="/2019/09/17/tween.html" rel="alternate" type="text/html" title="Animating an SVG Mouth Expression with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/tween</id><content type="html" xml:base="/2019/09/17/tween.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;In a previous post, I animated an emoji face with CSS animations only. This is a reasonable method if you only need CSS transforms and are getting good results across browsers. However, if you need to do something more complex such as change the path of an &lt;svg&gt; line or have a sequence of animations, then it is best to use a Javascript library designed for web animation.&lt;/svg&gt;&lt;/p&gt;
+
+&lt;p&gt;One such library is GreenSock’s &lt;a href=&quot;#&quot;&gt;GSAP&lt;/a&gt; (GreenSock Animation Platform). It is a robust Javascript library that can aspects of an SVG that transforms cannot, like the curvature of paths in SVG elements. It has both free features as well as more advanced features that come with a Greensock Club Membership.&lt;/p&gt;
+
+&lt;p&gt;Let’s use GSAP to animate the curvature of of an SVG path. To do this, we will animate the d-attribute, which determines how the path curves. (Reference Chris Coiyer’s CSS Tricks piece.)&lt;/p&gt;
+
+&lt;p&gt;Without an animation library, this is how it looks when you click the button. Here, I am just using &lt;code&gt;setAttribute&lt;/code&gt;.&lt;/p&gt;
+
+&lt;demo&gt;
+&lt;code&gt;
+
+What Greensock can help you do is tween the animation, or show a smooth transition from the smile to the open mouth. It does that by interpolating the frames in between the starting and ending frames of the animation. Here is what it looks like with Greensock.
+
+&lt;demo&gt;
+
+However, it doesn't always do this perfectly. Check out the animation below.
+
+&lt;demo&gt;
+
+In the animation that works, there are enough similarities between the starting and ending d-attributes of the mouth path so that Greensock makes an acceptable interpolation.
+
+The problematic animation was the one I came up with first. 
+
+In Inkscape, a path is made up of points called nodes. The more nodes you have, the more complex the path equation is. 
+
+&lt;screenshot&gt;&lt;pathcode&gt;
+	
+
+What I ended up doing was back-tracking to the first mouth I drew in Inkscape and drawing a small mouth expression that was not as drastic a transition to the smile. Here is the code: 
+
+&lt;code&gt;
+
+* I kept the number of nodes the same
+* Make small incremental changes and test them often. 
+* I avoided rotating the mouth; I only resized it
+* I would change the control points on the nodes, but I would not reorder the sequence of nodes at all
+
+MorphSVG makes this easier, but it is not for free. You can try it on codepen, though. 
+
+&lt;demo&gt;
+
+ You need to be a member of the &quot;Shockingly Green&quot; subscription, which is $100 per year. For now, I'm fine with counting my nodes. 
+
+
+
+
+
+&lt;/demo&gt;&lt;/code&gt;&lt;/pathcode&gt;&lt;/screenshot&gt;&lt;/demo&gt;&lt;/demo&gt;&lt;/code&gt;&lt;/demo&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Unmasking Decoupled Drupal</title><link href="/2019/09/13/decoupled-drupal-vue.html" rel="alternate" type="text/html" title="Unmasking Decoupled Drupal" /><published>2019-09-13T00:00:00-04:00</published><updated>2019-09-13T00:00:00-04:00</updated><id>/2019/09/13/decoupled-drupal-vue</id><content type="html" xml:base="/2019/09/13/decoupled-drupal-vue.html">&lt;h4 id=&quot;what-is-decoupled-drupal&quot;&gt;What is Decoupled Drupal?&lt;/h4&gt;
 &lt;p&gt;Suppose you want the freedom to create a site with whatever front-end solution you want — Angular, Vue, React, you name it — but also want the benefits of a content management system so your team can update the site with new material and configure menus or user roles without having to touch any code.&lt;/p&gt;
 
 &lt;p&gt;If so, Decoupled (aka Headless) Drupal may be for you. It involves using Drupal as the content management end of a website, but using a completely different front-end solution such as Vue or React. Your front-end grabs the data from the Drupal CMS via an API and renders the content with whatever slick JS solution you have chosen. Meanwhile, the only part of the visible Drupal interface that gets seen are the administrative content management pages.&lt;/p&gt;
@@ -804,33 +870,4 @@ MorphSVG makes this easier, but it is not for free. You can try it on codepen, t
   &lt;li&gt;The viewBox is the SVG “window” and its scale is relative to the art&lt;/li&gt;
   &lt;li&gt;Without width and height, the SVG will expand to fit the width of the browser or device&lt;/li&gt;
   &lt;li&gt;The properties of an SVG can be captured in CSS&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">iPhone X landscape and the notch</title><link href="/2019/08/28/notch.html" rel="alternate" type="text/html" title="iPhone X landscape and the notch" /><published>2019-08-28T00:00:00-04:00</published><updated>2019-08-28T00:00:00-04:00</updated><id>/2019/08/28/notch</id><content type="html" xml:base="/2019/08/28/notch.html">&lt;p&gt;So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.&lt;/p&gt;
-
-&lt;p&gt;I got into a little “alligator wrestling” with CSS, trying to get it to span the full width of the page by moving margins. I thought initially it was something in the CSS, so I gradually commented it all out. The issue was still there.&lt;/p&gt;
-
-&lt;p&gt;I then took a quick look at all number of other sites in iPhone landscape, including my other site, &lt;a href=&quot;http://www.birdleymedia.com&quot;&gt;birdleymedia.com&lt;/a&gt;. I noticed that all of the other sites had this same issue, where the content did not cover the full width. And then it dawned on me — it is probably because of the notch on the iPhone.&lt;/p&gt;
-
-&lt;p&gt;The color of the two “gutters” on either side is determined by the &lt;code&gt;background-color&lt;/code&gt; of the &lt;code&gt;body&lt;/code&gt; element.&lt;/p&gt;
-
-&lt;p&gt;So you have two options:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;use suitable style for the &lt;code&gt;body&lt;/code&gt; attribute that you wouldn’t mind showing up on either side of the landscape&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;use a specific &lt;code&gt;meta&lt;/code&gt; attribute, &lt;code&gt;viewport-fit=cover&lt;/code&gt;, as shown below in your html pages;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, viewport-fit=cover&quot;&gt;
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;p&gt;I ultimately decided not to use the &lt;code&gt;viewport-fit=cover&lt;/code&gt; technique because I just want to make sure that the notch doesn’t obscure anything. But I do see a lot of potential for apps and for sites that need to create an immersive experience.&lt;/p&gt;
-
-&lt;p&gt;More info on the notch and CSS can be found in &lt;a href=&quot;https://css-tricks.com/the-notch-and-css/&quot;&gt;this article&lt;/a&gt; on CSS Tricks by Chris Coiyer.&lt;/p&gt;</content><author><name></name></author><summary type="html">So I discovered something as I was working on this dragon banner. I wanted it to span the full width of the page, and on various browsers and iPhone portrait mode, it was doing just that. But when I switched to iPhone landscape, I noticed that the page was not filling up the full width.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry></feed>
