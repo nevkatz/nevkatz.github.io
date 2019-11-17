@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-29T20:40:22-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Careers in Educational Technology and Media</title><link href="/2019/10/29/edtech-roles.html" rel="alternate" type="text/html" title="Careers in Educational Technology and Media" /><published>2019-10-29T00:00:00-04:00</published><updated>2019-10-29T00:00:00-04:00</updated><id>/2019/10/29/edtech-roles</id><content type="html" xml:base="/2019/10/29/edtech-roles.html">&lt;h3 id=&quot;so-many-roles-so-little-time&quot;&gt;So many roles, so little time&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-11-17T15:59:08-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Technical Project Director vs. Technical Lead</title><link href="/2019/11/17/tech-lead-project-manager.html" rel="alternate" type="text/html" title="Technical Project Director vs. Technical Lead" /><published>2019-11-17T00:00:00-05:00</published><updated>2019-11-17T00:00:00-05:00</updated><id>/2019/11/17/tech-lead-project-manager</id><content type="html" xml:base="/2019/11/17/tech-lead-project-manager.html">&lt;h3 id=&quot;my-experience-with-both-roles&quot;&gt;My experience with both roles&lt;/h3&gt;
+
+&lt;p&gt;As I was finishing my work towards my software engineering certificate in 2016, my title shifted to technical project director and I started taking on more management roles on a range of projects. I tried out the role for about two years, and while I continued to build apps and websites during this time, my focus shifted by necessity towards management during a portion of each day. While I had previously been focused primarily on front-end web development and on building Drupal sites, I became less involved with building and more involved with managing budgets, scheduling meetings, and leading teams of content writers, web developers, and quality assurance specialists. In short, my concern was less about any specific thing I was building and more about shepherding the deliverables to the finish line and meeting the needs of the client.&lt;/p&gt;
+
+&lt;p&gt;Ultimately, I decided that the director role wasn’t for me and that in the long term, I gravitated more towards making things than managing teams. While I have since switched back to a technical lead role on my current projects, I enjoyed my time as a technical project director and can speak to the similarities and differences of the two roles.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-the-distinction&quot;&gt;What is the distinction?&lt;/h3&gt;
+
+&lt;p&gt;While the distinction between technical project director and technical lead can vary across projects and organizations, the technical project director is primarily concerned with delivering a successful product and communicating with clients, while the technical lead stays focused on growing the components of a given website, course, or application, and on managing the work of any other developers on the team.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-technical-project-director&quot;&gt;The technical project director&lt;/h3&gt;
+
+&lt;p&gt;Let’s say that a team is developing an online course for a client. The technical project director will either be the primary contact or one of the primary contacts with the client, and will schedule meetings and calls. They also may write the initial proposal to a client, manage timeline and budget, and check in on timelines. Their primary role is by necessity “high-level,” meaning that it focuses on big-picture concerns rather than technical details and coding.&lt;/p&gt;
+
+&lt;p&gt;The technical project director would usually handle the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;figure out how much budget to allocate to particular roles and tasks&lt;/li&gt;
+  &lt;li&gt;determine the objective and agenda of meetings&lt;/li&gt;
+  &lt;li&gt;figure out who should be at each meeting&lt;/li&gt;
+  &lt;li&gt;establish a place where project resources are stored&lt;/li&gt;
+  &lt;li&gt;help developers establish a workflow and system of communication&lt;/li&gt;
+  &lt;li&gt;check in with devs on the progress of particular tasks&lt;/li&gt;
+  &lt;li&gt;work with clients, designers, and developers to finalize designs&lt;/li&gt;
+  &lt;li&gt;setting deadlines for content writing staff, designers, developers, and QA staff&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-technical-lead&quot;&gt;The technical lead&lt;/h3&gt;
+
+&lt;p&gt;The technical lead typically manages budget less but may still keep track of how much time developers and designers are spending on particular tasks. As a technical lead, I often would work in between technical project directors and other technical staff, communicating with the technical project director(s) about overall goals and timelines, and then talking with tech staff about how those break down into smaller tasks.&lt;/p&gt;
+
+&lt;p&gt;A technical would usually handle the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;make recommendations on what modules or plugins to try on a given project&lt;/li&gt;
+  &lt;li&gt;make the call on when a given request calls for an already-built plugin or new custom code&lt;/li&gt;
+  &lt;li&gt;determine and manage the process for deploying a set of changes to a live website or production-level app&lt;/li&gt;
+  &lt;li&gt;take the lead on writing a custom code solution&lt;/li&gt;
+  &lt;li&gt;inform the technical project director about the status of particular tasks&lt;/li&gt;
+  &lt;li&gt;coordinate the work of other developers&lt;/li&gt;
+  &lt;li&gt;keep the team current on app and web development best practices&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;where-both-roles-intersect&quot;&gt;Where both roles intersect&lt;/h3&gt;
+
+&lt;p&gt;Depending on team size and the roles and skill sets within that team, the technical lead may also have to be the technical project director. I have been on projects where it has been my role to check on budget as well as complete the primary coding work. So depending on the tech lead’s skill set, he/she may share coding or other “boots-on-the-ground” technical roles. That said, tech leads can also restrict themselves to the “high level” aspects of the project — fielding client requests, checking on designs before they go to developers, assisting with quality assurance, and entering requests into a tracking system - and leave the coding to the developers.&lt;/p&gt;
+
+&lt;p&gt;These are some roles that tech leads and technical project directors may both share:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;lead or co-lead teams of developers&lt;/li&gt;
+  &lt;li&gt;determine the best tech solution for a project based on feedback from vendors&lt;/li&gt;
+  &lt;li&gt;check hours spent on particular tasks against budget and timeline&lt;/li&gt;
+  &lt;li&gt;inform designers on the necessary content of design specs file formats their designs would need to be in&lt;/li&gt;
+  &lt;li&gt;controlling the level of change on a project by determining which client requests are within the scope of a given project&lt;/li&gt;
+  &lt;li&gt;Help to prepare clients to use and/or maintain the app or website&lt;/li&gt;
+  &lt;li&gt;Check what has been built against the assignment specs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tools-to-explore&quot;&gt;Tools to explore&lt;/h3&gt;
+
+&lt;p&gt;For each role, it definitely helps to learn project management and quality assurance tools, such as the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pivotal Tracker&lt;/li&gt;
+  &lt;li&gt;Trello&lt;/li&gt;
+  &lt;li&gt;Monday.com&lt;/li&gt;
+  &lt;li&gt;Asana&lt;/li&gt;
+  &lt;li&gt;DoneDone&lt;/li&gt;
+  &lt;li&gt;Rally&lt;/li&gt;
+  &lt;li&gt;Microsoft Excel&lt;/li&gt;
+  &lt;li&gt;Microsoft SharePoint&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both technical project director and technical lead roles are terrific for someone who likes to work closely with people and gravitates towards organization and time management. If your role is primarily that of a coder, you may want to try managing a project to get a sense of this other perspective and see how you like the role. For now, I have decided that a technical lead role is a better fit for me, and my experiences in both roles have in the long run made me a more effective developer.&lt;/p&gt;</content><author><name></name></author><summary type="html">My experience with both roles</summary></entry><entry><title type="html">Careers in Educational Technology and Media</title><link href="/2019/10/29/edtech-roles.html" rel="alternate" type="text/html" title="Careers in Educational Technology and Media" /><published>2019-10-29T00:00:00-04:00</published><updated>2019-10-29T00:00:00-04:00</updated><id>/2019/10/29/edtech-roles</id><content type="html" xml:base="/2019/10/29/edtech-roles.html">&lt;h3 id=&quot;so-many-roles-so-little-time&quot;&gt;So many roles, so little time&lt;/h3&gt;
 
 &lt;p&gt;The specific roles and job titles in educational technology and media can seem nebulous if you are just starting to look around. The field is also very broad, and technology is changing at a rapid pace. All these factors can make figuring out a good role challenging.&lt;/p&gt;
 
@@ -144,7 +215,56 @@ If I make a lot of changes in a lot of places, I will type &lt;code&gt;git commi
 
 &lt;h3 id=&quot;takeaway&quot;&gt;Takeaway&lt;/h3&gt;
 
-&lt;p&gt;Large codebases don’t have to feel like a jenga tower that is about to topple over. If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you enjoy coming back to and working on.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating SVG Mouth Expressions with Greensock</title><link href="/2019/09/17/greensock.html" rel="alternate" type="text/html" title="Animating SVG Mouth Expressions with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/greensock</id><content type="html" xml:base="/2019/09/17/greensock.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+&lt;p&gt;Large codebases don’t have to feel like a jenga tower that is about to topple over. If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you enjoy coming back to and working on.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating an SVG Mouth Expression with Greensock</title><link href="/2019/09/17/tween.html" rel="alternate" type="text/html" title="Animating an SVG Mouth Expression with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/tween</id><content type="html" xml:base="/2019/09/17/tween.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
+
+&lt;p&gt;In a previous post, I animated an emoji face with CSS animations only. This is a reasonable method if you only need CSS transforms and are getting good results across browsers. However, if you need to do something more complex such as change the path of an &lt;svg&gt; line or have a sequence of animations, then it is best to use a Javascript library designed for web animation.&lt;/svg&gt;&lt;/p&gt;
+
+&lt;p&gt;One such library is GreenSock’s &lt;a href=&quot;#&quot;&gt;GSAP&lt;/a&gt; (GreenSock Animation Platform). It is a robust Javascript library that can aspects of an SVG that transforms cannot, like the curvature of paths in SVG elements. It has both free features as well as more advanced features that come with a Greensock Club Membership.&lt;/p&gt;
+
+&lt;p&gt;Let’s use GSAP to animate the curvature of of an SVG path. To do this, we will animate the d-attribute, which determines how the path curves. (Reference Chris Coiyer’s CSS Tricks piece.)&lt;/p&gt;
+
+&lt;p&gt;Without an animation library, this is how it looks when you click the button. Here, I am just using &lt;code&gt;setAttribute&lt;/code&gt;.&lt;/p&gt;
+
+&lt;demo&gt;
+&lt;code&gt;
+
+What Greensock can help you do is tween the animation, or show a smooth transition from the smile to the open mouth. It does that by interpolating the frames in between the starting and ending frames of the animation. Here is what it looks like with Greensock.
+
+&lt;demo&gt;
+
+However, it doesn't always do this perfectly. Check out the animation below.
+
+&lt;demo&gt;
+
+In the animation that works, there are enough similarities between the starting and ending d-attributes of the mouth path so that Greensock makes an acceptable interpolation.
+
+The problematic animation was the one I came up with first. 
+
+In Inkscape, a path is made up of points called nodes. The more nodes you have, the more complex the path equation is. 
+
+&lt;screenshot&gt;&lt;pathcode&gt;
+	
+
+What I ended up doing was back-tracking to the first mouth I drew in Inkscape and drawing a small mouth expression that was not as drastic a transition to the smile. Here is the code: 
+
+&lt;code&gt;
+
+* I kept the number of nodes the same
+* Make small incremental changes and test them often. 
+* I avoided rotating the mouth; I only resized it
+* I would change the control points on the nodes, but I would not reorder the sequence of nodes at all
+
+MorphSVG makes this easier, but it is not for free. You can try it on codepen, though. 
+
+&lt;demo&gt;
+
+ You need to be a member of the &quot;Shockingly Green&quot; subscription, which is $100 per year. For now, I'm fine with counting my nodes. 
+
+
+
+
+
+&lt;/demo&gt;&lt;/code&gt;&lt;/pathcode&gt;&lt;/screenshot&gt;&lt;/demo&gt;&lt;/demo&gt;&lt;/code&gt;&lt;/demo&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating SVG Mouth Expressions with Greensock</title><link href="/2019/09/17/greensock.html" rel="alternate" type="text/html" title="Animating SVG Mouth Expressions with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/greensock</id><content type="html" xml:base="/2019/09/17/greensock.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
 
 &lt;p&gt;Have you ever wanted to animate something on the web?&lt;/p&gt;
 
@@ -239,56 +359,7 @@ If I make a lot of changes in a lot of places, I will type &lt;code&gt;git commi
   &lt;li&gt;You could include an SVG as an &lt;code&gt;object&lt;/code&gt; element and use a PNG fallback.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I will plan to write about some or all of these techniques in some upcoming posts. I am especially looking forward to animating the mouth by changing the d-attribute of the mouth path with JS. More to come!&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating an SVG Mouth Expression with Greensock</title><link href="/2019/09/17/tween.html" rel="alternate" type="text/html" title="Animating an SVG Mouth Expression with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/tween</id><content type="html" xml:base="/2019/09/17/tween.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
-
-&lt;p&gt;In a previous post, I animated an emoji face with CSS animations only. This is a reasonable method if you only need CSS transforms and are getting good results across browsers. However, if you need to do something more complex such as change the path of an &lt;svg&gt; line or have a sequence of animations, then it is best to use a Javascript library designed for web animation.&lt;/svg&gt;&lt;/p&gt;
-
-&lt;p&gt;One such library is GreenSock’s &lt;a href=&quot;#&quot;&gt;GSAP&lt;/a&gt; (GreenSock Animation Platform). It is a robust Javascript library that can aspects of an SVG that transforms cannot, like the curvature of paths in SVG elements. It has both free features as well as more advanced features that come with a Greensock Club Membership.&lt;/p&gt;
-
-&lt;p&gt;Let’s use GSAP to animate the curvature of of an SVG path. To do this, we will animate the d-attribute, which determines how the path curves. (Reference Chris Coiyer’s CSS Tricks piece.)&lt;/p&gt;
-
-&lt;p&gt;Without an animation library, this is how it looks when you click the button. Here, I am just using &lt;code&gt;setAttribute&lt;/code&gt;.&lt;/p&gt;
-
-&lt;demo&gt;
-&lt;code&gt;
-
-What Greensock can help you do is tween the animation, or show a smooth transition from the smile to the open mouth. It does that by interpolating the frames in between the starting and ending frames of the animation. Here is what it looks like with Greensock.
-
-&lt;demo&gt;
-
-However, it doesn't always do this perfectly. Check out the animation below.
-
-&lt;demo&gt;
-
-In the animation that works, there are enough similarities between the starting and ending d-attributes of the mouth path so that Greensock makes an acceptable interpolation.
-
-The problematic animation was the one I came up with first. 
-
-In Inkscape, a path is made up of points called nodes. The more nodes you have, the more complex the path equation is. 
-
-&lt;screenshot&gt;&lt;pathcode&gt;
-	
-
-What I ended up doing was back-tracking to the first mouth I drew in Inkscape and drawing a small mouth expression that was not as drastic a transition to the smile. Here is the code: 
-
-&lt;code&gt;
-
-* I kept the number of nodes the same
-* Make small incremental changes and test them often. 
-* I avoided rotating the mouth; I only resized it
-* I would change the control points on the nodes, but I would not reorder the sequence of nodes at all
-
-MorphSVG makes this easier, but it is not for free. You can try it on codepen, though. 
-
-&lt;demo&gt;
-
- You need to be a member of the &quot;Shockingly Green&quot; subscription, which is $100 per year. For now, I'm fine with counting my nodes. 
-
-
-
-
-
-&lt;/demo&gt;&lt;/code&gt;&lt;/pathcode&gt;&lt;/screenshot&gt;&lt;/demo&gt;&lt;/demo&gt;&lt;/code&gt;&lt;/demo&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Unmasking Decoupled Drupal</title><link href="/2019/09/13/decoupled-drupal-vue.html" rel="alternate" type="text/html" title="Unmasking Decoupled Drupal" /><published>2019-09-13T00:00:00-04:00</published><updated>2019-09-13T00:00:00-04:00</updated><id>/2019/09/13/decoupled-drupal-vue</id><content type="html" xml:base="/2019/09/13/decoupled-drupal-vue.html">&lt;h4 id=&quot;what-is-decoupled-drupal&quot;&gt;What is Decoupled Drupal?&lt;/h4&gt;
+&lt;p&gt;I will plan to write about some or all of these techniques in some upcoming posts. I am especially looking forward to animating the mouth by changing the d-attribute of the mouth path with JS. More to come!&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Unmasking Decoupled Drupal</title><link href="/2019/09/13/decoupled-drupal-vue.html" rel="alternate" type="text/html" title="Unmasking Decoupled Drupal" /><published>2019-09-13T00:00:00-04:00</published><updated>2019-09-13T00:00:00-04:00</updated><id>/2019/09/13/decoupled-drupal-vue</id><content type="html" xml:base="/2019/09/13/decoupled-drupal-vue.html">&lt;h4 id=&quot;what-is-decoupled-drupal&quot;&gt;What is Decoupled Drupal?&lt;/h4&gt;
 &lt;p&gt;Suppose you want the freedom to create a site with whatever front-end solution you want — Angular, Vue, React, you name it — but also want the benefits of a content management system so your team can update the site with new material and configure menus or user roles without having to touch any code.&lt;/p&gt;
 
 &lt;p&gt;If so, Decoupled (aka Headless) Drupal may be for you. It involves using Drupal as the content management end of a website, but using a completely different front-end solution such as Vue or React. Your front-end grabs the data from the Drupal CMS via an API and renders the content with whatever slick JS solution you have chosen. Meanwhile, the only part of the visible Drupal interface that gets seen are the administrative content management pages.&lt;/p&gt;
@@ -786,88 +857,4 @@ MorphSVG makes this easier, but it is not for free. You can try it on codepen, t
   &lt;li&gt;In addition to the online version I used, there is an offline version with additional features.&lt;/li&gt;
   &lt;li&gt;There are tons of settings that I recommend experimenting with.&lt;/li&gt;
   &lt;li&gt;For those of you interested in a CLI tool, try SVGO.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">Where coding meets cartooning: Facial Expressions with SVGs</title><link href="/2019/09/03/facial-expressions-1.html" rel="alternate" type="text/html" title="Where coding meets cartooning&amp;#58; Facial Expressions with SVGs" /><published>2019-09-03T00:00:00-04:00</published><updated>2019-09-03T00:00:00-04:00</updated><id>/2019/09/03/facial-expressions-1</id><content type="html" xml:base="/2019/09/03/facial-expressions-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
-
-&lt;p&gt;In our last tutorial, we looked at how to draw a simple emoji-like SVG face by adding a circle, two ellipses, and paths and looking at their various attributes. In this tutorial, we’ll investigate how other emoji-like expressions look as SVG code.&lt;/p&gt;
-
-&lt;p&gt;To explore these questions, we will take a look at facial expressions drawn in the same general style and look at their various elements. These expressions are a little more detailed, with eyebrows, noses, and in some cases, tongues.&lt;/p&gt;
-
-&lt;p&gt;I drew all these expressions in Inkscape rather than code because I knew I would want to add some artistic expression to things like eyebrowes, noses, and mouths. I encourage you to explore Inkscape, as it is a terrific open source tool for creating vector graphics.&lt;/p&gt;
-
-&lt;p&gt;The purpose of going into these graphics and taking a look at how they look in code is to highlight what the art looks like  “under the hood” as SVG code, as an understanding of an SVG’s components will enable you to become more effective at editing and animating SVG’s. Armed with a better understanding of what it takes to animate these, we will look at how to animate these in our next tutorial.&lt;/p&gt;
-
-&lt;p&gt;If you’d like to see how I drew these in Inkscape, let me know in the comments below or over Twitter.&lt;/p&gt;
-
-&lt;div class=&quot;section-separator&quot;&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h3&gt;
-
-&lt;p&gt;We have nine facial expressions we will look at. Here they all are below.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;hypnotic trance&lt;/li&gt;
-  &lt;li&gt;stern&lt;/li&gt;
-  &lt;li&gt;jocular&lt;/li&gt;
-  &lt;li&gt;surprised&lt;/li&gt;
-  &lt;li&gt;wary&lt;/li&gt;
-  &lt;li&gt;sleeping&lt;/li&gt;
-  &lt;li&gt;confused&lt;/li&gt;
-  &lt;li&gt;yelling&lt;/li&gt;
-  &lt;li&gt;grossed out&lt;/li&gt;
-  &lt;li&gt;(hearts for eyes)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Here we go!&lt;/p&gt;
-
-&lt;h4 id=&quot;hypnotic-trance-animation-from-neutral-face&quot;&gt;hypnotic trance (animation: from neutral face)&lt;/h4&gt;
-
-&lt;p&gt;In this expression, I am using open circles with no fill. I am using no pupils and a small circular mouth to give that “tranced out” look.&lt;/p&gt;
-
-&lt;h4 id=&quot;stern-animation-turning-whole-head-from-side-to-side&quot;&gt;stern (animation: turning whole head from side to side)&lt;/h4&gt;
-
-&lt;p&gt;Here we have turned the smile upside down, flattened it a bit, and we’ve bumped up the stroke-width by 3. We also have those eyebrows that are clearly not havin’ it.&lt;/p&gt;
-
-&lt;h4 id=&quot;jocular-animation-talking&quot;&gt;jocular (animation: talking)&lt;/h4&gt;
-
-&lt;p&gt;Here I am using smaller circles for the eyes as opposed to large ellipses. The maroon of the mouth is a completely separate object, as is the tongue.&lt;/p&gt;
-
-&lt;h4 id=&quot;surprised-animation-from-neutral-face&quot;&gt;surprised (animation: from neutral face)&lt;/h4&gt;
-
-&lt;p&gt;Here is the static image. Here I am using another technique from “Peanuts” and other comics by having curved lines on the outer sides of the eyes drawn with paths. I am not making them quite symmetrical.&lt;/p&gt;
-
-&lt;h4 id=&quot;wary-animation-looking-back-and-forth&quot;&gt;wary (animation: looking back and forth)&lt;/h4&gt;
-
-&lt;p&gt;Here we have curved paths used over the lines that are similar to those used in teh “Peanuts” cartoon.&lt;/p&gt;
-
-&lt;p&gt;I am using a circle for the mouth. Note how its &lt;code&gt;r&lt;/code&gt; attribute could be animated to adjust the mouth’s size.&lt;/p&gt;
-
-&lt;h4 id=&quot;sleeping-animation-waking-up&quot;&gt;sleeping (animation: waking up)&lt;/h4&gt;
-
-&lt;p&gt;In this first sleeping image, I am using a path for each eye. However, if you use a flat ellipse, as in this second face, you can animate the person waking up!&lt;/p&gt;
-
-&lt;h4 id=&quot;confused-animate-from-neutral-face&quot;&gt;confused (animate from neutral face)&lt;/h4&gt;
-
-&lt;p&gt;Using a path with a separate fill-only object for the confused mouth. I am also using some squiggly-looking paths for the eyebrows, and the eyes are two circles with strokes and fills.&lt;/p&gt;
-
-&lt;h4 id=&quot;yelling-animation-mouth-getting-larger-and-smaller&quot;&gt;yelling (animation: mouth getting larger and smaller)&lt;/h4&gt;
-
-&lt;p&gt;Classic “Peanuts” yelling state with a large blob-like object for the mouth. The nose is a path with a fill that is the same color as the face. You can get a nice cyclic animation out of this one.&lt;/p&gt;
-
-&lt;h4 id=&quot;grossed-out-animation-exclaim&quot;&gt;grossed out (animation: exclaim)&lt;/h4&gt;
-
-&lt;p&gt;Back to the circular eyes with no fill, this time for a sickly look. The tongue appears over the mouth and has a pink fill. Using two paths on the outer side of each eye to convey the grossed out exclamation.&lt;/p&gt;
-
-&lt;h4 id=&quot;lovey-face-animation-pop&quot;&gt;Lovey face (animation: pop)&lt;/h4&gt;
-
-&lt;p&gt;Using two hearts for the eyes with an open mouth. Both shapes have fills. You can find more symmetrical hearts online, but I just hand-drew these to give it a more human and spontaneous quality.&lt;/p&gt;
-
-&lt;div class=&quot;section-separator&quot;&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;takeaways&quot;&gt;Takeaways&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SVGs consist of one or more elements, such as circles&lt;/li&gt;
-  &lt;li&gt;The viewBox is the SVG “window” and its scale is relative to the art&lt;/li&gt;
-  &lt;li&gt;Without width and height, the SVG will expand to fit the width of the browser or device&lt;/li&gt;
-  &lt;li&gt;The properties of an SVG can be captured in CSS&lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry></feed>
