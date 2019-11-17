@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-11-17T16:09:27-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Technical Project Director vs. Technical Lead</title><link href="/2019/11/17/tech-lead-project-dir.html" rel="alternate" type="text/html" title="Technical Project Director vs. Technical Lead" /><published>2019-11-17T00:00:00-05:00</published><updated>2019-11-17T00:00:00-05:00</updated><id>/2019/11/17/tech-lead-project-dir</id><content type="html" xml:base="/2019/11/17/tech-lead-project-dir.html">&lt;h3 id=&quot;my-experience-with-both-roles&quot;&gt;My experience with both roles&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-11-17T16:31:38-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Technical Project Director vs. Technical Lead</title><link href="/2019/11/17/tech-lead-project-manager.html" rel="alternate" type="text/html" title="Technical Project Director vs. Technical Lead" /><published>2019-11-17T00:00:00-05:00</published><updated>2019-11-17T00:00:00-05:00</updated><id>/2019/11/17/tech-lead-project-manager</id><content type="html" xml:base="/2019/11/17/tech-lead-project-manager.html">&lt;h3 id=&quot;my-experience-with-both-roles&quot;&gt;My experience with both roles&lt;/h3&gt;
+
+&lt;p&gt;As I was finishing my work towards my software engineering certificate in 2016, my title shifted to technical project director and I started taking on more management roles on a range of projects. I tried out the role for about two years, and while I continued to build apps and websites during this time, my focus shifted by necessity towards management during a portion of each day. While I had previously been focused primarily on front-end web development and on building Drupal sites, my role grew to include managing budgets, scheduling meetings, and leading teams of content writers, web developers, and quality assurance specialists. In short, my focus was less on any specific thing I was building and more on shepherding the deliverables to the finish line and on making sure the overall products met the needs of the client.&lt;/p&gt;
+
+&lt;p&gt;Ultimately, I decided that I gravitated more towards making things than management, and that the management roles siphoned off too much time from the app and web development that people still relied on me for. So while I have since switched back to a technical lead role on my current projects, I enjoyed my time as a technical project director and can speak to the similarities and differences between the two roles.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-the-distinction&quot;&gt;What is the distinction?&lt;/h3&gt;
+
+&lt;p&gt;While the distinction between technical project director and technical lead can vary across projects and organizations, the technical project director is primarily concerned with delivering a successful product and communicating with clients, while the technical lead stays focused on growing the components of a given website, course, or application, and on managing the work of any other developers on the team.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-technical-project-director&quot;&gt;The technical project director&lt;/h3&gt;
+
+&lt;p&gt;Let’s say that a team is developing an online course for a client. The technical project director will either be the primary contact or one of the primary contacts with the client, and will schedule meetings and calls. They also may write the initial proposal to a client, manage timeline and budget, and check in on timelines. Their primary role is by necessity “high-level,” meaning that it focuses on big-picture concerns rather than technical details and coding.&lt;/p&gt;
+
+&lt;p&gt;The technical project director would usually handle the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;figure out how much budget to allocate to particular roles and tasks&lt;/li&gt;
+  &lt;li&gt;determine the objective and agenda of meetings&lt;/li&gt;
+  &lt;li&gt;figure out who should be at each meeting&lt;/li&gt;
+  &lt;li&gt;establish a place where project resources are stored&lt;/li&gt;
+  &lt;li&gt;help developers establish a workflow and system of communication&lt;/li&gt;
+  &lt;li&gt;check in with devs on the progress of particular tasks&lt;/li&gt;
+  &lt;li&gt;work with clients, designers, and developers to finalize designs&lt;/li&gt;
+  &lt;li&gt;setting deadlines for content writing staff, designers, developers, and QA staff&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-technical-lead&quot;&gt;The technical lead&lt;/h3&gt;
+
+&lt;p&gt;The technical lead typically manages budget less but may still keep track of how much time developers and designers are spending on particular tasks. As a technical lead, I often would work in between technical project directors and other technical staff, communicating with the technical project director(s) about overall goals and timelines, and then talking with tech staff about how those break down into smaller tasks.&lt;/p&gt;
+
+&lt;p&gt;A technical would usually handle the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;make recommendations on what modules or plugins to try on a given project&lt;/li&gt;
+  &lt;li&gt;make the call on when a given request calls for an already-built plugin or new custom code&lt;/li&gt;
+  &lt;li&gt;determine and manage the process for deploying a set of changes to a live website or production-level app&lt;/li&gt;
+  &lt;li&gt;take the lead on writing a custom code solution&lt;/li&gt;
+  &lt;li&gt;inform the technical project director about the status of particular tasks&lt;/li&gt;
+  &lt;li&gt;coordinate the work of other developers&lt;/li&gt;
+  &lt;li&gt;keep the team current on app and web development best practices&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;where-both-roles-intersect&quot;&gt;Where both roles intersect&lt;/h3&gt;
+
+&lt;p&gt;Depending on team size and the roles and skill sets within that team, the technical lead may also have to be the technical project director. I have been on projects where it has been my role to check on budget as well as complete the primary coding work. So depending on the tech lead’s skill set, he/she may share coding or other “boots-on-the-ground” technical roles. That said, tech leads can also restrict themselves to the “high level” aspects of the project — fielding client requests, checking on designs before they go to developers, assisting with quality assurance, and entering requests into a tracking system - and leave the coding to the developers.&lt;/p&gt;
+
+&lt;p&gt;These are some roles that tech leads and technical project directors may both share:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;lead or co-lead teams of developers&lt;/li&gt;
+  &lt;li&gt;determine the best tech solution for a project based on feedback from vendors&lt;/li&gt;
+  &lt;li&gt;check hours spent on particular tasks against budget and timeline&lt;/li&gt;
+  &lt;li&gt;inform designers on the necessary content of design specs file formats their designs would need to be in&lt;/li&gt;
+  &lt;li&gt;controlling the level of change on a project by determining which client requests are within the scope of a given project&lt;/li&gt;
+  &lt;li&gt;Help to prepare clients to use and/or maintain the app or website&lt;/li&gt;
+  &lt;li&gt;Check what has been built against the assignment specs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tools-to-explore&quot;&gt;Tools to explore&lt;/h3&gt;
+
+&lt;p&gt;For each role, it definitely helps to learn project management and quality assurance tools, such as the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pivotal Tracker&lt;/li&gt;
+  &lt;li&gt;Trello&lt;/li&gt;
+  &lt;li&gt;Monday.com&lt;/li&gt;
+  &lt;li&gt;Asana&lt;/li&gt;
+  &lt;li&gt;DoneDone&lt;/li&gt;
+  &lt;li&gt;Rally&lt;/li&gt;
+  &lt;li&gt;Microsoft Excel&lt;/li&gt;
+  &lt;li&gt;Microsoft SharePoint&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both technical project director and technical lead roles are terrific for someone who likes to work closely with people and gravitates towards organization and time management. If your role is primarily that of a coder, you may want to try managing a project to get a sense of this other perspective and see how you like the role. For now, I have decided that a technical lead role is a better fit for me, and my experiences in both roles have in the long run made me a more effective developer.&lt;/p&gt;</content><author><name></name></author><summary type="html">My experience with both roles</summary></entry><entry><title type="html">Technical Project Director vs. Technical Lead</title><link href="/2019/11/17/tech-lead-project-dir.html" rel="alternate" type="text/html" title="Technical Project Director vs. Technical Lead" /><published>2019-11-17T00:00:00-05:00</published><updated>2019-11-17T00:00:00-05:00</updated><id>/2019/11/17/tech-lead-project-dir</id><content type="html" xml:base="/2019/11/17/tech-lead-project-dir.html">&lt;h3 id=&quot;my-experience-with-both-roles&quot;&gt;My experience with both roles&lt;/h3&gt;
 
 &lt;p&gt;As I was finishing my work towards my software engineering certificate in 2016, my title shifted to technical project director and I started taking on more management roles on a range of projects. I tried out the role for about two years, and while I continued to build apps and websites during this time, my focus shifted by necessity towards management during a portion of each day. While I had previously been focused primarily on front-end web development and on building Drupal sites, I became less involved with building and more involved with managing budgets, scheduling meetings, and leading teams of content writers, web developers, and quality assurance specialists. In short, my concern was less about any specific thing I was building and more about shepherding the deliverables to the finish line and meeting the needs of the client.&lt;/p&gt;
 
@@ -794,67 +865,4 @@ MorphSVG makes this easier, but it is not for free. You can try it on codepen, t
 
 &lt;p&gt;It has occurred to me that it would be cool to reduce the size of these and show how they might be used inline with some text. If you’d like to see how I’d do that, let me know.&lt;/p&gt;
 
-&lt;p&gt;I hope you’ve found this helpful. In upcoming posts, we’ll take a look at a few other emojis, how they look in code, and how they can be animated.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="/2019/09/04/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-04T00:00:00-04:00</published><updated>2019-09-04T00:00:00-04:00</updated><id>/2019/09/04/svg-omg</id><content type="html" xml:base="/2019/09/04/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
-
-&lt;p&gt;I was planning to write today about looking at SVG code within some facial expressions I drew up in Inkscape, but that will have to wait. Upon trying the SVG optimization tool known as  &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt;, I realized I had to write about this first!&lt;/p&gt;
-
-&lt;p&gt;Vector graphics applications like Inkscape and Illustrator are terrific for creating SVG images, but the resulting code can be bloated with a lot of unnecessary code (I’m looking at you, metadata.) Optimizing your SVG can make it a million times more readable and reduce its overall size tremendously, but getting your optimization settings just right can be tricky.&lt;/p&gt;
-
-&lt;p&gt;Fortunately, the free online tool &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt; has you covered if your export settings aren’t doing the whole job. (And even if they are, this is worth checking out.) In this post, we’ll look at SVG OMG and compare the memory size of the “before” image with that of the “after” image.&lt;/p&gt;
-
-&lt;h4 id=&quot;what-is-svg-omg&quot;&gt;What is SVG OMG?&lt;/h4&gt;
-
-&lt;p&gt;SVG OMG is an application maintained by Jake Archibald that is a GUI (Graphic User Interface) version of &lt;a href=&quot;https://github.com/svg/svgo&quot;&gt;svgo&lt;/a&gt;, an SVG optimization tool. In addition to the online version I used, there is an offline version with additional features. It is a node.js tool, so it can be installed with the node package manager (npm).&lt;/p&gt;
-
-&lt;div class=&quot;section-separator&quot;&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;diving-in&quot;&gt;Diving in&lt;/h3&gt;
-&lt;h4 id=&quot;the-image&quot;&gt;The Image&lt;/h4&gt;
-
-&lt;p&gt;While the face in my &lt;a href=&quot;/svg/images/2019/08/08/circle-to-face.html&quot; target=&quot;_blank&quot;&gt;circle to face&lt;/a&gt; tutorial was drawn completely with code, I’ve drawn the faces below using the open source vector art application known as &lt;a href=&quot;http://www.inkscape.org&quot; target=&quot;_blank&quot;&gt;Inkscape&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;image-container&quot;&gt;
-&lt;img src=&quot;/assets/images/faces/12-faces-omg.svg&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We’ll look at the SVG code of this image in an upcoming tutorial.&lt;/p&gt;
-
-&lt;p&gt;Now what I have above is the optimized image. The off-the-shelf unoptimized image below that is directly generated by Inkscape has minimal to no discernable difference from its optimized counterpart above.&lt;/p&gt;
-
-&lt;div class=&quot;image-container&quot;&gt;
-&lt;img src=&quot;/assets/images/faces/12-faces-inkscape.svg&quot; /&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;first-impressions-of-the-initial-file-in-a-text-editor&quot;&gt;First Impressions of the Initial File in a Text Editor&lt;/h4&gt;
-
-&lt;p&gt;But while the difference is at least mostly invisible to the human eye, the differences between the two show up in stark relief when both these images are opened in a text editor. Indeed I found that in the original image, the Inkscape-generated code had loads of unfamiliar, Inkscape-specific syntax, with many more lines of code that were hard to parse out, even by SVG standards. To be fair, some of this is due to the modern conveniences that Inkscape offers (ex. layers) but as with the layers and other niceties in a Photoshop file, I didn’t want all that in my final image. And most importantly for upcoming posts, I wanted the SVG code to be limited to only the essential syntax.&lt;/p&gt;
-
-&lt;p&gt;I wanted to optimize the file, and I remembered the &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot;&gt;SVG OMG&lt;/a&gt; tool from &lt;a href=&quot;http://syntax.fm&quot;&gt;syntax.fm&lt;/a&gt; episode with amazing SVG Expert and web developer extraordinaire &lt;a href=&quot;https://www.sarasoueidan.com/&quot;&gt;Sarah Soueidan&lt;/a&gt;. (Thank you, Wes Bos and Scott Tolinski, for the terrific episode.)&lt;/p&gt;
-
-&lt;h4 id=&quot;file-size-comparison&quot;&gt;File Size Comparison&lt;/h4&gt;
-
-&lt;p&gt;So I uploaded my file to SVG OMG. While keeping the default settings, the application told me that SVG OMG reduced the file size from 20.14k to 4.22k — 20.93% of its original size. While the file sizes came out as larger after I downloaded them, the reduction was even more significant: 13KB compared with the original 99KB, or 13% of its original size.&lt;/p&gt;
-
-&lt;div class=&quot;callout&quot;&gt;
-  Optimizing SVG's can remove Inkscape layers. Makes perfect sense but I didn't automatically think of it. In my case I didn't mind, but this may cause issues if you want to go back and edit your image. So hold on to those original files in case you want to go back to your layers. 
-&lt;/div&gt;
-
-&lt;h4 id=&quot;text-editor-comparison&quot;&gt;Text Editor Comparison&lt;/h4&gt;
-
-&lt;p&gt;Upon opening the file in Sublime Text and comparing it with the original file, I found that the extra unnecessary data was gone. The only code there was the code meant to render the image, so it was compact and more readable.&lt;/p&gt;
-
-&lt;p&gt;Here is the &lt;a href=&quot;/assets/images/faces/12-faces-inkscape.svg&quot;&gt;original file&lt;/a&gt; and the &lt;a href=&quot;/assets/images/faces/12-faces-omg.svg&quot;&gt;optimized file&lt;/a&gt; in case you want to have a closer look. Predictably, similar elements across the twelve faces are grouped together, so I will be separating these faces into different SVG objects once we start taking a closer look at the code under the hood.&lt;/p&gt;
-&lt;h4 id=&quot;overall-impression&quot;&gt;Overall Impression&lt;/h4&gt;
-
-&lt;p&gt;After this experience, I will definitely be using SVG OMG as my go-to for SVG image optimization, and might even check out its older command-line cousin, SVGO.&lt;/p&gt;
-
-&lt;div class=&quot;section-separator&quot;&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;takeaways-and-additional-notes&quot;&gt;Takeaways and Additional Notes&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SVG OMG is a terrific tool for optimizing images created with a graphics editor.&lt;/li&gt;
-  &lt;li&gt;In addition to the online version I used, there is an offline version with additional features.&lt;/li&gt;
-  &lt;li&gt;There are tons of settings that I recommend experimenting with.&lt;/li&gt;
-  &lt;li&gt;For those of you interested in a CLI tool, try SVGO.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry></feed>
+&lt;p&gt;I hope you’ve found this helpful. In upcoming posts, we’ll take a look at a few other emojis, how they look in code, and how they can be animated.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry></feed>
