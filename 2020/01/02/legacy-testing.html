@@ -76,21 +76,21 @@
 
 <h4 id="example-1-lists">Example 1: Lists</h4>
 
-<p>Suppose you have an app that stores inventories for different stores, and each store is in a different city. Initially, the app stored data for all the stores in one file. But as use scales up, it becomes important to distribute all the data across many files and have one file for each city.</p>
+<p>Suppose you have an app that stores inventories for different stores, and each store is in a different city. Initially, the app stored data for all the stores in one file. But as use scales up, it becomes important to distribute all the data across many files and have one file for each city. The app needs to retrieve data on these stores when it starts up.</p>
 
-<p>Without legacy code, an app updating to the new version may ignore the original single list file, look only for these per-city files. If it ignores that original file, it will not be able to retrieve any data. So it is important to write code that bridges the gap between the two versions and makes sure that the old data is still accessible in the new version - potentially by looking for the single list first, extracting its data, and distributing the data across multiple files.</p>
+<p>Without legacy code, an app updating to the new version may ignore the original single list file and look only for the new per-city files. If it ignores that original file, it will not be able to retrieve any data when it starts up. So it is important to write code that bridges the gap between the two versions and makes sure that the old data is still accessible in the new version. For instance, the app could perform a one-time operation where it looks for the single list file first, extracts its data, and distributes the data across a new set of per-city files.</p>
 
 <h4 id="example-2-when-to-update-records">Example 2: When to update records</h4>
 
-<p>Sometimes you have to choose carefully when you would want to make your legacy update. Suppose your app stores a bunch of records for stores without store postal codes, but the new app depends on postal codes being stored. You have a choice as to whether you want to update all your store records automatically when the app first launches, or take a “lazy” approach update a store record when the app loads in a store. The one-time update process would have to require the update time to be manageable for the user, while the lazy as-needed process would need to make sure that other processes, such as data uploads, do not depend on all the stores being updated.</p>
+<p>Figuring out when your app should make a legacy update when it is running is an important step. Suppose your app originally stored a bunch of records for stores without storing postal codes, but the new app depends on postal codes being stored. You have a choice as to whether you want to update all your store records automatically when the app first launches, or take a “lazy” approach and update a store record when the app first needs to load that store. The one-time update process would have to require the update time to be manageable for the user, while the lazy as-needed process would require you to make sure that other processes, such as data uploads, do not depend on all the stores being updated.</p>
 
 <h4 id="make-data-backups">Make Data Backups</h4>
 
-<p>If the data is altered during a legacy upgrade, it is best to find a way to back up the original data. This way you can restore it if the data gets corrupted during the upgrade.</p>
+<p>If the data is altered during a legacy upgrade, it is best to write logic that backs up the original data. This way you can restore the data to its original state if the data gets corrupted during the upgrade.</p>
 
 <h4 id="development-versus-production-builds">Development versus Production Builds</h4>
 
-<p>If a build is not able to handle legacy data yet and you are still supporting earlier versions with legacy data, it is important to post it as a development build until you can be sure it can support it.</p>
+<p>If a build you release is not able to handle legacy data yet and you are still supporting earlier versions with legacy data, it is important to either clearly post its limitations and potentially keep it internal to your team, listing it as a development build until you can be sure an upgrade can run smoothly.</p>
 
 <h4 id="legacy-testing">Legacy Testing</h4>
 
