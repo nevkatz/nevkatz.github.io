@@ -90,9 +90,9 @@
 
 <p>If the data is altered during a legacy upgrade, it is best to write logic that backs up the original data. This way you can restore the data to its original state if the data gets corrupted during the upgrade.</p>
 
-<h4 id="development-versus-production-builds">Development versus Production Builds</h4>
+<h4 id="communicate-limitations">Communicate Limitations</h4>
 
-<p>If a build you release is not able to handle legacy data yet and you are still supporting earlier versions with legacy data, it is important to either clearly post its limitations and potentially keep it internal to your team, listing it as a development build until you can be sure an upgrade can run smoothly.</p>
+<p>If a build you release is not able to handle legacy data yet and app versions in use are still supporting earlier versions with legacy data, it is ideal to keep the new version internal to your team until you can be sure an upgrade can run smoothly. If you do release it for use beyond your team, be sure to post its upgrade limitations and list it as a development build.</p>
 
 <h4 id="legacy-testing">Legacy Testing</h4>
 
