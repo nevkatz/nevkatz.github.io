@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><!-- http://jovandeginste.github.io/2016/05/18/add-metadata-tags-to-jekyll-blog-posts.html   -->
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146443473-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146443473-1');
+</script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="/2020/01/02/legacy-testing.html" />
+  
+  <meta itemprop="keywords" content="software-development">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Legacy Testing and Backwards Compatibility | Nevin’s Dev Pages</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Legacy Testing and Backwards Compatibility" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="At some point in software development, you may have an application in the field holding data that needs to be upgraded — and your next build may need to change how that data is stored or pushed up to the cloud. The last thing you would want would be for the data to be corrupted during the upgrade, so building with backwards compatibility in mind and writing code that helps bridge the gap between old and new app versions is essential." />
+<meta property="og:description" content="At some point in software development, you may have an application in the field holding data that needs to be upgraded — and your next build may need to change how that data is stored or pushed up to the cloud. The last thing you would want would be for the data to be corrupted during the upgrade, so building with backwards compatibility in mind and writing code that helps bridge the gap between old and new app versions is essential." />
+<link rel="canonical" href="/2020/01/02/legacy-testing.html" />
+<meta property="og:url" content="/2020/01/02/legacy-testing.html" />
+<meta property="og:site_name" content="Nevin’s Dev Pages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-02T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"At some point in software development, you may have an application in the field holding data that needs to be upgraded — and your next build may need to change how that data is stored or pushed up to the cloud. The last thing you would want would be for the data to be corrupted during the upgrade, so building with backwards compatibility in mind and writing code that helps bridge the gap between old and new app versions is essential.","@type":"BlogPosting","url":"/2020/01/02/legacy-testing.html","headline":"Legacy Testing and Backwards Compatibility","dateModified":"2020-01-02T00:00:00-05:00","datePublished":"2020-01-02T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/01/02/legacy-testing.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/css/prism.css">
+  <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin's Dev Pages" /></head>
+<body ><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nevin&#39;s Dev Pages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <!--<a class="page-link" href="/about/">About</a><a class="page-link" href="/index.html">Nevin&#39;s Dev Pages</a>-->
+           <a class="page-link" href="/about">About</a>
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Legacy Testing and Backwards Compatibility</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-02T00:00:00-05:00" itemprop="datePublished">Jan 2, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>At some point in software development, you may have an application in the field holding data that needs to be upgraded — and your next build may need to change how that data is stored or pushed up to the cloud. The last thing you would want would be for the data to be corrupted during the upgrade, so building with backwards compatibility in mind and writing code that helps bridge the gap between old and new app versions is essential.</p>
+
+<h4 id="defining-terms">Defining Terms</h4>
+
+<ul>
+  <li>Backwards compatibility can mean a number of things, but in this case, it means that an application needs to be able to interact with older data, potentially in a different format, that was produced by an earlier version of the app.</li>
+  <li>The term “legacy code” also has a lot of meanings, but in this case, I use it to refer to code that helps with maintaining and updating this older data.</li>
+</ul>
+
+<h4 id="example-1-lists">Example 1: Lists</h4>
+
+<p>Suppose you have an app that stores inventories for different stores, and each store is in a different city. Initially, the app stored data for all the stores in one file. But as use scales up, it becomes important to distribute all the data across many files and have one file for each city.</p>
+
+<p>Without legacy code, an app updating to the new version may ignore the original single list file, look only for these per-city files. If it ignores that original file, it will not be able to retrieve any data. So it is important to write code that bridges the gap between the two versions and makes sure that the old data is still accessible in the new version - potentially by looking for the single list first, extracting its data, and distributing the data across multiple files.</p>
+
+<h4 id="example-2-when-to-update-records">Example 2: When to update records</h4>
+
+<p>Sometimes you have to choose carefully when you would want to make your legacy update. Suppose your app stores a bunch of records for stores without store postal codes, but the new app depends on postal codes being stored. You have a choice as to whether you want to update all your store records automatically when the app first launches, or take a “lazy” approach update a store record when the app loads in a store. The one-time update process would have to require the update time to be manageable for the user, while the lazy as-needed process would need to make sure that other processes, such as data uploads, do not depend on all the stores being updated.</p>
+
+<h4 id="make-data-backups">Make Data Backups</h4>
+
+<p>If the data is altered during a legacy upgrade, it is best to find a way to back up the original data. This way you can restore it if the data gets corrupted during the upgrade.</p>
+
+<h4 id="development-versus-production-builds">Development versus Production Builds</h4>
+
+<p>If a build is not able to handle legacy data yet and you are still supporting earlier versions with legacy data, it is important to post it as a development build until you can be sure it can support it.</p>
+
+<h4 id="legacy-testing">Legacy Testing</h4>
+
+<p>To test how well an app with legacy data will upgrade to the new version, I recommend setting up your application with the old version, entering some data, and then upgrading to the new version. Additionally, you will need to also run setup tests on the new version by itself to make sure that the app also functions properly when just starting out as the new version.</p>
+
+
+  </div><div id="disqus_thread"></div>
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://nevkatz.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/02/legacy-testing.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Nevin&#39;s Dev Pages</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"><!-- Nevin&#39;s Dev Pages --></li><li><a class="u-email" href="mailto:nevkatz@gmail.com">nevkatz@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">nevkatz</span></a></li><li><a href="https://www.twitter.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">nevkatz</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I write about web and app development.</p>
+      </div>
+
+      
+    </div>
+   
+
+  </div>
+   <div id="copyright">
+    <p>Copyright &copy; 2019 Nevin Katz. All Rights Reserved.</p>
+   </div>
+
+</footer>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

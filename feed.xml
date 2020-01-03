@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-11-17T16:48:54-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Technical Project Director vs. Technical Lead</title><link href="/2019/11/17/tech-lead-project-dir.html" rel="alternate" type="text/html" title="Technical Project Director vs. Technical Lead" /><published>2019-11-17T00:00:00-05:00</published><updated>2019-11-17T00:00:00-05:00</updated><id>/2019/11/17/tech-lead-project-dir</id><content type="html" xml:base="/2019/11/17/tech-lead-project-dir.html">&lt;h3 id=&quot;my-experience-with-both-roles&quot;&gt;My experience with both roles&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-02T23:14:04-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Legacy Testing and Backwards Compatibility</title><link href="/2020/01/02/legacy-testing.html" rel="alternate" type="text/html" title="Legacy Testing and Backwards Compatibility" /><published>2020-01-02T00:00:00-05:00</published><updated>2020-01-02T00:00:00-05:00</updated><id>/2020/01/02/legacy-testing</id><content type="html" xml:base="/2020/01/02/legacy-testing.html">&lt;p&gt;At some point in software development, you may have an application in the field holding data that needs to be upgraded — and your next build may need to change how that data is stored or pushed up to the cloud. The last thing you would want would be for the data to be corrupted during the upgrade, so building with backwards compatibility in mind and writing code that helps bridge the gap between old and new app versions is essential.&lt;/p&gt;
+
+&lt;h4 id=&quot;defining-terms&quot;&gt;Defining Terms&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Backwards compatibility can mean a number of things, but in this case, it means that an application needs to be able to interact with older data, potentially in a different format, that was produced by an earlier version of the app.&lt;/li&gt;
+  &lt;li&gt;The term “legacy code” also has a lot of meanings, but in this case, I use it to refer to code that helps with maintaining and updating this older data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;example-1-lists&quot;&gt;Example 1: Lists&lt;/h4&gt;
+
+&lt;p&gt;Suppose you have an app that stores inventories for different stores, and each store is in a different city. Initially, the app stored data for all the stores in one file. But as use scales up, it becomes important to distribute all the data across many files and have one file for each city.&lt;/p&gt;
+
+&lt;p&gt;Without legacy code, an app updating to the new version may ignore the original single list file, look only for these per-city files. If it ignores that original file, it will not be able to retrieve any data. So it is important to write code that bridges the gap between the two versions and makes sure that the old data is still accessible in the new version - potentially by looking for the single list first, extracting its data, and distributing the data across multiple files.&lt;/p&gt;
+
+&lt;h4 id=&quot;example-2-when-to-update-records&quot;&gt;Example 2: When to update records&lt;/h4&gt;
+
+&lt;p&gt;Sometimes you have to choose carefully when you would want to make your legacy update. Suppose your app stores a bunch of records for stores without store postal codes, but the new app depends on postal codes being stored. You have a choice as to whether you want to update all your store records automatically when the app first launches, or take a “lazy” approach update a store record when the app loads in a store. The one-time update process would have to require the update time to be manageable for the user, while the lazy as-needed process would need to make sure that other processes, such as data uploads, do not depend on all the stores being updated.&lt;/p&gt;
+
+&lt;h4 id=&quot;make-data-backups&quot;&gt;Make Data Backups&lt;/h4&gt;
+
+&lt;p&gt;If the data is altered during a legacy upgrade, it is best to find a way to back up the original data. This way you can restore it if the data gets corrupted during the upgrade.&lt;/p&gt;
+
+&lt;h4 id=&quot;development-versus-production-builds&quot;&gt;Development versus Production Builds&lt;/h4&gt;
+
+&lt;p&gt;If a build is not able to handle legacy data yet and you are still supporting earlier versions with legacy data, it is important to post it as a development build until you can be sure it can support it.&lt;/p&gt;
+
+&lt;h4 id=&quot;legacy-testing&quot;&gt;Legacy Testing&lt;/h4&gt;
+
+&lt;p&gt;To test how well an app with legacy data will upgrade to the new version, I recommend setting up your application with the old version, entering some data, and then upgrading to the new version. Additionally, you will need to also run setup tests on the new version by itself to make sure that the app also functions properly when just starting out as the new version.&lt;/p&gt;</content><author><name></name></author><summary type="html">At some point in software development, you may have an application in the field holding data that needs to be upgraded — and your next build may need to change how that data is stored or pushed up to the cloud. The last thing you would want would be for the data to be corrupted during the upgrade, so building with backwards compatibility in mind and writing code that helps bridge the gap between old and new app versions is essential.</summary></entry><entry><title type="html">Technical Project Director vs. Technical Lead</title><link href="/2019/11/17/tech-lead-project-dir.html" rel="alternate" type="text/html" title="Technical Project Director vs. Technical Lead" /><published>2019-11-17T00:00:00-05:00</published><updated>2019-11-17T00:00:00-05:00</updated><id>/2019/11/17/tech-lead-project-dir</id><content type="html" xml:base="/2019/11/17/tech-lead-project-dir.html">&lt;h3 id=&quot;my-experience-with-both-roles&quot;&gt;My experience with both roles&lt;/h3&gt;
 
 &lt;p&gt;As I was finishing my work towards my software engineering certificate in 2016, my title shifted to technical project director and I started taking on more management roles on a range of projects. I tried out the role for about two years, and while I continued to build apps and websites during this time, my focus shifted by necessity towards management during a portion of each day. While I had previously been focused primarily on front-end web development and on building Drupal sites, my role grew to include managing budgets, scheduling meetings, and leading teams of content writers, web developers, and quality assurance specialists. In short, my focus was less on any specific thing I was building and more on shepherding the deliverables to the finish line and on making sure the overall products met the needs of the client.&lt;/p&gt;
 
@@ -794,67 +823,4 @@ MorphSVG makes this easier, but it is not for free. You can try it on codepen, t
 
 &lt;p&gt;It has occurred to me that it would be cool to reduce the size of these and show how they might be used inline with some text. If you’d like to see how I’d do that, let me know.&lt;/p&gt;
 
-&lt;p&gt;I hope you’ve found this helpful. In upcoming posts, we’ll take a look at a few other emojis, how they look in code, and how they can be animated.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Optimizing an SVG Image with SVG OMG</title><link href="/2019/09/04/svg-omg.html" rel="alternate" type="text/html" title="Optimizing an SVG Image with SVG OMG" /><published>2019-09-04T00:00:00-04:00</published><updated>2019-09-04T00:00:00-04:00</updated><id>/2019/09/04/svg-omg</id><content type="html" xml:base="/2019/09/04/svg-omg.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
-
-&lt;p&gt;I was planning to write today about looking at SVG code within some facial expressions I drew up in Inkscape, but that will have to wait. Upon trying the SVG optimization tool known as  &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt;, I realized I had to write about this first!&lt;/p&gt;
-
-&lt;p&gt;Vector graphics applications like Inkscape and Illustrator are terrific for creating SVG images, but the resulting code can be bloated with a lot of unnecessary code (I’m looking at you, metadata.) Optimizing your SVG can make it a million times more readable and reduce its overall size tremendously, but getting your optimization settings just right can be tricky.&lt;/p&gt;
-
-&lt;p&gt;Fortunately, the free online tool &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot; target=&quot;_blank&quot;&gt;SVG OMG&lt;/a&gt; has you covered if your export settings aren’t doing the whole job. (And even if they are, this is worth checking out.) In this post, we’ll look at SVG OMG and compare the memory size of the “before” image with that of the “after” image.&lt;/p&gt;
-
-&lt;h4 id=&quot;what-is-svg-omg&quot;&gt;What is SVG OMG?&lt;/h4&gt;
-
-&lt;p&gt;SVG OMG is an application maintained by Jake Archibald that is a GUI (Graphic User Interface) version of &lt;a href=&quot;https://github.com/svg/svgo&quot;&gt;svgo&lt;/a&gt;, an SVG optimization tool. In addition to the online version I used, there is an offline version with additional features. It is a node.js tool, so it can be installed with the node package manager (npm).&lt;/p&gt;
-
-&lt;div class=&quot;section-separator&quot;&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;diving-in&quot;&gt;Diving in&lt;/h3&gt;
-&lt;h4 id=&quot;the-image&quot;&gt;The Image&lt;/h4&gt;
-
-&lt;p&gt;While the face in my &lt;a href=&quot;/svg/images/2019/08/08/circle-to-face.html&quot; target=&quot;_blank&quot;&gt;circle to face&lt;/a&gt; tutorial was drawn completely with code, I’ve drawn the faces below using the open source vector art application known as &lt;a href=&quot;http://www.inkscape.org&quot; target=&quot;_blank&quot;&gt;Inkscape&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;image-container&quot;&gt;
-&lt;img src=&quot;/assets/images/faces/12-faces-omg.svg&quot; /&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We’ll look at the SVG code of this image in an upcoming tutorial.&lt;/p&gt;
-
-&lt;p&gt;Now what I have above is the optimized image. The off-the-shelf unoptimized image below that is directly generated by Inkscape has minimal to no discernable difference from its optimized counterpart above.&lt;/p&gt;
-
-&lt;div class=&quot;image-container&quot;&gt;
-&lt;img src=&quot;/assets/images/faces/12-faces-inkscape.svg&quot; /&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;first-impressions-of-the-initial-file-in-a-text-editor&quot;&gt;First Impressions of the Initial File in a Text Editor&lt;/h4&gt;
-
-&lt;p&gt;But while the difference is at least mostly invisible to the human eye, the differences between the two show up in stark relief when both these images are opened in a text editor. Indeed I found that in the original image, the Inkscape-generated code had loads of unfamiliar, Inkscape-specific syntax, with many more lines of code that were hard to parse out, even by SVG standards. To be fair, some of this is due to the modern conveniences that Inkscape offers (ex. layers) but as with the layers and other niceties in a Photoshop file, I didn’t want all that in my final image. And most importantly for upcoming posts, I wanted the SVG code to be limited to only the essential syntax.&lt;/p&gt;
-
-&lt;p&gt;I wanted to optimize the file, and I remembered the &lt;a href=&quot;https://jakearchibald.github.io/svgomg/&quot;&gt;SVG OMG&lt;/a&gt; tool from &lt;a href=&quot;http://syntax.fm&quot;&gt;syntax.fm&lt;/a&gt; episode with amazing SVG Expert and web developer extraordinaire &lt;a href=&quot;https://www.sarasoueidan.com/&quot;&gt;Sarah Soueidan&lt;/a&gt;. (Thank you, Wes Bos and Scott Tolinski, for the terrific episode.)&lt;/p&gt;
-
-&lt;h4 id=&quot;file-size-comparison&quot;&gt;File Size Comparison&lt;/h4&gt;
-
-&lt;p&gt;So I uploaded my file to SVG OMG. While keeping the default settings, the application told me that SVG OMG reduced the file size from 20.14k to 4.22k — 20.93% of its original size. While the file sizes came out as larger after I downloaded them, the reduction was even more significant: 13KB compared with the original 99KB, or 13% of its original size.&lt;/p&gt;
-
-&lt;div class=&quot;callout&quot;&gt;
-  Optimizing SVG's can remove Inkscape layers. Makes perfect sense but I didn't automatically think of it. In my case I didn't mind, but this may cause issues if you want to go back and edit your image. So hold on to those original files in case you want to go back to your layers. 
-&lt;/div&gt;
-
-&lt;h4 id=&quot;text-editor-comparison&quot;&gt;Text Editor Comparison&lt;/h4&gt;
-
-&lt;p&gt;Upon opening the file in Sublime Text and comparing it with the original file, I found that the extra unnecessary data was gone. The only code there was the code meant to render the image, so it was compact and more readable.&lt;/p&gt;
-
-&lt;p&gt;Here is the &lt;a href=&quot;/assets/images/faces/12-faces-inkscape.svg&quot;&gt;original file&lt;/a&gt; and the &lt;a href=&quot;/assets/images/faces/12-faces-omg.svg&quot;&gt;optimized file&lt;/a&gt; in case you want to have a closer look. Predictably, similar elements across the twelve faces are grouped together, so I will be separating these faces into different SVG objects once we start taking a closer look at the code under the hood.&lt;/p&gt;
-&lt;h4 id=&quot;overall-impression&quot;&gt;Overall Impression&lt;/h4&gt;
-
-&lt;p&gt;After this experience, I will definitely be using SVG OMG as my go-to for SVG image optimization, and might even check out its older command-line cousin, SVGO.&lt;/p&gt;
-
-&lt;div class=&quot;section-separator&quot;&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;takeaways-and-additional-notes&quot;&gt;Takeaways and Additional Notes&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SVG OMG is a terrific tool for optimizing images created with a graphics editor.&lt;/li&gt;
-  &lt;li&gt;In addition to the online version I used, there is an offline version with additional features.&lt;/li&gt;
-  &lt;li&gt;There are tons of settings that I recommend experimenting with.&lt;/li&gt;
-  &lt;li&gt;For those of you interested in a CLI tool, try SVGO.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Background</summary></entry></feed>
+&lt;p&gt;I hope you’ve found this helpful. In upcoming posts, we’ll take a look at a few other emojis, how they look in code, and how they can be animated.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry></feed>
