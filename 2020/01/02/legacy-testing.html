@@ -76,7 +76,7 @@
 
 <h4 id="example-1-lists">Example 1: Lists</h4>
 
-<p>Suppose you have an app that stores inventories for different stores, and each store is in a different city. Initially, the app stored data for all the stores in one file. But as use scales up, it becomes important to distribute all the data across many files and have one file for each city. The app needs to retrieve data on these stores when it starts up.</p>
+<p>Suppose you have an app that stores inventories for different stores across a range of cities, with multiple stores in each city. The app needs to retrieve data on these stores when it starts up. Initially, the app stored data for all the stores in one file. But as use scales up, it becomes important to distribute all the data across many files and have one file for each city.</p>
 
 <p>Without legacy code, an app updating to the new version may ignore the original single list file and look only for the new per-city files. If it ignores that original file, it will not be able to retrieve any data when it starts up. So it is important to write code that bridges the gap between the two versions and makes sure that the old data is still accessible in the new version. For instance, the app could perform a one-time operation where it looks for the single list file first, extracts its data, and distributes the data across a new set of per-city files.</p>
 
@@ -96,6 +96,9 @@
 
 <p>To test how well an app with legacy data will upgrade to the new version, I recommend setting up your application with the old version, entering some data, and then upgrading to the new version. Additionally, you will need to also run setup tests on the new version by itself to make sure that the app also functions properly when just starting out as the new version.</p>
 
+<h4 id="closing">Closing</h4>
+
+<p>It is important to consider how updates to an application affect your users, particularly with respect to important data that pre-update versions of the app are handling. To ensure a smooth transition, building in logic to smoothly migrate the data into a format that the new app version can work with, and be sure to test the upgrade process before releasing your app into the field. Thanks for reading!</p>
 
   </div><div id="disqus_thread"></div>
     <script>
