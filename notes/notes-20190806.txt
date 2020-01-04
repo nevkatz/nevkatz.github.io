@@ -1,0 +1,15 @@
+Stuff to explore with Jekyll
+
+Adding 1-sentence descriptions to the blog
+
+Filtering posts
+
+Jekyll search
+
+Categorizing posts by page
+
+Adding icons
+
+Removing the RSS thing
+
+This is the first time where I feel focused on an area of tech writing that I feel I can succeed in, though. 

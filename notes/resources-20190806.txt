@@ -1,0 +1,22 @@
+
+
+Markdown Quick Ref
+https://gist.github.com/roachhd/779fa77e9b90fe945b0c
+
+Filters
+https://blog.webjeda.com/jekyll-filters/
+
+Pagination
+https://jekyllrb.com/docs/pagination/
+
+Scaling an SVG
+https://css-tricks.com/scale-svg/
+
+Heart SVG
+https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d
+
+Sections:
+https://dev-notes.eu/2016/08/page-sections-in-jekyll-seperating-content-from-layout/
+
+Cheat sheet: 
+https://devhints.io/jekyll
