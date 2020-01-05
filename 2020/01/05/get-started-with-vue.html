@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><!-- http://jovandeginste.github.io/2016/05/18/add-metadata-tags-to-jekyll-blog-posts.html   -->
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146443473-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146443473-1');
+</script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="/2020/01/05/get-started-with-vue.html" />
+  
+  <meta itemprop="keywords" content="vue">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Four Ways to Get Up and Running with VueJS | Nevin’s Dev Pages</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Four Ways to Get Up and Running with VueJS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Getting Started" />
+<meta property="og:description" content="Getting Started" />
+<link rel="canonical" href="/2020/01/05/get-started-with-vue.html" />
+<meta property="og:url" content="/2020/01/05/get-started-with-vue.html" />
+<meta property="og:site_name" content="Nevin’s Dev Pages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-05T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Getting Started","@type":"BlogPosting","url":"/2020/01/05/get-started-with-vue.html","headline":"Four Ways to Get Up and Running with VueJS","dateModified":"2020-01-05T00:00:00-05:00","datePublished":"2020-01-05T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/01/05/get-started-with-vue.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/css/prism.css">
+  <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin's Dev Pages" /></head>
+<body ><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nevin&#39;s Dev Pages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <!--<a class="page-link" href="/about/">About</a><a class="page-link" href="/index.html">Nevin&#39;s Dev Pages</a>-->
+           <a class="page-link" href="/about">About</a>
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Four Ways to Get Up and Running with VueJS</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-05T00:00:00-05:00" itemprop="datePublished">Jan 5, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="getting-started">Getting Started</h3>
+
+<p>VueJS is a terrific Javascript framework used across the world for building user interfaces. Whether you are new to web development or a seasoned veteran, you can find a way to set it up that works for you. Below I have listed four different setup methods for getting started with VueJS so you can start learning and experimenting.</p>
+
+<p><strong>(1) Adding the Vue library via <code>&lt;script&gt;</code> tags</strong> My introduction to Vue was over a year ago when I discovered how to add the codebase the way I would add any other JS library — simply by adding the link to the library within <code>&lt;script&gt;</code> tags at the bottom of my html pages.</p>
+
+<p>I used this method of integrating VueJS in my course all the time on JS Fiddle — here is a quick <a href="https://jsfiddle.net/nevkatz/y0hq7ues/" target="_blank">Hello World</a> example in Fiddle, and of course, you could also try it in a CodePen sandbox as well.</p>
+
+<p>As far as how to get to the VueJS library, you can download it directly or use a CDN (here is <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js" target="_blank">Vue 2.3.4 on CloudFlare</a>).</p>
+
+<p>This method is equivalent to the way you would add jQuery or some other JS library. To learn more, check out Sarah Drasner’s <a href="https://www.smashingmagazine.com/2018/02/jquery-vue-javascript/" target="_blank">Replacing jQuery With Vue.js: No Build Step Necessary</a> piece.</p>
+
+<p><strong>(2) Running a local server using the Vue CLI tool.</strong> You can download and set up the Command-Line Interface (CLI) tool at <a href="https://cli.vuejs.org" target="_blank">cli.vuejs.org</a> and create a project completely from the command line. You’ll need Node JS and npm to get started, and I also recommend checking out Daniel Cook’s terrific <a href="https://itnext.io/getting-started-vue-js-and-visual-studio-code-6990f92e918a" target="_blank">Getting Started: Vue.js and Visual Studio Code</a>, which can be adapted to other Integrated Development Environments (IDE’s) or text editors like Sublime Text.</p>
+
+<p><strong>(3) Using the GUI tool after starting it from the command line.</strong> Once you have downloaded the CLI, you can also use Vue’s Graphic User Interface (GUI) to create and configure a project by typing <code>vue ui</code> from the command line — and as with teh CLI method, you can edit your code with your favorite text editor or IDE and see your results take place in a browser. The  <a href="https://medium.com/the-vue-point/vue-cli-3-0-is-here-c42bebe28fbb" target="_blank">Vue 3 CLI</a> just came out in August, which has a very intuitive screen flow and an awesome set of options for getting started. To explore this method, I followed the second half of <a href="https://reactgo.com/vue-cli3-tutorial-creating-project/" target="_blank">Vue CLI 3 Tutorial: How to create Vue project</a>, which worked well for me.</p>
+
+<p><strong>(4) Running from the command line with webpack.</strong> You can also build a Vue application with a utility known as webpack. To get started, check out Daniel Cook’s <a href="https://itnext.io/vuejs-and-webpack-4-from-scratch-part-1-94c9c28a534a" target="_blank">Vue.js and Webpack 4 From Scratch, Part 1</a>.</p>
+
+<h4 id="take-an-intro-course">Take an Intro Course</h4>
+
+<p>Vue can sometimes feel like a new language, and it can be challenging to build learning momentum without a structured learning path. Over the past couple months, I have been taking an excellent Udemy Course called <a href="https://www.udemy.com/course/vuejs-2-the-complete-guide/">VueJS 2 — The Complete Guide</a> with Maximilian Schwarzmüller. The course starts with the JS Fiddle approach, so the on-ramp is straightforward. If you are new to Vue and want to learn how to use it in your projects, I recommend taking a course like this.</p>
+
+<h4 id="learn-the-components-model">Learn the Components Model</h4>
+
+<p>You can assemble a Vue app using components, which reside in .vue files. Each component consists of its own template markup, CSS, and JS code. If you already distribute your CSS styles and JS code across multiple files, this may be a helpful model for you to learn.</p>
+
+<h4 id="try-building-multi-page-apps">Try building Multi-Page Apps</h4>
+
+<p>As I get started, the most useful Vue dependency I have installed so far has been router, which enables you to build multi-page apps. If you build using the Vue GUI, the application will recommend installing this for single-page applications.</p>
+
+<p>Good luck getting started with Vue!</p>
+
+
+  </div><div id="disqus_thread"></div>
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://nevkatz.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/05/get-started-with-vue.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Nevin&#39;s Dev Pages</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"><!-- Nevin&#39;s Dev Pages --></li><li><a class="u-email" href="mailto:nevkatz@gmail.com">nevkatz@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">nevkatz</span></a></li><li><a href="https://www.twitter.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">nevkatz</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I write about web and app development.</p>
+      </div>
+
+      
+    </div>
+   
+
+  </div>
+   <div id="copyright">
+    <p>Copyright &copy; 2019 Nevin Katz. All Rights Reserved.</p>
+   </div>
+
+</footer>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>
