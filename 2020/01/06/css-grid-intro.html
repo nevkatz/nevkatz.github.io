@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en"><!-- http://jovandeginste.github.io/2016/05/18/add-metadata-tags-to-jekyll-blog-posts.html   -->
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146443473-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146443473-1');
+</script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="/2020/01/06/css-grid-intro.html" />
+  
+  <meta itemprop="keywords" content="css,css-grid,comics,mobile">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>A Responsive Comic Panel Layout with CSS Grid | Nevin’s Dev Pages</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="A Responsive Comic Panel Layout with CSS Grid" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Getting Started" />
+<meta property="og:description" content="Getting Started" />
+<link rel="canonical" href="/2020/01/06/css-grid-intro.html" />
+<meta property="og:url" content="/2020/01/06/css-grid-intro.html" />
+<meta property="og:site_name" content="Nevin’s Dev Pages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-06T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Getting Started","@type":"BlogPosting","url":"/2020/01/06/css-grid-intro.html","headline":"A Responsive Comic Panel Layout with CSS Grid","dateModified":"2020-01-06T00:00:00-05:00","datePublished":"2020-01-06T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/01/06/css-grid-intro.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/css/prism.css">
+  <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin's Dev Pages" /></head>
+<body ><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nevin&#39;s Dev Pages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <!--<a class="page-link" href="/about/">About</a><a class="page-link" href="/index.html">Nevin&#39;s Dev Pages</a>-->
+           <a class="page-link" href="/about">About</a>
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">A Responsive Comic Panel Layout with CSS Grid</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-06T00:00:00-05:00" itemprop="datePublished">Jan 6, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="getting-started">Getting Started</h3>
+
+<p>CSS Grid is a terrific web technique for two-dimensional layouts, and I see a lot of potential for formatting web comics. Below I have a quick demo of the type of nine-panel layout that responds to screen widths. At screen widths above 667px, you’ll see 3 x 3 panel arrangement that you may see in a graphic novel. At widths between 501px and 667px, it has a two column layout. And at widths below, all the panels stack within one column.</p>
+
+<div class="grid-container">
+<div class="grid-template">
+  <div class="grid-el" id="el-1">
+    1
+  </div>
+  <div class="grid-el" id="el-2">
+    <span>2</span>
+  </div>
+  <div class="grid-el" id="el-3">
+    <span>3</span>
+  </div>
+  <div class="grid-el" id="el-4">
+    <span>4</span>
+  </div>
+   <div class="grid-el" id="el-5">
+    5
+  </div>
+  <div class="grid-el" id="el-6">
+    <span>6</span>
+  </div>
+  <div class="grid-el" id="el-7">
+    <span>7</span>
+  </div>
+  <div class="grid-el" id="el-8">
+    <span>8</span>
+  </div>
+   <div class="grid-el" id="el-9">
+   <span>9</span>
+  </div>
+   <div class="grid-el" id="el-10">
+   <span>The End</span>
+  </div>
+</div>
+</div>
+
+<p>Here is the code.</p>
+
+<style>/* overall container */
+.grid-container {
+  margin-bottom: 20px;
+}
+/* grid template */
+.grid-template {
+  margin: 0px auto;
+  width: 470px;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  text-align: center;
+  font-family: "Arial";
+  font-size: 20px;
+  justify-content: stretch;
+}
+/* individual grid element */
+.grid-el {
+  min-height: 200px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* colors */
+#el-1 {
+  background-color: #aaccee;
+}
+#el-2 {
+  background-color: #ccddaa;
+}
+#el-3 {
+  background-color: #ddccee;
+}
+#el-4 {
+  background-color: #eeccaa;
+}
+#el-5 {
+  background-color: #ccaaee;
+}
+#el-6 {
+  background-color: #6699dd;
+}
+#el-7 {
+  background-color: #ffcc55;
+}
+#el-8 {
+  background-color: #66BB88;
+}
+#el-9 {
+  background-color: #DD8899;
+}
+#el-10 {
+  background-color: #aaccee;
+  display: none;
+}
+/* responsive theming */
+@media screen and (max-width:667px) {
+  .grid-template {
+    grid-template-columns: 150px 150px;
+    width: 310px;
+  }
+  /* show the last optional panel so each column has same number of panels */
+  #el-10 {
+    display: flex;
+  }
+}
+@media screen and (max-width:500px) {
+  .grid-template {
+    grid-template-columns: 150px;
+    width: 150px;
+    grid-column-gap: 0px;
+  }
+}
+</style>
+
+<ul class="css-tabs">
+  <li><a href="#section1">HTML</a></li>
+  <li><a href="#section2">CSS</a></li>
+</ul>
+
+<div id="section1">
+ <pre>
+ <code class="language-markup">
+<script type="prism-html-markup"><div class="grid-container">
+ <div class="grid-template">
+  <div class="grid-el" id="el-1">
+    1
+  </div>
+  <div class="grid-el" id="el-2">
+    <span>2</span>
+  </div>
+  <div class="grid-el" id="el-3">
+    <span>3</span>
+  </div>
+  <div class="grid-el" id="el-4">
+    <span>4</span>
+  </div>
+   <div class="grid-el" id="el-5">
+    5
+  </div>
+  <div class="grid-el" id="el-6">
+    <span>6</span>
+  </div>
+  <div class="grid-el" id="el-7">
+    <span>7</span>
+  </div>
+  <div class="grid-el" id="el-8">
+    <span>8</span>
+  </div>
+   <div class="grid-el" id="el-9">
+   <span>9</span>
+  </div>
+  <div class="grid-el" id="el-10">
+   <span>The End</span>
+  </div>
+ </div>
+</div>
+</script>
+</code>
+</pre>
+</div>
+<div id="section2"> 
+<pre>
+<code class="language-css">/* overall container */
+.grid-container {
+  margin-bottom: 20px;
+}
+/* grid template */
+.grid-template {
+  margin: 0px auto;
+  width: 470px;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  text-align: center;
+  font-family: "Arial";
+  font-size: 20px;
+  justify-content: stretch;
+}
+/* individual grid element */
+.grid-el {
+  min-height: 200px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* colors */
+#el-1 {
+  background-color: #aaccee;
+}
+#el-2 {
+  background-color: #ccddaa;
+}
+#el-3 {
+  background-color: #ddccee;
+}
+#el-4 {
+  background-color: #eeccaa;
+}
+#el-5 {
+  background-color: #ccaaee;
+}
+#el-6 {
+  background-color: #6699dd;
+}
+#el-7 {
+  background-color: #ffcc55;
+}
+#el-8 {
+  background-color: #66BB88;
+}
+#el-9 {
+  background-color: #DD8899;
+}
+#el-10 {
+  background-color: #aaccee;
+  display: none;
+}
+/* responsive theming */
+@media screen and (max-width:667px) {
+  .grid-template {
+    grid-template-columns: 150px 150px;
+    width: 310px;
+  }
+  /* show the last optional panel so each column has same number of panels */
+  #el-10 {
+    display: flex;
+  }
+}
+@media screen and (max-width:500px) {
+  .grid-template {
+    grid-template-columns: 150px;
+    width: 150px;
+    grid-column-gap: 0px;
+  }
+}
+</code>
+</pre>
+</div>
+
+<p>Check out this example on <a href="https://codepen.io/nevkatz/pen/mdypppw" target="_blank">CodePen</a>.</p>
+
+<p>A few things to notice:</p>
+
+<ul>
+  <li>I am giving the overall container, <code>grid-container</code>, a pre-defined width and centering it for each screen width.</li>
+  <li>In both the main code and the media queries, <code>grid-template-columns</code> determines how many columns you have.</li>
+  <li>Each panel has the class <code>.grid-el</code>, which has a minimum height of 200px.</li>
+  <li>The <code>.grid-el</code> class has <code>display: flex</code>, which I use to center the text inside it.</li>
+  <li>I am using <code>grid-row-gap</code> and <code>grid-column-gap</code> for the gutters. Because both are 10px, I could also theoretically use <code>grid-gap</code> for brevity.</li>
+  <li>You’ll notice that an extra panel shows up in the two-column view so that each column has the same number of panels. At the two other width ranges, this final panel is simply hidden with <code>display: none</code>.  This technique may not be ideal in all cases, but I just wanted to toss it out as an example of how to handle different numbers of columns across a range of screen widths.</li>
+</ul>
+
+<p>CSS grid holds a great many possibilities for rendering comics in responsive ways, and is a terrific example of how art and tech are two sides of same coin. Below are a few resources related to comics and CSS grid.</p>
+
+<h4 id="resources">Resources</h4>
+
+<p>Once again, here is the <a href="https://codepen.io/nevkatz/pen/mdypppw" target="_blank">CodePen example</a>.</p>
+
+<p>For a comprehensive guide to CSS Syntax, check out <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">The complete guide to CSS Grid</a> on CSS-Tricks.</p>
+
+<p>Learn about CSS grid and view a similar example of this layout on <a href="https://www.w3schools.com/css/css_grid.asp">W3Schools.com</a>.</p>
+
+<p>In his book <a href="https://www.amazon.com/Reinventing-Comics-Evolution-Art-Form/dp/0060953500" target="_blank">Reinventing Comics</a>, author Scott McCloud discusses the web medium as creating the potential for an “infinite canvas.” Because it was written before the advent of smartphones, its predictions do not completely mirror the current day - though the book does speak to the vast potential of comics as a digital medium.</p>
+
+<p>To learn about my comics-based science science resource books, <em>Dr. Birdley Teaches Science</em>, and see some examples of how I present illustrations on the web, check out <a href="http://www.birdleymedia.com" target="_blank">birdleymedia.com</a>. I have had a longstanding interest in using comics as an educational medium and it is exciting to begin experimenting with their use on the web.</p>
+
+  </div><div id="disqus_thread"></div>
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://nevkatz.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/06/css-grid-intro.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Nevin&#39;s Dev Pages</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"><!-- Nevin&#39;s Dev Pages --></li><li><a class="u-email" href="mailto:nevkatz@gmail.com">nevkatz@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">nevkatz</span></a></li><li><a href="https://www.twitter.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">nevkatz</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I write about web and app development.</p>
+      </div>
+
+      
+    </div>
+   
+
+  </div>
+   <div id="copyright">
+    <p>Copyright &copy; 2019 Nevin Katz. All Rights Reserved.</p>
+   </div>
+
+</footer>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>
