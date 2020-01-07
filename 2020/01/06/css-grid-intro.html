@@ -164,17 +164,21 @@
   background-color: #aaccee;
   display: none;
 }
-/* responsive theming */
+/* show two columns at widths between 501px and 667px */
 @media screen and (max-width:667px) {
   .grid-template {
     grid-template-columns: 150px 150px;
     width: 310px;
   }
+}
+/* show the ending panel only on the two-column display */
+@media screen and (min-width:501px) and (max-width:667px) {
   /* show the last optional panel so each column has same number of panels */
   #el-10 {
     display: flex;
   }
 }
+/* show one column at widths of 500px and below */
 @media screen and (max-width:500px) {
   .grid-template {
     grid-template-columns: 150px;
@@ -290,17 +294,21 @@
   background-color: #aaccee;
   display: none;
 }
-/* responsive theming */
+/* show two columns at widths between 501px and 667px */
 @media screen and (max-width:667px) {
   .grid-template {
     grid-template-columns: 150px 150px;
     width: 310px;
   }
+}
+/* show the ending panel only on the two-column display */
+@media screen and (min-width:501px) and (max-width:667px) {
   /* show the last optional panel so each column has same number of panels */
   #el-10 {
     display: flex;
   }
 }
+/* show one column at widths of 500px and below */
 @media screen and (max-width:500px) {
   .grid-template {
     grid-template-columns: 150px;

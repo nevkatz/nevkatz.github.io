@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-06T08:59:38-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">A Responsive Comic Panel Layout with CSS Grid</title><link href="/2020/01/06/css-grid-intro.html" rel="alternate" type="text/html" title="A Responsive Comic Panel Layout with CSS Grid" /><published>2020-01-06T00:00:00-05:00</published><updated>2020-01-06T00:00:00-05:00</updated><id>/2020/01/06/css-grid-intro</id><content type="html" xml:base="/2020/01/06/css-grid-intro.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-07T08:00:53-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">A Responsive Comic Panel Layout with CSS Grid</title><link href="/2020/01/06/css-grid-intro.html" rel="alternate" type="text/html" title="A Responsive Comic Panel Layout with CSS Grid" /><published>2020-01-06T00:00:00-05:00</published><updated>2020-01-06T00:00:00-05:00</updated><id>/2020/01/06/css-grid-intro</id><content type="html" xml:base="/2020/01/06/css-grid-intro.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
 
 &lt;p&gt;CSS Grid is a terrific web technique for two-dimensional layouts, and I see a lot of potential for formatting web comics. Below I have a quick demo of the type of nine-panel layout that responds to screen widths. At screen widths above 667px, you’ll see 3 x 3 panel arrangement that you may see in a graphic novel. At widths between 501px and 667px, it has a two column layout. And at widths below, all the panels stack within one column.&lt;/p&gt;
 
@@ -97,17 +97,21 @@
   background-color: #aaccee;
   display: none;
 }
-/* responsive theming */
+/* show two columns at widths between 501px and 667px */
 @media screen and (max-width:667px) {
   .grid-template {
     grid-template-columns: 150px 150px;
     width: 310px;
   }
+}
+/* show the ending panel only on the two-column display */
+@media screen and (min-width:501px) and (max-width:667px) {
   /* show the last optional panel so each column has same number of panels */
   #el-10 {
     display: flex;
   }
 }
+/* show one column at widths of 500px and below */
 @media screen and (max-width:500px) {
   .grid-template {
     grid-template-columns: 150px;
@@ -223,17 +227,21 @@
   background-color: #aaccee;
   display: none;
 }
-/* responsive theming */
+/* show two columns at widths between 501px and 667px */
 @media screen and (max-width:667px) {
   .grid-template {
     grid-template-columns: 150px 150px;
     width: 310px;
   }
+}
+/* show the ending panel only on the two-column display */
+@media screen and (min-width:501px) and (max-width:667px) {
   /* show the last optional panel so each column has same number of panels */
   #el-10 {
     display: flex;
   }
 }
+/* show one column at widths of 500px and below */
 @media screen and (max-width:500px) {
   .grid-template {
     grid-template-columns: 150px;
