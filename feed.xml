@@ -1,4 +1,513 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-07T10:52:57-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">First Demo with Greensock’s SVG animation library</title><link href="/2020/01/07/greensock-test-1.html" rel="alternate" type="text/html" title="First Demo with Greensock's SVG animation library" /><published>2020-01-07T00:00:00-05:00</published><updated>2020-01-07T00:00:00-05:00</updated><id>/2020/01/07/greensock-test-1</id><content type="html" xml:base="/2020/01/07/greensock-test-1.html">&lt;h3 id=&quot;delving-into-greensock-with-a-moody-creature&quot;&gt;Delving into Greensock with a Moody Creature&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-08T09:47:51-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Code breakdown of creature mouth animation</title><link href="/2020/01/08/greensock-explanation.html" rel="alternate" type="text/html" title="Code breakdown of creature mouth animation" /><published>2020-01-08T00:00:00-05:00</published><updated>2020-01-08T00:00:00-05:00</updated><id>/2020/01/08/greensock-explanation</id><content type="html" xml:base="/2020/01/08/greensock-explanation.html">&lt;h3 id=&quot;changing-facial-expressions-with-vanilla-js-and-gsap&quot;&gt;Changing facial expressions with Vanilla JS and GSAP&lt;/h3&gt;
+
+&lt;p&gt;My &lt;a href=&quot;/2020/01/07/greensock-test-1.html&quot; target=&quot;_blank&quot;&gt;post&lt;/a&gt; before this one featured my first demo of the GSAP (Greensock Animation API) library for animation of SVG (Scalar Vector Graphics) and included a quick explanation of why I used it. Here is the demo again - click on the buttons (the default is set to “happy”) and you should be able to see the critter change expressions.&lt;/p&gt;
+
+&lt;div id=&quot;critter-container&quot; class=&quot;margin-bottom&quot;&gt;
+&lt;!-- create the character as an inline svg --&gt;
+  &lt;svg width=&quot;200&quot; height=&quot;200&quot; viewBox=&quot;0 0 53.925 52.917&quot;&gt;
+  &lt;path d=&quot;M35.888 38.876c.05.814.134 1.558.134 2.405 0 1.043.45 3.675 0 3.675h2.205c1.115 0 5.412-.107 5.412 1.336 0 .66-.017 1.617-.802 2.205-.888.666-4.762 1.055-5.88.87-.528-.089-1.695-.627-2.004-.937-.5-.5-1.515-1.447-2.005-1.937-.315-.315.618-5.997.2-6.415&quot; fill=&quot;#b4823e&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; /&gt;
+  &lt;path d=&quot;M32.76 6.584c.547-.954 1.232-1.87 1.524-2.884.435-1.514.108-1.278-.095-1.252-.547.712-1.79 1.498-2.36 2.137-.7.786-2.622 1.596-2.567 2.033.003.026-.494-1.08-1.492-2.237-.912-1.056-2.208-1.256-2.533-1.51-.366-.283 1.6 4.147-.666 2.853-2.139-1.22-4.114-2.536-6.565-2.948-1.073-.18 2.38 2.181 1.51 2.29-.196.025-.236-.183 0 0 .8.621-4.132-.736-3.382-.036 4.935 4.611 1.088 1.107-1.855 4.543-3.834 4.475-7.934 9.74-9.925 15.384-.67 1.9 2.39-.918 2.67-1.277.06-.078-.113.183-.1.282.09.716.444 1.401.53 2.088.242 1.925 1.158 9.344 2.721 9.895.835.294.305-3.622 1.807-1.708 1.72 2.193 3.501 4.008 5.736 4.938.615.256 2.283.735 2.702 1.143.345.335 1.503 1.205 2.19 1.342 1.73.346-1.307-2.193.363-1.392 1.422 0 5.356 1.508 6.432 1.888 1.132-2.209 4.538-2.183 5.668-2.714 2.9-.743 3.158-1.522 3.596-1.814 4.156-2.772.544 1.65 1.46 1.972.597.21 1.244-.362 1.673-.614 3.558-2.082 3.632-6.488 3.196-9.962-.054-.438.718.515 1.045.812.538.488 3.154 3.24 3.63 3.181.014-.002-.273-3.725-.597-4.773-.578-2.687-2.77-8.138-2.77-8.138 1.358.407 2.181 1.655 2.9 2.734.09.134.336.524.316.364-.626-4.999-2.454-8.326-5.755-12.612-.568-.737-5.22-3.386-5.67-3.33-.162.02-.894.388-.912.25-.044-.356 2.726-3.143 2.696-3.38-.05-.407-2.666 1.04-2.845 1.108-2.424.94-2.603.696-4.276 1.344z&quot; fill=&quot;#ffce8b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; /&gt;
+  &lt;ellipse cx=&quot;23.196&quot; cy=&quot;-16.958&quot; rx=&quot;2.071&quot; ry=&quot;3.942&quot; transform=&quot;scale(1 -1)&quot; fill=&quot;#280b0b&quot; /&gt;
+  &lt;ellipse cx=&quot;33.553&quot; cy=&quot;-16.958&quot; rx=&quot;2.071&quot; ry=&quot;3.942&quot; transform=&quot;scale(1 -1)&quot; fill=&quot;#280b0b&quot; /&gt;
+  &lt;ellipse cx=&quot;23.567&quot; cy=&quot;-15.729&quot; rx=&quot;.458&quot; ry=&quot;1.182&quot; transform=&quot;scale(1 -1)&quot; fill=&quot;#fff&quot; /&gt;
+  &lt;ellipse cx=&quot;34.12&quot; cy=&quot;-15.753&quot; rx=&quot;.458&quot; ry=&quot;1.205&quot; transform=&quot;scale(1 -1)&quot; fill=&quot;#fff&quot; /&gt;
+  &lt;path d=&quot;M17.316 39.141c-.05.815-.134 1.558-.134 2.406 0 1.042-.45 3.674 0 3.674h-2.204c-1.115 0-5.412-.107-5.412 1.337 0 .66.017 1.616.802 2.205.888.666 4.762 1.055 5.88.868.528-.088 1.695-.625 2.004-.935.501-.5 1.515-1.448 2.005-1.938.315-.314-.618-5.996-.2-6.414&quot; fill=&quot;#b4823e&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; /&gt;
+    &lt;!-- mouth --&gt;
+  &lt;path id=&quot;mouth&quot; data-expression=&quot;happy&quot; d=&quot;M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z&quot; fill=&quot;#b74c24&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; /&gt;
+    &lt;!-- left eyebrow --&gt;
+  &lt;path class=&quot;eyebrow&quot; id=&quot;left-eyebrow&quot; d=&quot;M25.496 11.411c-2.149-1.994-4.342-.4-5.01.268&quot; fill=&quot;#ffce8b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; /&gt;
+  &lt;!-- right eyebrow --&gt;
+  &lt;path class=&quot;eyebrow&quot; id=&quot;right-eyebrow&quot; d=&quot;M36.388 11.746c-.4-.029-.75-.456-1.07-.668-1.86-1.242-3.32-.02-3.875.534&quot; fill=&quot;#ffce8b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; /&gt;
+ 
+&lt;/svg&gt;
+&lt;!-- controls --&gt;
+&lt;div id=&quot;controls&quot;&gt;
+  &lt;button data-expression=&quot;happy&quot;&gt;Happy&lt;/button&gt;
+  &lt;button data-expression=&quot;sad&quot;&gt;Sad&lt;/button&gt;
+  &lt;button data-expression=&quot;shocked&quot;&gt;Shocked&lt;/button&gt;
+  &lt;button data-expression=&quot;dismayed&quot;&gt;Dismayed&lt;/button&gt;
+  &lt;button data-expression=&quot;smoother&quot;&gt;Surprised&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;style&gt;#critter-container svg {
+    display: block;
+    margin: 0px auto;
+    
+}
+#controls {
+  	display: flex;
+  	justify-content: center;	
+    flex-wrap: wrap;
+}
+button {
+  	background-color: #116fca;
+  	color: white;
+  	padding: 8px 5px;
+  	border-width: 0px;
+  	border-radius: 2px;
+  	min-width: 80px;
+  	cursor: pointer;
+  	margin: 10px 3px 2px 3px;
+}
+&lt;/style&gt;
+
+&lt;p&gt;In this post, let’s take a close look at the code. First, here is an abbreviated version of the inline SVG that shows two &lt;code&gt;path&lt;/code&gt; elements and one &lt;code&gt;ellipse&lt;/code&gt; element. The full object has more paths and ellipses that draw the full creature. Notice that paths have a &lt;code&gt;d&lt;/code&gt; attribute with special syntax that determines the path shape. The &lt;code&gt;d&lt;/code&gt; attribute of the &lt;code&gt;mouth&lt;/code&gt; path is what gets animated.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;!-- create the character as an inline svg --&gt;
+  &lt;svg width=&quot;200&quot; height=&quot;200&quot; viewBox=&quot;0 0 53.925 52.917&quot;&gt;
+  &lt;path d=&quot;M35.888 38.876c.05.814.134 1.558.134 2.405 0 1.043.45 3.675 0 3.675h2.205c1.115 0 5.412-.107 5.412 1.336 0 .66-.017 1.617-.802 2.205-.888.666-4.762 1.055-5.88.87-.528-.089-1.695-.627-2.004-.937-.5-.5-1.515-1.447-2.005-1.937-.315-.315.618-5.997.2-6.415&quot; fill=&quot;#b4823e&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+
+    ...
+
+    &lt;ellipse cx=&quot;23.196&quot; cy=&quot;-16.958&quot; rx=&quot;2.071&quot; ry=&quot;3.942&quot; transform=&quot;scale(1 -1)&quot; fill=&quot;#280b0b&quot;/&gt;
+
+    ...
+
+   &lt;path id=&quot;mouth&quot; data-expression=&quot;happy&quot; d=&quot;M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z&quot; fill=&quot;#b74c24&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+  &lt;/svg&gt;
+&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;And here are the button controls. Notice the &lt;code&gt;data&lt;/code&gt; attributes! They come into play later as the Javascript will grab them to animate the face to the right expression.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;div id=&quot;controls&quot;&gt;
+  &lt;button data-expression=&quot;happy&quot;&gt;Happy&lt;/button&gt;
+  &lt;button data-expression=&quot;sad&quot;&gt;Sad&lt;/button&gt;
+  &lt;button data-expression=&quot;shocked&quot;&gt;Shocked&lt;/button&gt;
+  &lt;button data-expression=&quot;dismayed&quot;&gt;Dismayed&lt;/button&gt;
+  &lt;button data-expression=&quot;smoother&quot;&gt;Surprised&lt;/button&gt;
+&lt;/div&gt;
+&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Below is a breakdown the Javascript code I use to enable the buttons and animate the mouth, followed by the full code once again.&lt;/p&gt;
+
+&lt;p&gt;At the top of my JS file, I first define a set of SVG paths in a Javascript object. Drill down one level and you get the expression; drill down one more layer and you get the specific part of the face as a key-value pair. Right now I only have the mouth. The key is “mouth” and the value is the SVG path; basically an equation in SVG-speak that draws the line.&lt;/p&gt;
+
+&lt;div class=&quot;code-sample&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+var expressions = {
+  'happy':{
+    'mouth':'M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z'
+   },
+   ...
+   'dismayed':{
+    'mouth':'M38.338 31.51c-.53-.564-1.27-.944-2.08-1.354-4.606-2.332-6.115-4.424-11.905-2.471-1.54.52-2.99 2-4.252 2.71-.705.396-2.457 1.46-2.457 1.992 0 .06.265-.426.472-.558.74-.468 1.196-.872 1.985-1.434 1.189-.753 2.353.39 3.73-.493 1.153-.74 4.956-.565 6.098-.795 1.07-.312 2.55-.37 4.37.344 3.426 1.926 3.246 1.285 4.039 2.06z'
+  }
+};
+ 
+&lt;/code&gt;
+&lt;/pre&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;I have these two levels for expandability, as I want to include parts besides the mouth later.&lt;/p&gt;
+
+&lt;p&gt;I then have the rest of the code in an &lt;code&gt;init()&lt;/code&gt; function. The first part of it is a small helper function called &lt;code&gt;drill&lt;/code&gt; that drills into the above object using a variable called &lt;code&gt;str&lt;/code&gt; for the name of the expression, and retrieves the SVG path for the mouth.&lt;/p&gt;
+
+&lt;div class=&quot;code-sample&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+  const drill = (str) =&amp;gt; {
+      return expressions[str]['mouth'];
+   }
+&lt;/code&gt;
+&lt;/pre&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;The next line of code grabs the &lt;code&gt;div#controls&lt;/code&gt; element that holds the buttons, and the line after that grabs all the buttons within the this &lt;code&gt;div&lt;/code&gt; element.&lt;/p&gt;
+&lt;div class=&quot;code-sample&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+// define the button container
+let controls = document.querySelector('#controls');
+
+// define the series of buttons
+let buttons = controls.querySelectorAll('button');
+&lt;/code&gt;
+&lt;/pre&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;I want to iterate through each button element and add a click listener using &lt;code&gt;foreach&lt;/code&gt; so that it animates the mouth with a click. The list of elements is a node list, and not an array, which means we don’t yet have access to &lt;code&gt;foreach&lt;/code&gt;. So use the spread &lt;code&gt;...&lt;/code&gt; operator to expand the node list into elements and then I enclose it in brackets (&lt;code&gt;[...buttons]&lt;/code&gt;) to make it an array. Boom! We are good to go with &lt;code&gt;foreach&lt;/code&gt; now.&lt;/p&gt;
+
+&lt;div class=&quot;code-sample&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+[...buttons].forEach(function(button,idx){
+	// next up, we write the function...
+})
+&lt;/code&gt;
+&lt;/pre&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;Now in the full &lt;code&gt;foreach&lt;/code&gt; function we get to see how I use GSAP.&lt;/p&gt;
+
+&lt;p&gt;Here is the whole function.&lt;/p&gt;
+
+&lt;div class=&quot;code-sample&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+ [...buttons].forEach(function(button,idx){
+
+       // get the button's data attribute
+       let expression = button.getAttribute('data-expression');
+
+       // add a click listener
+       button.addEventListener('click',function(e){
+
+         // instantiate a GSAP timeline object
+         var tl = new TimelineLite();
+
+         var svg_path = drill(expression);
+
+         // create a tween on the mouth to the designated expression
+         tl.to('#mouth',0.5,{attr:{d:svg_path}});
+       })
+      
+   })
+&lt;/code&gt;
+&lt;/pre&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;You may recall that the HTML code for a button has a &lt;code&gt;data-expression&lt;/code&gt; attribute.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;button data-expression=&quot;happy&quot;&gt;Happy&lt;/button&gt;
+&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;So I first grab the expression name from the button’s &lt;code&gt;data-expression&lt;/code&gt; attribute.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+
+let expression = button.getAttribute('data-expression');
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;I then use my &lt;code&gt;drill&lt;/code&gt; helper function to drill into that big JSON object using the expression name to get the svg path.&lt;/p&gt;
+
+&lt;p&gt;Here is the function again:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+
+const drill = (str) =&amp;gt; {
+      return expressions[str]['mouth'];
+}
+
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Here is what I do with it:&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+
+let svg_path = drill(expression);
+
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;After I get the expression name, I add the click listener, which tells the button to animate the face when clicked.&lt;/p&gt;
+
+&lt;p&gt;First, the code creates GSAP’s &lt;code&gt;TimelineLite&lt;/code&gt; object.&lt;/p&gt;
+
+&lt;div class=&quot;code-sample&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+var tl = new TimelineLite();
+&lt;/code&gt;
+&lt;/pre&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;Then, the code tells this object to tween the mouth to the new expression over &lt;code&gt;0.5&lt;/code&gt; seconds.
+Note that it uses the &lt;code&gt;svg_path&lt;/code&gt; as the &lt;code&gt;d&lt;/code&gt; attribute of the path, which determines the path’s shape.&lt;/p&gt;
+
+&lt;div class=&quot;code-sample&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+ tl.to('#mouth',0.5,{attr:{d:svg_path}});
+&lt;/code&gt;
+&lt;/pre&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;Below is the full code.&lt;/p&gt;
+
+&lt;div&gt;&lt;script&gt;
+
+// define the expressions
+var expressions = {
+  'happy':{
+    'mouth':'M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z'
+  },
+  'surprised_blob':{
+    'mouth':'M35.485 35.839c-.252.168-.642.43-1.083.71-.44.28-1.038 1.03-1.563.967-.525-.062-.637-.73-.956-.957-.319-.228-.555-.272-.899-.438-.343-.166-.856-.194-1.163-.557-.307-.362-.573-1.083-.442-1.496.13-.412.517-.382.81-.634.292-.251.485-.556.934-.883.449-.327 1.25-.946 1.794-.981.543-.036.832.245 1.146.445.315.2.505.45.728.693.224.243.35.519.613.76.263.243.84.3.966.656.126.356-.234.808-.312 1.044-.079.236-.043.254-.138.376-.095.122-.183.126-.435.295z'
+  },
+  'smoother':{
+    'mouth':'M32.85 34.973c-.123.238-.505 1.153-.692 1.326-.498.62-1.603.157-1.974-.095-.356-.22-.782-.604-1.074-.904-.162-.168-.787-1.032-.66-1.564.106-.29.329-.643.544-.854.27-.273.377-.317.773-.322.346.018.556.11.946.055.466-.002.719.152.983.25.248.132.428.312.792.596.415.34.608 1.114.362 1.512z'
+  },
+  'oval':{
+    'mouth':'M32.721 35.301c-.265.439-.633.653-1.263.984-.683.106-1.145-.072-1.517-.324-.413-.335-.596-.39-.888-.69a1.788 1.788 0 0 1-.518-1.135c-.03-.414.187-.814.444-.997.314-.202.548-.532.93-.622.347-.054.585-.047 1.018-.031.452.156.576.282.84.379.248.132.486.384.721.596 0 0 .68.471.576 1.269z'
+  },
+  'circular':{
+    'mouth':'M32.696 35.482c-.237.41-.703.598-1.277.72-.519.099-.803.013-1.133-.223-.368-.313-.53-.364-.79-.645a1.708 1.708 0 0 1-.461-1.062c-.028-.387.166-.762.394-.933.28-.189.488-.498.829-.582.308-.05.393-.044.777-.029.403.146.615.237.85.328.22.123.458.372.667.57.206.196.515.626.512.894-.003.268-.123.535-.368.962z'
+  },
+  'surprised_blob_nr':{
+    'mouth':'M36.391 34.813c-.122.239-.504 1.153-.692 1.327-.497.62-1.602.156-1.974-.096-.356-.22-.781-.604-1.073-.904-.163-.168-.788-.118-.533-1.564.107-.605.358-.814.587-.854.171.198.62-.446.802-.208.275.318.4-.104.717.269.267.313.663.21.926.308.248.132.458.512.879.21.443-.146.608 1.114.361 1.512z'
+  },
+  'surprised_blob_nrsim':{
+     'mouth':'M32.85 34.973c-.123.238-.505 1.153-.692 1.326-.498.62-1.603.157-1.974-.095-.356-.22-.782-.604-1.074-.904-.162-.168-.787-.118-.532-1.564.107-.605.358-.814.587-.854.17.198.62-.446.802-.208.275.318.399-.104.717.269.267.313.662.21.926.308.248.132.457.512.878.21.444-.146.608 1.114.362 1.512z'
+  },
+  'surprised_jagged':{
+    'mouth':'M36.392 33.999c-.092.338-.342 1.602-.524 1.882-.45.94-1.844.75-2.333.566-.465-.15-1.046-.476-1.453-.746-.227-.151-.948.126-.96-1.75-.006-.786.243-1.132.502-1.261a3.36 3.36 0 0 1 1.158-.759c.393-.054.8.042 1.058.182.38.295.7.067 1.03.096.32.077.64-.02 1.145.452.583.3.58.76.377 1.338z'
+  },
+  'gasp_small':{
+    'mouth':'M37.405 33.65c-.192.302-.79 1.463-1.083 1.683-1.668 1.25-.994.926-3.09-.122-.558-.279-1.083-.22-1.54-.601-.255-.213-1.475-1.665-1.076-3.5.167-.767.944-.184 1.02-.114.267.252.97-.566 1.255-.264.431.404.625-.132 1.123.342.418.397 1.037.267 1.45.39.388.168.514-.016 1.173-.4 1.24-1.033 1.618 1.657.768 2.585z'
+  },
+  'gasp':{
+    'mouth':'M36.598 31.173c-.53.67-2.182 3.234-2.992 3.72-4.607 2.765-2.746 2.047-8.537-.268-1.539-.617-2.989-.487-4.252-1.33-.704-.47-4.073-3.678-2.971-7.731.461-1.696 2.607-.408 2.815-.253.74.555 2.68-1.25 3.47-.584 1.19.892 1.725-.29 3.1.755 1.154.877 2.865.59 4.005.863 1.072.37 1.42-.037 3.24-.884 3.425-2.283 4.47 3.66 2.122 5.712z&quot; fill=&quot;#b74c24&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706'
+  },
+  'surprised_simple':{
+    'left-eyebrow':null,
+    'right-eyebrow':null,
+    'mouth':'M31.743 32.76c-2.095-.41-3.675 1.05-3.114 2.797 2.576 3.267 6.518-2.07 3.114-2.797z'
+  },
+  'surprised':{
+    'left-eyebrow':null,
+    'right-eyebrow':null,
+    'mouth':'M31.743 32.76a3.365 3.365 0 0 0-1.45.018c-.216.053-.419.13-.604.226a2.37 2.37 0 0 0-.499.346 2.12 2.12 0 0 0-.375.447 1.977 1.977 0 0 0-.3 1.121c.007.206.044.42.114.639.322.408.665.682 1.013.848.348.165.7.221 1.039.195a2.35 2.35 0 0 0 .963-.3 2.955 2.955 0 0 0 1.289-1.474c.11-.29.157-.587.122-.863a1.234 1.234 0 0 0-.363-.74c-.213-.209-.523-.372-.949-.463z'
+  },
+  'friendly':{
+    'mouth':'M32.444 29.376c-2.368-.476-2.885.174-4.366 1.2-1.572-1.251-4.85-1.243-6.113-2.085-1.06-.307-2.8-1.66-1.918-.865.74.555 3.413 3.16 4.202 3.827 2.413 2.24 2.412 2.02 3.899 2.307 1.26-.055.597-.24 2.418-1.087 3.425-2.283 5.168-4.353 5.96-5.27-1.675 1.08-2.9 2.387-4.082 1.973z'
+  },
+  'sad':{
+    'mouth':'M38.445 31.305c-.53-.565-1.269-.945-2.08-1.355-4.606-2.33-6.115-4.424-11.905-2.47-1.54.52-2.99 2-4.253 2.71-.704.395-2.456 1.46-2.456 1.991 0 .062.265-.426.472-.557.74-.469 1.196-.873 1.984-1.435 1.19-.752 2.354-1.68 3.73-2.564 1.154-.74 1.95-.546 3.091-.776 1.071-.312 3.018.031 4.84.746 3.425 1.925 5.784 2.935 6.577 3.71z'
+  },
+  'shocked':{
+    'mouth':'M38.734 33.278c-.53-.67-4.425.622-5.286.233-4.34-1.962-.834-.816-6.624 1.5-1.54.616-5.4-4.432-6.662-3.59-.704.47-2.456 1.732-2.456 2.362 0 .072.398-3.245.606-3.4.74-.556 2.264-.968 3.053-1.635 1.19-.892 2.287-1.392 3.664-2.439 1.153-.877.812 1.425 1.954 1.151 1.07-.37 2.684-1.5 4.505-.653 1.713 1.142 3.526 1.93 5.01 3.08 1.486 1.15 1.839 2.932 2.236 3.391z'
+  },
+  'dismayed':{
+    'mouth':'M38.338 31.51c-.53-.564-1.27-.944-2.08-1.354-4.606-2.332-6.115-4.424-11.905-2.471-1.54.52-2.99 2-4.252 2.71-.705.396-2.457 1.46-2.457 1.992 0 .06.265-.426.472-.558.74-.468 1.196-.872 1.985-1.434 1.189-.753 2.353.39 3.73-.493 1.153-.74 4.956-.565 6.098-.795 1.07-.312 2.55-.37 4.37.344 3.426 1.926 3.246 1.285 4.039 2.06z'
+  }
+ };
+
+// startup function
+function init() {
+  // helper function for drilling into the expressions
+   const drill = (str) =&gt; {
+      return expressions[str]['mouth'];
+   }
+   // define the button container
+   let controls = document.querySelector('#controls');
+
+   // define the series of buttons
+   let buttons = controls.querySelectorAll('button');
+
+   // iterate through each button
+   [...buttons].forEach(function(button,idx){
+
+       // get the button's data attribute
+       let expression = button.getAttribute('data-expression');
+
+       let svg_path = drill(expression);
+
+       // add a click listener
+       button.addEventListener('click',function(e){
+
+         // instantiate a GSAP timeline object
+         var tl = new TimelineLite();
+
+         
+
+         // create a tween on the mouth to the designated expression
+         tl.to('#mouth',0.5,{attr:{d:svg_path}});
+       })
+      
+   })
+}
+init();
+&lt;/script&gt;&lt;/div&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section3&quot;&gt;JS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;!-- create the character as an inline svg --&gt;
+  &lt;svg width=&quot;200&quot; height=&quot;200&quot; viewBox=&quot;0 0 53.925 52.917&quot;&gt;
+  &lt;path d=&quot;M35.888 38.876c.05.814.134 1.558.134 2.405 0 1.043.45 3.675 0 3.675h2.205c1.115 0 5.412-.107 5.412 1.336 0 .66-.017 1.617-.802 2.205-.888.666-4.762 1.055-5.88.87-.528-.089-1.695-.627-2.004-.937-.5-.5-1.515-1.447-2.005-1.937-.315-.315.618-5.997.2-6.415&quot; fill=&quot;#b4823e&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+  &lt;path d=&quot;M32.76 6.584c.547-.954 1.232-1.87 1.524-2.884.435-1.514.108-1.278-.095-1.252-.547.712-1.79 1.498-2.36 2.137-.7.786-2.622 1.596-2.567 2.033.003.026-.494-1.08-1.492-2.237-.912-1.056-2.208-1.256-2.533-1.51-.366-.283 1.6 4.147-.666 2.853-2.139-1.22-4.114-2.536-6.565-2.948-1.073-.18 2.38 2.181 1.51 2.29-.196.025-.236-.183 0 0 .8.621-4.132-.736-3.382-.036 4.935 4.611 1.088 1.107-1.855 4.543-3.834 4.475-7.934 9.74-9.925 15.384-.67 1.9 2.39-.918 2.67-1.277.06-.078-.113.183-.1.282.09.716.444 1.401.53 2.088.242 1.925 1.158 9.344 2.721 9.895.835.294.305-3.622 1.807-1.708 1.72 2.193 3.501 4.008 5.736 4.938.615.256 2.283.735 2.702 1.143.345.335 1.503 1.205 2.19 1.342 1.73.346-1.307-2.193.363-1.392 1.422 0 5.356 1.508 6.432 1.888 1.132-2.209 4.538-2.183 5.668-2.714 2.9-.743 3.158-1.522 3.596-1.814 4.156-2.772.544 1.65 1.46 1.972.597.21 1.244-.362 1.673-.614 3.558-2.082 3.632-6.488 3.196-9.962-.054-.438.718.515 1.045.812.538.488 3.154 3.24 3.63 3.181.014-.002-.273-3.725-.597-4.773-.578-2.687-2.77-8.138-2.77-8.138 1.358.407 2.181 1.655 2.9 2.734.09.134.336.524.316.364-.626-4.999-2.454-8.326-5.755-12.612-.568-.737-5.22-3.386-5.67-3.33-.162.02-.894.388-.912.25-.044-.356 2.726-3.143 2.696-3.38-.05-.407-2.666 1.04-2.845 1.108-2.424.94-2.603.696-4.276 1.344z&quot; fill=&quot;#ffce8b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+  &lt;ellipse cx=&quot;23.196&quot; cy=&quot;-16.958&quot; rx=&quot;2.071&quot; ry=&quot;3.942&quot; transform=&quot;scale(1 -1)&quot; fill=&quot;#280b0b&quot;/&gt;
+  &lt;ellipse cx=&quot;33.553&quot; cy=&quot;-16.958&quot; rx=&quot;2.071&quot; ry=&quot;3.942&quot; transform=&quot;scale(1 -1)&quot; fill=&quot;#280b0b&quot;/&gt;
+  &lt;ellipse cx=&quot;23.567&quot; cy=&quot;-15.729&quot; rx=&quot;.458&quot; ry=&quot;1.182&quot; transform=&quot;scale(1 -1)&quot; fill=&quot;#fff&quot;/&gt;
+  &lt;ellipse cx=&quot;34.12&quot; cy=&quot;-15.753&quot; rx=&quot;.458&quot; ry=&quot;1.205&quot; transform=&quot;scale(1 -1)&quot; fill=&quot;#fff&quot;/&gt;
+  &lt;path d=&quot;M17.316 39.141c-.05.815-.134 1.558-.134 2.406 0 1.042-.45 3.674 0 3.674h-2.204c-1.115 0-5.412-.107-5.412 1.337 0 .66.017 1.616.802 2.205.888.666 4.762 1.055 5.88.868.528-.088 1.695-.625 2.004-.935.501-.5 1.515-1.448 2.005-1.938.315-.314-.618-5.996-.2-6.414&quot; fill=&quot;#b4823e&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+    &lt;!-- mouth --&gt;
+  &lt;path id=&quot;mouth&quot; data-expression=&quot;happy&quot; d=&quot;M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z&quot; fill=&quot;#b74c24&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+    &lt;!-- left eyebrow --&gt;
+  &lt;path class=&quot;eyebrow&quot; id=&quot;left-eyebrow&quot;  d=&quot;M25.496 11.411c-2.149-1.994-4.342-.4-5.01.268&quot; fill=&quot;#ffce8b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+  &lt;!-- right eyebrow --&gt;
+  &lt;path class=&quot;eyebrow&quot; id=&quot;right-eyebrow&quot; d=&quot;M36.388 11.746c-.4-.029-.75-.456-1.07-.668-1.86-1.242-3.32-.02-3.875.534&quot; fill=&quot;#ffce8b&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+ 
+&lt;/svg&gt;
+&lt;!-- controls --&gt;
+&lt;div id=&quot;controls&quot;&gt;
+  &lt;button data-expression=&quot;happy&quot;&gt;Happy&lt;/button&gt;
+  &lt;button data-expression=&quot;sad&quot;&gt;Sad&lt;/button&gt;
+  &lt;button data-expression=&quot;shocked&quot;&gt;Shocked&lt;/button&gt;
+  &lt;button data-expression=&quot;dismayed&quot;&gt;Dismayed&lt;/button&gt;
+  &lt;button data-expression=&quot;smoother&quot;&gt;Surprised&lt;/button&gt;
+&lt;/div&gt;
+&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&quot;section2&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;#critter-container svg {
+    display: block;
+    margin: 0px auto;
+    
+}
+#controls {
+  	display: flex;
+  	justify-content: center;	
+    flex-wrap: wrap;
+}
+button {
+  	background-color: #116fca;
+  	color: white;
+  	padding: 8px 5px;
+  	border-width: 0px;
+  	border-radius: 2px;
+  	min-width: 80px;
+  	cursor: pointer;
+  	margin: 10px 3px 2px 3px;
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&quot;section3&quot;&gt; 
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;&lt;script&gt;
+
+// define the expressions
+var expressions = {
+  'happy':{
+    'mouth':'M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z'
+  },
+  'surprised_blob':{
+    'mouth':'M35.485 35.839c-.252.168-.642.43-1.083.71-.44.28-1.038 1.03-1.563.967-.525-.062-.637-.73-.956-.957-.319-.228-.555-.272-.899-.438-.343-.166-.856-.194-1.163-.557-.307-.362-.573-1.083-.442-1.496.13-.412.517-.382.81-.634.292-.251.485-.556.934-.883.449-.327 1.25-.946 1.794-.981.543-.036.832.245 1.146.445.315.2.505.45.728.693.224.243.35.519.613.76.263.243.84.3.966.656.126.356-.234.808-.312 1.044-.079.236-.043.254-.138.376-.095.122-.183.126-.435.295z'
+  },
+  'smoother':{
+    'mouth':'M32.85 34.973c-.123.238-.505 1.153-.692 1.326-.498.62-1.603.157-1.974-.095-.356-.22-.782-.604-1.074-.904-.162-.168-.787-1.032-.66-1.564.106-.29.329-.643.544-.854.27-.273.377-.317.773-.322.346.018.556.11.946.055.466-.002.719.152.983.25.248.132.428.312.792.596.415.34.608 1.114.362 1.512z'
+  },
+  'oval':{
+    'mouth':'M32.721 35.301c-.265.439-.633.653-1.263.984-.683.106-1.145-.072-1.517-.324-.413-.335-.596-.39-.888-.69a1.788 1.788 0 0 1-.518-1.135c-.03-.414.187-.814.444-.997.314-.202.548-.532.93-.622.347-.054.585-.047 1.018-.031.452.156.576.282.84.379.248.132.486.384.721.596 0 0 .68.471.576 1.269z'
+  },
+  'circular':{
+    'mouth':'M32.696 35.482c-.237.41-.703.598-1.277.72-.519.099-.803.013-1.133-.223-.368-.313-.53-.364-.79-.645a1.708 1.708 0 0 1-.461-1.062c-.028-.387.166-.762.394-.933.28-.189.488-.498.829-.582.308-.05.393-.044.777-.029.403.146.615.237.85.328.22.123.458.372.667.57.206.196.515.626.512.894-.003.268-.123.535-.368.962z'
+  },
+  'surprised_blob_nr':{
+    'mouth':'M36.391 34.813c-.122.239-.504 1.153-.692 1.327-.497.62-1.602.156-1.974-.096-.356-.22-.781-.604-1.073-.904-.163-.168-.788-.118-.533-1.564.107-.605.358-.814.587-.854.171.198.62-.446.802-.208.275.318.4-.104.717.269.267.313.663.21.926.308.248.132.458.512.879.21.443-.146.608 1.114.361 1.512z'
+  },
+  'surprised_blob_nrsim':{
+     'mouth':'M32.85 34.973c-.123.238-.505 1.153-.692 1.326-.498.62-1.603.157-1.974-.095-.356-.22-.782-.604-1.074-.904-.162-.168-.787-.118-.532-1.564.107-.605.358-.814.587-.854.17.198.62-.446.802-.208.275.318.399-.104.717.269.267.313.662.21.926.308.248.132.457.512.878.21.444-.146.608 1.114.362 1.512z'
+  },
+  'surprised_jagged':{
+    'mouth':'M36.392 33.999c-.092.338-.342 1.602-.524 1.882-.45.94-1.844.75-2.333.566-.465-.15-1.046-.476-1.453-.746-.227-.151-.948.126-.96-1.75-.006-.786.243-1.132.502-1.261a3.36 3.36 0 0 1 1.158-.759c.393-.054.8.042 1.058.182.38.295.7.067 1.03.096.32.077.64-.02 1.145.452.583.3.58.76.377 1.338z'
+  },
+  'gasp_small':{
+    'mouth':'M37.405 33.65c-.192.302-.79 1.463-1.083 1.683-1.668 1.25-.994.926-3.09-.122-.558-.279-1.083-.22-1.54-.601-.255-.213-1.475-1.665-1.076-3.5.167-.767.944-.184 1.02-.114.267.252.97-.566 1.255-.264.431.404.625-.132 1.123.342.418.397 1.037.267 1.45.39.388.168.514-.016 1.173-.4 1.24-1.033 1.618 1.657.768 2.585z'
+  },
+  'gasp':{
+    'mouth':'M36.598 31.173c-.53.67-2.182 3.234-2.992 3.72-4.607 2.765-2.746 2.047-8.537-.268-1.539-.617-2.989-.487-4.252-1.33-.704-.47-4.073-3.678-2.971-7.731.461-1.696 2.607-.408 2.815-.253.74.555 2.68-1.25 3.47-.584 1.19.892 1.725-.29 3.1.755 1.154.877 2.865.59 4.005.863 1.072.37 1.42-.037 3.24-.884 3.425-2.283 4.47 3.66 2.122 5.712z&quot; fill=&quot;#b74c24&quot; stroke=&quot;#000&quot; stroke-width=&quot;.706'
+  },
+  'surprised_simple':{
+    'left-eyebrow':null,
+    'right-eyebrow':null,
+    'mouth':'M31.743 32.76c-2.095-.41-3.675 1.05-3.114 2.797 2.576 3.267 6.518-2.07 3.114-2.797z'
+  },
+  'surprised':{
+    'left-eyebrow':null,
+    'right-eyebrow':null,
+    'mouth':'M31.743 32.76a3.365 3.365 0 0 0-1.45.018c-.216.053-.419.13-.604.226a2.37 2.37 0 0 0-.499.346 2.12 2.12 0 0 0-.375.447 1.977 1.977 0 0 0-.3 1.121c.007.206.044.42.114.639.322.408.665.682 1.013.848.348.165.7.221 1.039.195a2.35 2.35 0 0 0 .963-.3 2.955 2.955 0 0 0 1.289-1.474c.11-.29.157-.587.122-.863a1.234 1.234 0 0 0-.363-.74c-.213-.209-.523-.372-.949-.463z'
+  },
+  'friendly':{
+    'mouth':'M32.444 29.376c-2.368-.476-2.885.174-4.366 1.2-1.572-1.251-4.85-1.243-6.113-2.085-1.06-.307-2.8-1.66-1.918-.865.74.555 3.413 3.16 4.202 3.827 2.413 2.24 2.412 2.02 3.899 2.307 1.26-.055.597-.24 2.418-1.087 3.425-2.283 5.168-4.353 5.96-5.27-1.675 1.08-2.9 2.387-4.082 1.973z'
+  },
+  'sad':{
+    'mouth':'M38.445 31.305c-.53-.565-1.269-.945-2.08-1.355-4.606-2.33-6.115-4.424-11.905-2.47-1.54.52-2.99 2-4.253 2.71-.704.395-2.456 1.46-2.456 1.991 0 .062.265-.426.472-.557.74-.469 1.196-.873 1.984-1.435 1.19-.752 2.354-1.68 3.73-2.564 1.154-.74 1.95-.546 3.091-.776 1.071-.312 3.018.031 4.84.746 3.425 1.925 5.784 2.935 6.577 3.71z'
+  },
+  'shocked':{
+    'mouth':'M38.734 33.278c-.53-.67-4.425.622-5.286.233-4.34-1.962-.834-.816-6.624 1.5-1.54.616-5.4-4.432-6.662-3.59-.704.47-2.456 1.732-2.456 2.362 0 .072.398-3.245.606-3.4.74-.556 2.264-.968 3.053-1.635 1.19-.892 2.287-1.392 3.664-2.439 1.153-.877.812 1.425 1.954 1.151 1.07-.37 2.684-1.5 4.505-.653 1.713 1.142 3.526 1.93 5.01 3.08 1.486 1.15 1.839 2.932 2.236 3.391z'
+  },
+  'dismayed':{
+    'mouth':'M38.338 31.51c-.53-.564-1.27-.944-2.08-1.354-4.606-2.332-6.115-4.424-11.905-2.471-1.54.52-2.99 2-4.252 2.71-.705.396-2.457 1.46-2.457 1.992 0 .06.265-.426.472-.558.74-.468 1.196-.872 1.985-1.434 1.189-.753 2.353.39 3.73-.493 1.153-.74 4.956-.565 6.098-.795 1.07-.312 2.55-.37 4.37.344 3.426 1.926 3.246 1.285 4.039 2.06z'
+  }
+ };
+
+// startup function
+function init() {
+  // helper function for drilling into the expressions
+   const drill = (str) =&gt; {
+      return expressions[str]['mouth'];
+   }
+   // define the button container
+   let controls = document.querySelector('#controls');
+
+   // define the series of buttons
+   let buttons = controls.querySelectorAll('button');
+
+   // iterate through each button
+   [...buttons].forEach(function(button,idx){
+
+       // get the button's data attribute
+       let expression = button.getAttribute('data-expression');
+
+       let svg_path = drill(expression);
+
+       // add a click listener
+       button.addEventListener('click',function(e){
+
+         // instantiate a GSAP timeline object
+         var tl = new TimelineLite();
+
+         
+
+         // create a tween on the mouth to the designated expression
+         tl.to('#mouth',0.5,{attr:{d:svg_path}});
+       })
+      
+   })
+}
+init();
+&lt;/script&gt;&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;thats-a-wrap&quot;&gt;That’s a wrap&lt;/h4&gt;
+
+&lt;p&gt;I hope that helps you understand the underlying code, as well as a few Vanilla JS techniques and how to use the Greensock library. If you are interested in going further, I recommend creating a few test SVG’s, perhaps optimizing them with SVG OMG, and then inlining them in an HTML document. Then import the Greensock library in a JS file and try a few simple tweens to get going. Good luck!&lt;/p&gt;</content><author><name></name></author><summary type="html">Changing facial expressions with Vanilla JS and GSAP</summary></entry><entry><title type="html">First Demo with Greensock’s SVG animation library</title><link href="/2020/01/07/greensock-test-1.html" rel="alternate" type="text/html" title="First Demo with Greensock's SVG animation library" /><published>2020-01-07T00:00:00-05:00</published><updated>2020-01-07T00:00:00-05:00</updated><id>/2020/01/07/greensock-test-1</id><content type="html" xml:base="/2020/01/07/greensock-test-1.html">&lt;h3 id=&quot;delving-into-greensock-with-a-moody-creature&quot;&gt;Delving into Greensock with a Moody Creature&lt;/h3&gt;
 
 &lt;p&gt;This is my first trial run using the GSAP (Greensock Animation API) library for animation of SVG (Scalar Vector Graphics). SVG’s are super-sharp images with underlying code that is structured a lot like HTML.  When you “inline” an SVG, or include the SVG code directly in the HTML of a webpage, you can use CSS and Javascript to animate its parts.&lt;/p&gt;
 
@@ -81,8 +590,6 @@ button {
 // define the expressions
 var expressions = {
   'happy':{
-    'left-eyebrow':null,
-    'right-eyebrow':null,
     'mouth':'M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z'
   },
   'surprised_blob':{
@@ -139,7 +646,7 @@ var expressions = {
 // startup function
 function init() {
   // helper function for drilling into the expressions
-   const m = (str) =&gt; {
+   const drill = (str) =&gt; {
       return expressions[str]['mouth'];
    }
    // define the button container
@@ -154,14 +661,18 @@ function init() {
        // get the button's data attribute
        let expression = button.getAttribute('data-expression');
 
+       let svg_path = drill(expression);
+
        // add a click listener
        button.addEventListener('click',function(e){
 
          // instantiate a GSAP timeline object
          var tl = new TimelineLite();
 
+         
+
          // create a tween on the mouth to the designated expression
-         tl.to('#mouth',0.5,{attr:{d:m(expression)}});
+         tl.to('#mouth',0.5,{attr:{d:svg_path}});
        })
       
    })
@@ -240,8 +751,6 @@ button {
 // define the expressions
 var expressions = {
   'happy':{
-    'left-eyebrow':null,
-    'right-eyebrow':null,
     'mouth':'M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z'
   },
   'surprised_blob':{
@@ -298,7 +807,7 @@ var expressions = {
 // startup function
 function init() {
   // helper function for drilling into the expressions
-   const m = (str) =&gt; {
+   const drill = (str) =&gt; {
       return expressions[str]['mouth'];
    }
    // define the button container
@@ -313,14 +822,18 @@ function init() {
        // get the button's data attribute
        let expression = button.getAttribute('data-expression');
 
+       let svg_path = drill(expression);
+
        // add a click listener
        button.addEventListener('click',function(e){
 
          // instantiate a GSAP timeline object
          var tl = new TimelineLite();
 
+         
+
          // create a tween on the mouth to the designated expression
-         tl.to('#mouth',0.5,{attr:{d:m(expression)}});
+         tl.to('#mouth',0.5,{attr:{d:svg_path}});
        })
       
    })
@@ -1009,53 +1522,4 @@ If I make a lot of changes in a lot of places, I will type &lt;code&gt;git commi
   &lt;li&gt;I kept the number of nodes the same&lt;/li&gt;
   &lt;li&gt;I avoided rotating the mouth; I only resized it&lt;/li&gt;
   &lt;li&gt;I would change the control points on the nodes, but I would not reorder the sequence of nodes at all&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating an SVG Mouth Expression with Greensock</title><link href="/2019/09/17/tween.html" rel="alternate" type="text/html" title="Animating an SVG Mouth Expression with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/tween</id><content type="html" xml:base="/2019/09/17/tween.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
-
-&lt;p&gt;In a previous post, I animated an emoji face with CSS animations only. This is a reasonable method if you only need CSS transforms and are getting good results across browsers. However, if you need to do something more complex such as change the path of an &lt;svg&gt; line or have a sequence of animations, then it is best to use a Javascript library designed for web animation.&lt;/svg&gt;&lt;/p&gt;
-
-&lt;p&gt;One such library is GreenSock’s &lt;a href=&quot;#&quot;&gt;GSAP&lt;/a&gt; (GreenSock Animation Platform). It is a robust Javascript library that can aspects of an SVG that transforms cannot, like the curvature of paths in SVG elements. It has both free features as well as more advanced features that come with a Greensock Club Membership.&lt;/p&gt;
-
-&lt;p&gt;Let’s use GSAP to animate the curvature of of an SVG path. To do this, we will animate the d-attribute, which determines how the path curves. (Reference Chris Coiyer’s CSS Tricks piece.)&lt;/p&gt;
-
-&lt;p&gt;Without an animation library, this is how it looks when you click the button. Here, I am just using &lt;code&gt;setAttribute&lt;/code&gt;.&lt;/p&gt;
-
-&lt;demo&gt;
-&lt;code&gt;
-
-What Greensock can help you do is tween the animation, or show a smooth transition from the smile to the open mouth. It does that by interpolating the frames in between the starting and ending frames of the animation. Here is what it looks like with Greensock.
-
-&lt;demo&gt;
-
-However, it doesn't always do this perfectly. Check out the animation below.
-
-&lt;demo&gt;
-
-In the animation that works, there are enough similarities between the starting and ending d-attributes of the mouth path so that Greensock makes an acceptable interpolation.
-
-The problematic animation was the one I came up with first. 
-
-In Inkscape, a path is made up of points called nodes. The more nodes you have, the more complex the path equation is. 
-
-&lt;screenshot&gt;&lt;pathcode&gt;
-	
-
-What I ended up doing was back-tracking to the first mouth I drew in Inkscape and drawing a small mouth expression that was not as drastic a transition to the smile. Here is the code: 
-
-&lt;code&gt;
-
-* I kept the number of nodes the same
-* Make small incremental changes and test them often. 
-* I avoided rotating the mouth; I only resized it
-* I would change the control points on the nodes, but I would not reorder the sequence of nodes at all
-
-MorphSVG makes this easier, but it is not for free. You can try it on codepen, though. 
-
-&lt;demo&gt;
-
- You need to be a member of the &quot;Shockingly Green&quot; subscription, which is $100 per year. For now, I'm fine with counting my nodes. 
-
-
-
-
-
-&lt;/demo&gt;&lt;/code&gt;&lt;/pathcode&gt;&lt;/screenshot&gt;&lt;/demo&gt;&lt;/demo&gt;&lt;/code&gt;&lt;/demo&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry></feed>

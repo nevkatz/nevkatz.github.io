@@ -14,23 +14,23 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:url" content="/2020/01/07/greensock-test-1.html" />
+  <meta property="og:url" content="/2020/01/08/greensock-explanation.html" />
   
   <meta itemprop="keywords" content="svg,animation,css">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>First Demo with Greensock’s SVG animation library | Nevin’s Dev Pages</title>
+<title>Code breakdown of creature mouth animation | Nevin’s Dev Pages</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="First Demo with Greensock’s SVG animation library" />
+<meta property="og:title" content="Code breakdown of creature mouth animation" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Delving into Greensock with a Moody Creature" />
-<meta property="og:description" content="Delving into Greensock with a Moody Creature" />
-<link rel="canonical" href="/2020/01/07/greensock-test-1.html" />
-<meta property="og:url" content="/2020/01/07/greensock-test-1.html" />
+<meta name="description" content="Changing facial expressions with Vanilla JS and GSAP" />
+<meta property="og:description" content="Changing facial expressions with Vanilla JS and GSAP" />
+<link rel="canonical" href="/2020/01/08/greensock-explanation.html" />
+<meta property="og:url" content="/2020/01/08/greensock-explanation.html" />
 <meta property="og:site_name" content="Nevin’s Dev Pages" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-01-07T00:00:00-05:00" />
+<meta property="article:published_time" content="2020-01-08T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Delving into Greensock with a Moody Creature","@type":"BlogPosting","url":"/2020/01/07/greensock-test-1.html","headline":"First Demo with Greensock’s SVG animation library","dateModified":"2020-01-07T00:00:00-05:00","datePublished":"2020-01-07T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/01/07/greensock-test-1.html"},"@context":"https://schema.org"}</script>
+{"description":"Changing facial expressions with Vanilla JS and GSAP","@type":"BlogPosting","url":"/2020/01/08/greensock-explanation.html","headline":"Code breakdown of creature mouth animation","dateModified":"2020-01-08T00:00:00-05:00","datePublished":"2020-01-08T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/01/08/greensock-explanation.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/css/prism.css">
@@ -58,18 +58,16 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">First Demo with Greensock&#39;s SVG animation library</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Code breakdown of creature mouth animation</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2020-01-07T00:00:00-05:00" itemprop="datePublished">Jan 7, 2020
+      <time class="dt-published" datetime="2020-01-08T00:00:00-05:00" itemprop="datePublished">Jan 8, 2020
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h3 id="delving-into-greensock-with-a-moody-creature">Delving into Greensock with a Moody Creature</h3>
+    <h3 id="changing-facial-expressions-with-vanilla-js-and-gsap">Changing facial expressions with Vanilla JS and GSAP</h3>
 
-<p>This is my first trial run using the GSAP (Greensock Animation API) library for animation of SVG (Scalar Vector Graphics). SVG’s are super-sharp images with underlying code that is structured a lot like HTML.  When you “inline” an SVG, or include the SVG code directly in the HTML of a webpage, you can use CSS and Javascript to animate its parts.</p>
-
-<p>The animations below are made possible with vanilla Javascript as well as two lines of code that use GSAP. Click on the buttons (the default is set to “happy”) and you should be able to see the critter change expressions.</p>
+<p>My <a href="/2020/01/07/greensock-test-1.html" target="_blank">post</a> before this one featured my first demo of the GSAP (Greensock Animation API) library for animation of SVG (Scalar Vector Graphics) and included a quick explanation of why I used it. Here is the demo again - click on the buttons (the default is set to “happy”) and you should be able to see the critter change expressions.</p>
 
 <div id="critter-container" class="margin-bottom">
 <!-- create the character as an inline svg -->
@@ -123,25 +121,198 @@ button {
 }
 </style>
 
-<p>Why GSAP? I have found that using Vanilla JS and CSS is great if you want to do basic animations, but if you need something that smoothly transitions a complex shape from one state to another, you really need an animation library.</p>
+<p>In this post, let’s take a close look at the code. First, here is an abbreviated version of the inline SVG that shows two <code>path</code> elements and one <code>ellipse</code> element. The full object has more paths and ellipses that draw the full creature. Notice that paths have a <code>d</code> attribute with special syntax that determines the path shape. The <code>d</code> attribute of the <code>mouth</code> path is what gets animated.</p>
 
-<p>The GSAP library is terrific for this, and there is a free version and a paid version. My demo below uses the free version and at this point animates the mouth. I plan on animating other feature like the eyes on an upcoming demo.</p>
+<pre>
+<code class="language-markup">
+<script type="prism-html-markup">
+<!-- create the character as an inline svg -->
+  <svg width="200" height="200" viewBox="0 0 53.925 52.917">
+  <path d="M35.888 38.876c.05.814.134 1.558.134 2.405 0 1.043.45 3.675 0 3.675h2.205c1.115 0 5.412-.107 5.412 1.336 0 .66-.017 1.617-.802 2.205-.888.666-4.762 1.055-5.88.87-.528-.089-1.695-.627-2.004-.937-.5-.5-1.515-1.447-2.005-1.937-.315-.315.618-5.997.2-6.415" fill="#b4823e" stroke="#000" stroke-width=".706" stroke-linecap="round" stroke-linejoin="round"/>
 
-<p>I plan to include a breakdown of how I wrote the code in an upcoming post, but for those of you who are curious, I have the code below with comments.</p>
+    ...
 
-<ul>
-  <li>
-    <p>The CSS is minimal and really just centers the criter and controls while styling the buttons.</p>
-  </li>
-  <li>
-    <p>The HTML will show you how I set up the SVG and the controls. Note the data attributes, which determine the mouth shape that each button triggers.</p>
-  </li>
-  <li>
-    <p>The JS will show you how I used Vanilla JS to create an object full of mouth SVG paths and set up the click listeners. You will also see how I used only two lines of code calling the GSAP logic to tween the animations.</p>
-  </li>
-</ul>
+    <ellipse cx="23.196" cy="-16.958" rx="2.071" ry="3.942" transform="scale(1 -1)" fill="#280b0b"/>
 
-<p>Enjoy!</p>
+    ...
+
+   <path id="mouth" data-expression="happy" d="M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z" fill="#b74c24" stroke="#000" stroke-width=".706" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</script>
+</code>
+</pre>
+
+<p>And here are the button controls. Notice the <code>data</code> attributes! They come into play later as the Javascript will grab them to animate the face to the right expression.</p>
+
+<pre>
+<code class="language-markup">
+<script type="prism-html-markup">
+<div id="controls">
+  <button data-expression="happy">Happy</button>
+  <button data-expression="sad">Sad</button>
+  <button data-expression="shocked">Shocked</button>
+  <button data-expression="dismayed">Dismayed</button>
+  <button data-expression="smoother">Surprised</button>
+</div>
+</script>
+</code>
+</pre>
+
+<p>Below is a breakdown the Javascript code I use to enable the buttons and animate the mouth, followed by the full code once again.</p>
+
+<p>At the top of my JS file, I first define a set of SVG paths in a Javascript object. Drill down one level and you get the expression; drill down one more layer and you get the specific part of the face as a key-value pair. Right now I only have the mouth. The key is “mouth” and the value is the SVG path; basically an equation in SVG-speak that draws the line.</p>
+
+<div class="code-sample">
+<pre>
+<code class="language-javascript">
+var expressions = {
+  'happy':{
+    'mouth':'M38.54 26.603c-.53.67-1.268 1.12-2.078 1.607-4.607 2.764-6.116 5.245-11.907 2.93-1.539-.617-2.989-2.372-4.252-3.214-.704-.47-2.457-1.733-2.457-2.362 0-.073.265.506.473.661.74.555 1.195 1.034 1.984 1.701 1.19.892 2.354 1.994 3.73 3.04 1.153.877 1.95.647 3.09.92 1.072.37 3.02-.037 4.84-.884 3.425-2.283 5.784-3.48 6.577-4.399z'
+   },
+   ...
+   'dismayed':{
+    'mouth':'M38.338 31.51c-.53-.564-1.27-.944-2.08-1.354-4.606-2.332-6.115-4.424-11.905-2.471-1.54.52-2.99 2-4.252 2.71-.705.396-2.457 1.46-2.457 1.992 0 .06.265-.426.472-.558.74-.468 1.196-.872 1.985-1.434 1.189-.753 2.353.39 3.73-.493 1.153-.74 4.956-.565 6.098-.795 1.07-.312 2.55-.37 4.37.344 3.426 1.926 3.246 1.285 4.039 2.06z'
+  }
+};
+ 
+</code>
+</pre> 
+</div>
+
+<p>I have these two levels for expandability, as I want to include parts besides the mouth later.</p>
+
+<p>I then have the rest of the code in an <code>init()</code> function. The first part of it is a small helper function called <code>drill</code> that drills into the above object using a variable called <code>str</code> for the name of the expression, and retrieves the SVG path for the mouth.</p>
+
+<div class="code-sample">
+<pre>
+<code class="language-javascript">
+  const drill = (str) =&gt; {
+      return expressions[str]['mouth'];
+   }
+</code>
+</pre> 
+</div>
+
+<p>The next line of code grabs the <code>div#controls</code> element that holds the buttons, and the line after that grabs all the buttons within the this <code>div</code> element.</p>
+<div class="code-sample">
+<pre>
+<code class="language-javascript">
+// define the button container
+let controls = document.querySelector('#controls');
+
+// define the series of buttons
+let buttons = controls.querySelectorAll('button');
+</code>
+</pre> 
+</div>
+
+<p>I want to iterate through each button element and add a click listener using <code>foreach</code> so that it animates the mouth with a click. The list of elements is a node list, and not an array, which means we don’t yet have access to <code>foreach</code>. So use the spread <code>...</code> operator to expand the node list into elements and then I enclose it in brackets (<code>[...buttons]</code>) to make it an array. Boom! We are good to go with <code>foreach</code> now.</p>
+
+<div class="code-sample">
+<pre>
+<code class="language-javascript">
+[...buttons].forEach(function(button,idx){
+	// next up, we write the function...
+})
+</code>
+</pre> 
+</div>
+
+<p>Now in the full <code>foreach</code> function we get to see how I use GSAP.</p>
+
+<p>Here is the whole function.</p>
+
+<div class="code-sample">
+<pre>
+<code class="language-javascript">
+ [...buttons].forEach(function(button,idx){
+
+       // get the button's data attribute
+       let expression = button.getAttribute('data-expression');
+
+       // add a click listener
+       button.addEventListener('click',function(e){
+
+         // instantiate a GSAP timeline object
+         var tl = new TimelineLite();
+
+         var svg_path = drill(expression);
+
+         // create a tween on the mouth to the designated expression
+         tl.to('#mouth',0.5,{attr:{d:svg_path}});
+       })
+      
+   })
+</code>
+</pre> 
+</div>
+
+<p>You may recall that the HTML code for a button has a <code>data-expression</code> attribute.</p>
+
+<pre>
+<code class="language-markup">
+<script type="prism-html-markup">
+<button data-expression="happy">Happy</button>
+</script>
+</code>
+</pre>
+
+<p>So I first grab the expression name from the button’s <code>data-expression</code> attribute.</p>
+
+<pre>
+<code class="language-javascript">
+
+let expression = button.getAttribute('data-expression');
+</code>
+</pre>
+
+<p>I then use my <code>drill</code> helper function to drill into that big JSON object using the expression name to get the svg path.</p>
+
+<p>Here is the function again:</p>
+<pre>
+<code class="language-javascript">
+
+const drill = (str) =&gt; {
+      return expressions[str]['mouth'];
+}
+
+</code>
+</pre>
+
+<p>Here is what I do with it:</p>
+
+<pre>
+<code class="language-javascript">
+
+let svg_path = drill(expression);
+
+</code>
+</pre>
+
+<p>After I get the expression name, I add the click listener, which tells the button to animate the face when clicked.</p>
+
+<p>First, the code creates GSAP’s <code>TimelineLite</code> object.</p>
+
+<div class="code-sample">
+<pre>
+<code class="language-javascript">
+var tl = new TimelineLite();
+</code>
+</pre> 
+</div>
+
+<p>Then, the code tells this object to tween the mouth to the new expression over <code>0.5</code> seconds.
+Note that it uses the <code>svg_path</code> as the <code>d</code> attribute of the path, which determines the path’s shape.</p>
+
+<div class="code-sample">
+<pre>
+<code class="language-javascript">
+ tl.to('#mouth',0.5,{attr:{d:svg_path}});
+</code>
+</pre> 
+</div>
+
+<p>Below is the full code.</p>
 
 <div><script>
 
@@ -401,6 +572,11 @@ init();
 </pre>
 </div>
 
+<h4 id="thats-a-wrap">That’s a wrap</h4>
+
+<p>I hope that helps you understand the underlying code, as well as a few Vanilla JS techniques and how to use the Greensock library. If you are interested in going further, I recommend creating a few test SVG’s, perhaps optimizing them with SVG OMG, and then inlining them in an HTML document. Then import the Greensock library in a JS file and try a few simple tweens to get going. Good luck!</p>
+
+
   </div><div id="disqus_thread"></div>
     <script>
 
@@ -420,7 +596,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
   (d.head || d.body).appendChild(s);
 })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/07/greensock-test-1.html" hidden></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/08/greensock-explanation.html" hidden></a>
 </article>
 
       </div>
