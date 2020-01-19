@@ -1,4 +1,888 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-08T09:47:51-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Code breakdown of creature mouth animation</title><link href="/2020/01/08/greensock-explanation.html" rel="alternate" type="text/html" title="Code breakdown of creature mouth animation" /><published>2020-01-08T00:00:00-05:00</published><updated>2020-01-08T00:00:00-05:00</updated><id>/2020/01/08/greensock-explanation</id><content type="html" xml:base="/2020/01/08/greensock-explanation.html">&lt;h3 id=&quot;changing-facial-expressions-with-vanilla-js-and-gsap&quot;&gt;Changing facial expressions with Vanilla JS and GSAP&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-18T20:20:11-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating a star rating widget with HTML and CSS</title><link href="/2020/01/18/star-rating-before-after.html" rel="alternate" type="text/html" title="Creating a star rating widget with HTML and CSS" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>/2020/01/18/star-rating-before-after</id><content type="html" xml:base="/2020/01/18/star-rating-before-after.html">&lt;h3 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h3&gt;
+
+&lt;p&gt;Recently I became interested in making a star rating tool, which are seen on all kinds of apps and websites. There are a number of resources on this and countless ways to pull this off, so below is one way of achieving using CSS pseudoselectors and Flexbox.&lt;/p&gt;
+
+&lt;p&gt;Note: While this code is Javascript-free, you’ll want to ultimately use JS to do something with the value that the user selects. What is covered hear is the CSS needed to make the interface look and work right for the user.&lt;/p&gt;
+
+&lt;p&gt;Let’s get started!&lt;/p&gt;
+
+&lt;h4 id=&quot;one-star-in-the-off-state&quot;&gt;One star in the “off” state&lt;/h4&gt;
+
+&lt;p&gt;First, let’s make just one hollow star that serves as our “off” state. You’ll see that it has three parts:&lt;/p&gt;
+
+&lt;ul class=&quot;regular&quot;&gt;
+  &lt;li&gt;an &lt;code&gt;input&lt;/code&gt; button that is either checked or not checked&lt;/li&gt;
+  &lt;li&gt;a visible &lt;code&gt;label&lt;/code&gt; tied to the input button that we interact with&lt;/li&gt;
+  &lt;li&gt;a &lt;code&gt;:before&lt;/code&gt; element on the label&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here’s how it looks.&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom only-off&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	  &lt;input type=&quot;radio&quot; name=&quot;studentId-a&quot; id=&quot;studentId-choice1a&quot; /&gt;
+      &lt;label for=&quot;studentId-choice1a&quot; value=&quot;1&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And here is the code for this one star in the “off” state. You’ll see that in the CSS, there are styles for the input, the label, and the label’s &lt;code&gt;:before&lt;/code&gt; element.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1a&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2a&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1a&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	  &lt;input type=&quot;radio&quot; name=&quot;studentId-a&quot; id=&quot;studentId-choice1a&quot;/&gt;
+      &lt;label for=&quot;studentId-choice1a&quot; value=&quot;1&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2a&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;.star-rating  input {
+	display: none;
+}
+.star-rating  input {
+  display: none;
+}
+.star-rating &amp;gt; label {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;From looking at it, there are a few things to notice:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The code only affects inputs within a &lt;code&gt;div&lt;/code&gt; containing the &lt;code&gt;star-rating&lt;/code&gt; class.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code&gt;:before&lt;/code&gt; and &lt;code&gt;:after&lt;/code&gt; pseudoselectors make the styles affect the label’s &lt;code&gt;:before&lt;/code&gt; element, rather than the label itself.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Both &lt;code&gt;:before&lt;/code&gt; and &lt;code&gt;:after&lt;/code&gt; have a &lt;code&gt;content&lt;/code&gt; value of &lt;code&gt;\2605&lt;/code&gt;, which causes them both to take on a solid star shape.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code&gt;:before&lt;/code&gt; element is orange and serves as the star outline.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;:after&lt;/code&gt; element is white, has a smaller font, and serves as the star fill. It’s &lt;code&gt;left&lt;/code&gt; and &lt;code&gt;top&lt;/code&gt; attributes are such that it is centered.&lt;/li&gt;
+  &lt;li&gt;The &lt;code&gt;content&lt;/code&gt; value of &lt;code&gt;\2606&lt;/code&gt; causes the :before and :after elements of the affected labels will show up as a filled star rather than a hollow star (&lt;code&gt;☆&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;Note:&lt;/code&gt; I have tried using the hollow star shape, but it changes size in Chrome when it turns solid. Another approach is to use an SVG somehow - either as a background object or by inlining it directly in the HTML.&lt;/p&gt;
+
+&lt;h4 id=&quot;one-star-in-the-on-state&quot;&gt;One star in the “on” state&lt;/h4&gt;
+
+&lt;p&gt;Now let’s make a filled star in the “on” state.&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	  &lt;input checked=&quot;true&quot; type=&quot;radio&quot; name=&quot;studentId-b&quot; id=&quot;studentId-choice1b&quot; /&gt;
+      &lt;label for=&quot;studentId-choice1b&quot; value=&quot;1b&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice that the only difference in the HTML versus the one before it (besides the different ID) is the &lt;code&gt;checked&lt;/code&gt; attribute, which is set to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1b&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2b&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1b&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	  &lt;input checked=&quot;true&quot; type=&quot;radio&quot;  name=&quot;studentId-b&quot; id=&quot;studentId-choice1b&quot;/&gt;
+      &lt;label for=&quot;studentId-choice1b&quot; value=&quot;1b&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2b&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;.star-rating  input {
+  display: none;
+}
+.star-rating  input {
+  display: none;
+}
+.star-rating &amp;gt; label {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+.star-rating input:checked ~ label:before {
+  content:'\2605';
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There is also a new CSS selector:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.star-rating input:checked ~ label:before&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;:checked&lt;/code&gt; pseudoselector will select only inputs with &lt;code&gt;checked&lt;/code&gt; set to &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;The tilda (&lt;code&gt;~&lt;/code&gt;) makes the code act not on the &lt;code&gt;input&lt;/code&gt; itself, but its siblings; in this case, all the &lt;code&gt;label&lt;/code&gt; elements that come after it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And how about the &lt;code&gt;color&lt;/code&gt; attribute within this selector?&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;
+.star-rating input:checked ~ label:before {
+  content: '\2605';
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;groups-of-stars&quot;&gt;Groups of Stars&lt;/h4&gt;
+
+&lt;p&gt;Now let’s try five stars using the same CSS.&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice5c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice5c&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice4c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice4c&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice3c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice3c&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice2c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice2c&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice1c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice1c&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Oops! Assuming we want our stars in a row, that’s not what we want.&lt;/p&gt;
+
+&lt;p&gt;The one below is a little better, because it uses CSS tied to Flexbox (or the flexible box layout model) to make the stars line up in a row.&lt;/p&gt;
+
+&lt;p&gt;But Try clicking or tapping each star to see what happens - you will find that something is still not quite right about how the stars react.&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom row&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice5d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice5d&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice4d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice4d&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice3d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice3d&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice2d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice2d&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice1d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice1d&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You’ll see that if you click at a star, the stars to the &lt;em&gt;right&lt;/em&gt;, rather than those on the &lt;em&gt;left&lt;/em&gt;, end up highlighted. Not good!&lt;/p&gt;
+
+&lt;p&gt;Before we ponder what’s missing in the code, let’s take a look at what’s helping: the new flexbox CSS at the top.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1c&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2c&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1c&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice5c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice5c&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice4c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice4c&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice3c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice3c&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice2c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice2c&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice1c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice1c&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2c&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star-rating  input {
+	display: none;
+}
+.star-rating &amp;gt; label {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+.star-rating input:checked ~ label:before {
+  content:'\2605';
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The additional CSS up top sets &lt;code&gt;display&lt;/code&gt; of the &lt;code&gt;star-rating&lt;/code&gt; container to &lt;code&gt;flex&lt;/code&gt; to line the stars up horizontally rather than vertically. (&lt;code&gt;flex-direction&lt;/code&gt; is set to &lt;code&gt;row&lt;/code&gt; by default.)&lt;/p&gt;
+
+&lt;p&gt;It also centers the items vertically with &lt;code&gt;align-items&lt;/code&gt;, and sets the &lt;code&gt;width&lt;/code&gt; to &lt;code&gt;160px&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;And you’ll see that the tilda &lt;code&gt;~&lt;/code&gt; in &lt;code&gt;.star-rating input:checked ~ label:before&lt;/code&gt; is working its magic, but not in quite the right way. It is doing what it naturally does and making all the stars &lt;em&gt;after&lt;/em&gt; the selected star also show up as full, but what we really want is to have all the stars &lt;em&gt;before&lt;/em&gt;  the selected star show up as full.&lt;/p&gt;
+
+&lt;p&gt;How do we solve this problem?&lt;/p&gt;
+
+&lt;p&gt;Let’s add a &lt;code&gt;flex-direction&lt;/code&gt; attribute and set it to &lt;code&gt;row-reverse&lt;/code&gt;. This reverses the order of stars so that the ones that show up after a given star actually show up before it. 
+Because this turns the “end” of the container into the beginning, let’s also use &lt;code&gt;justify-content&lt;/code&gt; to “flex-end” to keep the stars horizontally left-aligned.&lt;/p&gt;
+
+&lt;div id=&quot;section2c&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;
+.star-rating {
+  display: flex;
+  width: 160px;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;stars-working-right&quot;&gt;Stars working right&lt;/h5&gt;
+
+&lt;p&gt;Here is how it looks now:&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom row reversed&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice5e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice5e&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice4e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice4e&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice3e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice3e&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice2e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice2e&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice1e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice1e&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is the code. Notice that the &lt;code&gt;value&lt;/code&gt; attributes of my &lt;code&gt;input&lt;/code&gt; elements have been in descending order so that when Flexbox reverses their layout, the star values are in the correct ascending order. For instance, the star with a value of “1” shows up on the left and the star with the value of “5” shows up on the right.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1d&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2d&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&quot;section1d&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice5e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice5e&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice4e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice4e&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice3e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice3e&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice2e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice2e&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice1e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice1e&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2d&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  width: 160px;
+}
+
+.star-rating  input {
+	display: none;
+}
+.star-rating &amp;gt; label {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+.star-rating input:checked ~ label:before {
+  content:'\2605';
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.reversed .star-rating {
+ flex-direction: row-reverse;
+ justify-content: flex-end;
+}
+.row .star-rating {
+  display: flex;
+  width: 160px;
+  align-items: center;
+}
+
+.star-rating  input {
+  display: none;
+}
+.star-rating &gt; label {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
+  content:'\2605';
+}&lt;/style&gt;
+
+&lt;h4 id=&quot;going-further&quot;&gt;Going further&lt;/h4&gt;
+
+&lt;p&gt;Here are a few suggestions for building off of this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Try adding a &lt;code&gt;:hover&lt;/code&gt; states with a different color.&lt;/li&gt;
+  &lt;li&gt;Try adding an &lt;code&gt;:active&lt;/code&gt; state for when a star is pressed.&lt;/li&gt;
+  &lt;li&gt;Try adding CSS transitions to smooth out these states.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What might this look like, you ask? Check out this &lt;a target=&quot;_blank&quot; href=&quot;https://codepen.io/nevkatz/pen/OJPBBpL&quot;&gt;CodePen&lt;/a&gt; to find out! Thanks for reading!&lt;/p&gt;
+
+&lt;h4 id=&quot;additional-resources&quot;&gt;Additional Resources&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;There is a great concise tutorial on &lt;a href=&quot;https://css-tricks.com/star-ratings/&quot; target=&quot;_blank&quot;&gt;CSS Tricks&lt;/a&gt; for getting started with star rating CSS.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you are new to Flexbox, check out Samantha Ming’s &lt;a href=&quot;https://github.com/samanthaming/Flexbox30&quot;&gt;Flexbox in 30 days&lt;/a&gt; get a great introduction and dig deeper!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Here we go</summary></entry><entry><title type="html">Creating a star rating widget with HTML and CSS</title><link href="/2020/01/18/star-rating.html" rel="alternate" type="text/html" title="Creating a star rating widget with HTML and CSS" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>/2020/01/18/star-rating</id><content type="html" xml:base="/2020/01/18/star-rating.html">&lt;h3 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h3&gt;
+
+&lt;p&gt;Recently I became interested in making a star rating tool, which are seen on all kinds of apps and websites. There are a number of resources on this and countless ways to pull this off, so below is one way of achieving using CSS pseudoselectors and Flexbox.&lt;/p&gt;
+
+&lt;p&gt;Note: While this code is Javascript-free, you’ll want to ultimately use JS to do something with the value that the user selects. What is covered hear is the CSS needed to make the interface look and work right for the user.&lt;/p&gt;
+
+&lt;p&gt;Let’s get started!&lt;/p&gt;
+
+&lt;h4 id=&quot;one-star-in-the-off-state&quot;&gt;One star in the “off” state&lt;/h4&gt;
+
+&lt;p&gt;First, let’s make just one hollow star that serves as our “off” state.&lt;/p&gt;
+
+&lt;p&gt;Here’s how it looks.&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom only-off&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	  &lt;input type=&quot;radio&quot; name=&quot;studentId-a&quot; id=&quot;studentId-choice1a&quot; /&gt;
+      &lt;label for=&quot;studentId-choice1a&quot; value=&quot;1&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The HTML for the star reveals a container with the class &lt;code&gt;star-rating&lt;/code&gt; and shows that the star is made up of two parts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;an &lt;code&gt;input&lt;/code&gt; button that is either checked or not checked&lt;/li&gt;
+  &lt;li&gt;a visible &lt;code&gt;label&lt;/code&gt; tied to the input button that we interact with&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The CSS acts on the &lt;code&gt;input&lt;/code&gt; and &lt;code&gt;label&lt;/code&gt; elements and reveals a third part: a &lt;code&gt;:before&lt;/code&gt; element on the label.&lt;/p&gt;
+
+&lt;p class=&quot;regular&quot;&gt;You’ll see that in the CSS, there are styles for the input, the label, and the label’s &lt;code&gt;:before&lt;/code&gt; element.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1a&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2a&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1a&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	  &lt;input type=&quot;radio&quot; name=&quot;studentId-a&quot; id=&quot;studentId-choice1a&quot;/&gt;
+      &lt;label for=&quot;studentId-choice1a&quot; value=&quot;1&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2a&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;.star-rating  input {
+	display: none;
+}
+.star-rating  input {
+  display: none;
+}
+.star-rating &amp;gt; label {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you dig deeper into the CSS you’ll find a few additional things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The styles only affect inputs within an element having the &lt;code&gt;star-rating&lt;/code&gt; class.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code&gt;:before&lt;/code&gt; pseudoselector places the star on the label’s &lt;code&gt;:before&lt;/code&gt; element, rather than the label itself.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The line &lt;code&gt;content: '\2606'&lt;/code&gt; sets the shape of the hollow star.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code&gt;font-family&lt;/code&gt; of the &lt;code&gt;label&lt;/code&gt; element is set to &lt;code&gt;Verdana&lt;/code&gt;, and the &lt;code&gt;:before&lt;/code&gt; element inherits this. Controlling font is super important for making both hollow and solid stars appear the same size in Chrome and Safari browsers.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code&gt;position&lt;/code&gt; of the &lt;code&gt;label&lt;/code&gt; element is set to &lt;code&gt;relative&lt;/code&gt; so that the &lt;code&gt;:before&lt;/code&gt; element’s &lt;code&gt;absolute&lt;/code&gt; position is set based on the label’s position.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;one-star-in-the-on-state&quot;&gt;One star in the “on” state&lt;/h4&gt;
+
+&lt;p&gt;Now let’s make a filled star in the “on” state.&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	  &lt;input checked=&quot;true&quot; type=&quot;radio&quot; name=&quot;studentId-b&quot; id=&quot;studentId-choice1b&quot; /&gt;
+      &lt;label for=&quot;studentId-choice1b&quot; value=&quot;1b&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice that the only difference in the HTML versus the one before it (besides the different ID) is the &lt;code&gt;checked&lt;/code&gt; attribute, which is set to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1b&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2b&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1b&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	  &lt;input checked=&quot;true&quot; type=&quot;radio&quot;  name=&quot;studentId-b&quot; id=&quot;studentId-choice1b&quot;/&gt;
+      &lt;label for=&quot;studentId-choice1b&quot; value=&quot;1b&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2b&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;.star-rating  input {
+  display: none;
+}
+.star-rating  input {
+  display: none;
+}
+.star-rating &amp;gt; label {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+.star-rating input:checked ~ label:before {
+  content:'\2605';
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There is also a new CSS selector:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.star-rating input:checked ~ label:before&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;From looking at it, there are a few things to notice:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;:checked&lt;/code&gt; pseudoselector will select only inputs with &lt;code&gt;checked&lt;/code&gt; set to &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;The tilda (&lt;code&gt;~&lt;/code&gt;) makes the code act not on the &lt;code&gt;input&lt;/code&gt; itself, but its siblings; in this case, all the &lt;code&gt;label&lt;/code&gt; elements that come after it.&lt;/li&gt;
+  &lt;li&gt;The line &lt;code&gt;content: '\2605'&lt;/code&gt; sets the shape of the solid star. Let’s take one more look:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;
+.star-rating input:checked ~ label:before {
+  content: '\2605';
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;In other words, the &lt;code&gt;content&lt;/code&gt; value of &lt;code&gt;\2605&lt;/code&gt; causes the :before element of the affected labels will show up as a filled star rather than a hollow star (&lt;code&gt;☆&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h4 id=&quot;groups-of-stars&quot;&gt;Groups of Stars&lt;/h4&gt;
+
+&lt;p&gt;Now let’s try five stars using the same CSS.&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice5c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice5c&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice4c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice4c&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice3c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice3c&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice2c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice2c&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice1c&quot; /&gt;
+     &lt;label for=&quot;studentId-choice1c&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Oops! Assuming we want our stars in a row, that’s not what we want.&lt;/p&gt;
+
+&lt;p&gt;The one below is a little better, because it uses CSS tied to Flexbox (or the flexible box layout model) to make the stars line up in a row.&lt;/p&gt;
+
+&lt;p&gt;But try clicking or tapping each star to see what happens - you will find that something is still not quite right about how the stars react.&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom row&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice5d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice5d&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice4d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice4d&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice3d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice3d&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice2d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice2d&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-d&quot; id=&quot;studentId-choice1d&quot; /&gt;
+     &lt;label for=&quot;studentId-choice1d&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You’ll see that if you click at a star, the stars to the &lt;em&gt;right&lt;/em&gt;, rather than those on the &lt;em&gt;left&lt;/em&gt;, end up highlighted. So assuming you want to read the star rating from left to right, this should be fixed.&lt;/p&gt;
+
+&lt;p&gt;Before we ponder what’s missing in the code, let’s take a look at what’s helping: the new flexbox CSS at the top.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2c&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1c&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&quot;section2c&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star-rating  input {
+	display: none;
+}
+.star-rating &amp;gt; label {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+.star-rating input:checked ~ label:before {
+  content:'\2605';
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section1c&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice5c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice5c&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice4c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice4c&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice3c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice3c&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice2c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice2c&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice1c&quot;/&gt;
+     &lt;label for=&quot;studentId-choice1c&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The additional CSS up top sets &lt;code&gt;display&lt;/code&gt; of the &lt;code&gt;star-rating&lt;/code&gt; container to &lt;code&gt;flex&lt;/code&gt; to line the stars up horizontally rather than vertically. (&lt;code&gt;flex-direction&lt;/code&gt; is set to &lt;code&gt;row&lt;/code&gt; by default.)&lt;/p&gt;
+
+&lt;p&gt;It also centers the items vertically with &lt;code&gt;align-items&lt;/code&gt;, and sets the &lt;code&gt;width&lt;/code&gt; to &lt;code&gt;160px&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;And you’ll see that the tilda &lt;code&gt;~&lt;/code&gt; in &lt;code&gt;.star-rating input:checked ~ label:before&lt;/code&gt; is working its magic, but not in quite the right way. It is doing what it naturally does and making all the stars &lt;em&gt;after&lt;/em&gt; the selected star also show up as full, but what we really want is to have all the stars &lt;em&gt;before&lt;/em&gt;  the selected star show up as full.&lt;/p&gt;
+
+&lt;p&gt;How do we solve this problem?&lt;/p&gt;
+
+&lt;p&gt;Let’s add a &lt;code&gt;flex-direction&lt;/code&gt; attribute and set it to &lt;code&gt;row-reverse&lt;/code&gt;. This reverses the order of stars so that the ones that show up after a given star actually show up before it. 
+Because this turns the “end” of the container into the beginning, let’s also use &lt;code&gt;justify-content&lt;/code&gt; to “flex-end” to keep the stars horizontally left-aligned.&lt;/p&gt;
+
+&lt;div id=&quot;section2c&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;
+.star-rating {
+  display: flex;
+  width: 160px;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;stars-working-right&quot;&gt;Stars working right&lt;/h4&gt;
+
+&lt;p&gt;The stars now highlight in the correct order. If you click a star and make it full, all those to the &lt;code&gt;left&lt;/code&gt; of it will also be full.&lt;/p&gt;
+
+&lt;div class=&quot;margin-bottom row reversed&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice5e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice5e&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice4e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice4e&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice3e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice3e&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice2e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice2e&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice1e&quot; /&gt;
+     &lt;label for=&quot;studentId-choice1e&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice in the underlying HTML below that the &lt;code&gt;value&lt;/code&gt; attributes of my &lt;code&gt;input&lt;/code&gt; elements have been in descending order so that when Flexbox reverses their layout, the star values are in the correct ascending order.&lt;/p&gt;
+
+&lt;p&gt;For instance, the star with a value of “1” shows up on the left and the star with the value of “5” shows up on the right.&lt;/p&gt;
+
+&lt;p&gt;And the CSS has &lt;code&gt;flex-direction: row-reverse&lt;/code&gt; and &lt;code&gt;justify-content: flex-end&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1d&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2d&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&quot;section1d&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div class=&quot;star-rating&quot;&gt;
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice5e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice5e&quot; value=&quot;5&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice4e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice4e&quot; value=&quot;4&quot;&gt;&lt;/label&gt;
+
+     &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice3e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice3e&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice2e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice2e&quot; value=&quot;2&quot;&gt;&lt;/label&gt;
+
+	 &lt;input type=&quot;radio&quot; name=&quot;studentId-e&quot; id=&quot;studentId-choice1e&quot;/&gt;
+     &lt;label for=&quot;studentId-choice1e&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2d&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  width: 160px;
+}
+
+.star-rating  input {
+	display: none;
+}
+.star-rating &amp;gt; label {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+.star-rating input:checked ~ label:before {
+  content:'\2605';
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.reversed .star-rating {
+ flex-direction: row-reverse;
+ justify-content: flex-end;
+}
+.row .star-rating {
+  display: flex;
+  width: 160px;
+  align-items: center;
+}
+
+.star-rating  input {
+  display: none;
+}
+.star-rating &gt; label {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
+  content:'\2605';
+}&lt;/style&gt;
+
+&lt;h4 id=&quot;going-further&quot;&gt;Going further&lt;/h4&gt;
+
+&lt;p&gt;Here are a few suggestions for building off of this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Try adding a &lt;code&gt;:hover&lt;/code&gt; states with a different color.&lt;/li&gt;
+  &lt;li&gt;Try adding an &lt;code&gt;:active&lt;/code&gt; state for when a star is pressed.&lt;/li&gt;
+  &lt;li&gt;Try adding CSS transitions to smooth out these states.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What might this look like, you ask? Check out this &lt;a target=&quot;_blank&quot; href=&quot;https://codepen.io/nevkatz/pen/OJPBBpL&quot;&gt;CodePen&lt;/a&gt; to find out! Thanks for reading!&lt;/p&gt;
+
+&lt;h4 id=&quot;additional-resources&quot;&gt;Additional Resources&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;There is a great concise tutorial on &lt;a href=&quot;https://css-tricks.com/star-ratings/&quot; target=&quot;_blank&quot;&gt;CSS Tricks&lt;/a&gt; for getting started with star rating CSS.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If you are new to Flexbox, check out Samantha Ming’s &lt;a href=&quot;https://github.com/samanthaming/Flexbox30&quot;&gt;Flexbox in 30 days&lt;/a&gt; get a great introduction and dig deeper!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Here we go</summary></entry><entry><title type="html">Code breakdown of creature mouth animation</title><link href="/2020/01/08/greensock-explanation.html" rel="alternate" type="text/html" title="Code breakdown of creature mouth animation" /><published>2020-01-08T00:00:00-05:00</published><updated>2020-01-08T00:00:00-05:00</updated><id>/2020/01/08/greensock-explanation</id><content type="html" xml:base="/2020/01/08/greensock-explanation.html">&lt;h3 id=&quot;changing-facial-expressions-with-vanilla-js-and-gsap&quot;&gt;Changing facial expressions with Vanilla JS and GSAP&lt;/h3&gt;
 
 &lt;p&gt;My &lt;a href=&quot;/2020/01/07/greensock-test-1.html&quot; target=&quot;_blank&quot;&gt;post&lt;/a&gt; before this one featured my first demo of the GSAP (Greensock Animation API) library for animation of SVG (Scalar Vector Graphics) and included a quick explanation of why I used it. Here is the demo again - click on the buttons (the default is set to “happy”) and you should be able to see the critter change expressions.&lt;/p&gt;
 
@@ -1410,116 +2294,4 @@ init();
 
 &lt;p&gt;When considering what roles you would be the ideal fit for, do some research on what skills a given role requires and try to connect with people who have these roles in their career. Arrange for a brief informational interview to get a sense of what skills to build for each role, and what “a day in the of” looks like. After learning about a given role, give some thought as to which roles involve skills that are a logical extension of your talents, and how you might set up a formal or informal learning path for yourself that would prepare you for this role.&lt;/p&gt;
 
-&lt;p&gt;In upcoming posts, I will spotlight some of these roles and discuss the types skills that a given role (or group of roles) require, and the types of tools that are useful to have for it.&lt;/p&gt;</content><author><name></name></author><summary type="html">So many roles, so little time</summary></entry><entry><title type="html">Working with a large codebase</title><link href="/2019/10/08/big-codebase.html" rel="alternate" type="text/html" title="Working with a large codebase" /><published>2019-10-08T00:00:00-04:00</published><updated>2019-10-08T00:00:00-04:00</updated><id>/2019/10/08/big-codebase</id><content type="html" xml:base="/2019/10/08/big-codebase.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
-
-&lt;p&gt;In recent weeks I have stepped away from SVG animation in order to focus on getting cordova mobile apps ready for rollout. The app codebase, which is built in Javascript, is quite large. Over time, I have developed some strategies for keeping the large codebase manageable and flexible. Below are a few tips:&lt;/p&gt;
-
-&lt;h3 id=&quot;modules-and-function-naming&quot;&gt;Modules and Function Naming&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Keep the code modular.&lt;/strong&gt; Break the code into different modules, each comprising one or more files, and give each module a specific purpose. In the early days of the codebase, I started with one main module — but as the number of modules proliferated, the code in that first modules ended up getting dispersed into more specific modules.&lt;/p&gt;
-
-&lt;p&gt;I recommend giving each module a name that describes that purpose. And if two modules are in a similar realm but have distinct purposes, I often start them with the same word (ex. &lt;code&gt;user_save&lt;/code&gt; and &lt;code&gt;user_retrieve&lt;/code&gt;) so they show up together when my files are sorted alphabetically.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Name functions according to the modules they are in.&lt;/strong&gt; I have over 100 modules in the app, and each module starts with something like &lt;code&gt;current_activity&lt;/code&gt;. When I look at a function, I like to see what module it is a part of, so I recommend naming all functions so that they start with the name of their module. (ex. &lt;code&gt;current_activity_setup&lt;/code&gt;.)&lt;/p&gt;
-
-&lt;h3 id=&quot;comments-and-variable-names&quot;&gt;Comments and Variable Names&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Comment where necessary but be selective.&lt;/strong&gt; As long sa the volume of comments is something you can maintain, they are helpful, but older comments can become outdated. I recommend placing comments at the top of a given file and above your functions.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Make variable names descriptive.&lt;/strong&gt; Make sure your variables are recognizable. Think about what you would recognize if you came back to the code after a long break. When returning to a long block of code, would you rather come back to &lt;code&gt;let x = 5&lt;/code&gt; or &lt;code&gt;let starting_accounts = 5&lt;/code&gt;? Good variable names can eliminate the need for commenting, which can often become outdated.&lt;/p&gt;
-
-&lt;h3 id=&quot;function-trees&quot;&gt;Function Trees&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Map out function trees for a given module.&lt;/strong&gt; To keep a bird’s eye view of how the different functions relate in a module, I create a README.txt file for each module. In that file, I describe the module’s purpose and map out the key functions in that module. In its most basic form, a function tree looks something like this:&lt;/p&gt;
-
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-  lesson_download_cycle
-  |
-  *--lesson_download_activities
-       |
-       *--lesson_download_activity_overview_file
-       |
-       *--lesson_download_activity_assets
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;p&gt;You can also expand this format to include other parts of the code you want to be able to see, such as the arguments, for loops, and indicators of whether some functions are synchronous or asynchronous. I use &lt;code&gt;async / await&lt;/code&gt; logic a lot, so including the &lt;code&gt;await&lt;/code&gt; before the function name helps me remember that those functions are asynchronous.&lt;/p&gt;
-
-&lt;p&gt;Also notice that I have added a divider to show when I am calling a function in another module.&lt;/p&gt;
-&lt;pre&gt;
- &lt;code class=&quot;language-markup&quot;&gt;
-  &lt;script type=&quot;prism-html-markup&quot;&gt;
-  lesson_download(lesson_id)
-  |
-  *--await lesson_download_activities(lesson_id)
-      |
-      *--for loop (activity_array)
-           |
-           |
-           *--await lesson_download_activity_overview_file(activity_id)
-           |
-           *--await lesson_download_activity_assets(activity_id)
-               |
-        =============== asset module ===============
-               |
-               *----await download_image asset
-
-  &lt;/script&gt;
- &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;h3 id=&quot;git&quot;&gt;Git&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Use Git to your advantage.&lt;/strong&gt; Especially with large codebases I like to do the following with Git:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;check commit history with &lt;code&gt;git log&lt;/code&gt; often to get re-oriented, especially after the weekend&lt;/li&gt;
-  &lt;li&gt;use &lt;code&gt;git branch&lt;/code&gt; to separate out stable points in the build&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt; git tag&lt;/code&gt; important releases or milestones with version number and description&lt;/li&gt;
-  &lt;li&gt;make detailed &lt;code&gt;git commit&lt;/code&gt; messages when needed&lt;/li&gt;
-  &lt;li&gt;using &lt;code&gt;git diff&lt;/code&gt; when making a detailed commit to see what has changed&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If I am making a short commit, I will just use &lt;code&gt;git commit -m &amp;lt;message&amp;gt;&lt;/code&gt;.
-If I make a lot of changes in a lot of places, I will type &lt;code&gt;git commit&lt;/code&gt;, which takes me into the command-line text editor. I then use &lt;code&gt;git diff&lt;/code&gt; to view all my new changes. While going through my diff, I write a detailed commit message and make a detailed list of all my key changes.&lt;/p&gt;
-
-&lt;p&gt;I also try to &lt;code&gt;git tag&lt;/code&gt; each version of the codebase to keep track of what versions I am at, and I while I work mainly on a &lt;code&gt;devel&lt;/code&gt; branch, have a few git branches that I know are at a stable point in development.&lt;/p&gt;
-
-&lt;h3 id=&quot;takeaway&quot;&gt;Takeaway&lt;/h3&gt;
-
-&lt;p&gt;Large codebases don’t have to feel like a jenga tower that is about to topple over. If you keep your code modular and are clear about where your functions are, what your variables mean, and how your functions and modules connect with each other, you can have a codebase that you enjoy coming back to and working on.&lt;/p&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry><entry><title type="html">Animating SVG Mouth Expressions with Greensock</title><link href="/2019/09/17/greensock.html" rel="alternate" type="text/html" title="Animating SVG Mouth Expressions with Greensock" /><published>2019-09-17T00:00:00-04:00</published><updated>2019-09-17T00:00:00-04:00</updated><id>/2019/09/17/greensock</id><content type="html" xml:base="/2019/09/17/greensock.html">&lt;h3 id=&quot;intro&quot;&gt;Intro&lt;/h3&gt;
-
-&lt;p&gt;Have you ever wanted to animate something on the web?&lt;/p&gt;
-
-&lt;p&gt;I had been thinking about this post for weeks. I had created an alien creature and after making a range of expressions, I wanted to simply make my alien creature go from a smile to a surprised expression.&lt;/p&gt;
-
-&lt;p&gt;Here is the completed animation, done with Greensock animation library.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;transition-1-we-need-a-library&quot;&gt;Transition 1: We need a library&lt;/h4&gt;
-
-&lt;p&gt;My first approach on a CodePen was using the setAttribute command in Javscript for the &lt;code&gt;d&lt;/code&gt; attribute of the mouth path.&lt;/p&gt;
-
-&lt;p&gt;I had heard from Sara Soudaian and Sarah Drasner that animation libraries are key for complex animations, so after my first try didn’t work, I immediately went to try Greensock. The syntax is super easy. Here are the commands I tried:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Tweenlite - use for single simple animations&lt;/li&gt;
-  &lt;li&gt;TweenMax - use for single robust animations (?)&lt;/li&gt;
-  &lt;li&gt;TimelineMax - use for multiple animations&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;MorphSVG makes this easier, but it is not for free. You need to be a member of the “Shockingly Green” subscription, which is $100. For now, I’m fine with counting my nodes.&lt;/p&gt;
-
-&lt;p&gt;I had initially created a round mouth and got unsatisfactory results - GreenSock (again, without the paid-for MorphSVG) was unable to tween the transition. It either looked like a pretzel or the mouth disappeared.&lt;/p&gt;
-
-&lt;p&gt;What I ended up doing was back-tracking to the first mouth I drew in Inkscape and drawing a small mouth expression that was not as drastic a transition to the smile.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;I kept the number of nodes the same&lt;/li&gt;
-  &lt;li&gt;I avoided rotating the mouth; I only resized it&lt;/li&gt;
-  &lt;li&gt;I would change the control points on the nodes, but I would not reorder the sequence of nodes at all&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Intro</summary></entry></feed>
+&lt;p&gt;In upcoming posts, I will spotlight some of these roles and discuss the types skills that a given role (or group of roles) require, and the types of tools that are useful to have for it.&lt;/p&gt;</content><author><name></name></author><summary type="html">So many roles, so little time</summary></entry></feed>

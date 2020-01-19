@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en"><!-- http://jovandeginste.github.io/2016/05/18/add-metadata-tags-to-jekyll-blog-posts.html   -->
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146443473-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146443473-1');
+</script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="/2020/01/18/star-rating.html" />
+  
+  <meta itemprop="keywords" content="svg,css">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Creating a star rating widget with HTML and CSS | Nevin’s Dev Pages</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Creating a star rating widget with HTML and CSS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Here we go" />
+<meta property="og:description" content="Here we go" />
+<link rel="canonical" href="/2020/01/18/star-rating.html" />
+<meta property="og:url" content="/2020/01/18/star-rating.html" />
+<meta property="og:site_name" content="Nevin’s Dev Pages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-18T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Here we go","@type":"BlogPosting","url":"/2020/01/18/star-rating.html","headline":"Creating a star rating widget with HTML and CSS","dateModified":"2020-01-18T00:00:00-05:00","datePublished":"2020-01-18T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/01/18/star-rating.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/css/prism.css">
+  <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin's Dev Pages" /></head>
+<body ><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nevin&#39;s Dev Pages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          <!--<a class="page-link" href="/about/">About</a><a class="page-link" href="/index.html">Nevin&#39;s Dev Pages</a>-->
+           <a class="page-link" href="/about">About</a>
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Creating a star rating widget with HTML and CSS</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-18T00:00:00-05:00" itemprop="datePublished">Jan 18, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="here-we-go">Here we go</h3>
+
+<p>Recently I became interested in making a star rating tool, which are seen on all kinds of apps and websites. There are a number of resources on this and countless ways to pull this off, so below is one way of achieving using CSS pseudoselectors and Flexbox.</p>
+
+<p>Note: While this code is Javascript-free, you’ll want to ultimately use JS to do something with the value that the user selects. What is covered hear is the CSS needed to make the interface look and work right for the user.</p>
+
+<p>Let’s get started!</p>
+
+<h4 id="one-star-in-the-off-state">One star in the “off” state</h4>
+
+<p>First, let’s make just one hollow star that serves as our “off” state.</p>
+
+<p>Here’s how it looks.</p>
+
+<div class="margin-bottom only-off"><div class="star-rating">
+	  <input type="radio" name="studentId-a" id="studentId-choice1a" />
+      <label for="studentId-choice1a" value="1"></label>
+</div></div>
+
+<p>The HTML for the star reveals a container with the class <code>star-rating</code> and shows that the star is made up of two parts:</p>
+
+<ul>
+  <li>an <code>input</code> button that is either checked or not checked</li>
+  <li>a visible <code>label</code> tied to the input button that we interact with</li>
+</ul>
+
+<p>The CSS acts on the <code>input</code> and <code>label</code> elements and reveals a third part: a <code>:before</code> element on the label.</p>
+
+<p class="regular">You’ll see that in the CSS, there are styles for the input, the label, and the label’s <code>:before</code> element.</p>
+
+<ul class="css-tabs">
+  <li><a href="#section1a">HTML</a></li>
+  <li><a href="#section2a">CSS</a></li>
+</ul>
+
+<div id="section1a">
+<pre>
+<code class="language-markup">
+<script type="prism-html-markup"><div class="star-rating">
+	  <input type="radio" name="studentId-a" id="studentId-choice1a"/>
+      <label for="studentId-choice1a" value="1"></label>
+</div></script>
+</code>
+</pre>
+</div>
+
+<div id="section2a">
+<pre>
+<code class="language-css">.star-rating  input {
+	display: none;
+}
+.star-rating  input {
+  display: none;
+}
+.star-rating &gt; label {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}</code>
+</pre>
+</div>
+
+<p>If you dig deeper into the CSS you’ll find a few additional things:</p>
+
+<ul>
+  <li>
+    <p>The styles only affect inputs within an element having the <code>star-rating</code> class.</p>
+  </li>
+  <li>
+    <p>The <code>:before</code> pseudoselector places the star on the label’s <code>:before</code> element, rather than the label itself.</p>
+  </li>
+  <li>
+    <p>The line <code>content: '\2606'</code> sets the shape of the hollow star.</p>
+  </li>
+  <li>
+    <p>The <code>font-family</code> of the <code>label</code> element is set to <code>Verdana</code>, and the <code>:before</code> element inherits this. Controlling font is super important for making both hollow and solid stars appear the same size in Chrome and Safari browsers.</p>
+  </li>
+  <li>
+    <p>The <code>position</code> of the <code>label</code> element is set to <code>relative</code> so that the <code>:before</code> element’s <code>absolute</code> position is set based on the label’s position.</p>
+  </li>
+</ul>
+
+<h4 id="one-star-in-the-on-state">One star in the “on” state</h4>
+
+<p>Now let’s make a filled star in the “on” state.</p>
+
+<div class="margin-bottom"><div class="star-rating">
+	  <input checked="true" type="radio" name="studentId-b" id="studentId-choice1b" />
+      <label for="studentId-choice1b" value="1b"></label>
+</div></div>
+
+<p>Notice that the only difference in the HTML versus the one before it (besides the different ID) is the <code>checked</code> attribute, which is set to <code>true</code>.</p>
+
+<ul class="css-tabs">
+  <li><a href="#section1b">HTML</a></li>
+  <li><a href="#section2b">CSS</a></li>
+</ul>
+
+<div id="section1b">
+<pre>
+<code class="language-markup">
+<script type="prism-html-markup"><div class="star-rating">
+	  <input checked="true" type="radio"  name="studentId-b" id="studentId-choice1b"/>
+      <label for="studentId-choice1b" value="1b"></label>
+</div></script>
+</code>
+</pre>
+</div>
+
+<div id="section2b">
+<pre>
+<code class="language-css">.star-rating  input {
+  display: none;
+}
+.star-rating  input {
+  display: none;
+}
+.star-rating &gt; label {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+.star-rating input:checked ~ label:before {
+  content:'\2605';
+}</code>
+</pre>
+</div>
+
+<p>There is also a new CSS selector:</p>
+
+<p><code>.star-rating input:checked ~ label:before</code></p>
+
+<p>From looking at it, there are a few things to notice:</p>
+
+<ul>
+  <li>The <code>:checked</code> pseudoselector will select only inputs with <code>checked</code> set to <code>true</code>.</li>
+  <li>The tilda (<code>~</code>) makes the code act not on the <code>input</code> itself, but its siblings; in this case, all the <code>label</code> elements that come after it.</li>
+  <li>The line <code>content: '\2605'</code> sets the shape of the solid star. Let’s take one more look:</li>
+</ul>
+
+<pre>
+<code class="language-css">
+.star-rating input:checked ~ label:before {
+  content: '\2605';
+}
+</code>
+</pre>
+
+<p>In other words, the <code>content</code> value of <code>\2605</code> causes the :before element of the affected labels will show up as a filled star rather than a hollow star (<code>☆</code>).</p>
+
+<h4 id="groups-of-stars">Groups of Stars</h4>
+
+<p>Now let’s try five stars using the same CSS.</p>
+
+<div class="margin-bottom"><div class="star-rating">
+	 <input type="radio" name="studentId-c" id="studentId-choice5c" />
+     <label for="studentId-choice5c" value="5"></label>
+
+	 <input type="radio" name="studentId-c" id="studentId-choice4c" />
+     <label for="studentId-choice4c" value="4"></label>
+
+     <input type="radio" name="studentId-c" id="studentId-choice3c" />
+     <label for="studentId-choice3c" value="3"></label>
+
+	 <input type="radio" name="studentId-c" id="studentId-choice2c" />
+     <label for="studentId-choice2c" value="2"></label>
+
+	 <input type="radio" name="studentId-c" id="studentId-choice1c" />
+     <label for="studentId-choice1c" value="1" checked="true"></label>
+</div></div>
+
+<p>Oops! Assuming we want our stars in a row, that’s not what we want.</p>
+
+<p>The one below is a little better, because it uses CSS tied to Flexbox (or the flexible box layout model) to make the stars line up in a row.</p>
+
+<p>But try clicking or tapping each star to see what happens - you will find that something is still not quite right about how the stars react.</p>
+
+<div class="margin-bottom row"><div class="star-rating">
+	 <input type="radio" name="studentId-d" id="studentId-choice5d" />
+     <label for="studentId-choice5d" value="5"></label>
+
+	 <input type="radio" name="studentId-d" id="studentId-choice4d" />
+     <label for="studentId-choice4d" value="4"></label>
+
+     <input type="radio" name="studentId-d" id="studentId-choice3d" />
+     <label for="studentId-choice3d" value="3"></label>
+
+	 <input type="radio" name="studentId-d" id="studentId-choice2d" />
+     <label for="studentId-choice2d" value="2"></label>
+
+	 <input type="radio" name="studentId-d" id="studentId-choice1d" />
+     <label for="studentId-choice1d" value="1" checked="true"></label>
+</div></div>
+
+<p>You’ll see that if you click at a star, the stars to the <em>right</em>, rather than those on the <em>left</em>, end up highlighted. So assuming you want to read the star rating from left to right, this should be fixed.</p>
+
+<p>Before we ponder what’s missing in the code, let’s take a look at what’s helping: the new flexbox CSS at the top.</p>
+
+<ul class="css-tabs">
+  <li><a href="#section2c">CSS</a></li>
+  <li><a href="#section1c">HTML</a></li>
+</ul>
+<div id="section2c">
+<pre>
+<code class="language-css">.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star-rating  input {
+	display: none;
+}
+.star-rating &gt; label {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+.star-rating input:checked ~ label:before {
+  content:'\2605';
+}</code>
+</pre>
+</div>
+
+<div id="section1c">
+<pre>
+<code class="language-markup">
+<script type="prism-html-markup"><div class="star-rating">
+	 <input type="radio" name="studentId-c" id="studentId-choice5c"/>
+     <label for="studentId-choice5c" value="5"></label>
+
+	 <input type="radio" name="studentId-c" id="studentId-choice4c"/>
+     <label for="studentId-choice4c" value="4"></label>
+
+     <input type="radio" name="studentId-c" id="studentId-choice3c"/>
+     <label for="studentId-choice3c" value="3"></label>
+
+	 <input type="radio" name="studentId-c" id="studentId-choice2c"/>
+     <label for="studentId-choice2c" value="2"></label>
+
+	 <input type="radio" name="studentId-c" id="studentId-choice1c"/>
+     <label for="studentId-choice1c" value="1" checked="true"></label>
+</div></script>
+</code>
+</pre>
+</div>
+
+<p>The additional CSS up top sets <code>display</code> of the <code>star-rating</code> container to <code>flex</code> to line the stars up horizontally rather than vertically. (<code>flex-direction</code> is set to <code>row</code> by default.)</p>
+
+<p>It also centers the items vertically with <code>align-items</code>, and sets the <code>width</code> to <code>160px</code>.</p>
+
+<p>And you’ll see that the tilda <code>~</code> in <code>.star-rating input:checked ~ label:before</code> is working its magic, but not in quite the right way. It is doing what it naturally does and making all the stars <em>after</em> the selected star also show up as full, but what we really want is to have all the stars <em>before</em>  the selected star show up as full.</p>
+
+<p>How do we solve this problem?</p>
+
+<p>Let’s add a <code>flex-direction</code> attribute and set it to <code>row-reverse</code>. This reverses the order of stars so that the ones that show up after a given star actually show up before it. 
+Because this turns the “end” of the container into the beginning, let’s also use <code>justify-content</code> to “flex-end” to keep the stars horizontally left-aligned.</p>
+
+<div id="section2c">
+<pre>
+<code class="language-css">
+.star-rating {
+  display: flex;
+  width: 160px;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+</code>
+</pre>
+</div>
+
+<h4 id="stars-working-right">Stars working right</h4>
+
+<p>The stars now highlight in the correct order. If you click a star and make it full, all those to the <code>left</code> of it will also be full.</p>
+
+<div class="margin-bottom row reversed"><div class="star-rating">
+	 <input type="radio" name="studentId-e" id="studentId-choice5e" />
+     <label for="studentId-choice5e" value="5"></label>
+
+	 <input type="radio" name="studentId-e" id="studentId-choice4e" />
+     <label for="studentId-choice4e" value="4"></label>
+
+     <input type="radio" name="studentId-e" id="studentId-choice3e" />
+     <label for="studentId-choice3e" value="3"></label>
+
+	 <input type="radio" name="studentId-e" id="studentId-choice2e" />
+     <label for="studentId-choice2e" value="2"></label>
+
+	 <input type="radio" name="studentId-e" id="studentId-choice1e" />
+     <label for="studentId-choice1e" value="1" checked="true"></label>
+</div></div>
+
+<p>Notice in the underlying HTML below that the <code>value</code> attributes of my <code>input</code> elements have been in descending order so that when Flexbox reverses their layout, the star values are in the correct ascending order.</p>
+
+<p>For instance, the star with a value of “1” shows up on the left and the star with the value of “5” shows up on the right.</p>
+
+<p>And the CSS has <code>flex-direction: row-reverse</code> and <code>justify-content: flex-end</code>.</p>
+
+<ul class="css-tabs">
+  <li><a href="#section1d">HTML</a></li>
+  <li><a href="#section2d">CSS</a></li>
+</ul>
+<div id="section1d">
+<pre>
+<code class="language-markup">
+<script type="prism-html-markup"><div class="star-rating">
+	 <input type="radio" name="studentId-e" id="studentId-choice5e"/>
+     <label for="studentId-choice5e" value="5"></label>
+
+	 <input type="radio" name="studentId-e" id="studentId-choice4e"/>
+     <label for="studentId-choice4e" value="4"></label>
+
+     <input type="radio" name="studentId-e" id="studentId-choice3e"/>
+     <label for="studentId-choice3e" value="3"></label>
+
+	 <input type="radio" name="studentId-e" id="studentId-choice2e"/>
+     <label for="studentId-choice2e" value="2"></label>
+
+	 <input type="radio" name="studentId-e" id="studentId-choice1e"/>
+     <label for="studentId-choice1e" value="1" checked="true"></label>
+</div></script>
+</code>
+</pre>
+</div>
+
+<div id="section2d">
+<pre>
+<code class="language-css">.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  width: 160px;
+}
+
+.star-rating  input {
+	display: none;
+}
+.star-rating &gt; label {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+.star-rating input:checked ~ label:before {
+  content:'\2605';
+}</code>
+</pre>
+</div>
+
+<style>
+.reversed .star-rating {
+ flex-direction: row-reverse;
+ justify-content: flex-end;
+}
+.row .star-rating {
+  display: flex;
+  width: 160px;
+  align-items: center;
+}
+
+.star-rating  input {
+  display: none;
+}
+.star-rating > label {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  
+  display: block;
+  position: relative;
+  font-family: Verdana;
+}
+.star-rating label::before {
+  content: '\2606';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  color: orange;
+  line-height: 30px;
+}
+div:not(.only-off) > div.star-rating input:checked ~ label:before {
+  content:'\2605';
+}</style>
+
+<h4 id="going-further">Going further</h4>
+
+<p>Here are a few suggestions for building off of this:</p>
+
+<ul>
+  <li>Try adding a <code>:hover</code> states with a different color.</li>
+  <li>Try adding an <code>:active</code> state for when a star is pressed.</li>
+  <li>Try adding CSS transitions to smooth out these states.</li>
+</ul>
+
+<p>What might this look like, you ask? Check out this <a target="_blank" href="https://codepen.io/nevkatz/pen/OJPBBpL">CodePen</a> to find out! Thanks for reading!</p>
+
+<h4 id="additional-resources">Additional Resources</h4>
+
+<ul>
+  <li>
+    <p>There is a great concise tutorial on <a href="https://css-tricks.com/star-ratings/" target="_blank">CSS Tricks</a> for getting started with star rating CSS.</p>
+  </li>
+  <li>
+    <p>If you are new to Flexbox, check out Samantha Ming’s <a href="https://github.com/samanthaming/Flexbox30">Flexbox in 30 days</a> get a great introduction and dig deeper!</p>
+  </li>
+</ul>
+
+
+  </div><div id="disqus_thread"></div>
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://nevkatz.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a class="u-url" href="/2020/01/18/star-rating.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Nevin&#39;s Dev Pages</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name"><!-- Nevin&#39;s Dev Pages --></li><li><a class="u-email" href="mailto:nevkatz@gmail.com">nevkatz@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">nevkatz</span></a></li><li><a href="https://www.twitter.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">nevkatz</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I write about web and app development.</p>
+      </div>
+
+      
+    </div>
+   
+
+  </div>
+   <div id="copyright">
+    <p>Copyright &copy; 2019 Nevin Katz. All Rights Reserved.</p>
+   </div>
+
+</footer>
+<script src="/assets/js/prism.js"></script>
+<script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>
