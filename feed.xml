@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-18T20:20:11-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating a star rating widget with HTML and CSS</title><link href="/2020/01/18/star-rating-before-after.html" rel="alternate" type="text/html" title="Creating a star rating widget with HTML and CSS" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>/2020/01/18/star-rating-before-after</id><content type="html" xml:base="/2020/01/18/star-rating-before-after.html">&lt;h3 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-18T20:30:07-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating a star rating widget with HTML and CSS</title><link href="/2020/01/18/star-rating-before-after.html" rel="alternate" type="text/html" title="Creating a star rating widget with HTML and CSS" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>/2020/01/18/star-rating-before-after</id><content type="html" xml:base="/2020/01/18/star-rating-before-after.html">&lt;h3 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h3&gt;
 
 &lt;p&gt;Recently I became interested in making a star rating tool, which are seen on all kinds of apps and websites. There are a number of resources on this and countless ways to pull this off, so below is one way of achieving using CSS pseudoselectors and Flexbox.&lt;/p&gt;
 
@@ -45,9 +45,6 @@
 &lt;pre&gt;
 &lt;code class=&quot;language-css&quot;&gt;.star-rating  input {
 	display: none;
-}
-.star-rating  input {
-  display: none;
 }
 .star-rating &amp;gt; label {
   width: 30px;
@@ -117,10 +114,7 @@
 
 &lt;div id=&quot;section2b&quot;&gt;
 &lt;pre&gt;
-&lt;code class=&quot;language-css&quot;&gt;.star-rating  input {
-  display: none;
-}
-.star-rating  input {
+&lt;code class=&quot;language-css&quot;&gt;.star-rating input {
   display: none;
 }
 .star-rating &amp;gt; label {
@@ -245,8 +239,7 @@
   display: flex;
   align-items: center;
 }
-
-.star-rating  input {
+.star-rating input {
 	display: none;
 }
 .star-rating &amp;gt; label {
@@ -349,13 +342,11 @@ Because this turns the “end” of the container into the beginning, let’s al
 &lt;pre&gt;
 &lt;code class=&quot;language-css&quot;&gt;.star-rating {
   display: flex;
+  align-items: center;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  align-items: center;
-  width: 160px;
 }
-
-.star-rating  input {
+.star-rating input {
 	display: none;
 }
 .star-rating &amp;gt; label {
@@ -386,7 +377,6 @@ Because this turns the “end” of the container into the beginning, let’s al
 }
 .row .star-rating {
   display: flex;
-  width: 160px;
   align-items: center;
 }
 
@@ -487,9 +477,6 @@ div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
 &lt;code class=&quot;language-css&quot;&gt;.star-rating  input {
 	display: none;
 }
-.star-rating  input {
-  display: none;
-}
 .star-rating &amp;gt; label {
   width: 30px;
   height: 30px;
@@ -557,10 +544,7 @@ div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
 
 &lt;div id=&quot;section2b&quot;&gt;
 &lt;pre&gt;
-&lt;code class=&quot;language-css&quot;&gt;.star-rating  input {
-  display: none;
-}
-.star-rating  input {
+&lt;code class=&quot;language-css&quot;&gt;.star-rating input {
   display: none;
 }
 .star-rating &amp;gt; label {
@@ -664,8 +648,7 @@ div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
   display: flex;
   align-items: center;
 }
-
-.star-rating  input {
+.star-rating input {
 	display: none;
 }
 .star-rating &amp;gt; label {
@@ -714,7 +697,7 @@ div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
 
 &lt;p&gt;The additional CSS up top sets &lt;code&gt;display&lt;/code&gt; of the &lt;code&gt;star-rating&lt;/code&gt; container to &lt;code&gt;flex&lt;/code&gt; to line the stars up horizontally rather than vertically. (&lt;code&gt;flex-direction&lt;/code&gt; is set to &lt;code&gt;row&lt;/code&gt; by default.)&lt;/p&gt;
 
-&lt;p&gt;It also centers the items vertically with &lt;code&gt;align-items&lt;/code&gt;, and sets the &lt;code&gt;width&lt;/code&gt; to &lt;code&gt;160px&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It also centers the items vertically with &lt;code&gt;align-items&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;And you’ll see that the tilda &lt;code&gt;~&lt;/code&gt; in &lt;code&gt;.star-rating input:checked ~ label:before&lt;/code&gt; is working its magic, but not in quite the right way. It is doing what it naturally does and making all the stars &lt;em&gt;after&lt;/em&gt; the selected star also show up as full, but what we really want is to have all the stars &lt;em&gt;before&lt;/em&gt;  the selected star show up as full.&lt;/p&gt;
 
@@ -728,7 +711,6 @@ Because this turns the “end” of the container into the beginning, let’s al
 &lt;code class=&quot;language-css&quot;&gt;
 .star-rating {
   display: flex;
-  width: 160px;
   align-items: center;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -795,13 +777,11 @@ Because this turns the “end” of the container into the beginning, let’s al
 &lt;pre&gt;
 &lt;code class=&quot;language-css&quot;&gt;.star-rating {
   display: flex;
+  align-items: center;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  align-items: center;
-  width: 160px;
 }
-
-.star-rating  input {
+.star-rating input {
 	display: none;
 }
 .star-rating &amp;gt; label {
@@ -832,7 +812,6 @@ Because this turns the “end” of the container into the beginning, let’s al
 }
 .row .star-rating {
   display: flex;
-  width: 160px;
   align-items: center;
 }
 

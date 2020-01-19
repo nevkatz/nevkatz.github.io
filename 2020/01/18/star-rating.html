@@ -116,9 +116,6 @@
 <code class="language-css">.star-rating  input {
 	display: none;
 }
-.star-rating  input {
-  display: none;
-}
 .star-rating &gt; label {
   width: 30px;
   height: 30px;
@@ -186,10 +183,7 @@
 
 <div id="section2b">
 <pre>
-<code class="language-css">.star-rating  input {
-  display: none;
-}
-.star-rating  input {
+<code class="language-css">.star-rating input {
   display: none;
 }
 .star-rating &gt; label {
@@ -293,8 +287,7 @@
   display: flex;
   align-items: center;
 }
-
-.star-rating  input {
+.star-rating input {
 	display: none;
 }
 .star-rating &gt; label {
@@ -343,7 +336,7 @@
 
 <p>The additional CSS up top sets <code>display</code> of the <code>star-rating</code> container to <code>flex</code> to line the stars up horizontally rather than vertically. (<code>flex-direction</code> is set to <code>row</code> by default.)</p>
 
-<p>It also centers the items vertically with <code>align-items</code>, and sets the <code>width</code> to <code>160px</code>.</p>
+<p>It also centers the items vertically with <code>align-items</code>.</p>
 
 <p>And you’ll see that the tilda <code>~</code> in <code>.star-rating input:checked ~ label:before</code> is working its magic, but not in quite the right way. It is doing what it naturally does and making all the stars <em>after</em> the selected star also show up as full, but what we really want is to have all the stars <em>before</em>  the selected star show up as full.</p>
 
@@ -357,7 +350,6 @@ Because this turns the “end” of the container into the beginning, let’s al
 <code class="language-css">
 .star-rating {
   display: flex;
-  width: 160px;
   align-items: center;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -424,13 +416,11 @@ Because this turns the “end” of the container into the beginning, let’s al
 <pre>
 <code class="language-css">.star-rating {
   display: flex;
+  align-items: center;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  align-items: center;
-  width: 160px;
 }
-
-.star-rating  input {
+.star-rating input {
 	display: none;
 }
 .star-rating &gt; label {
@@ -461,7 +451,6 @@ Because this turns the “end” of the container into the beginning, let’s al
 }
 .row .star-rating {
   display: flex;
-  width: 160px;
   align-items: center;
 }
 
