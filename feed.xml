@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-18T20:42:40-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating a star rating widget with HTML and CSS</title><link href="/2020/01/18/star-rating-before-after.html" rel="alternate" type="text/html" title="Creating a star rating widget with HTML and CSS" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>/2020/01/18/star-rating-before-after</id><content type="html" xml:base="/2020/01/18/star-rating-before-after.html">&lt;h3 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-01-18T20:45:53-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">Creating a star rating widget with HTML and CSS</title><link href="/2020/01/18/star-rating-before-after.html" rel="alternate" type="text/html" title="Creating a star rating widget with HTML and CSS" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>/2020/01/18/star-rating-before-after</id><content type="html" xml:base="/2020/01/18/star-rating-before-after.html">&lt;h3 id=&quot;here-we-go&quot;&gt;Here we go&lt;/h3&gt;
 
 &lt;p&gt;Recently I became interested in making a star rating tool, which are seen on all kinds of apps and websites. There are a number of resources on this and countless ways to pull this off, so below is one way of achieving using CSS pseudoselectors and Flexbox.&lt;/p&gt;
 
@@ -590,7 +590,7 @@ div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
 
 &lt;p&gt;In other words, the &lt;code&gt;content&lt;/code&gt; value of &lt;code&gt;\2605&lt;/code&gt; causes the :before element of the affected labels will show up as a filled star rather than a hollow star (&lt;code&gt;☆&lt;/code&gt;).&lt;/p&gt;
 
-&lt;h4 id=&quot;groups-of-stars&quot;&gt;Groups of Stars&lt;/h4&gt;
+&lt;h4 id=&quot;a-group-of-stars&quot;&gt;A Group of Stars&lt;/h4&gt;
 
 &lt;p&gt;Now let’s try five stars using the same CSS.&lt;/p&gt;
 
@@ -610,6 +610,8 @@ div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
 	 &lt;input type=&quot;radio&quot; name=&quot;studentId-c&quot; id=&quot;studentId-choice1c&quot; /&gt;
      &lt;label for=&quot;studentId-choice1c&quot; value=&quot;1&quot; checked=&quot;true&quot;&gt;&lt;/label&gt;
 &lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;a-horizontal-group-of-stars&quot;&gt;A Horizontal Group of Stars&lt;/h4&gt;
 
 &lt;p&gt;Oops! Assuming we want our stars in a row, that’s not what we want.&lt;/p&gt;
 
@@ -702,6 +704,8 @@ div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
 &lt;p&gt;And you’ll see that the tilda &lt;code&gt;~&lt;/code&gt; in &lt;code&gt;.star-rating input:checked ~ label:before&lt;/code&gt; is working its magic, but not in quite the right way. It is doing what it naturally does and making all the stars &lt;em&gt;after&lt;/em&gt; the selected star also show up as full, but what we really want is to have all the stars &lt;em&gt;before&lt;/em&gt;  the selected star show up as full.&lt;/p&gt;
 
 &lt;p&gt;How do we solve this problem?&lt;/p&gt;
+
+&lt;h4 id=&quot;a-flipped-group-of-stars&quot;&gt;A Flipped Group of Stars&lt;/h4&gt;
 
 &lt;p&gt;Let’s add a &lt;code&gt;flex-direction&lt;/code&gt; attribute and set it to &lt;code&gt;row-reverse&lt;/code&gt;. This reverses the order of stars so that the ones that show up after a given star actually show up before it. 
 Because this turns the “end” of the container into the beginning, let’s also use &lt;code&gt;justify-content&lt;/code&gt; to “flex-end” to keep the stars horizontally left-aligned.&lt;/p&gt;
