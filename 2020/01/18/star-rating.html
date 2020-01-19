@@ -229,7 +229,7 @@
 
 <p>In other words, the <code>content</code> value of <code>\2605</code> causes the :before element of the affected labels will show up as a filled star rather than a hollow star (<code>☆</code>).</p>
 
-<h4 id="a-group-of-stars">A Group of Stars</h4>
+<h4 id="stars-in-a-row">Stars in a Row</h4>
 
 <p>Now let’s try five stars using the same CSS.</p>
 
@@ -250,11 +250,11 @@
      <label for="studentId-choice1c" value="1" checked="true"></label>
 </div></div>
 
-<h4 id="a-horizontal-group-of-stars">A Horizontal Group of Stars</h4>
-
 <p>Oops! Assuming we want our stars in a row, that’s not what we want.</p>
 
-<p>The one below is a little better, because it uses CSS tied to Flexbox (or the flexible box layout model) to make the stars line up in a row.</p>
+<h4 id="a-horizontal-group-of-stars">A Horizontal Group of Stars</h4>
+
+<p>The group below is a little better, because it uses CSS tied to Flexbox (or the flexible box layout model) to make the stars line up in a row.</p>
 
 <p>But try clicking or tapping each star to see what happens - you will find that something is still not quite right about how the stars react.</p>
 
@@ -344,7 +344,7 @@
 
 <p>How do we solve this problem?</p>
 
-<h4 id="a-flipped-group-of-stars">A Flipped Group of Stars</h4>
+<h4 id="flipping-the-group">Flipping the Group</h4>
 
 <p>Let’s add a <code>flex-direction</code> attribute and set it to <code>row-reverse</code>. This reverses the order of stars so that the ones that show up after a given star actually show up before it. 
 Because this turns the “end” of the container into the beginning, let’s also use <code>justify-content</code> to “flex-end” to keep the stars horizontally left-aligned.</p>
