@@ -690,7 +690,7 @@ ul.css-tabs {
 
 @-moz-document url-prefix() {
   ul.css-tabs li a {
-    top: -1px; } }
+    top: 0px; } }
 /* dragon banner */
 div.banner {
   width: 100vw;
