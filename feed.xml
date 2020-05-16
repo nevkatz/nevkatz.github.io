@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-11T00:34:41-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">CSS Theme Switcher with VueJS</title><link href="http://localhost:4000/2020/05/10/vue-theme-switcher.html" rel="alternate" type="text/html" title="CSS Theme Switcher with VueJS" /><published>2020-05-10T00:00:00-04:00</published><updated>2020-05-10T00:00:00-04:00</updated><id>http://localhost:4000/2020/05/10/vue-theme-switcher</id><content type="html" xml:base="http://localhost:4000/2020/05/10/vue-theme-switcher.html">&lt;h3 id=&quot;switching-themes-with-vue&quot;&gt;Switching themes with Vue&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-05-16T18:54:19-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">CSS Theme Switcher with VueJS</title><link href="/2020/05/10/vue-theme-switcher.html" rel="alternate" type="text/html" title="CSS Theme Switcher with VueJS" /><published>2020-05-10T00:00:00-04:00</published><updated>2020-05-10T00:00:00-04:00</updated><id>/2020/05/10/vue-theme-switcher</id><content type="html" xml:base="/2020/05/10/vue-theme-switcher.html">&lt;h3 id=&quot;building-a-theme-switcher-with-vue&quot;&gt;Building a Theme Switcher with Vue&lt;/h3&gt;
 
-&lt;p&gt;If you are building a website for a client, you may want to give your client an idea of how different themes look for a particular website element. In this case, it can help to have script that allows the client to dynamically switch themes and make a decision.&lt;/p&gt;
+&lt;p&gt;If you are building a site for a client, you may want to give your client an idea of how different themes look on a particular site, site page, or site element. In this case, it can help to have a demo that allows your client to dynamically switch themes in order to see how they look at a glance and arrive at a decision.&lt;/p&gt;
 
-&lt;p&gt;I recently found a way to build a quick theme switcher in VueJS below.&lt;/p&gt;
+&lt;p&gt;Here, we will look at a way to build a theme switcher with VueJS.&lt;/p&gt;
 
-&lt;p&gt;The interactive, which uses four themes from Canva’s &lt;a href=&quot;https://www.canva.com/learn/website-color-schemes/&quot;&gt;website color schemes&lt;/a&gt;, allows you to switch themes using radio input elements, which are styled to look like tabs. When you press a tab, Vue works behind the scenes to change the CSS class of the &lt;code&gt;output&lt;/code&gt; element.&lt;/p&gt;
+&lt;h4 class=&quot;demo&quot; id=&quot;a-glimpse-of-the-final-product&quot;&gt;A glimpse of the final product&lt;/h4&gt;
+
+&lt;p&gt;The theme switcher, which uses themes from Canva’s &lt;a href=&quot;https://www.canva.com/learn/website-color-schemes/&quot; target=&quot;_blank&quot;&gt;website color schemes&lt;/a&gt;, allows you to switch themes using radio input elements, which are styled to look like tabs. When you press a tab, Vue works behind the scenes to change the CSS class of the &lt;code&gt;output&lt;/code&gt; element. Try clicking the tabs here.&lt;/p&gt;
 
 &lt;div class=&quot;margin-bottom&quot;&gt;
 &lt;script src=&quot;https://npmcdn.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;!-- set the root --&gt;
@@ -15,7 +17,7 @@
     &lt;!-- the template elemnts does not show up in the dom --&gt;
     &lt;template v-for=&quot;theme in themes&quot;&gt;
     &lt;!-- the v-for logic uses each item in the array to make a radio button --&gt;
-      &lt;input :value=&quot;theme&quot; :id=&quot;theme&quot; name=&quot;style-options&quot; type=&quot;radio&quot; v-model=&quot;selected&quot; /&gt;&lt;label :for=&quot;theme&quot;&gt;&lt;span v-html=&quot;theme&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;input :id=&quot;theme&quot; v-model=&quot;selected&quot; :value=&quot;theme&quot; name=&quot;style-options&quot; type=&quot;radio&quot; /&gt;&lt;label :for=&quot;theme&quot; v-html=&quot;theme&quot;&gt;&lt;/label&gt;
       &lt;/template&gt;
     &lt;/div&gt;
     &lt;!-- this is the markup that gets styled. --&gt;
@@ -36,11 +38,7 @@
 &lt;style&gt;body {
   font-family: Arial;
 }
-/* theme-switcher */
-#theme-switcher {
-  margin-bottom: 10px;
-  border-bottom: 1px solid darkgrey;
-}
+
 /* hide the radio button element */
 #theme-switcher input[type=&quot;radio&quot;] {
   display: none;
@@ -70,7 +68,7 @@
   width: 100%;
 }
 #root h1 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0px;
   padding: 10px; 
   font-weight: 700;
@@ -78,7 +76,7 @@
 #root p {
   margin: 0px;
   padding: 10px;
-  font-size: 13px;
+  font-size: 15px;
 }
 #root button {
   margin: 0px auto;
@@ -167,15 +165,23 @@
    vm.selected = vm.themes[0];
 &lt;/script&gt;
 
-&lt;p&gt;We are pulling in the VueJS library from a CDN using a &lt;code&gt;script&lt;/code&gt; tag:&lt;/p&gt;
+&lt;p&gt;Now, let’s walk through the process for building this theme switcher from the ground up.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;&amp;lt;script src=&quot;https://npmcdn.com/vue/dist/vue.js&quot;&amp;gt;&amp;lt;script&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;part-1-building-the-basic-markup&quot;&gt;Part 1: Building the basic markup&lt;/h3&gt;
 
-&lt;p&gt;So for this interactive, there is no build step.&lt;/p&gt;
+&lt;h4 id=&quot;step-1-adding-the-vue-js-library&quot;&gt;Step 1: Adding the Vue JS library&lt;/h4&gt;
 
-&lt;h4 id=&quot;step-1-adding-the-root-element&quot;&gt;Step 1: Adding the root element&lt;/h4&gt;
+&lt;p&gt;Being a library, Vue JS can be baked into your site’s codebase in a number of ways, which I discuss &lt;a href=&quot;/2020/01/05/get-started-with-vue.html&quot; target=&quot;_blank&quot;&gt;elsewhere&lt;/a&gt;. For this particular demo, we are pulling in the VueJS library from a content delivery network (CDN) using a &lt;code&gt;script&lt;/code&gt; tag:&lt;/p&gt;
 
-&lt;p&gt;First, let’s add the main DOM element to our html and give it an ID of &lt;code&gt;root&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;script src=&quot;https://npmcdn.com/vue/dist/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;So integrating VueJS for this project does not require a build step.&lt;/p&gt;
+
+&lt;p&gt;If you are building this on a static html page, you should add this to an HTML template with all the usual starting material, such as this &lt;a href=&quot;https://www.sitepoint.com/a-basic-html5-template/&quot; target=&quot;_blank&quot;&gt;SitePoint template&lt;/a&gt;. If you are using a code sandbox like CodePen or JS Fiddle, no need.&lt;/p&gt;
+
+&lt;h4 id=&quot;step-2-adding-the-root-element&quot;&gt;Step 2: Adding the root element&lt;/h4&gt;
+
+&lt;p&gt;Assuming the Vue library &lt;code&gt;script&lt;/code&gt; tag is already added to our html page, let’s add the main DOM element to our html and give it an ID of &lt;code&gt;root&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
@@ -185,9 +191,23 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h4 id=&quot;step-2-adding-the-theme-switcher-and-output&quot;&gt;Step 2: Adding the theme switcher and output&lt;/h4&gt;
+&lt;p&gt;If you are trying this on a static html page, it is best to add this inside a &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; element.&lt;/p&gt;
 
-&lt;p&gt;Now, let’s add an element for our theme switcher, and the container with id of &lt;code&gt;output&lt;/code&gt; that will contain the elements with the resulting styles.&lt;/p&gt;
+&lt;h4 id=&quot;step-3-adding-the-theme-switcher-and-output-containers&quot;&gt;Step 3: Adding the theme switcher and output containers&lt;/h4&gt;
+
+&lt;p&gt;Now, let’s add an element that will contain the list of tabbed theme options.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div id=&quot;root&quot;&gt;
+     &lt;!-- widget for switching themes --&gt;
+    &lt;div id=&quot;theme-switcher&quot;&gt; 
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;And now, let’s add the container with an &lt;code&gt;id&lt;/code&gt; of &lt;code&gt;output&lt;/code&gt; that will contain the elements with the resulting styles.&lt;/p&gt;
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
 &lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div id=&quot;root&quot;&gt;
@@ -201,9 +221,9 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h4 id=&quot;step-3-create-a-template-element-that-will-generate-the-theme-options&quot;&gt;Step 3: Create a template element that will generate the theme options&lt;/h4&gt;
+&lt;h4 id=&quot;step-4-create-a-template-element-that-will-generate-the-theme-options&quot;&gt;Step 4: Create a template element that will generate the theme options&lt;/h4&gt;
 
-&lt;p&gt;Now we could just add some theme options using html radio buttons…&lt;/p&gt;
+&lt;p&gt;Ok, our containers are set up. Time to create our four theme options that the user will click on. Now if this were not a VueJS tutorial, we &lt;em&gt;could&lt;/em&gt; just add some theme options using html radio buttons…&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
@@ -211,10 +231,10 @@
    
     &lt;div id=&quot;theme-switcher&quot;&gt;
       &lt;!-- looks kinda repetitive, don't it? --&gt;
-      &lt;input value=&quot;light&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
-      &lt;input value=&quot;dark&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
-      &lt;input value=&quot;modern&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
-      &lt;input value=&quot;gemstone&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
+      &lt;input value=&quot;light&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;light
+      &lt;input value=&quot;dark&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;dark
+      &lt;input value=&quot;modern&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;modern
+      &lt;input value=&quot;gemstone&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;gemstone
     &lt;/div&gt;
     &lt;div id=&quot;output&quot;&gt;
     &lt;/div&gt;
@@ -222,9 +242,18 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;… but this gets repetitive, especially when add additional attributes to each input.&lt;/p&gt;
+&lt;p&gt;… but where is the fun in that? This gets repetitive, especially when we add additional attributes to each input element.&lt;/p&gt;
 
-&lt;p&gt;A less repetitive way to go about it is to create a list of themes and loop through them to create our inputs. We’ll lay the groundwork for that by adding a &lt;code&gt;template&lt;/code&gt; element. The nice thinga about a &lt;code&gt;template&lt;/code&gt; is that you can add Vue logic to it but it won’t show up in the DOM.&lt;/p&gt;
+&lt;p&gt;A less repetitive way to make these tabs is to tie our HTML file to a Javascript file with a Vue object. Here’s the plan:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In a Javascript file, we’ll create a Vue object.&lt;/li&gt;
+  &lt;li&gt;In the Vue object, we’ll create a list of themes.&lt;/li&gt;
+  &lt;li&gt;In this HTML page we’ve been building, we’ll loop through the list of themes to create our four radio inputs.&lt;/li&gt;
+  &lt;li&gt;At the end of this project, we will style these inputs to look like tabs.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Before we start our JS file, let’s lay the groundwork for that by adding a &lt;code&gt;template&lt;/code&gt; element. The nice thing about a &lt;code&gt;template&lt;/code&gt; is that you can add Vue logic to it but it won’t show up in the DOM.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
@@ -242,11 +271,23 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h4 id=&quot;step-4-creating-the-vue-object-that-holds-the-themes-list&quot;&gt;Step 4: Creating the Vue Object that holds the themes list&lt;/h4&gt;
+&lt;h3 id=&quot;part-2-adding-the-vue-object&quot;&gt;Part 2: Adding the Vue Object&lt;/h3&gt;
 
-&lt;p&gt;Let’s now start our Javascript file and create the Vue object that holds our themes list. Remember that by using that with a &lt;code&gt;script&lt;/code&gt; tag mentioned earlier, we are already pulling in the Vue framework, which allows us to create the &lt;code&gt;Vue&lt;/code&gt; object.&lt;/p&gt;
+&lt;h4 id=&quot;step-5-creating-the-vue-object&quot;&gt;Step 5: Creating the Vue Object&lt;/h4&gt;
 
-&lt;p&gt;To make the &lt;code&gt;Vue&lt;/code&gt; object act on our main &lt;code&gt;root&lt;/code&gt; element, we will set its &lt;code&gt;el&lt;/code&gt; property equal to &lt;code&gt;#root.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The purpose of the Vue object will be threefold:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It stores the list of themes.&lt;/li&gt;
+  &lt;li&gt;It stores which theme is selected.&lt;/li&gt;
+  &lt;li&gt;It is used to set the default theme at runtime.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s now start our Javascript file and create the Vue object. Our first goal will be to make it hold our themes list.&lt;/p&gt;
+
+&lt;p&gt;Remember that by using that handy &lt;code&gt;script&lt;/code&gt; tag earlier, we are already pulling in the Vue library, which allows us to create this &lt;code&gt;Vue&lt;/code&gt; object and have it work the way it should.&lt;/p&gt;
+
+&lt;p&gt;To make the &lt;code&gt;Vue&lt;/code&gt; object act on our main &lt;code&gt;root&lt;/code&gt; element, we will give it an &lt;code&gt;el&lt;/code&gt; property, which we set equal to &lt;code&gt;#root&lt;/code&gt;. The &lt;code&gt;el&lt;/code&gt; property tells the Vue object which HTML element it should act on.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-js&quot;&gt;
@@ -268,7 +309,7 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;We can now add a &lt;code&gt;themes&lt;/code&gt; property to our data object, which we can define as a list of four theme names.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;data&lt;/code&gt; object is meant to be an expandable list of properties. We can now add a &lt;code&gt;themes&lt;/code&gt; property to our data object, which we can define as a list of four theme names.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-js&quot;&gt;
@@ -276,7 +317,7 @@
     el:'#root',
     // add the data object.
     data: {
-       themes:['dark','modern','light','gemstone'],
+       themes:['dark','modern','light','gemstone']
     }
   });
 &lt;/code&gt;
@@ -284,10 +325,28 @@
 
 &lt;p&gt;Okay, so now we have a Vue object with four themes that is wired up to our HTML structure.&lt;/p&gt;
 
-&lt;h4 id=&quot;step-5-iterate-through-those-themes&quot;&gt;Step 5: Iterate through those themes&lt;/h4&gt;
+&lt;h4 id=&quot;step-6-iterate-through-our-theme-list-to-create-options&quot;&gt;Step 6: Iterate through our theme list to create options&lt;/h4&gt;
 
-&lt;p&gt;Let’s now go back to our HTML, where we will now use a Vue for-loop to iterate through those four themes and create our four options. To do this we’ll use &lt;code&gt;v-for&lt;/code&gt; with the &lt;code&gt;themes&lt;/code&gt; property, and use &lt;code&gt;theme&lt;/code&gt; as the term for the current one in the loop.&lt;/p&gt;
+&lt;p&gt;Let’s now go back to our HTML file, where we will now use what we call a &lt;code&gt;v-for&lt;/code&gt; loop to iterate through those four themes in the above theme list and create our four clickable options. To do this we’ll use &lt;code&gt;v-for&lt;/code&gt; with the &lt;code&gt;themes&lt;/code&gt; property…&lt;/p&gt;
 
+&lt;pre&gt;
+&lt;code class=&quot;language-markup&quot;&gt;
+&lt;script type=&quot;prism-html-markup&quot;&gt;
+  &lt;template v-for=&quot;theme in themes&quot;&gt;
+  &lt;/template&gt;
+&lt;/script&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;… and use &lt;code&gt;theme&lt;/code&gt; as the term for the current theme that gets used for that particular iteration of the loop.&lt;/p&gt;
+
+&lt;p&gt;Below you will see the HTML markup and the Javascript side-by-side. Compare the HTML to the Javascript and see if you can make the connection between how the &lt;code&gt;themes&lt;/code&gt; from the Vue object are now pulled into the HTML file.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#mid-html&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#mid-js&quot;&gt;JS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&quot;mid-html&quot;&gt;
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
 &lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div id=&quot;root&quot;&gt;
@@ -302,8 +361,40 @@
 &lt;/div&gt;&lt;/script&gt;
 &lt;/code&gt;
 &lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&quot;mid-js&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-js&quot;&gt;
+ let vm = new Vue({
+    el:'#root',
+    // add the data object.
+    data: {
+       themes:['dark','modern','light','gemstone']
+    }
+  });
 
-&lt;p&gt;What will we do with the &lt;code&gt;theme&lt;/code&gt; each time? Why we’ll make our radio input element. In the &lt;code&gt;input&lt;/code&gt; element below, notice that we have a colon &lt;code&gt;:&lt;/code&gt; before &lt;code&gt;value&lt;/code&gt; below, which allows us to reference the &lt;code&gt;theme&lt;/code&gt; variable.&lt;/p&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are four elements in the Vue object’s &lt;code&gt;themes&lt;/code&gt; list:&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-js&quot;&gt;
+['dark','modern','light','gemstone']
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Here is how this list will be used in the HTML:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code&gt;v-for&lt;/code&gt; loop creates the radio inputs needed for switching themes.&lt;/li&gt;
+  &lt;li&gt;With each iteration of the &lt;code&gt;v-for&lt;/code&gt; loop, the &lt;code&gt;theme&lt;/code&gt; value becomes the next item in the Vue object’s &lt;code&gt;themes&lt;/code&gt; list.&lt;/li&gt;
+  &lt;li&gt;In each iteration, Vue will use whatever the current &lt;code&gt;theme&lt;/code&gt; value is to make our radio input element.&lt;/li&gt;
+  &lt;li&gt;But for that to happen, we need to add our &lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt; element inside the &lt;code&gt;v-for&lt;/code&gt; loop, which we do below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In code below, you will see that &lt;code&gt;input&lt;/code&gt; element. Notice that we have a colon &lt;code&gt;:&lt;/code&gt; before &lt;code&gt;value&lt;/code&gt; below, which allows us to reference the &lt;code&gt;theme&lt;/code&gt; variable.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
@@ -311,7 +402,7 @@
     &lt;div id=&quot;theme-switcher&quot;&gt;
     &lt;template v-for=&quot;theme in themes&quot;&gt;
       &lt;!-- use the theme variable to create an input element for each iteration of the loop --&gt;
-           &lt;input type=&quot;radio&quot; name=&quot;style-options&quot; :value=&quot;theme&quot;&gt;
+           &lt;input :value=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
       &lt;/template&gt;
     &lt;/div&gt;
     &lt;div id=&quot;output&quot;&gt;
@@ -320,7 +411,7 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h4 id=&quot;step-6-wire-the-input-elements-to-vue-object&quot;&gt;Step 6: Wire the input elements to Vue object&lt;/h4&gt;
+&lt;h4 id=&quot;step-7-wire-the-input-elements-to-vue-object&quot;&gt;Step 7: Wire the input elements to Vue object&lt;/h4&gt;
 
 &lt;p&gt;So we can generate our list of input elements now, but we ned to make it so that when you select one, it sets the current theme. So let’s create a variable called &lt;code&gt;selected&lt;/code&gt; in our Vue object…&lt;/p&gt;
 
@@ -344,8 +435,8 @@
 &lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div id=&quot;root&quot;&gt;
     &lt;div id=&quot;theme-switcher&quot;&gt;
     &lt;template v-for=&quot;theme in themes&quot;&gt;
-      &lt;!-- v-model makes this determine the selected variable. --&gt;
-           &lt;input type=&quot;radio&quot; name=&quot;style-options&quot; :value=&quot;theme&quot; v-model=&quot;selected&quot;&gt;
+      &lt;!-- add v-model makes this set the theme in the Vue object. --&gt;
+           &lt;input v-model=&quot;selected&quot; :value=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
       &lt;/template&gt;
     &lt;/div&gt;
     &lt;div id=&quot;output&quot;&gt;
@@ -354,11 +445,33 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h4 id=&quot;step-7-add-an-id-and-a-label-to-each-input-option&quot;&gt;Step 7: Add an ID and a label to each input option&lt;/h4&gt;
+&lt;h4 class=&quot;demo&quot; id=&quot;demo-1&quot;&gt;Demo 1&lt;/h4&gt;
 
-&lt;p&gt;While we’re at it, let’s add an ID to each input and let’s give each input a label, which will actually be the visible element that we see.&lt;/p&gt;
+&lt;p&gt;Here’s what we have so far. Our radio buttons show up, and if you click one, it will appear to be selected. They are not much to look at yet, but we’ll get there.&lt;/p&gt;
 
-&lt;p&gt;Notice that the &lt;code&gt;id&lt;/code&gt; attribute will also be the theme name, and the &lt;code&gt;for&lt;/code&gt; attribute of the label will also be the theme name and therefore connect the label to its radio input element. We are using colons before each of these attributes so we can use that Vue goodness to reference the &lt;code&gt;theme&lt;/code&gt; property.&lt;/p&gt;
+&lt;div id=&quot;demo1&quot;&gt;
+  &lt;input value=&quot;light&quot; type=&quot;radio&quot; name=&quot;style-options&quot; /&gt;
+  &lt;input value=&quot;dark&quot; type=&quot;radio&quot; name=&quot;style-options&quot; /&gt;
+  &lt;input value=&quot;modern&quot; type=&quot;radio&quot; name=&quot;style-options&quot; /&gt;
+  &lt;input value=&quot;gemstone&quot; type=&quot;radio&quot; name=&quot;style-options&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So far, we cannot tell which radio button is which without labels, so let’s add some.&lt;/p&gt;
+
+&lt;h4 id=&quot;step-8-add-an-id-and-a-label-to-each-input-option&quot;&gt;Step 8: Add an ID and a label to each input option&lt;/h4&gt;
+
+&lt;p&gt;We will add visible labels for each button using the &lt;code&gt;&amp;lt;label&amp;gt;&lt;/code&gt; element, which can be wired to an input and which allows for the custom styling options that are needed to make our radio buttons look like tabs. Here is what you need to know at this point:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;There is one &lt;code&gt;label&lt;/code&gt; for each &lt;code&gt;input&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;When you click on the label, its corresponding radio button ends up being selected.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To wire each label to its input element, we will give each radio input element an &lt;code&gt;id&lt;/code&gt; attribute, which will also be the theme name.&lt;/p&gt;
+
+&lt;p&gt;Why do we need the &lt;code&gt;id&lt;/code&gt;? Because each label uses its &lt;code&gt;for&lt;/code&gt; attribute, which is also the name of the input’s theme, to find the &lt;code&gt;id&lt;/code&gt; of its &lt;code&gt;input&lt;/code&gt; counterpart.&lt;/p&gt;
+
+&lt;p&gt;Here is how we add the labels and id’s. We are using colons before &lt;code&gt;for&lt;/code&gt; and &lt;code&gt;id&lt;/code&gt; so we can use that Vue goodness to reference the &lt;code&gt;theme&lt;/code&gt; property.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
@@ -366,9 +479,10 @@
     &lt;div id=&quot;theme-switcher&quot;&gt;
     &lt;template v-for=&quot;theme in themes&quot;&gt;
            &lt;!-- add an ID --&gt;
-           &lt;input :id=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot; :value=&quot;theme&quot; v-model=&quot;selected&quot;&gt;
+           &lt;input :id=&quot;theme&quot; v-model=&quot;selected&quot; :value=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
            &lt;!-- add a label --&gt;
-           &lt;label :for=&quot;theme&quot;&gt;&lt;span v-html=&quot;theme&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+           &lt;!-- span has v-html attribute --&gt;
+           &lt;label :for=&quot;theme&quot; v-html=&quot;theme&quot;&gt;&lt;/label&gt;
       &lt;/template&gt;
     &lt;/div&gt;
     &lt;div id=&quot;output&quot;&gt;
@@ -377,21 +491,89 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Notice also that the label’s &lt;code&gt;span&lt;/code&gt; element has a &lt;code&gt;v-html&lt;/code&gt; property that is set equal to the &lt;code&gt;theme&lt;/code&gt; element as well. This will allow the theme name to show up as visible text in each radio option.&lt;/p&gt;
+&lt;p&gt;Notice also that the label has a &lt;code&gt;v-html&lt;/code&gt; property that is set equal to the &lt;code&gt;theme&lt;/code&gt; element as well.&lt;/p&gt;
 
-&lt;h4 id=&quot;step-8-show-the-result-of-selecting-a-theme&quot;&gt;Step 8: Show the result of selecting a theme&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;label :for=&quot;theme&quot; v-html=&quot;theme&quot;&amp;gt;&amp;lt;/label&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Now that we have some working options, let’s show the result of selecting a theme. We know that selecting an option will set the &lt;code&gt;select&lt;/code&gt; variable on the Vue object to that option’s theme name, so now let’s pull that &lt;code&gt;select&lt;/code&gt; variable into the &lt;code&gt;output&lt;/code&gt; element.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;v-html&lt;/code&gt; attribute injects the theme name as visible text into each &lt;code&gt;label&lt;/code&gt; element.&lt;/p&gt;
 
-&lt;p&gt;We’ll do this in a couple ways: first, let’s set the class of the element using the colon syntax, and we will also add an &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; header that prints the name of the theme.&lt;/p&gt;
+&lt;h4 class=&quot;demo&quot; id=&quot;demo-2&quot;&gt;Demo 2&lt;/h4&gt;
+
+&lt;p&gt;Here is how the project should look now.&lt;/p&gt;
+
+&lt;div id=&quot;demo2&quot;&gt;
+  &lt;input id=&quot;light&quot; value=&quot;light&quot; type=&quot;radio&quot; name=&quot;style-options&quot; /&gt;
+  &lt;label for=&quot;light&quot;&gt;light&lt;/label&gt;
+  &lt;input id=&quot;dark&quot; value=&quot;dark&quot; type=&quot;radio&quot; name=&quot;style-options&quot; /&gt;
+  &lt;label for=&quot;dark&quot;&gt;dark&lt;/label&gt;
+  &lt;input id=&quot;modern&quot; value=&quot;modern&quot; type=&quot;radio&quot; name=&quot;style-options&quot; /&gt;
+  &lt;label for=&quot;modern&quot;&gt;modern&lt;/label&gt;
+  &lt;input id=&quot;gemstone&quot; value=&quot;gemstone&quot; type=&quot;radio&quot; name=&quot;style-options&quot; /&gt;
+  &lt;label for=&quot;gemstone&quot;&gt;gemstone&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Still pretty modest, so let’s start adding some style and functionality.&lt;/p&gt;
+
+&lt;h3 id=&quot;part-3-adding-the-theme-switch-effect&quot;&gt;Part 3: Adding the theme switch effect&lt;/h3&gt;
+
+&lt;h4 id=&quot;step-9-show-the-result-of-selecting-a-theme&quot;&gt;Step 9: Show the result of selecting a theme&lt;/h4&gt;
+
+&lt;p&gt;Now that we have some working options, let’s show the result of selecting a theme. We know that selecting an option will set the &lt;code&gt;select&lt;/code&gt; variable on the Vue object to that option’s theme name, so now let’s use that &lt;code&gt;select&lt;/code&gt; variable to define the class of the &lt;code&gt;output&lt;/code&gt; element that will display our content.&lt;/p&gt;
+
+&lt;p&gt;But first, we need some content to display! Let’s start by adding an &lt;code&gt;h1&lt;/code&gt; element with some placeholder text. Here is how the output element looks itself with that addition.&lt;/p&gt;
+
+&lt;pre&gt;
+    &lt;code class=&quot;language-markup&quot;&gt;
+    &lt;script type=&quot;prism-html-markup&quot;&gt;
+      &lt;div id=&quot;output&quot;&gt;
+           &lt;h1&gt;
+             Placeholder text
+           &lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;/script&gt;
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;To make the &lt;code&gt;output&lt;/code&gt; element take on the style of the theme select, let’s set the class of the element equal to whatever theme is in the Vue object’s &lt;code&gt;selected&lt;/code&gt; variable using the colon syntax.&lt;/p&gt;
+
+&lt;pre&gt;
+    &lt;code class=&quot;language-markup&quot;&gt;
+    &lt;script type=&quot;prism-html-markup&quot;&gt;
+    &lt;!-- set the :class variable equal to the theme name... --&gt;
+    &lt;!-- ...which is in the &quot;selected&quot; variable of the Vue object. --&gt;
+      &lt;div id=&quot;output&quot; :class=&quot;selected&quot;&gt;
+           &lt;h1&gt;
+             Placeholder text
+           &lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;/script&gt;
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;To make the name of the theme explicitly show up for the user, let’s also make the &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; header print the name of the theme using that same “selected” variable.&lt;/p&gt;
+
+&lt;pre&gt;
+    &lt;code class=&quot;language-markup&quot;&gt;
+    &lt;script type=&quot;prism-html-markup&quot;&gt;
+      &lt;div id=&quot;output&quot; :class=&quot;selected&quot;&gt;
+          &lt;!-- make the header print the current theme name with v-html. --&gt;
+           &lt;h1&gt;
+             Current Theme: &lt;span v-html=&quot;selected&quot;&gt;&lt;/span&gt;
+           &lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;/script&gt;
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Here is how it looks with the rest of the markup.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
 &lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div id=&quot;root&quot;&gt;
     &lt;div id=&quot;theme-switcher&quot;&gt;
        &lt;template v-for=&quot;theme in themes&quot;&gt;
-           &lt;input :id=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot; :value=&quot;theme&quot; v-model=&quot;selected&quot;&gt;
-           &lt;label :for=&quot;theme&quot;&gt;&lt;span v-html=&quot;theme&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+           &lt;input :id=&quot;theme&quot; v-model=&quot;selected&quot; :value=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
+           &lt;label :for=&quot;theme&quot; v-html=&quot;theme&quot;&gt;&lt;/label&gt;
       &lt;/template&gt;
     &lt;/div&gt;
     &lt;div id=&quot;output&quot; :class=&quot;selected&quot;&gt;
@@ -404,17 +586,282 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h4 id=&quot;step-9-add-some-additional-elements-that-would-be-styled-by-the-theme&quot;&gt;Step 9: Add some additional elements that would be styled by the theme.&lt;/h4&gt;
+&lt;div class=&quot;callout&quot;&gt;
+  &lt;h4&gt;Syntax Moment&lt;/h4&gt;
+  &lt;p&gt;Another way to print a Vue variable is with curly brace syntax, as in the snippet below.&lt;/p&gt;
+  
+  &lt;pre&gt;
+    &lt;code class=&quot;language-markup&quot;&gt;
+    &lt;script type=&quot;prism-html-markup&quot;&gt;
+      &lt;div id=&quot;output&quot; :class=&quot;selected&quot;&gt;
+          &lt;!-- make the header print the current theme name with v-html. --&gt;
+           &lt;h1&gt;
+             Current Theme: {{ selected }}
+           &lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;/script&gt;
+  &lt;/code&gt;
+ &lt;/pre&gt;
+ 
+ &lt;p&gt;For this project, I am using &lt;code&gt;v-html=&quot;selected&quot;&lt;/code&gt; instead of curly braces. This is because curly braces do not work properly when I compile my site with Jekyll, the static site generator I use. This is because Jekyll uses curly braces for other purposes.&lt;/p&gt;
 
-&lt;p&gt;Now let’s add a &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; tag and a &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; element.&lt;/p&gt;
+ &lt;p&gt;That said &amp;mdash; if you are not using a system that conflicts with curly braces, you can use use them in place of &lt;code&gt;v-html&lt;/code&gt; syntax as in the example above.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;step-10-add-styles-for-the-four-themes&quot;&gt;Step 10: Add styles for the four themes&lt;/h4&gt;
+
+&lt;p&gt;Before we test the theme switcher we need themes to switch through, right? So to test basic functionality, let’s go ahead and add styles for the four themes. Here is what we add to our CSS file. You’ll notice that the last selector in each theme is a &lt;code&gt;button&lt;/code&gt; element, which we will add shortly to our HTML.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#theme-a-mid&quot;&gt;Dark&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#theme-b-mid&quot;&gt;Modern&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#theme-c-mid&quot;&gt;Light&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#theme-d-mid&quot;&gt;Gemstone&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&quot;theme-a-mid&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;/* dark */
+#root .dark {
+  background-color: #062f4f;
+  color: #fff;
+  border: 1px solid #b82601;
+  font-family: Arial;
+}
+#root .dark h1 {
+  background-color: #813772;
+}
+
+#root .dark button {
+  background-color: #b82601;
+  color: #fff;
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&quot;theme-b-mid&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;/* modern */
+#root .modern {
+  background-color: #efefef;
+  font-family: Verdana;
+  color: #606060;
+}
+#root .modern h1 {
+  background-color: #caebf2;
+}
+
+#root .modern button {
+  background-color: #ff3b3f;
+  color: white;
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&quot;theme-c-mid&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;/* light */
+#root .light {
+  background-color: rgba(246,246,246,1);
+}
+#root .light h1 {
+  background-color: #67aeca;
+  color: 
+}
+#root .light p {
+  color: #5f0f4e;
+}
+#root button {
+  background-color: #e52a6f;
+  color: white;
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&quot;theme-d-mid&quot;&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;/* gemstone */
+#root .gemstone {
+  background-color: #efefef;
+}
+#root .gemstone h1 {
+  background-color: #0f6571;
+  color: #fff;
+}
+#root .gemstone p {
+  color: #414141;
+}
+#root .gemstone button {
+  background-color: #ff6a5c;
+  color: #fff;
+}&lt;/code&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;step-11-add-some-general-styles&quot;&gt;Step 11: Add some general styles&lt;/h4&gt;
+
+&lt;p&gt;And since we’re starting to focus on styling, let’s quickly add some general styles to the overall page:&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-css&quot;&gt;
+body {
+  font-family: Arial;
+}
+#output {
+  min-height: 130px;
+  width: 100%;
+}
+#root h1 {
+  font-size: 16px;
+  margin: 0px;
+  padding: 10px; 
+  font-weight: 700;
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;h4 class=&quot;demo&quot; id=&quot;demo-3&quot;&gt;Demo 3&lt;/h4&gt;
+
+&lt;p&gt;And here is how the theme switcher should look so far. You can see that it basically works, albeit without content beyond the header, and without styles for the tabs.&lt;script src=&quot;https://npmcdn.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;!-- set the root-mid --&gt;&lt;/p&gt;
+&lt;div id=&quot;root-mid&quot;&gt;
+     &lt;!-- widget for switching themes --&gt;
+    &lt;div id=&quot;theme-switcher-mid&quot;&gt;
+    &lt;!-- using v-for to loop through array --&gt;
+    &lt;!-- the template elemnts does not show up in the dom --&gt;
+    &lt;template v-for=&quot;(theme,i) in themes&quot;&gt;
+    &lt;!-- the v-for logic uses each item in the array to make a radio button --&gt;
+       
+           &lt;input :id=&quot;theme.id&quot; v-model=&quot;selected&quot; :value=&quot;theme.label&quot; name=&quot;style-options-mid&quot; type=&quot;radio&quot; /&gt;
+           &lt;label :for=&quot;theme.id&quot;&gt;&lt;span v-html=&quot;theme.label&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+        &lt;/template&gt;
+    &lt;/div&gt;
+    &lt;!-- this is the markup that gets styled. --&gt;
+    &lt;!-- this pulls the class from the &quot;selected&quot; variable. --&gt;
+    
+       &lt;div id=&quot;output-mid&quot; :class=&quot;selected&quot;&gt;
+           &lt;h1&gt;
+             Current Theme: &lt;span v-html=&quot;selected&quot;&gt;&lt;/span&gt;
+           &lt;/h1&gt;
+       &lt;/div&gt;
+
+&lt;/div&gt;
+&lt;script&gt;
+ let vm_mid = new Vue({
+    el:'#root-mid',
+    data: {
+      themes:[
+      {
+        id:'dark-mid',
+        label:'dark',
+      },
+      {
+        id:'modern-mid',
+        label:'modern',
+      },
+      {
+        id:'light-mid',
+        label:'light',
+      },
+      {
+        id:'gemstone-mid',
+        label:'gemstone'
+      }
+      ],
+      selected:''
+     }
+   });
+   // set the default as the first element.
+   // v-model will keep this up because it usees the value, which is set to the label!
+   vm_mid.selected = vm_mid.themes[0].label;
+&lt;/script&gt;
+
+&lt;style&gt;
+body {
+  font-family: Arial;
+}
+  
+/* styles that relate to the theme switcher */
+#output-mid {
+  min-height: 130px;
+  width: 100%;
+}
+#root-mid h1 {
+  font-size: 16px;
+  margin: 0px;
+  padding: 10px; 
+  font-weight: 700;
+}
+
+/* themes */
+#root-mid .dark {
+  background-color: #062f4f;
+  color: #fff;
+  border: 1px solid #b82601;
+  font-family: Arial;
+}
+#root-mid .dark h1 {
+  background-color: #813772;
+}
+
+#root-mid .dark button {
+  background-color: #b82601;
+  color: #fff;
+}
+/* modern */
+#root-mid .modern {
+  background-color: #efefef;
+  font-family: Verdana;
+  color: #606060;
+}
+#root-mid .modern h1 {
+  background-color: #caebf2;
+}
+
+#root-mid .modern button {
+  background-color: #ff3b3f;
+  color: white;
+}
+/* light */
+#root-mid .light {
+  background-color: rgba(246,246,246,1);
+}
+#root-mid .light h1 {
+  background-color: #67aeca;
+  color: 
+}
+#root-mid .light p {
+  color: #5f0f4e;
+}
+#root-mid button {
+  background-color: #e52a6f;
+  color: white;
+}
+/* gemstone */
+#root-mid .gemstone {
+  background-color: #efefef;
+}
+#root-mid .gemstone h1 {
+  background-color: #0f6571;
+  color: #fff;
+}
+#root-mid .gemstone p {
+  color: #414141;
+}
+#root-mid .gemstone button {
+  background-color: #ff6a5c;
+  color: #fff;
+}
+&lt;/style&gt;
+
+&lt;h4 id=&quot;step-12-add-some-additional-elements-that-would-be-styled-by-the-theme&quot;&gt;Step 12: Add some additional elements that would be styled by the theme.&lt;/h4&gt;
+
+&lt;p&gt;Now let’s add a &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; tag and a &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; element in the output markup.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
 &lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div id=&quot;root&quot;&gt;
     &lt;div id=&quot;theme-switcher&quot;&gt;
        &lt;template v-for=&quot;theme in themes&quot;&gt;
-           &lt;input :id=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot; :value=&quot;theme&quot; v-model=&quot;selected&quot;&gt;
-           &lt;label :for=&quot;theme&quot;&gt;&lt;span v-html=&quot;theme&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+           &lt;input :id=&quot;theme&quot; v-model=&quot;selected&quot; :value=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
+            &lt;label :for=&quot;theme&quot; v-html=&quot;theme&quot;&gt;&lt;/label&gt;
       &lt;/template&gt;
     &lt;/div&gt;
     &lt;div id=&quot;output&quot; :class=&quot;selected&quot;&gt;
@@ -433,9 +880,9 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h4 id=&quot;step-10-set-first-option-as-default-theme&quot;&gt;Step 10: Set first option as default theme.&lt;/h4&gt;
+&lt;h4 id=&quot;step-13-set-first-option-dark-as-our-default-theme&quot;&gt;Step 13: Set first option, &lt;code&gt;dark&lt;/code&gt;, as our default theme.&lt;/h4&gt;
 
-&lt;p&gt;And back in our Vue object, let’s add a way to set our first option as the default theme. To do this, let’s just set the &lt;code&gt;selected&lt;/code&gt; property as the first element in the Vue object’s &lt;code&gt;themes&lt;/code&gt; array.&lt;/p&gt;
+&lt;p&gt;And back in our Vue object, let’s add a way to set our first option as the default theme. To do this, let’s use the variable name of the Vue object, &lt;code&gt;vm&lt;/code&gt;, and set its &lt;code&gt;selected&lt;/code&gt; property as the first element in the Vue object’s &lt;code&gt;themes&lt;/code&gt; array.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-js&quot;&gt;
@@ -451,9 +898,9 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Finally, I’d like something to happen when you click that button - so let’s add a &lt;code&gt;methods&lt;/code&gt; property to the Vue object. In &lt;code&gt;methods&lt;/code&gt;, we’ll define a method called &lt;code&gt;hello&lt;/code&gt; that handles the button click event with a simple “hello world.”&lt;/p&gt;
+&lt;h4 id=&quot;step-14-add-a-listener-and-method-for-the-button-clicks&quot;&gt;Step 14: Add a listener and method for the button clicks&lt;/h4&gt;
 
-&lt;h4 id=&quot;step-11-add-a-listener-and-handler-for-the-button-clicks&quot;&gt;Step 11: Add a listener and handler for the button clicks.&lt;/h4&gt;
+&lt;p&gt;Let’s make something happen when you click that button - so let’s add a &lt;code&gt;methods&lt;/code&gt; property to the Vue object. In &lt;code&gt;methods&lt;/code&gt;, we’ll define a method called &lt;code&gt;hello&lt;/code&gt; that handles the button click event with a simple “hello world!” alert.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-js&quot;&gt;
@@ -475,15 +922,15 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;And let’s add a click listener on the button using the &lt;code&gt;v-on&lt;/code&gt; attribute.&lt;/p&gt;
+&lt;p&gt;And let’s add a click listener on the button using a new &lt;code&gt;v-on&lt;/code&gt; attribute.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-markup&quot;&gt;
 &lt;script type=&quot;prism-html-markup&quot;&gt;&lt;div id=&quot;root&quot;&gt;
     &lt;div id=&quot;theme-switcher&quot;&gt;
        &lt;template v-for=&quot;theme in themes&quot;&gt;
-           &lt;input :id=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot; :value=&quot;theme&quot; v-model=&quot;selected&quot;&gt;
-           &lt;label :for=&quot;theme&quot;&gt;&lt;span v-html=&quot;theme&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+           &lt;input :id=&quot;theme&quot; v-model=&quot;selected&quot;  :value=&quot;theme&quot; type=&quot;radio&quot; name=&quot;style-options&quot;&gt;
+           &lt;label :for=&quot;theme&quot; v-html=&quot;theme&quot;&gt;&lt;/label&gt;
       &lt;/template&gt;
     &lt;/div&gt;
     &lt;div id=&quot;output&quot; :class=&quot;selected&quot;&gt;
@@ -494,6 +941,7 @@
             &lt;p&gt;
              Sample text is right here. The theme switcher is powered by VueJS.
            &lt;/p&gt;
+           &lt;!-- add a click listener --&gt;
            &lt;button v-on:click=&quot;hello&quot;&gt;
               Go
            &lt;/button&gt;
@@ -502,24 +950,49 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;h4 id=&quot;step-11-add-the-css&quot;&gt;Step 11: Add the CSS&lt;/h4&gt;
+&lt;h4 id=&quot;step-15-add-remaining-styling&quot;&gt;Step 15: Add remaining styling&lt;/h4&gt;
 
-&lt;p&gt;We wouldn’t be able to change the style without CSS! This CSS has three sections:&lt;/p&gt;
+&lt;p&gt;We already added general styling and the styling for the four themes. So to round out our styles, let’s add the following:&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;general font style&lt;/li&gt;
   &lt;li&gt;the theme switcher styles&lt;/li&gt;
-  &lt;li&gt;general styles for the output&lt;/li&gt;
-  &lt;li&gt;specific styles for each theme&lt;/li&gt;
+  &lt;li&gt;a few more general styles for the output&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Let’s first add a general font family.&lt;/p&gt;
+&lt;p&gt;The general styles include those for the &lt;code&gt;&amp;lt;button&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; elements.&lt;/p&gt;
 &lt;pre&gt;
 &lt;code class=&quot;language-css&quot;&gt;body {
   font-family: Arial;
+}
+
+#output {
+  min-height: 130px;
+  width: 100%;
+}
+#root h1 {
+  font-size: 16px;
+  margin: 0px;
+  padding: 10px; 
+  font-weight: 700;
+}
+#root p {
+  margin: 0px;
+  padding: 10px;
+  font-size: 15px;
+}
+#root button {
+  margin: 0px auto;
+  display: block;
+  border: 0px;
+  padding: 8px;
+  color:  #000;
+  border-radius: 20px;
+  cursor: pointer;
 }&lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Now let’s add the style for the switcher. Notice that I’m hiding the &lt;code&gt;input&lt;/code&gt; elements and only showing the &lt;code&gt;label&lt;/code&gt; elements so I can make the options look like tabs.&lt;/p&gt;
+&lt;p&gt;Now let’s add the style for the switcher. Notice that I’m hiding the &lt;code&gt;input&lt;/code&gt; elements and only showing the &lt;code&gt;label&lt;/code&gt; elements so I can make the options look like tabs. Since the label acts as a proxy for the input element, clicking the label will automatically mark that theme as selected.&lt;/p&gt;
+
 &lt;pre&gt;
 &lt;code class=&quot;language-css&quot;&gt;
 /* theme-switcher */
@@ -552,121 +1025,7 @@
  &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Here I am just adding some general output styles.&lt;/p&gt;
-&lt;pre&gt;
-&lt;code class=&quot;language-css&quot;&gt;/* styles that relate to the theme switcher */
-#output {
-  min-height: 130px;
-  width: 100%;
-}
-#root h1 {
-  font-size: 14px;
-  margin: 0px;
-  padding: 10px; 
-  font-weight: 700;
-}
-#root p {
-  margin: 0px;
-  padding: 10px;
-  font-size: 13px;
-}
-#root button {
-  margin: 0px auto;
-  display: block;
-  border: 0px;
-  padding: 8px;
-  color:  #000;
-  border-radius: 20px;
-  cursor: pointer;
-}&lt;/code&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;And here are the styles for the four themes. Remember that the name of each theme is in the Vue object’s list, and the class of the output element gets set to a theme when the radio button for that theme is clicked.&lt;/p&gt;
-
-&lt;ul class=&quot;css-tabs&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#theme-a&quot;&gt;Dark&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#theme-b&quot;&gt;Modern&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#theme-c&quot;&gt;Light&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#theme-d&quot;&gt;Gemstone&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id=&quot;theme-a&quot;&gt;
-&lt;pre&gt;
-&lt;code class=&quot;language-css&quot;&gt;/* dark */
-#root .dark {
-  background-color: #062f4f;
-  color: #fff;
-  border: 1px solid #b82601;
-  font-family: Arial;
-}
-#root .dark h1 {
-  background-color: #813772;
-}
-
-#root .dark button {
-  background-color: #b82601;
-  color: #fff;
-}
-&lt;/code&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&quot;theme-b&quot;&gt;
-&lt;pre&gt;
-&lt;code class=&quot;language-css&quot;&gt;/* modern */
-#root .modern {
-  background-color: #efefef;
-  font-family: Verdana;
-  color: #606060;
-}
-#root .modern h1 {
-  background-color: #caebf2;
-}
-
-#root .modern button {
-  background-color: #ff3b3f;
-  color: white;
-}&lt;/code&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&quot;theme-c&quot;&gt;
-&lt;pre&gt;
-&lt;code class=&quot;language-css&quot;&gt;/* light */
-#root .light {
-  background-color: rgba(246,246,246,1);
-}
-#root .light h1 {
-  background-color: #67aeca;
-  color: 
-}
-#root .light p {
-  color: #5f0f4e;
-}
-#root button {
-  background-color: #e52a6f;
-  color: white;
-}&lt;/code&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&quot;theme-d&quot;&gt;
-&lt;pre&gt;
-&lt;code class=&quot;language-css&quot;&gt;/* gemstone */
-#root .gemstone {
-  background-color: #efefef;
-}
-#root .gemstone h1 {
-  background-color: #0f6571;
-  color: #fff;
-}
-#root .gemstone p {
-  color: #414141;
-}
-#root .gemstone button {
-  background-color: #ff6a5c;
-  color: #fff;
-}&lt;/code&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Here is the HTML, JS, and CSS all together.&lt;/p&gt;
+&lt;p&gt;Here is the HTML, JS, and full CSS all together.&lt;/p&gt;
 
 &lt;ul class=&quot;css-tabs&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
@@ -684,7 +1043,7 @@
     &lt;!-- the template elemnts does not show up in the dom --&gt;
     &lt;template v-for=&quot;theme in themes&quot;&gt;
     &lt;!-- the v-for logic uses each item in the array to make a radio button --&gt;
-      &lt;input :value=&quot;theme&quot; :id=&quot;theme&quot; name=&quot;style-options&quot; type=&quot;radio&quot; v-model=&quot;selected&quot;&gt;&lt;label :for=&quot;theme&quot;&gt;&lt;span v-html=&quot;theme&quot;&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;input :id=&quot;theme&quot; v-model=&quot;selected&quot; :value=&quot;theme&quot; name=&quot;style-options&quot; type=&quot;radio&quot;&gt;&lt;label :for=&quot;theme&quot; v-html=&quot;theme&quot;&gt;&lt;/label&gt;
       &lt;/template&gt;
     &lt;/div&gt;
     &lt;!-- this is the markup that gets styled. --&gt;
@@ -730,11 +1089,7 @@
 &lt;code class=&quot;language-css&quot;&gt;body {
   font-family: Arial;
 }
-/* theme-switcher */
-#theme-switcher {
-  margin-bottom: 10px;
-  border-bottom: 1px solid darkgrey;
-}
+
 /* hide the radio button element */
 #theme-switcher input[type=&quot;radio&quot;] {
   display: none;
@@ -764,7 +1119,7 @@
   width: 100%;
 }
 #root h1 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0px;
   padding: 10px; 
   font-weight: 700;
@@ -772,7 +1127,7 @@
 #root p {
   margin: 0px;
   padding: 10px;
-  font-size: 13px;
+  font-size: 15px;
 }
 #root button {
   margin: 0px auto;
@@ -845,7 +1200,187 @@
 &lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;I hope this was a helpful introduction to the use of Vue JS. As you can see, you can put together a cool style switcher with a minimal amount of Javascript. You also end up defining a lot of your logic in your html, which connects it closely to your Vue object without the need for repetition.&lt;/p&gt;</content><author><name></name></author><summary type="html">Switching themes with Vue</summary></entry><entry><title type="html">Creating a Star Rating Widget</title><link href="http://localhost:4000/2020/01/18/star-rating.html" rel="alternate" type="text/html" title="Creating a Star Rating Widget" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>http://localhost:4000/2020/01/18/star-rating</id><content type="html" xml:base="http://localhost:4000/2020/01/18/star-rating.html">&lt;h3 id=&quot;building-stars-with-html-and-css&quot;&gt;Building Stars with HTML and CSS&lt;/h3&gt;
+&lt;h4 class=&quot;demo&quot; id=&quot;final-product&quot;&gt;Final Product&lt;/h4&gt;
+
+&lt;p&gt;Here is the final product once again.&lt;script src=&quot;https://npmcdn.com/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;!-- set the root-final --&gt;&lt;/p&gt;
+&lt;div id=&quot;root-final&quot;&gt;
+     &lt;!-- widget for switching themes --&gt;
+    &lt;div id=&quot;theme-switcher-final&quot;&gt;
+    &lt;!-- using v-for to loop through array --&gt;
+    &lt;!-- the template elemnts does not show up in the dom --&gt;
+    &lt;template v-for=&quot;(theme,i) in themes&quot;&gt;
+    &lt;!-- the v-for logic uses each item in the array to make a radio button --&gt;
+       &lt;input :id=&quot;theme.id&quot; v-model=&quot;selected&quot; :value=&quot;theme.label&quot; name=&quot;style-options-final&quot; type=&quot;radio&quot; /&gt;&lt;label :for=&quot;theme.id&quot; v-html=&quot;theme.label&quot;&gt;&lt;/label&gt;
+    &lt;/template&gt;
+    &lt;/div&gt;
+    &lt;!-- this is the markup that gets styled. --&gt;
+    &lt;!-- this pulls the class from the &quot;selected&quot; variable. --&gt;
+    
+       &lt;div id=&quot;output-final&quot; :class=&quot;selected&quot;&gt;
+           &lt;h1&gt;
+             Current Theme: &lt;span v-html=&quot;selected&quot;&gt;&lt;/span&gt;
+           &lt;/h1&gt;
+           &lt;p&gt;
+             Sample text is right here. The theme switcher is powered by VueJS.
+           &lt;/p&gt;
+           &lt;button v-on:click=&quot;hello&quot;&gt;
+              Go
+           &lt;/button&gt;
+       &lt;/div&gt;
+
+&lt;/div&gt;
+&lt;script&gt;
+ let vm_final = new Vue({
+    el:'#root-final',
+    data: {
+      themes:[
+      {
+        id:'dark-final',
+        label:'dark',
+      },
+      {
+        id:'modern-final',
+        label:'modern',
+      },
+      {
+        id:'light-final',
+        label:'light',
+      },
+      {
+        id:'gemstone-final',
+        label:'gemstone'
+      }
+      ],
+      selected:''
+    },
+    methods: {
+      hello:function() {
+        alert('hello, world!')
+      }
+    }
+   });
+   // set the default as the first element.
+   // v-model will keep this up because it usees the value, which is set to the label!
+   vm_final.selected = vm_final.themes[0].label;
+&lt;/script&gt;
+
+&lt;style&gt;
+
+/* hide the radio button element */
+#theme-switcher-final input[type=&quot;radio&quot;] {
+  display: none;
+}
+/* style the label */
+#theme-switcher-final label {
+  padding: 10px;
+  background-color: lightgrey;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0px;
+  min-width: 50px;
+  border-right: 1px solid darkgrey;
+}
+#theme-switcher-final label:last-child {
+  border-right: 0px;
+}
+#theme-switcher-final input[type=&quot;radio&quot;]:checked+label {
+  background-color: dodgerblue;
+  color: white;
+}
+  
+/* styles that relate to the theme switcher */
+#output-final {
+  min-height: 130px;
+  width: 100%;
+}
+#root-final h1 {
+  font-size: 16px;
+  margin: 0px;
+  padding: 10px; 
+  font-weight: 700;
+}
+#root-final p {
+  margin: 0px;
+  padding: 10px;
+  font-size: 15px;
+}
+#root-final button {
+  margin: 0px auto;
+  display: block;
+  border: 0px;
+  padding: 8px;
+  color:  #000;
+  border-radius: 20px;
+  cursor: pointer;
+}
+/* themes */
+#root-final .dark {
+  background-color: #062f4f;
+  color: #fff;
+  border: 1px solid #b82601;
+  font-family: Arial;
+}
+#root-final .dark h1 {
+  background-color: #813772;
+}
+
+#root-final .dark button {
+  background-color: #b82601;
+  color: #fff;
+}
+/* modern */
+#root-final .modern {
+  background-color: #efefef;
+  font-family: Verdana;
+  color: #606060;
+}
+#root-final .modern h1 {
+  background-color: #caebf2;
+}
+
+#root-final .modern button {
+  background-color: #ff3b3f;
+  color: white;
+}
+/* light */
+#root-final .light {
+  background-color: rgba(246,246,246,1);
+}
+#root-final .light h1 {
+  background-color: #67aeca;
+  color: 
+}
+#root-final .light p {
+  color: #5f0f4e;
+}
+#root-final button {
+  background-color: #e52a6f;
+  color: white;
+}
+/* gemstone */
+#root-final .gemstone {
+  background-color: #efefef;
+}
+#root-final .gemstone h1 {
+  background-color: #0f6571;
+  color: #fff;
+}
+#root-final .gemstone p {
+  color: #414141;
+}
+#root-final .gemstone button {
+  background-color: #ff6a5c;
+  color: #fff;
+}
+&lt;/style&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; While I am making the full versions of the theme switcher show up at both the beginning and end with some additional code behind the scenes, the code presented in this tutorial limits the occurrence of the theme switcher to just once on a given page.&lt;/p&gt;
+
+&lt;p&gt;You can also view the demo on this &lt;a href=&quot;https://jsfiddle.net/nevkatz/nhymwqaf/&quot; target=&quot;_blank&quot;&gt;fiddle&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I hope this was a helpful introduction to the use of Vue JS. As you can see, you can put together a cool style switcher with a minimal amount of Javascript. You also end up defining a lot of your logic in your html, which connects it closely to your Vue object without the need for undue repetition.&lt;/p&gt;</content><author><name></name></author><summary type="html">Building a Theme Switcher with Vue</summary></entry><entry><title type="html">Creating a Star Rating Widget</title><link href="/2020/01/18/star-rating.html" rel="alternate" type="text/html" title="Creating a Star Rating Widget" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>/2020/01/18/star-rating</id><content type="html" xml:base="/2020/01/18/star-rating.html">&lt;h3 id=&quot;building-stars-with-html-and-css&quot;&gt;Building Stars with HTML and CSS&lt;/h3&gt;
 
 &lt;p&gt;Recently I became interested in making a star rating tool, which are seen on all kinds of apps and websites. There are a number of resources on this and countless ways to pull this off. Below is one way of achieving it using CSS pseudoselectors and Flexbox.&lt;/p&gt;
 
@@ -1284,7 +1819,7 @@ div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
   &lt;li&gt;
     &lt;p&gt;If you are new to Flexbox, check out Samantha Ming’s &lt;a href=&quot;https://github.com/samanthaming/Flexbox30&quot;&gt;Flexbox in 30 days&lt;/a&gt; get a great introduction and dig deeper!&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Building Stars with HTML and CSS</summary></entry><entry><title type="html">Code breakdown of creature mouth animation</title><link href="http://localhost:4000/2020/01/08/greensock-explanation.html" rel="alternate" type="text/html" title="Code breakdown of creature mouth animation" /><published>2020-01-08T00:00:00-05:00</published><updated>2020-01-08T00:00:00-05:00</updated><id>http://localhost:4000/2020/01/08/greensock-explanation</id><content type="html" xml:base="http://localhost:4000/2020/01/08/greensock-explanation.html">&lt;h3 id=&quot;changing-facial-expressions-with-vanilla-js-and-gsap&quot;&gt;Changing facial expressions with Vanilla JS and GSAP&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Building Stars with HTML and CSS</summary></entry><entry><title type="html">Code breakdown of creature mouth animation</title><link href="/2020/01/08/greensock-explanation.html" rel="alternate" type="text/html" title="Code breakdown of creature mouth animation" /><published>2020-01-08T00:00:00-05:00</published><updated>2020-01-08T00:00:00-05:00</updated><id>/2020/01/08/greensock-explanation</id><content type="html" xml:base="/2020/01/08/greensock-explanation.html">&lt;h3 id=&quot;changing-facial-expressions-with-vanilla-js-and-gsap&quot;&gt;Changing facial expressions with Vanilla JS and GSAP&lt;/h3&gt;
 
 &lt;p&gt;My &lt;a href=&quot;/2020/01/07/greensock-test-1.html&quot; target=&quot;_blank&quot;&gt;post&lt;/a&gt; before this one featured my first demo of the GSAP (Greensock Animation API) library for animation of SVG (Scalar Vector Graphics) and included a quick explanation of why I used it. Here is the demo again - click on the buttons (the default is set to “happy”) and you should be able to see the critter change expressions.&lt;/p&gt;
 
@@ -1793,7 +2328,7 @@ init();
 
 &lt;h4 id=&quot;thats-a-wrap&quot;&gt;That’s a wrap&lt;/h4&gt;
 
-&lt;p&gt;I hope that helps you understand the underlying code, as well as a few Vanilla JS techniques and how to use the Greensock library. If you are interested in going further, I recommend creating a few test SVG’s, perhaps optimizing them with SVG OMG, and then inlining them in an HTML document. Then import the Greensock library in a JS file and try a few simple tweens to get going. Good luck!&lt;/p&gt;</content><author><name></name></author><summary type="html">Changing facial expressions with Vanilla JS and GSAP</summary></entry><entry><title type="html">First Demo with Greensock’s SVG animation library</title><link href="http://localhost:4000/2020/01/07/greensock-test-1.html" rel="alternate" type="text/html" title="First Demo with Greensock's SVG animation library" /><published>2020-01-07T00:00:00-05:00</published><updated>2020-01-07T00:00:00-05:00</updated><id>http://localhost:4000/2020/01/07/greensock-test-1</id><content type="html" xml:base="http://localhost:4000/2020/01/07/greensock-test-1.html">&lt;h3 id=&quot;delving-into-greensock-with-a-moody-creature&quot;&gt;Delving into Greensock with a Moody Creature&lt;/h3&gt;
+&lt;p&gt;I hope that helps you understand the underlying code, as well as a few Vanilla JS techniques and how to use the Greensock library. If you are interested in going further, I recommend creating a few test SVG’s, perhaps optimizing them with SVG OMG, and then inlining them in an HTML document. Then import the Greensock library in a JS file and try a few simple tweens to get going. Good luck!&lt;/p&gt;</content><author><name></name></author><summary type="html">Changing facial expressions with Vanilla JS and GSAP</summary></entry><entry><title type="html">First Demo with Greensock’s SVG animation library</title><link href="/2020/01/07/greensock-test-1.html" rel="alternate" type="text/html" title="First Demo with Greensock's SVG animation library" /><published>2020-01-07T00:00:00-05:00</published><updated>2020-01-07T00:00:00-05:00</updated><id>/2020/01/07/greensock-test-1</id><content type="html" xml:base="/2020/01/07/greensock-test-1.html">&lt;h3 id=&quot;delving-into-greensock-with-a-moody-creature&quot;&gt;Delving into Greensock with a Moody Creature&lt;/h3&gt;
 
 &lt;p&gt;This is my first trial run using the GSAP (Greensock Animation API) library for animation of SVG (Scalar Vector Graphics). SVG’s are super-sharp images with underlying code that is structured a lot like HTML.  When you “inline” an SVG, or include the SVG code directly in the HTML of a webpage, you can use CSS and Javascript to animate its parts.&lt;/p&gt;
 
@@ -2127,7 +2662,7 @@ function init() {
 init();
 &lt;/script&gt;&lt;/code&gt;
 &lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Delving into Greensock with a Moody Creature</summary></entry><entry><title type="html">A Responsive Comic Panel Layout with CSS Grid</title><link href="http://localhost:4000/2020/01/06/css-grid-intro.html" rel="alternate" type="text/html" title="A Responsive Comic Panel Layout with CSS Grid" /><published>2020-01-06T00:00:00-05:00</published><updated>2020-01-06T00:00:00-05:00</updated><id>http://localhost:4000/2020/01/06/css-grid-intro</id><content type="html" xml:base="http://localhost:4000/2020/01/06/css-grid-intro.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">Delving into Greensock with a Moody Creature</summary></entry><entry><title type="html">A Responsive Comic Panel Layout with CSS Grid</title><link href="/2020/01/06/css-grid-intro.html" rel="alternate" type="text/html" title="A Responsive Comic Panel Layout with CSS Grid" /><published>2020-01-06T00:00:00-05:00</published><updated>2020-01-06T00:00:00-05:00</updated><id>/2020/01/06/css-grid-intro</id><content type="html" xml:base="/2020/01/06/css-grid-intro.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
 
 &lt;p&gt;CSS Grid is a terrific web technique for two-dimensional layouts, and I see a lot of potential for formatting web comics. Below I have a quick demo of the type of nine-panel layout that responds to screen widths. At screen widths above 667px, you’ll see 3 x 3 panel arrangement that you may see in a graphic novel. At widths between 501px and 667px, it has a two column layout. And at widths below, all the panels stack within one column.&lt;/p&gt;
 
@@ -2407,7 +2942,7 @@ init();
 
 &lt;p&gt;In his book &lt;a href=&quot;https://www.amazon.com/Reinventing-Comics-Evolution-Art-Form/dp/0060953500&quot; target=&quot;_blank&quot;&gt;Reinventing Comics&lt;/a&gt;, author Scott McCloud discusses the web medium as creating the potential for an “infinite canvas.” Because it was written before the advent of smartphones, its predictions do not completely mirror the current day - though the book does speak to the vast potential of comics as a digital medium.&lt;/p&gt;
 
-&lt;p&gt;To learn about my comics-based science science resource books, &lt;em&gt;Dr. Birdley Teaches Science&lt;/em&gt;, and see some examples of how I present illustrations on the web, check out &lt;a href=&quot;http://www.birdleymedia.com&quot; target=&quot;_blank&quot;&gt;birdleymedia.com&lt;/a&gt;. I have had a longstanding interest in using comics as an educational medium and it is exciting to begin experimenting with their use on the web.&lt;/p&gt;</content><author><name></name></author><summary type="html">Getting Started</summary></entry><entry><title type="html">Four Ways to Get Up and Running with VueJS</title><link href="http://localhost:4000/2020/01/05/get-started-with-vue.html" rel="alternate" type="text/html" title="Four Ways to Get Up and Running with VueJS" /><published>2020-01-05T00:00:00-05:00</published><updated>2020-01-05T00:00:00-05:00</updated><id>http://localhost:4000/2020/01/05/get-started-with-vue</id><content type="html" xml:base="http://localhost:4000/2020/01/05/get-started-with-vue.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
+&lt;p&gt;To learn about my comics-based science science resource books, &lt;em&gt;Dr. Birdley Teaches Science&lt;/em&gt;, and see some examples of how I present illustrations on the web, check out &lt;a href=&quot;http://www.birdleymedia.com&quot; target=&quot;_blank&quot;&gt;birdleymedia.com&lt;/a&gt;. I have had a longstanding interest in using comics as an educational medium and it is exciting to begin experimenting with their use on the web.&lt;/p&gt;</content><author><name></name></author><summary type="html">Getting Started</summary></entry><entry><title type="html">Four Ways to Get Up and Running with VueJS</title><link href="/2020/01/05/get-started-with-vue.html" rel="alternate" type="text/html" title="Four Ways to Get Up and Running with VueJS" /><published>2020-01-05T00:00:00-05:00</published><updated>2020-01-05T00:00:00-05:00</updated><id>/2020/01/05/get-started-with-vue</id><content type="html" xml:base="/2020/01/05/get-started-with-vue.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
 
 &lt;p&gt;VueJS is a terrific Javascript framework used across the world for building user interfaces. Whether you are new to web development or a seasoned veteran, you can find a way to set it up that works for you. Below I have listed four different setup methods for getting started with VueJS so you can start learning and experimenting.&lt;/p&gt;
 
@@ -2437,7 +2972,7 @@ init();
 
 &lt;p&gt;As I get started, the most useful Vue dependency I have installed so far has been router, which enables you to build multi-page apps. If you build using the Vue GUI, the application will recommend installing this for single-page applications.&lt;/p&gt;
 
-&lt;p&gt;Good luck getting started with Vue!&lt;/p&gt;</content><author><name></name></author><summary type="html">Getting Started</summary></entry><entry><title type="html">My Powershell Journey Begins</title><link href="http://localhost:4000/2020/01/04/powershell-intro.html" rel="alternate" type="text/html" title="My Powershell Journey Begins" /><published>2020-01-04T00:00:00-05:00</published><updated>2020-01-04T00:00:00-05:00</updated><id>http://localhost:4000/2020/01/04/powershell-intro</id><content type="html" xml:base="http://localhost:4000/2020/01/04/powershell-intro.html">&lt;h3 id=&quot;i-did-not-know-powershell-existed&quot;&gt;I did not know Powershell existed&lt;/h3&gt;
+&lt;p&gt;Good luck getting started with Vue!&lt;/p&gt;</content><author><name></name></author><summary type="html">Getting Started</summary></entry><entry><title type="html">My Powershell Journey Begins</title><link href="/2020/01/04/powershell-intro.html" rel="alternate" type="text/html" title="My Powershell Journey Begins" /><published>2020-01-04T00:00:00-05:00</published><updated>2020-01-04T00:00:00-05:00</updated><id>/2020/01/04/powershell-intro</id><content type="html" xml:base="/2020/01/04/powershell-intro.html">&lt;h3 id=&quot;i-did-not-know-powershell-existed&quot;&gt;I did not know Powershell existed&lt;/h3&gt;
 
 &lt;p&gt;…until a couple months ago. It fell under my radar for the first time during a meeting. I had been pondering how to write a small desktop application that allowed Drupal website content creators to pull down the lessons they had created on an authoring website and package them into a nice, neat folder that could be loaded onto Android tablets for use by our app.&lt;/p&gt;
 
@@ -2524,7 +3059,7 @@ init();
 
 &lt;h4 id=&quot;closing&quot;&gt;Closing&lt;/h4&gt;
 
-&lt;p&gt;So my journey with PowerShell has begun, and over the course of the past month, I have created an Powershell script that does its job fast. My goal over the next month will be to start testing in a Windows 10 environment (using Mac Parallels) and make it as easy as possible to use by content creators, who will have to transition from point-and-click GUIs to text-based interfaces. I am also working on adding functionality for swapping in large video files during and after the download process.&lt;/p&gt;</content><author><name></name></author><summary type="html">I did not know Powershell existed</summary></entry><entry><title type="html">Protecting User Data During an Upgrade</title><link href="http://localhost:4000/2020/01/02/legacy-testing.html" rel="alternate" type="text/html" title="Protecting User Data During an Upgrade" /><published>2020-01-02T00:00:00-05:00</published><updated>2020-01-02T00:00:00-05:00</updated><id>http://localhost:4000/2020/01/02/legacy-testing</id><content type="html" xml:base="http://localhost:4000/2020/01/02/legacy-testing.html">&lt;h3 id=&quot;bridging-the-gap-between-versions&quot;&gt;Bridging the Gap Between Versions&lt;/h3&gt;
+&lt;p&gt;So my journey with PowerShell has begun, and over the course of the past month, I have created an Powershell script that does its job fast. My goal over the next month will be to start testing in a Windows 10 environment (using Mac Parallels) and make it as easy as possible to use by content creators, who will have to transition from point-and-click GUIs to text-based interfaces. I am also working on adding functionality for swapping in large video files during and after the download process.&lt;/p&gt;</content><author><name></name></author><summary type="html">I did not know Powershell existed</summary></entry><entry><title type="html">Protecting User Data During an Upgrade</title><link href="/2020/01/02/legacy-testing.html" rel="alternate" type="text/html" title="Protecting User Data During an Upgrade" /><published>2020-01-02T00:00:00-05:00</published><updated>2020-01-02T00:00:00-05:00</updated><id>/2020/01/02/legacy-testing</id><content type="html" xml:base="/2020/01/02/legacy-testing.html">&lt;h3 id=&quot;bridging-the-gap-between-versions&quot;&gt;Bridging the Gap Between Versions&lt;/h3&gt;
 
 &lt;p&gt;At some point in software development, you may have an application in the field holding data that needs to be upgraded — and your next build may need to change how that data is stored or pushed up to the cloud. The last thing you would want would be for the data to be corrupted during the upgrade, or for the app to break due to looking for data in the wrong place - so building with backwards compatibility in mind and writing code that helps bridge the gap between old and new app versions is essential.&lt;/p&gt;
 
@@ -2559,7 +3094,7 @@ init();
 
 &lt;h4 id=&quot;closing&quot;&gt;Closing&lt;/h4&gt;
 
-&lt;p&gt;It is important to consider how updates to an application affect your users, particularly with respect to important data that pre-update versions of the app are handling. To ensure a smooth transition, build in logic that smoothly migrates the data into a format that the new app version can work with, and be sure to test the upgrade process before releasing your app into the field. Thanks for reading!&lt;/p&gt;</content><author><name></name></author><summary type="html">Bridging the Gap Between Versions</summary></entry><entry><title type="html">Technical Project Director vs. Technical Lead</title><link href="http://localhost:4000/2019/11/17/tech-lead-project-dir.html" rel="alternate" type="text/html" title="Technical Project Director vs. Technical Lead" /><published>2019-11-17T00:00:00-05:00</published><updated>2019-11-17T00:00:00-05:00</updated><id>http://localhost:4000/2019/11/17/tech-lead-project-dir</id><content type="html" xml:base="http://localhost:4000/2019/11/17/tech-lead-project-dir.html">&lt;h3 id=&quot;my-experience-with-both-roles&quot;&gt;My experience with both roles&lt;/h3&gt;
+&lt;p&gt;It is important to consider how updates to an application affect your users, particularly with respect to important data that pre-update versions of the app are handling. To ensure a smooth transition, build in logic that smoothly migrates the data into a format that the new app version can work with, and be sure to test the upgrade process before releasing your app into the field. Thanks for reading!&lt;/p&gt;</content><author><name></name></author><summary type="html">Bridging the Gap Between Versions</summary></entry><entry><title type="html">Technical Project Director vs. Technical Lead</title><link href="/2019/11/17/tech-lead-project-dir.html" rel="alternate" type="text/html" title="Technical Project Director vs. Technical Lead" /><published>2019-11-17T00:00:00-05:00</published><updated>2019-11-17T00:00:00-05:00</updated><id>/2019/11/17/tech-lead-project-dir</id><content type="html" xml:base="/2019/11/17/tech-lead-project-dir.html">&lt;h3 id=&quot;my-experience-with-both-roles&quot;&gt;My experience with both roles&lt;/h3&gt;
 
 &lt;p&gt;As I was finishing my work towards my software engineering certificate in 2016, my title shifted to technical project director and I started taking on more management roles on a range of projects. I tried out the role for about two years, and while I continued to build apps and websites during this time, my focus shifted by necessity towards management during a portion of each day. While I had previously been focused primarily on front-end web development and on building Drupal sites, my role grew to include managing budgets, scheduling meetings, and leading teams of content writers, web developers, and quality assurance specialists. In short, my focus was less on any specific thing I was building and more on shepherding the deliverables to the finish line and on making sure the overall products met the needs of the client.&lt;/p&gt;
 
@@ -2630,7 +3165,7 @@ init();
   &lt;li&gt;Microsoft SharePoint&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Both technical project director and technical lead roles are terrific for someone who likes to work closely with people and gravitates towards organization and time management. If your role is primarily that of a coder, you may want to try managing a project to get a sense of this other perspective and see how you like the role. For now, I have decided that a technical lead role is a better fit for me, and my experiences in both roles have in the long run made me a more effective developer.&lt;/p&gt;</content><author><name></name></author><summary type="html">My experience with both roles</summary></entry><entry><title type="html">Careers in Educational Technology and Media</title><link href="http://localhost:4000/2019/10/29/edtech-roles.html" rel="alternate" type="text/html" title="Careers in Educational Technology and Media" /><published>2019-10-29T00:00:00-04:00</published><updated>2019-10-29T00:00:00-04:00</updated><id>http://localhost:4000/2019/10/29/edtech-roles</id><content type="html" xml:base="http://localhost:4000/2019/10/29/edtech-roles.html">&lt;h3 id=&quot;so-many-roles-so-little-time&quot;&gt;So many roles, so little time&lt;/h3&gt;
+&lt;p&gt;Both technical project director and technical lead roles are terrific for someone who likes to work closely with people and gravitates towards organization and time management. If your role is primarily that of a coder, you may want to try managing a project to get a sense of this other perspective and see how you like the role. For now, I have decided that a technical lead role is a better fit for me, and my experiences in both roles have in the long run made me a more effective developer.&lt;/p&gt;</content><author><name></name></author><summary type="html">My experience with both roles</summary></entry><entry><title type="html">Careers in Educational Technology and Media</title><link href="/2019/10/29/edtech-roles.html" rel="alternate" type="text/html" title="Careers in Educational Technology and Media" /><published>2019-10-29T00:00:00-04:00</published><updated>2019-10-29T00:00:00-04:00</updated><id>/2019/10/29/edtech-roles</id><content type="html" xml:base="/2019/10/29/edtech-roles.html">&lt;h3 id=&quot;so-many-roles-so-little-time&quot;&gt;So many roles, so little time&lt;/h3&gt;
 
 &lt;p&gt;The specific roles and job titles in educational technology and media can seem nebulous if you are just starting to look around. The field is also very broad, and technology is changing at a rapid pace. All these factors can make figuring out a good role challenging.&lt;/p&gt;
 

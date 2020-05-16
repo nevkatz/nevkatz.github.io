@@ -504,6 +504,14 @@ table {
   .highlight .il {
     color: #099; }
 
+/*
+
+potential palette addditions
+
+hot pink code: *#f92672;
+
+nice orange: #f06d06;
+*/
 @font-face {
   font-family: 'Kalam';
   src: url("fonts/kalam/Kalam-Regular.ttf"); }
@@ -518,6 +526,9 @@ body {
 
 html {
   padding-top: 0px; }
+
+p {
+  margin-top: 12px; }
 
 main {
   background-color: #f7f4f4; }
@@ -586,11 +597,23 @@ body.home .page-content {
   padding-top: 0px; }
 
 /* headers */
+.post-content h3 {
+  font-size: 20px;
+  font-weight: bold; }
+
+.post-content h3:nth-child(n+2) {
+  margin-top: 20px; }
+
 h4 {
   font-size: 18px;
   font-weight: bold;
   color: #3887d4;
   margin: 12px 0px; }
+
+h4.demo {
+  color: #813772;
+  text-align: center;
+  margin-top: 16px; }
 
 h5 {
   font-weight: bold;
@@ -656,6 +679,9 @@ h2.post-list-heading {
   padding: 20px;
   background-color: lightblue;
   margin-bottom: 20px; }
+  .callout h4 {
+    color: #1a63aa;
+    margin-top: 0px; }
 
 /*
  *  widgets
@@ -672,21 +698,31 @@ ul.css-tabs {
   border-bottom: 1px solid #999; }
   ul.css-tabs li a {
     border-radius: 4px 4px 0px 0px;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
     background-color: lightgrey;
     border: 1px solid lightgrey;
-    padding: 4px 12px 3px 12px;
+    padding: 6px 14px 3px 14px;
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    top: -0px;
+    top: 1px;
     border-bottom-width: 0px; }
   ul.css-tabs li a.active {
     padding-bottom: 4px;
     background-color: #ffffff;
     border: 1px solid #999;
     border-bottom-width: 0px; }
+    ul.css-tabs li a.active:after {
+      content: '';
+      width: 100%;
+      display: block;
+      height: 1px;
+      position: absolute;
+      background-color: #fff;
+      left: 0px;
+      bottom: 0px;
+      margin: 0px; }
 
 @-moz-document url-prefix() {
   ul.css-tabs li a {

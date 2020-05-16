@@ -14,7 +14,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:url" content="http://localhost:4000/2020/05/10/vue-theme-switcher.html" />
+  <meta property="og:url" content="/2020/05/10/vue-theme-switcher.html" />
   
   <meta itemprop="keywords" content="css,vue">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
@@ -22,19 +22,19 @@
 <meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="CSS Theme Switcher with VueJS" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Switching themes with Vue" />
-<meta property="og:description" content="Switching themes with Vue" />
-<link rel="canonical" href="http://localhost:4000/2020/05/10/vue-theme-switcher.html" />
-<meta property="og:url" content="http://localhost:4000/2020/05/10/vue-theme-switcher.html" />
+<meta name="description" content="Building a Theme Switcher with Vue" />
+<meta property="og:description" content="Building a Theme Switcher with Vue" />
+<link rel="canonical" href="/2020/05/10/vue-theme-switcher.html" />
+<meta property="og:url" content="/2020/05/10/vue-theme-switcher.html" />
 <meta property="og:site_name" content="Nevin’s Dev Pages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-05-10T00:00:00-04:00" />
 <script type="application/ld+json">
-{"description":"Switching themes with Vue","@type":"BlogPosting","url":"http://localhost:4000/2020/05/10/vue-theme-switcher.html","headline":"CSS Theme Switcher with VueJS","dateModified":"2020-05-10T00:00:00-04:00","datePublished":"2020-05-10T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/05/10/vue-theme-switcher.html"},"@context":"https://schema.org"}</script>
+{"description":"Building a Theme Switcher with Vue","@type":"BlogPosting","url":"/2020/05/10/vue-theme-switcher.html","headline":"CSS Theme Switcher with VueJS","dateModified":"2020-05-10T00:00:00-04:00","datePublished":"2020-05-10T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2020/05/10/vue-theme-switcher.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/css/prism.css">
-  <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Nevin's Dev Pages" /></head>
+  <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin's Dev Pages" /></head>
 <body ><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">Nevin&#39;s Dev Pages</a><nav class="site-nav">
@@ -65,13 +65,15 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h3 id="switching-themes-with-vue">Switching themes with Vue</h3>
+    <h3 id="building-a-theme-switcher-with-vue">Building a Theme Switcher with Vue</h3>
 
-<p>If you are building a website for a client, you may want to give your client an idea of how different themes look for a particular website element. In this case, it can help to have script that allows the client to dynamically switch themes and make a decision.</p>
+<p>If you are building a site for a client, you may want to give your client an idea of how different themes look on a particular site, site page, or site element. In this case, it can help to have a demo that allows your client to dynamically switch themes in order to see how they look at a glance and arrive at a decision.</p>
 
-<p>I recently found a way to build a quick theme switcher in VueJS below.</p>
+<p>Here, we will look at a way to build a theme switcher with VueJS.</p>
 
-<p>The interactive, which uses four themes from Canva’s <a href="https://www.canva.com/learn/website-color-schemes/">website color schemes</a>, allows you to switch themes using radio input elements, which are styled to look like tabs. When you press a tab, Vue works behind the scenes to change the CSS class of the <code>output</code> element.</p>
+<h4 class="demo" id="a-glimpse-of-the-final-product">A glimpse of the final product</h4>
+
+<p>The theme switcher, which uses themes from Canva’s <a href="https://www.canva.com/learn/website-color-schemes/" target="_blank">website color schemes</a>, allows you to switch themes using radio input elements, which are styled to look like tabs. When you press a tab, Vue works behind the scenes to change the CSS class of the <code>output</code> element. Try clicking the tabs here.</p>
 
 <div class="margin-bottom">
 <script src="https://npmcdn.com/vue/dist/vue.js"></script><!-- set the root -->
@@ -82,7 +84,7 @@
     <!-- the template elemnts does not show up in the dom -->
     <template v-for="theme in themes">
     <!-- the v-for logic uses each item in the array to make a radio button -->
-      <input :value="theme" :id="theme" name="style-options" type="radio" v-model="selected" /><label :for="theme"><span v-html="theme"></span></label>
+      <input :id="theme" v-model="selected" :value="theme" name="style-options" type="radio" /><label :for="theme" v-html="theme"></label>
       </template>
     </div>
     <!-- this is the markup that gets styled. -->
@@ -103,11 +105,7 @@
 <style>body {
   font-family: Arial;
 }
-/* theme-switcher */
-#theme-switcher {
-  margin-bottom: 10px;
-  border-bottom: 1px solid darkgrey;
-}
+
 /* hide the radio button element */
 #theme-switcher input[type="radio"] {
   display: none;
@@ -137,7 +135,7 @@
   width: 100%;
 }
 #root h1 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0px;
   padding: 10px; 
   font-weight: 700;
@@ -145,7 +143,7 @@
 #root p {
   margin: 0px;
   padding: 10px;
-  font-size: 13px;
+  font-size: 15px;
 }
 #root button {
   margin: 0px auto;
@@ -234,15 +232,23 @@
    vm.selected = vm.themes[0];
 </script>
 
-<p>We are pulling in the VueJS library from a CDN using a <code>script</code> tag:</p>
+<p>Now, let’s walk through the process for building this theme switcher from the ground up.</p>
 
-<p><code>&lt;script src="https://npmcdn.com/vue/dist/vue.js"&gt;&lt;script&gt;</code></p>
+<h3 id="part-1-building-the-basic-markup">Part 1: Building the basic markup</h3>
 
-<p>So for this interactive, there is no build step.</p>
+<h4 id="step-1-adding-the-vue-js-library">Step 1: Adding the Vue JS library</h4>
 
-<h4 id="step-1-adding-the-root-element">Step 1: Adding the root element</h4>
+<p>Being a library, Vue JS can be baked into your site’s codebase in a number of ways, which I discuss <a href="/2020/01/05/get-started-with-vue.html" target="_blank">elsewhere</a>. For this particular demo, we are pulling in the VueJS library from a content delivery network (CDN) using a <code>script</code> tag:</p>
 
-<p>First, let’s add the main DOM element to our html and give it an ID of <code>root</code>.</p>
+<p><code>&lt;script src="https://npmcdn.com/vue/dist/vue.js"&gt;&lt;/script&gt;</code></p>
+
+<p>So integrating VueJS for this project does not require a build step.</p>
+
+<p>If you are building this on a static html page, you should add this to an HTML template with all the usual starting material, such as this <a href="https://www.sitepoint.com/a-basic-html5-template/" target="_blank">SitePoint template</a>. If you are using a code sandbox like CodePen or JS Fiddle, no need.</p>
+
+<h4 id="step-2-adding-the-root-element">Step 2: Adding the root element</h4>
+
+<p>Assuming the Vue library <code>script</code> tag is already added to our html page, let’s add the main DOM element to our html and give it an ID of <code>root</code>.</p>
 
 <pre>
 <code class="language-markup">
@@ -252,9 +258,23 @@
 </code>
 </pre>
 
-<h4 id="step-2-adding-the-theme-switcher-and-output">Step 2: Adding the theme switcher and output</h4>
+<p>If you are trying this on a static html page, it is best to add this inside a <code>&lt;body&gt;</code> element.</p>
 
-<p>Now, let’s add an element for our theme switcher, and the container with id of <code>output</code> that will contain the elements with the resulting styles.</p>
+<h4 id="step-3-adding-the-theme-switcher-and-output-containers">Step 3: Adding the theme switcher and output containers</h4>
+
+<p>Now, let’s add an element that will contain the list of tabbed theme options.</p>
+
+<pre>
+<code class="language-markup">
+<script type="prism-html-markup"><div id="root">
+     <!-- widget for switching themes -->
+    <div id="theme-switcher"> 
+    </div>
+</div></script>
+</code>
+</pre>
+
+<p>And now, let’s add the container with an <code>id</code> of <code>output</code> that will contain the elements with the resulting styles.</p>
 <pre>
 <code class="language-markup">
 <script type="prism-html-markup"><div id="root">
@@ -268,9 +288,9 @@
 </code>
 </pre>
 
-<h4 id="step-3-create-a-template-element-that-will-generate-the-theme-options">Step 3: Create a template element that will generate the theme options</h4>
+<h4 id="step-4-create-a-template-element-that-will-generate-the-theme-options">Step 4: Create a template element that will generate the theme options</h4>
 
-<p>Now we could just add some theme options using html radio buttons…</p>
+<p>Ok, our containers are set up. Time to create our four theme options that the user will click on. Now if this were not a VueJS tutorial, we <em>could</em> just add some theme options using html radio buttons…</p>
 
 <pre>
 <code class="language-markup">
@@ -278,10 +298,10 @@
    
     <div id="theme-switcher">
       <!-- looks kinda repetitive, don't it? -->
-      <input value="light" type="radio" name="style-options">
-      <input value="dark" type="radio" name="style-options">
-      <input value="modern" type="radio" name="style-options">
-      <input value="gemstone" type="radio" name="style-options">
+      <input value="light" type="radio" name="style-options">light
+      <input value="dark" type="radio" name="style-options">dark
+      <input value="modern" type="radio" name="style-options">modern
+      <input value="gemstone" type="radio" name="style-options">gemstone
     </div>
     <div id="output">
     </div>
@@ -289,9 +309,18 @@
 </code>
 </pre>
 
-<p>… but this gets repetitive, especially when add additional attributes to each input.</p>
+<p>… but where is the fun in that? This gets repetitive, especially when we add additional attributes to each input element.</p>
 
-<p>A less repetitive way to go about it is to create a list of themes and loop through them to create our inputs. We’ll lay the groundwork for that by adding a <code>template</code> element. The nice thinga about a <code>template</code> is that you can add Vue logic to it but it won’t show up in the DOM.</p>
+<p>A less repetitive way to make these tabs is to tie our HTML file to a Javascript file with a Vue object. Here’s the plan:</p>
+
+<ol>
+  <li>In a Javascript file, we’ll create a Vue object.</li>
+  <li>In the Vue object, we’ll create a list of themes.</li>
+  <li>In this HTML page we’ve been building, we’ll loop through the list of themes to create our four radio inputs.</li>
+  <li>At the end of this project, we will style these inputs to look like tabs.</li>
+</ol>
+
+<p>Before we start our JS file, let’s lay the groundwork for that by adding a <code>template</code> element. The nice thing about a <code>template</code> is that you can add Vue logic to it but it won’t show up in the DOM.</p>
 
 <pre>
 <code class="language-markup">
@@ -309,11 +338,23 @@
 </code>
 </pre>
 
-<h4 id="step-4-creating-the-vue-object-that-holds-the-themes-list">Step 4: Creating the Vue Object that holds the themes list</h4>
+<h3 id="part-2-adding-the-vue-object">Part 2: Adding the Vue Object</h3>
 
-<p>Let’s now start our Javascript file and create the Vue object that holds our themes list. Remember that by using that with a <code>script</code> tag mentioned earlier, we are already pulling in the Vue framework, which allows us to create the <code>Vue</code> object.</p>
+<h4 id="step-5-creating-the-vue-object">Step 5: Creating the Vue Object</h4>
 
-<p>To make the <code>Vue</code> object act on our main <code>root</code> element, we will set its <code>el</code> property equal to <code>#root.</code></p>
+<p>The purpose of the Vue object will be threefold:</p>
+
+<ul>
+  <li>It stores the list of themes.</li>
+  <li>It stores which theme is selected.</li>
+  <li>It is used to set the default theme at runtime.</li>
+</ul>
+
+<p>Let’s now start our Javascript file and create the Vue object. Our first goal will be to make it hold our themes list.</p>
+
+<p>Remember that by using that handy <code>script</code> tag earlier, we are already pulling in the Vue library, which allows us to create this <code>Vue</code> object and have it work the way it should.</p>
+
+<p>To make the <code>Vue</code> object act on our main <code>root</code> element, we will give it an <code>el</code> property, which we set equal to <code>#root</code>. The <code>el</code> property tells the Vue object which HTML element it should act on.</p>
 
 <pre>
 <code class="language-js">
@@ -335,7 +376,7 @@
 </code>
 </pre>
 
-<p>We can now add a <code>themes</code> property to our data object, which we can define as a list of four theme names.</p>
+<p>The <code>data</code> object is meant to be an expandable list of properties. We can now add a <code>themes</code> property to our data object, which we can define as a list of four theme names.</p>
 
 <pre>
 <code class="language-js">
@@ -343,7 +384,7 @@
     el:'#root',
     // add the data object.
     data: {
-       themes:['dark','modern','light','gemstone'],
+       themes:['dark','modern','light','gemstone']
     }
   });
 </code>
@@ -351,10 +392,28 @@
 
 <p>Okay, so now we have a Vue object with four themes that is wired up to our HTML structure.</p>
 
-<h4 id="step-5-iterate-through-those-themes">Step 5: Iterate through those themes</h4>
+<h4 id="step-6-iterate-through-our-theme-list-to-create-options">Step 6: Iterate through our theme list to create options</h4>
 
-<p>Let’s now go back to our HTML, where we will now use a Vue for-loop to iterate through those four themes and create our four options. To do this we’ll use <code>v-for</code> with the <code>themes</code> property, and use <code>theme</code> as the term for the current one in the loop.</p>
+<p>Let’s now go back to our HTML file, where we will now use what we call a <code>v-for</code> loop to iterate through those four themes in the above theme list and create our four clickable options. To do this we’ll use <code>v-for</code> with the <code>themes</code> property…</p>
 
+<pre>
+<code class="language-markup">
+<script type="prism-html-markup">
+  <template v-for="theme in themes">
+  </template>
+</script>
+</code>
+</pre>
+
+<p>… and use <code>theme</code> as the term for the current theme that gets used for that particular iteration of the loop.</p>
+
+<p>Below you will see the HTML markup and the Javascript side-by-side. Compare the HTML to the Javascript and see if you can make the connection between how the <code>themes</code> from the Vue object are now pulled into the HTML file.</p>
+
+<ul class="css-tabs">
+  <li><a href="#mid-html">HTML</a></li>
+  <li><a href="#mid-js">JS</a></li>
+</ul>
+<div id="mid-html">
 <pre>
 <code class="language-markup">
 <script type="prism-html-markup"><div id="root">
@@ -369,8 +428,40 @@
 </div></script>
 </code>
 </pre>
+</div>
+<div id="mid-js">
+<pre>
+<code class="language-js">
+ let vm = new Vue({
+    el:'#root',
+    // add the data object.
+    data: {
+       themes:['dark','modern','light','gemstone']
+    }
+  });
 
-<p>What will we do with the <code>theme</code> each time? Why we’ll make our radio input element. In the <code>input</code> element below, notice that we have a colon <code>:</code> before <code>value</code> below, which allows us to reference the <code>theme</code> variable.</p>
+</code>
+</pre>
+</div>
+
+<p>There are four elements in the Vue object’s <code>themes</code> list:</p>
+
+<pre>
+<code class="language-js">
+['dark','modern','light','gemstone']
+</code>
+</pre>
+
+<p>Here is how this list will be used in the HTML:</p>
+
+<ul>
+  <li>The <code>v-for</code> loop creates the radio inputs needed for switching themes.</li>
+  <li>With each iteration of the <code>v-for</code> loop, the <code>theme</code> value becomes the next item in the Vue object’s <code>themes</code> list.</li>
+  <li>In each iteration, Vue will use whatever the current <code>theme</code> value is to make our radio input element.</li>
+  <li>But for that to happen, we need to add our <code>&lt;input&gt;</code> element inside the <code>v-for</code> loop, which we do below.</li>
+</ul>
+
+<p>In code below, you will see that <code>input</code> element. Notice that we have a colon <code>:</code> before <code>value</code> below, which allows us to reference the <code>theme</code> variable.</p>
 
 <pre>
 <code class="language-markup">
@@ -378,7 +469,7 @@
     <div id="theme-switcher">
     <template v-for="theme in themes">
       <!-- use the theme variable to create an input element for each iteration of the loop -->
-           <input type="radio" name="style-options" :value="theme">
+           <input :value="theme" type="radio" name="style-options">
       </template>
     </div>
     <div id="output">
@@ -387,7 +478,7 @@
 </code>
 </pre>
 
-<h4 id="step-6-wire-the-input-elements-to-vue-object">Step 6: Wire the input elements to Vue object</h4>
+<h4 id="step-7-wire-the-input-elements-to-vue-object">Step 7: Wire the input elements to Vue object</h4>
 
 <p>So we can generate our list of input elements now, but we ned to make it so that when you select one, it sets the current theme. So let’s create a variable called <code>selected</code> in our Vue object…</p>
 
@@ -411,8 +502,8 @@
 <script type="prism-html-markup"><div id="root">
     <div id="theme-switcher">
     <template v-for="theme in themes">
-      <!-- v-model makes this determine the selected variable. -->
-           <input type="radio" name="style-options" :value="theme" v-model="selected">
+      <!-- add v-model makes this set the theme in the Vue object. -->
+           <input v-model="selected" :value="theme" type="radio" name="style-options">
       </template>
     </div>
     <div id="output">
@@ -421,11 +512,33 @@
 </code>
 </pre>
 
-<h4 id="step-7-add-an-id-and-a-label-to-each-input-option">Step 7: Add an ID and a label to each input option</h4>
+<h4 class="demo" id="demo-1">Demo 1</h4>
 
-<p>While we’re at it, let’s add an ID to each input and let’s give each input a label, which will actually be the visible element that we see.</p>
+<p>Here’s what we have so far. Our radio buttons show up, and if you click one, it will appear to be selected. They are not much to look at yet, but we’ll get there.</p>
 
-<p>Notice that the <code>id</code> attribute will also be the theme name, and the <code>for</code> attribute of the label will also be the theme name and therefore connect the label to its radio input element. We are using colons before each of these attributes so we can use that Vue goodness to reference the <code>theme</code> property.</p>
+<div id="demo1">
+  <input value="light" type="radio" name="style-options" />
+  <input value="dark" type="radio" name="style-options" />
+  <input value="modern" type="radio" name="style-options" />
+  <input value="gemstone" type="radio" name="style-options" />
+</div>
+
+<p>So far, we cannot tell which radio button is which without labels, so let’s add some.</p>
+
+<h4 id="step-8-add-an-id-and-a-label-to-each-input-option">Step 8: Add an ID and a label to each input option</h4>
+
+<p>We will add visible labels for each button using the <code>&lt;label&gt;</code> element, which can be wired to an input and which allows for the custom styling options that are needed to make our radio buttons look like tabs. Here is what you need to know at this point:</p>
+
+<ul>
+  <li>There is one <code>label</code> for each <code>input</code>.</li>
+  <li>When you click on the label, its corresponding radio button ends up being selected.</li>
+</ul>
+
+<p>To wire each label to its input element, we will give each radio input element an <code>id</code> attribute, which will also be the theme name.</p>
+
+<p>Why do we need the <code>id</code>? Because each label uses its <code>for</code> attribute, which is also the name of the input’s theme, to find the <code>id</code> of its <code>input</code> counterpart.</p>
+
+<p>Here is how we add the labels and id’s. We are using colons before <code>for</code> and <code>id</code> so we can use that Vue goodness to reference the <code>theme</code> property.</p>
 
 <pre>
 <code class="language-markup">
@@ -433,9 +546,10 @@
     <div id="theme-switcher">
     <template v-for="theme in themes">
            <!-- add an ID -->
-           <input :id="theme" type="radio" name="style-options" :value="theme" v-model="selected">
+           <input :id="theme" v-model="selected" :value="theme" type="radio" name="style-options">
            <!-- add a label -->
-           <label :for="theme"><span v-html="theme"></span></label>
+           <!-- span has v-html attribute -->
+           <label :for="theme" v-html="theme"></label>
       </template>
     </div>
     <div id="output">
@@ -444,21 +558,89 @@
 </code>
 </pre>
 
-<p>Notice also that the label’s <code>span</code> element has a <code>v-html</code> property that is set equal to the <code>theme</code> element as well. This will allow the theme name to show up as visible text in each radio option.</p>
+<p>Notice also that the label has a <code>v-html</code> property that is set equal to the <code>theme</code> element as well.</p>
 
-<h4 id="step-8-show-the-result-of-selecting-a-theme">Step 8: Show the result of selecting a theme</h4>
+<p><code>&lt;label :for="theme" v-html="theme"&gt;&lt;/label&gt;</code></p>
 
-<p>Now that we have some working options, let’s show the result of selecting a theme. We know that selecting an option will set the <code>select</code> variable on the Vue object to that option’s theme name, so now let’s pull that <code>select</code> variable into the <code>output</code> element.</p>
+<p>The <code>v-html</code> attribute injects the theme name as visible text into each <code>label</code> element.</p>
 
-<p>We’ll do this in a couple ways: first, let’s set the class of the element using the colon syntax, and we will also add an <code>&lt;h1&gt;</code> header that prints the name of the theme.</p>
+<h4 class="demo" id="demo-2">Demo 2</h4>
+
+<p>Here is how the project should look now.</p>
+
+<div id="demo2">
+  <input id="light" value="light" type="radio" name="style-options" />
+  <label for="light">light</label>
+  <input id="dark" value="dark" type="radio" name="style-options" />
+  <label for="dark">dark</label>
+  <input id="modern" value="modern" type="radio" name="style-options" />
+  <label for="modern">modern</label>
+  <input id="gemstone" value="gemstone" type="radio" name="style-options" />
+  <label for="gemstone">gemstone</label>
+</div>
+
+<p>Still pretty modest, so let’s start adding some style and functionality.</p>
+
+<h3 id="part-3-adding-the-theme-switch-effect">Part 3: Adding the theme switch effect</h3>
+
+<h4 id="step-9-show-the-result-of-selecting-a-theme">Step 9: Show the result of selecting a theme</h4>
+
+<p>Now that we have some working options, let’s show the result of selecting a theme. We know that selecting an option will set the <code>select</code> variable on the Vue object to that option’s theme name, so now let’s use that <code>select</code> variable to define the class of the <code>output</code> element that will display our content.</p>
+
+<p>But first, we need some content to display! Let’s start by adding an <code>h1</code> element with some placeholder text. Here is how the output element looks itself with that addition.</p>
+
+<pre>
+    <code class="language-markup">
+    <script type="prism-html-markup">
+      <div id="output">
+           <h1>
+             Placeholder text
+           </h1>
+      </div>
+    </script>
+  </code>
+</pre>
+
+<p>To make the <code>output</code> element take on the style of the theme select, let’s set the class of the element equal to whatever theme is in the Vue object’s <code>selected</code> variable using the colon syntax.</p>
+
+<pre>
+    <code class="language-markup">
+    <script type="prism-html-markup">
+    <!-- set the :class variable equal to the theme name... -->
+    <!-- ...which is in the "selected" variable of the Vue object. -->
+      <div id="output" :class="selected">
+           <h1>
+             Placeholder text
+           </h1>
+      </div>
+    </script>
+  </code>
+</pre>
+
+<p>To make the name of the theme explicitly show up for the user, let’s also make the <code>&lt;h1&gt;</code> header print the name of the theme using that same “selected” variable.</p>
+
+<pre>
+    <code class="language-markup">
+    <script type="prism-html-markup">
+      <div id="output" :class="selected">
+          <!-- make the header print the current theme name with v-html. -->
+           <h1>
+             Current Theme: <span v-html="selected"></span>
+           </h1>
+      </div>
+    </script>
+  </code>
+</pre>
+
+<p>Here is how it looks with the rest of the markup.</p>
 
 <pre>
 <code class="language-markup">
 <script type="prism-html-markup"><div id="root">
     <div id="theme-switcher">
        <template v-for="theme in themes">
-           <input :id="theme" type="radio" name="style-options" :value="theme" v-model="selected">
-           <label :for="theme"><span v-html="theme"></span></label>
+           <input :id="theme" v-model="selected" :value="theme" type="radio" name="style-options">
+           <label :for="theme" v-html="theme"></label>
       </template>
     </div>
     <div id="output" :class="selected">
@@ -471,17 +653,282 @@
 </code>
 </pre>
 
-<h4 id="step-9-add-some-additional-elements-that-would-be-styled-by-the-theme">Step 9: Add some additional elements that would be styled by the theme.</h4>
+<div class="callout">
+  <h4>Syntax Moment</h4>
+  <p>Another way to print a Vue variable is with curly brace syntax, as in the snippet below.</p>
+  
+  <pre>
+    <code class="language-markup">
+    <script type="prism-html-markup">
+      <div id="output" :class="selected">
+          <!-- make the header print the current theme name with v-html. -->
+           <h1>
+             Current Theme: {{ selected }}
+           </h1>
+      </div>
+    </script>
+  </code>
+ </pre>
+ 
+ <p>For this project, I am using <code>v-html="selected"</code> instead of curly braces. This is because curly braces do not work properly when I compile my site with Jekyll, the static site generator I use. This is because Jekyll uses curly braces for other purposes.</p>
 
-<p>Now let’s add a <code>&lt;p&gt;</code> tag and a <code>&lt;button&gt;</code> element.</p>
+ <p>That said &mdash; if you are not using a system that conflicts with curly braces, you can use use them in place of <code>v-html</code> syntax as in the example above.</p>
+</div>
+
+<h4 id="step-10-add-styles-for-the-four-themes">Step 10: Add styles for the four themes</h4>
+
+<p>Before we test the theme switcher we need themes to switch through, right? So to test basic functionality, let’s go ahead and add styles for the four themes. Here is what we add to our CSS file. You’ll notice that the last selector in each theme is a <code>button</code> element, which we will add shortly to our HTML.</p>
+
+<ul class="css-tabs">
+  <li><a href="#theme-a-mid">Dark</a></li>
+  <li><a href="#theme-b-mid">Modern</a></li>
+  <li><a href="#theme-c-mid">Light</a></li>
+  <li><a href="#theme-d-mid">Gemstone</a></li>
+</ul>
+<div id="theme-a-mid">
+<pre>
+<code class="language-css">/* dark */
+#root .dark {
+  background-color: #062f4f;
+  color: #fff;
+  border: 1px solid #b82601;
+  font-family: Arial;
+}
+#root .dark h1 {
+  background-color: #813772;
+}
+
+#root .dark button {
+  background-color: #b82601;
+  color: #fff;
+}
+</code>
+</pre>
+</div>
+<div id="theme-b-mid">
+<pre>
+<code class="language-css">/* modern */
+#root .modern {
+  background-color: #efefef;
+  font-family: Verdana;
+  color: #606060;
+}
+#root .modern h1 {
+  background-color: #caebf2;
+}
+
+#root .modern button {
+  background-color: #ff3b3f;
+  color: white;
+}</code>
+</pre>
+</div>
+<div id="theme-c-mid">
+<pre>
+<code class="language-css">/* light */
+#root .light {
+  background-color: rgba(246,246,246,1);
+}
+#root .light h1 {
+  background-color: #67aeca;
+  color: 
+}
+#root .light p {
+  color: #5f0f4e;
+}
+#root button {
+  background-color: #e52a6f;
+  color: white;
+}</code>
+</pre>
+</div>
+<div id="theme-d-mid">
+<pre>
+<code class="language-css">/* gemstone */
+#root .gemstone {
+  background-color: #efefef;
+}
+#root .gemstone h1 {
+  background-color: #0f6571;
+  color: #fff;
+}
+#root .gemstone p {
+  color: #414141;
+}
+#root .gemstone button {
+  background-color: #ff6a5c;
+  color: #fff;
+}</code>
+</pre>
+</div>
+
+<h4 id="step-11-add-some-general-styles">Step 11: Add some general styles</h4>
+
+<p>And since we’re starting to focus on styling, let’s quickly add some general styles to the overall page:</p>
+
+<pre>
+<code class="language-css">
+body {
+  font-family: Arial;
+}
+#output {
+  min-height: 130px;
+  width: 100%;
+}
+#root h1 {
+  font-size: 16px;
+  margin: 0px;
+  padding: 10px; 
+  font-weight: 700;
+}
+</code>
+</pre>
+
+<h4 class="demo" id="demo-3">Demo 3</h4>
+
+<p>And here is how the theme switcher should look so far. You can see that it basically works, albeit without content beyond the header, and without styles for the tabs.<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<!-- set the root-mid --></p>
+<div id="root-mid">
+     <!-- widget for switching themes -->
+    <div id="theme-switcher-mid">
+    <!-- using v-for to loop through array -->
+    <!-- the template elemnts does not show up in the dom -->
+    <template v-for="(theme,i) in themes">
+    <!-- the v-for logic uses each item in the array to make a radio button -->
+       
+           <input :id="theme.id" v-model="selected" :value="theme.label" name="style-options-mid" type="radio" />
+           <label :for="theme.id"><span v-html="theme.label"></span></label>
+        </template>
+    </div>
+    <!-- this is the markup that gets styled. -->
+    <!-- this pulls the class from the "selected" variable. -->
+    
+       <div id="output-mid" :class="selected">
+           <h1>
+             Current Theme: <span v-html="selected"></span>
+           </h1>
+       </div>
+
+</div>
+<script>
+ let vm_mid = new Vue({
+    el:'#root-mid',
+    data: {
+      themes:[
+      {
+        id:'dark-mid',
+        label:'dark',
+      },
+      {
+        id:'modern-mid',
+        label:'modern',
+      },
+      {
+        id:'light-mid',
+        label:'light',
+      },
+      {
+        id:'gemstone-mid',
+        label:'gemstone'
+      }
+      ],
+      selected:''
+     }
+   });
+   // set the default as the first element.
+   // v-model will keep this up because it usees the value, which is set to the label!
+   vm_mid.selected = vm_mid.themes[0].label;
+</script>
+
+<style>
+body {
+  font-family: Arial;
+}
+  
+/* styles that relate to the theme switcher */
+#output-mid {
+  min-height: 130px;
+  width: 100%;
+}
+#root-mid h1 {
+  font-size: 16px;
+  margin: 0px;
+  padding: 10px; 
+  font-weight: 700;
+}
+
+/* themes */
+#root-mid .dark {
+  background-color: #062f4f;
+  color: #fff;
+  border: 1px solid #b82601;
+  font-family: Arial;
+}
+#root-mid .dark h1 {
+  background-color: #813772;
+}
+
+#root-mid .dark button {
+  background-color: #b82601;
+  color: #fff;
+}
+/* modern */
+#root-mid .modern {
+  background-color: #efefef;
+  font-family: Verdana;
+  color: #606060;
+}
+#root-mid .modern h1 {
+  background-color: #caebf2;
+}
+
+#root-mid .modern button {
+  background-color: #ff3b3f;
+  color: white;
+}
+/* light */
+#root-mid .light {
+  background-color: rgba(246,246,246,1);
+}
+#root-mid .light h1 {
+  background-color: #67aeca;
+  color: 
+}
+#root-mid .light p {
+  color: #5f0f4e;
+}
+#root-mid button {
+  background-color: #e52a6f;
+  color: white;
+}
+/* gemstone */
+#root-mid .gemstone {
+  background-color: #efefef;
+}
+#root-mid .gemstone h1 {
+  background-color: #0f6571;
+  color: #fff;
+}
+#root-mid .gemstone p {
+  color: #414141;
+}
+#root-mid .gemstone button {
+  background-color: #ff6a5c;
+  color: #fff;
+}
+</style>
+
+<h4 id="step-12-add-some-additional-elements-that-would-be-styled-by-the-theme">Step 12: Add some additional elements that would be styled by the theme.</h4>
+
+<p>Now let’s add a <code>&lt;p&gt;</code> tag and a <code>&lt;button&gt;</code> element in the output markup.</p>
 
 <pre>
 <code class="language-markup">
 <script type="prism-html-markup"><div id="root">
     <div id="theme-switcher">
        <template v-for="theme in themes">
-           <input :id="theme" type="radio" name="style-options" :value="theme" v-model="selected">
-           <label :for="theme"><span v-html="theme"></span></label>
+           <input :id="theme" v-model="selected" :value="theme" type="radio" name="style-options">
+            <label :for="theme" v-html="theme"></label>
       </template>
     </div>
     <div id="output" :class="selected">
@@ -500,9 +947,9 @@
 </code>
 </pre>
 
-<h4 id="step-10-set-first-option-as-default-theme">Step 10: Set first option as default theme.</h4>
+<h4 id="step-13-set-first-option-dark-as-our-default-theme">Step 13: Set first option, <code>dark</code>, as our default theme.</h4>
 
-<p>And back in our Vue object, let’s add a way to set our first option as the default theme. To do this, let’s just set the <code>selected</code> property as the first element in the Vue object’s <code>themes</code> array.</p>
+<p>And back in our Vue object, let’s add a way to set our first option as the default theme. To do this, let’s use the variable name of the Vue object, <code>vm</code>, and set its <code>selected</code> property as the first element in the Vue object’s <code>themes</code> array.</p>
 
 <pre>
 <code class="language-js">
@@ -518,9 +965,9 @@
 </code>
 </pre>
 
-<p>Finally, I’d like something to happen when you click that button - so let’s add a <code>methods</code> property to the Vue object. In <code>methods</code>, we’ll define a method called <code>hello</code> that handles the button click event with a simple “hello world.”</p>
+<h4 id="step-14-add-a-listener-and-method-for-the-button-clicks">Step 14: Add a listener and method for the button clicks</h4>
 
-<h4 id="step-11-add-a-listener-and-handler-for-the-button-clicks">Step 11: Add a listener and handler for the button clicks.</h4>
+<p>Let’s make something happen when you click that button - so let’s add a <code>methods</code> property to the Vue object. In <code>methods</code>, we’ll define a method called <code>hello</code> that handles the button click event with a simple “hello world!” alert.</p>
 
 <pre>
 <code class="language-js">
@@ -542,15 +989,15 @@
 </code>
 </pre>
 
-<p>And let’s add a click listener on the button using the <code>v-on</code> attribute.</p>
+<p>And let’s add a click listener on the button using a new <code>v-on</code> attribute.</p>
 
 <pre>
 <code class="language-markup">
 <script type="prism-html-markup"><div id="root">
     <div id="theme-switcher">
        <template v-for="theme in themes">
-           <input :id="theme" type="radio" name="style-options" :value="theme" v-model="selected">
-           <label :for="theme"><span v-html="theme"></span></label>
+           <input :id="theme" v-model="selected"  :value="theme" type="radio" name="style-options">
+           <label :for="theme" v-html="theme"></label>
       </template>
     </div>
     <div id="output" :class="selected">
@@ -561,6 +1008,7 @@
             <p>
              Sample text is right here. The theme switcher is powered by VueJS.
            </p>
+           <!-- add a click listener -->
            <button v-on:click="hello">
               Go
            </button>
@@ -569,24 +1017,49 @@
 </code>
 </pre>
 
-<h4 id="step-11-add-the-css">Step 11: Add the CSS</h4>
+<h4 id="step-15-add-remaining-styling">Step 15: Add remaining styling</h4>
 
-<p>We wouldn’t be able to change the style without CSS! This CSS has three sections:</p>
+<p>We already added general styling and the styling for the four themes. So to round out our styles, let’s add the following:</p>
+
 <ul>
-  <li>general font style</li>
   <li>the theme switcher styles</li>
-  <li>general styles for the output</li>
-  <li>specific styles for each theme</li>
+  <li>a few more general styles for the output</li>
 </ul>
 
-<p>Let’s first add a general font family.</p>
+<p>The general styles include those for the <code>&lt;button&gt;</code> and <code>&lt;p&gt;</code> elements.</p>
 <pre>
 <code class="language-css">body {
   font-family: Arial;
+}
+
+#output {
+  min-height: 130px;
+  width: 100%;
+}
+#root h1 {
+  font-size: 16px;
+  margin: 0px;
+  padding: 10px; 
+  font-weight: 700;
+}
+#root p {
+  margin: 0px;
+  padding: 10px;
+  font-size: 15px;
+}
+#root button {
+  margin: 0px auto;
+  display: block;
+  border: 0px;
+  padding: 8px;
+  color:  #000;
+  border-radius: 20px;
+  cursor: pointer;
 }</code>
 </pre>
 
-<p>Now let’s add the style for the switcher. Notice that I’m hiding the <code>input</code> elements and only showing the <code>label</code> elements so I can make the options look like tabs.</p>
+<p>Now let’s add the style for the switcher. Notice that I’m hiding the <code>input</code> elements and only showing the <code>label</code> elements so I can make the options look like tabs. Since the label acts as a proxy for the input element, clicking the label will automatically mark that theme as selected.</p>
+
 <pre>
 <code class="language-css">
 /* theme-switcher */
@@ -619,121 +1092,7 @@
  </code>
 </pre>
 
-<p>Here I am just adding some general output styles.</p>
-<pre>
-<code class="language-css">/* styles that relate to the theme switcher */
-#output {
-  min-height: 130px;
-  width: 100%;
-}
-#root h1 {
-  font-size: 14px;
-  margin: 0px;
-  padding: 10px; 
-  font-weight: 700;
-}
-#root p {
-  margin: 0px;
-  padding: 10px;
-  font-size: 13px;
-}
-#root button {
-  margin: 0px auto;
-  display: block;
-  border: 0px;
-  padding: 8px;
-  color:  #000;
-  border-radius: 20px;
-  cursor: pointer;
-}</code>
-</pre>
-
-<p>And here are the styles for the four themes. Remember that the name of each theme is in the Vue object’s list, and the class of the output element gets set to a theme when the radio button for that theme is clicked.</p>
-
-<ul class="css-tabs">
-  <li><a href="#theme-a">Dark</a></li>
-  <li><a href="#theme-b">Modern</a></li>
-  <li><a href="#theme-c">Light</a></li>
-  <li><a href="#theme-d">Gemstone</a></li>
-</ul>
-<div id="theme-a">
-<pre>
-<code class="language-css">/* dark */
-#root .dark {
-  background-color: #062f4f;
-  color: #fff;
-  border: 1px solid #b82601;
-  font-family: Arial;
-}
-#root .dark h1 {
-  background-color: #813772;
-}
-
-#root .dark button {
-  background-color: #b82601;
-  color: #fff;
-}
-</code>
-</pre>
-</div>
-<div id="theme-b">
-<pre>
-<code class="language-css">/* modern */
-#root .modern {
-  background-color: #efefef;
-  font-family: Verdana;
-  color: #606060;
-}
-#root .modern h1 {
-  background-color: #caebf2;
-}
-
-#root .modern button {
-  background-color: #ff3b3f;
-  color: white;
-}</code>
-</pre>
-</div>
-<div id="theme-c">
-<pre>
-<code class="language-css">/* light */
-#root .light {
-  background-color: rgba(246,246,246,1);
-}
-#root .light h1 {
-  background-color: #67aeca;
-  color: 
-}
-#root .light p {
-  color: #5f0f4e;
-}
-#root button {
-  background-color: #e52a6f;
-  color: white;
-}</code>
-</pre>
-</div>
-<div id="theme-d">
-<pre>
-<code class="language-css">/* gemstone */
-#root .gemstone {
-  background-color: #efefef;
-}
-#root .gemstone h1 {
-  background-color: #0f6571;
-  color: #fff;
-}
-#root .gemstone p {
-  color: #414141;
-}
-#root .gemstone button {
-  background-color: #ff6a5c;
-  color: #fff;
-}</code>
-</pre>
-</div>
-
-<p>Here is the HTML, JS, and CSS all together.</p>
+<p>Here is the HTML, JS, and full CSS all together.</p>
 
 <ul class="css-tabs">
   <li><a href="#section1">HTML</a></li>
@@ -751,7 +1110,7 @@
     <!-- the template elemnts does not show up in the dom -->
     <template v-for="theme in themes">
     <!-- the v-for logic uses each item in the array to make a radio button -->
-      <input :value="theme" :id="theme" name="style-options" type="radio" v-model="selected"><label :for="theme"><span v-html="theme"></span></label>
+      <input :id="theme" v-model="selected" :value="theme" name="style-options" type="radio"><label :for="theme" v-html="theme"></label>
       </template>
     </div>
     <!-- this is the markup that gets styled. -->
@@ -797,11 +1156,7 @@
 <code class="language-css">body {
   font-family: Arial;
 }
-/* theme-switcher */
-#theme-switcher {
-  margin-bottom: 10px;
-  border-bottom: 1px solid darkgrey;
-}
+
 /* hide the radio button element */
 #theme-switcher input[type="radio"] {
   display: none;
@@ -831,7 +1186,7 @@
   width: 100%;
 }
 #root h1 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0px;
   padding: 10px; 
   font-weight: 700;
@@ -839,7 +1194,7 @@
 #root p {
   margin: 0px;
   padding: 10px;
-  font-size: 13px;
+  font-size: 15px;
 }
 #root button {
   margin: 0px auto;
@@ -912,7 +1267,187 @@
 </pre>
 </div>
 
-<p>I hope this was a helpful introduction to the use of Vue JS. As you can see, you can put together a cool style switcher with a minimal amount of Javascript. You also end up defining a lot of your logic in your html, which connects it closely to your Vue object without the need for repetition.</p>
+<h4 class="demo" id="final-product">Final Product</h4>
+
+<p>Here is the final product once again.<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<!-- set the root-final --></p>
+<div id="root-final">
+     <!-- widget for switching themes -->
+    <div id="theme-switcher-final">
+    <!-- using v-for to loop through array -->
+    <!-- the template elemnts does not show up in the dom -->
+    <template v-for="(theme,i) in themes">
+    <!-- the v-for logic uses each item in the array to make a radio button -->
+       <input :id="theme.id" v-model="selected" :value="theme.label" name="style-options-final" type="radio" /><label :for="theme.id" v-html="theme.label"></label>
+    </template>
+    </div>
+    <!-- this is the markup that gets styled. -->
+    <!-- this pulls the class from the "selected" variable. -->
+    
+       <div id="output-final" :class="selected">
+           <h1>
+             Current Theme: <span v-html="selected"></span>
+           </h1>
+           <p>
+             Sample text is right here. The theme switcher is powered by VueJS.
+           </p>
+           <button v-on:click="hello">
+              Go
+           </button>
+       </div>
+
+</div>
+<script>
+ let vm_final = new Vue({
+    el:'#root-final',
+    data: {
+      themes:[
+      {
+        id:'dark-final',
+        label:'dark',
+      },
+      {
+        id:'modern-final',
+        label:'modern',
+      },
+      {
+        id:'light-final',
+        label:'light',
+      },
+      {
+        id:'gemstone-final',
+        label:'gemstone'
+      }
+      ],
+      selected:''
+    },
+    methods: {
+      hello:function() {
+        alert('hello, world!')
+      }
+    }
+   });
+   // set the default as the first element.
+   // v-model will keep this up because it usees the value, which is set to the label!
+   vm_final.selected = vm_final.themes[0].label;
+</script>
+
+<style>
+
+/* hide the radio button element */
+#theme-switcher-final input[type="radio"] {
+  display: none;
+}
+/* style the label */
+#theme-switcher-final label {
+  padding: 10px;
+  background-color: lightgrey;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0px;
+  min-width: 50px;
+  border-right: 1px solid darkgrey;
+}
+#theme-switcher-final label:last-child {
+  border-right: 0px;
+}
+#theme-switcher-final input[type="radio"]:checked+label {
+  background-color: dodgerblue;
+  color: white;
+}
+  
+/* styles that relate to the theme switcher */
+#output-final {
+  min-height: 130px;
+  width: 100%;
+}
+#root-final h1 {
+  font-size: 16px;
+  margin: 0px;
+  padding: 10px; 
+  font-weight: 700;
+}
+#root-final p {
+  margin: 0px;
+  padding: 10px;
+  font-size: 15px;
+}
+#root-final button {
+  margin: 0px auto;
+  display: block;
+  border: 0px;
+  padding: 8px;
+  color:  #000;
+  border-radius: 20px;
+  cursor: pointer;
+}
+/* themes */
+#root-final .dark {
+  background-color: #062f4f;
+  color: #fff;
+  border: 1px solid #b82601;
+  font-family: Arial;
+}
+#root-final .dark h1 {
+  background-color: #813772;
+}
+
+#root-final .dark button {
+  background-color: #b82601;
+  color: #fff;
+}
+/* modern */
+#root-final .modern {
+  background-color: #efefef;
+  font-family: Verdana;
+  color: #606060;
+}
+#root-final .modern h1 {
+  background-color: #caebf2;
+}
+
+#root-final .modern button {
+  background-color: #ff3b3f;
+  color: white;
+}
+/* light */
+#root-final .light {
+  background-color: rgba(246,246,246,1);
+}
+#root-final .light h1 {
+  background-color: #67aeca;
+  color: 
+}
+#root-final .light p {
+  color: #5f0f4e;
+}
+#root-final button {
+  background-color: #e52a6f;
+  color: white;
+}
+/* gemstone */
+#root-final .gemstone {
+  background-color: #efefef;
+}
+#root-final .gemstone h1 {
+  background-color: #0f6571;
+  color: #fff;
+}
+#root-final .gemstone p {
+  color: #414141;
+}
+#root-final .gemstone button {
+  background-color: #ff6a5c;
+  color: #fff;
+}
+</style>
+
+<p><strong>Note:</strong> While I am making the full versions of the theme switcher show up at both the beginning and end with some additional code behind the scenes, the code presented in this tutorial limits the occurrence of the theme switcher to just once on a given page.</p>
+
+<p>You can also view the demo on this <a href="https://jsfiddle.net/nevkatz/nhymwqaf/" target="_blank">fiddle</a>.</p>
+
+<p>I hope this was a helpful introduction to the use of Vue JS. As you can see, you can put together a cool style switcher with a minimal amount of Javascript. You also end up defining a lot of your logic in your html, which connects it closely to your Vue object without the need for undue repetition.</p>
 
 
   </div><div id="disqus_thread"></div>
