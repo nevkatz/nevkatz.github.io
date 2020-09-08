@@ -1,4 +1,395 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-05-16T18:58:39-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Pages</title><subtitle>I write about web and app development.</subtitle><entry><title type="html">CSS Theme Switcher with VueJS</title><link href="/2020/05/10/vue-theme-switcher.html" rel="alternate" type="text/html" title="CSS Theme Switcher with VueJS" /><published>2020-05-10T00:00:00-04:00</published><updated>2020-05-10T00:00:00-04:00</updated><id>/2020/05/10/vue-theme-switcher</id><content type="html" xml:base="/2020/05/10/vue-theme-switcher.html">&lt;h3 id=&quot;building-a-theme-switcher-with-vue&quot;&gt;Building a Theme Switcher with Vue&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-09-07T23:47:32-04:00</updated><id>/feed.xml</id><title type="html">Nevin’s Art &amp;amp; Dev Spot</title><subtitle>Art and coding are two sides of the same coin.</subtitle><entry><title type="html">Responsive Comic Textbox</title><link href="/2020/09/07/flex-comics-1.html" rel="alternate" type="text/html" title="Responsive Comic Textbox" /><published>2020-09-07T00:00:00-04:00</published><updated>2020-09-07T00:00:00-04:00</updated><id>/2020/09/07/flex-comics-1</id><content type="html" xml:base="/2020/09/07/flex-comics-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+
+&lt;!--Displaying comics in a way that fits with the web medium can be quite a puzzle. Sequential art has always had to fit into their container, be it the Sunday 4-panel strip, the pages of a graphic novel, or a comic book. 
+
+But how about the web medium? One solution is to make the panels part of the same image file, in which case the layout will be maintained.
+
+But what if each panel is an HTML element? In that case, the layout of the comics needs to adapt to different device and browser sizes, and that is where things get interesting.--&gt;
+
+&lt;p&gt;This tutorial shows you how to create a simple comic layout using HTML wtih a little flexbox.&lt;/p&gt;
+
+&lt;p&gt;This is a wide textbox above a wide panel. Both the textbox and panel are 100% of the width. The textbox is actually above the panel, rather than with it, so that resizing the window will not make it cover up regions of the panel.&lt;/p&gt;
+
+&lt;!--
+(Add SVG)
+
+(Discuss Google webfont)
+
+(Discuss the local cave--&gt;
+&lt;section class=&quot;flex-comic&quot;&gt;
+  &lt;!-- textbox start --&gt;
+  &lt;div class=&quot;flex-textbox top&quot;&gt;
+    &lt;!-- the &lt;p&gt; element handles the padding --&gt;
+    &lt;p&gt;A dragon flew across the sky.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;!-- art panel start --&gt;
+  &lt;div class=&quot;flex-panel center lightblue&quot;&gt;
+    &lt;!-- the &lt;img&gt; element, pointing to an SVG --&gt;
+    &lt;img src=&quot;/assets/images/dragon-banner/dragon-v6-optimized.svg&quot; /&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;While we may think of textboxes as within a comics panel, the textbox here is actually above the panel, rather than with it, so that a taller panel at narrow widths will not make it cover up regions of the panel.&lt;/p&gt;
+
+&lt;p&gt;View the panel below on a small device or resize your browser to a narrow width, and look at what happens with a bunch more text. The textbox gets taller but there the dragon remains visible.&lt;/p&gt;
+
+&lt;section class=&quot;flex-comic&quot;&gt;
+  &lt;!-- panel text --&gt;
+  &lt;div class=&quot;flex-textbox top&quot;&gt;
+    &lt;p&gt;After a long day, the dragon flew across the sky and headed towards home. It did not find the wizard it had been looking for, but it hoped to find it the next day.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;!-- panel art --&gt;
+  &lt;div class=&quot;flex-panel center lightblue&quot;&gt;
+    &lt;img src=&quot;/assets/images/dragon-banner/dragon-v6-optimized.svg&quot; /&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;p&gt;Here is the code with some explanatory comments. You’ll see that I’m using a &lt;code&gt;center&lt;/code&gt; class with  &lt;code&gt;justify-content&lt;/code&gt; to center the SVG dragon image horizontally and &lt;code&gt;align-items&lt;/code&gt; to center the image vertically.&lt;/p&gt;
+
+&lt;ul class=&quot;css-tabs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section1&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section2&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;section1&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-markup&quot;&gt;
+  &lt;script type=&quot;prism-html-markup&quot;&gt;
+&lt;section class=&quot;flex-comic&quot;&gt;
+  &lt;!-- panel start --&gt;
+  &lt;div class=&quot;flex-textbox top&quot;&gt;
+  &lt;!-- our paragraph within the textbox --&gt;
+  &lt;p&gt;A dragon flew across the sky.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;flex-panel center lightblue&quot;&gt;
+  &lt;!-- the image --&gt;
+  &lt;img src=&quot;/assets/images/dragon-banner/dragon-v6-optimized.svg&quot;/&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+  &lt;/script&gt;
+ &lt;/code&gt;
+ &lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;section2&quot;&gt;
+&lt;pre&gt;
+ &lt;code class=&quot;language-css&quot;&gt;
+/* the container */
+flex-comic {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* for this particular type of textbox,
+give it no bottom border since the panel
+will hae a top border. */
+
+.flex-textbox.top {
+    border-bottom-width: 0px;
+}
+/* textbox styles */
+.flex-textbox {
+    border: 3px solid black;
+    border-bottom-width: 3px;
+    display: block;
+    z-index: 3;
+    background-color: white;
+    text-align: center;
+}
+/* give both panel and textbox uniform width */
+.flex-panel, .flex-textbox {
+    width: 100%;
+    max-width: 768px;
+    margin: 0px auto;
+}
+/* text within narrative block */
+.flex-textbox p {
+  margin: 0px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  font-family: 'Kalam';
+}
+/* styles for the panel containing the image */
+.flex-panel {
+    border: 3px solid black;
+    min-height: 200px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+/* if panel has the lightblue class, 
+give it a lightblue background */
+.flex-panel.lightblue {
+    background-color: lightblue;
+}
+/* if panel has center class, 
+center the image vertically 
+and horizontally. */
+.flex-panel.center {
+  justify-content: center;
+  align-items: center;
+}
+ &lt;/code&gt;
+ &lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I hope you found that helpful. My next post will demonstrate how we can use flexbox to handle more complex layouts.&lt;/p&gt;
+
+&lt;style&gt;/* devanagari */
+@font-face {
+  font-family: 'Kalam';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kalam'), local('Kalam-Regular'), url(https://fonts.gstatic.com/s/kalam/v11/YA9dr0Wd4kDdMthQOCfhsCkAj7g.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Kalam';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kalam'), local('Kalam-Regular'), url(https://fonts.gstatic.com/s/kalam/v11/YA9dr0Wd4kDdMthfOCfhsCkAj7g.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Kalam';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kalam'), local('Kalam-Regular'), url(https://fonts.gstatic.com/s/kalam/v11/YA9dr0Wd4kDdMthROCfhsCkA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+:root {
+  --base-panel-gap: 20px;
+  --wide-panel-width: 100%;
+  /* for 3-panel layout */
+  --base-panel-horiz-unit: 200px;
+  --base-panel-vert-unit: 200px;
+  --base-frame-vert-unit: calc(var(--base-panel-vert-unit) - 6px);;
+  --half-panel-unit: calc(1.5*var(--base-panel-horiz-unit) + 0.5*var(--base-panel-gap));
+}
+/* comic panels */
+.panel {
+ border: 3px solid black;
+  overflow: hidden;
+  position: relative;
+ 
+}
+
+.flex-panel img {
+  margin: 0px auto;
+}
+/* panel frames - additional classes for the panels */
+.panel.separate-frame {
+  border-width: 0px;
+}
+/* this lives WITHIN the panel */
+.frame {
+  width: var(--wide-panel-width);
+  border: 3px solid black;
+  display: block;
+  z-index: 3;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-height: var(--base-frame-vert-unit);
+}
+/* paragraph within panel */
+.flex-textbox p {
+  margin: 0px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  font-family: 'Kalam';
+}
+
+
+/* ballon curves */
+p.curve {
+  padding-bottom: 0px;
+}
+p.curve.lines-3 {
+  min-height: 60px;
+}
+
+/* balloons */
+svg.balloon {
+  position: relative;   
+  margin-top: 0px;
+}
+svg.balloon path {
+  fill: white;
+  stroke: black;
+  stroke-width: 2;
+}
+/* narrative box bottom lines */
+p.line {
+   border-bottom: 2px solid black;
+}
+.panel.no-border {
+  border: 0px;
+}
+.panel.oval {
+  border-radius: 100px
+}
+
+/* media queries - make this one column */
+@media screen and (min-width:768px) {
+  .full-width .panel,
+  .panel.full-width {
+    grid-column: 1 / 4;
+  }
+ 
+  .panel.wide-right {
+    grid-column: 2 / 3;
+  }
+ .panel.wide-left {
+    grid-column: 1 / 3;
+  }
+  .panel.wide-left .frame {
+    width: 414px;
+  }
+}
+
+div.curve {
+  margin-left: -35px;
+  margin-top: -95px;
+  width:270px; height:100px;  
+  border:solid 2px #000;
+  border-color:#000 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  transform:scaleY(-1);
+}
+svg.balloon-tail {
+  margin-top: -7px;
+  position: relative;
+  
+}
+svg.balloon-tail path {
+  stroke: black;
+  fill: white;
+  stroke-width: 2px;
+  
+}
+svg.balloon-tail path.tail-junction {
+  stroke: white;
+}
+@media screen and (max-width:767px) {
+
+  .comic-grid,
+  .comic-grid.two {
+    grid-template-columns: var(--base-panel-horiz-unit);
+    width: 200px;
+    grid-column-gap: 0px;
+  }
+  
+  .panel.wide-left {
+    
+  }
+  .frame {
+    left: 0px;
+  }
+  .full-width .panel,
+  .panel.full-width: {
+    grid-column: 1/1;
+  }
+}
+
+/* Flexbox styles */
+
+.flex-comic {
+  display: flex;
+  flex-wrap: wrap;
+  background-color;
+
+}
+.flex-panel,
+.flex-textbox {
+  max-width: 768px;
+  margin: 0px auto;
+}
+.flex-textbox {
+  width: var(--wide-panel-width);
+  border: 3px solid black;
+  display: block;
+  z-index: 3;
+  background-color: white;
+  text-align: center;
+}
+.flex-panel {
+  width: var(--wide-panel-width);
+  border: 3px solid black;
+  min-height: 200px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+}
+.flex-panel.center {
+  justify-content: center;
+  align-items: center;
+}
+.flex-panel .flex-panel .flex-textbox {
+  position: absolute;
+  border-width: 0px;
+  border-bottom-width: 3px;
+  width: 100%;
+}
+.flex-panel.no-border {
+  border: 0px;
+}
+/* two-panel layout */
+
+.flex-panel.half,
+.flex-textbox.half {
+  width: calc(50% - 20px);
+}
+.flex-panel.half {
+  margin-bottom: 0px;
+}
+.flex-textbox.left.left,
+.flex-panel.half.left {
+  margin-left: 0px;
+}
+.flex-textbox.half.right,
+.flex-panel.half.right {
+  margin-right: 0px;
+}
+@media screen and (max-width:768) {
+  .flex-panel.half {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
+}
+/* https://www.wpbeginner.com/wp-tutorials/how-to-create-a-paywall-in-wordpress/ */
+
+/* color variants */
+.flex-panel.lightblue {
+  background-color: lightblue;
+}
+.flex-panel.lightgreen {
+  background-color: lightgreen;
+}
+.flex-panel.lightorange {
+  background-color: #fed8b1;
+}
+.flex-panel.navy {
+  background-color: navy;
+}
+.flex-textbox.top {
+  border-bottom-width: 0px;
+}
+&lt;/style&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">CSS Theme Switcher with VueJS</title><link href="/2020/05/10/vue-theme-switcher.html" rel="alternate" type="text/html" title="CSS Theme Switcher with VueJS" /><published>2020-05-10T00:00:00-04:00</published><updated>2020-05-10T00:00:00-04:00</updated><id>/2020/05/10/vue-theme-switcher</id><content type="html" xml:base="/2020/05/10/vue-theme-switcher.html">&lt;h3 id=&quot;building-a-theme-switcher-with-vue&quot;&gt;Building a Theme Switcher with Vue&lt;/h3&gt;
 
 &lt;p&gt;If you are building a site for a client, you may want to give your client an idea of how different themes look on a particular site, site page, or site element. In this case, it can help to have a demo that allows your client to dynamically switch themes in order to see how they look at a glance and arrive at a decision.&lt;/p&gt;
 
@@ -3165,70 +3556,4 @@ init();
   &lt;li&gt;Microsoft SharePoint&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Both technical project director and technical lead roles are terrific for someone who likes to work closely with people and gravitates towards organization and time management. If your role is primarily that of a coder, you may want to try managing a project to get a sense of this other perspective and see how you like the role. For now, I have decided that a technical lead role is a better fit for me, and my experiences in both roles have in the long run made me a more effective developer.&lt;/p&gt;</content><author><name></name></author><summary type="html">My experience with both roles</summary></entry><entry><title type="html">Careers in Educational Technology and Media</title><link href="/2019/10/29/edtech-roles.html" rel="alternate" type="text/html" title="Careers in Educational Technology and Media" /><published>2019-10-29T00:00:00-04:00</published><updated>2019-10-29T00:00:00-04:00</updated><id>/2019/10/29/edtech-roles</id><content type="html" xml:base="/2019/10/29/edtech-roles.html">&lt;h3 id=&quot;so-many-roles-so-little-time&quot;&gt;So many roles, so little time&lt;/h3&gt;
-
-&lt;p&gt;The specific roles and job titles in educational technology and media can seem nebulous if you are just starting to look around. The field is also very broad, and technology is changing at a rapid pace. All these factors can make figuring out a good role challenging.&lt;/p&gt;
-
-&lt;p&gt;It is never to early to learn about the various roles that you may want to apply for. And if you are not a coder, fear not — while edtech teams may have highly technical roles like web developer or software engineer, you definitely do not have to be a coder to land a gig in the field of educational technology.&lt;/p&gt;
-
-&lt;p&gt;Below are some roles some of the roles on the various edtech teams I have been on that have been vital to a team’s success. Notice that only small fraction of them involve coding.&lt;/p&gt;
-
-&lt;p&gt;This is not an exhaustive list by any stretch. Keep in mind that I am focusing primarily on teams geared towards the building of products I have worked on, such as websites, apps, animated videos, app-website systems, and online courses — there are of course other types of media out there, the creative endeavors for which would involve additional roles. And as technology evolves, new roles emerge.&lt;/p&gt;
-
-&lt;p&gt;Here we go:&lt;/p&gt;
-
-&lt;h4 id=&quot;management&quot;&gt;Management&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;project manager&lt;/li&gt;
-  &lt;li&gt;technical lead&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;online-course-development&quot;&gt;Online Course Development&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;online course developer&lt;/li&gt;
-  &lt;li&gt;online course facilitator&lt;/li&gt;
-  &lt;li&gt;instructional designer&lt;/li&gt;
-  &lt;li&gt;learning management system (LMS) specialist&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;design-and-planning&quot;&gt;Design and Planning&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;visual designer&lt;/li&gt;
-  &lt;li&gt;user experience designer&lt;/li&gt;
-  &lt;li&gt;learning experience designer&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;building-site-or-course-elements&quot;&gt;Building site or course elements&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;animator&lt;/li&gt;
-  &lt;li&gt;graphic artist&lt;/li&gt;
-  &lt;li&gt;web interactive developer&lt;/li&gt;
-  &lt;li&gt;videographer&lt;/li&gt;
-  &lt;li&gt;illustrator&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;technical-roles&quot;&gt;Technical roles&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;web developer&lt;/li&gt;
-  &lt;li&gt;app developer&lt;/li&gt;
-  &lt;li&gt;database administrator&lt;/li&gt;
-  &lt;li&gt;content management system (CMS) specialist&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;testing--data-gathering&quot;&gt;Testing &amp;amp; Data Gathering&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;quality assurance specialist&lt;/li&gt;
-  &lt;li&gt;monitoring and evaluation specialist&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are many cases where someone would play more than one role. Below are a few examples.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;an app developer may also work on an online content management system that an app communicates with.&lt;/li&gt;
-  &lt;li&gt;a project manager may also be a technical lead.&lt;/li&gt;
-  &lt;li&gt;a front-end web developer may also create some animated elements.&lt;/li&gt;
-  &lt;li&gt;a web interactive developer may do some of his/her own quality assurance.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;When considering what roles you would be the ideal fit for, do some research on what skills a given role requires and try to connect with people who have these roles in their career. Arrange for a brief informational interview to get a sense of what skills to build for each role, and what “a day in the of” looks like. After learning about a given role, give some thought as to which roles involve skills that are a logical extension of your talents, and how you might set up a formal or informal learning path for yourself that would prepare you for this role.&lt;/p&gt;
-
-&lt;p&gt;In upcoming posts, I will spotlight some of these roles and discuss the types skills that a given role (or group of roles) require, and the types of tools that are useful to have for it.&lt;/p&gt;</content><author><name></name></author><summary type="html">So many roles, so little time</summary></entry></feed>
+&lt;p&gt;Both technical project director and technical lead roles are terrific for someone who likes to work closely with people and gravitates towards organization and time management. If your role is primarily that of a coder, you may want to try managing a project to get a sense of this other perspective and see how you like the role. For now, I have decided that a technical lead role is a better fit for me, and my experiences in both roles have in the long run made me a more effective developer.&lt;/p&gt;</content><author><name></name></author><summary type="html">My experience with both roles</summary></entry></feed>
