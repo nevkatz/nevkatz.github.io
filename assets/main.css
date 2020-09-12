@@ -844,10 +844,8 @@ pre {
   margin-left: -50vw;
   margin-right: -50vw;
   background-color: white;
-  border: 1px solid #ccc;
-  border-left: 0px;
-  border-right: 0px;
-  background-color: #006b9d;
+  background-color: #246d8e;
+  /*lighten(#00486a,10%);*/
   color: white; }
 
 #main-page-intro {
