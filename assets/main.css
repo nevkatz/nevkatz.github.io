@@ -844,9 +844,8 @@ pre {
   margin-left: -50vw;
   margin-right: -50vw;
   background-color: white;
-  background-color: #246d8e;
-  /*lighten(#00486a,10%);*/
-  color: white; }
+  color: white;
+  background-color: #00486a; }
 
 #main-page-intro {
   margin: 0px auto 0px auto;
