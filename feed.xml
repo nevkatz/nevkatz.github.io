@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-19T22:13:28-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Spot</title><subtitle>Art and coding are two sides of the same coin.</subtitle><entry><title type="html">Using split() and join() to replace characters</title><link href="/2021/02/19/split-join-replace.html" rel="alternate" type="text/html" title="Using split() and join() to replace characters" /><published>2021-02-19T00:00:00-05:00</published><updated>2021-02-19T00:00:00-05:00</updated><id>/2021/02/19/split-join-replace</id><content type="html" xml:base="/2021/02/19/split-join-replace.html">&lt;p&gt;Javascript’s string object has a &lt;code&gt;replace&lt;/code&gt; function that allows you to replace characters.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-19T22:22:25-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Spot</title><subtitle>Art and coding are two sides of the same coin.</subtitle><entry><title type="html">Using split() and join() to replace characters</title><link href="/2021/02/19/split-join-replace.html" rel="alternate" type="text/html" title="Using split() and join() to replace characters" /><published>2021-02-19T00:00:00-05:00</published><updated>2021-02-19T00:00:00-05:00</updated><id>/2021/02/19/split-join-replace</id><content type="html" xml:base="/2021/02/19/split-join-replace.html">&lt;p&gt;Javascript’s string object has a &lt;code&gt;replace()&lt;/code&gt; method that allows you to replace characters.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-js&quot;&gt;
@@ -10,7 +10,7 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;You can also use &lt;code&gt;replace&lt;/code&gt; on whole words and other multi-character strings.&lt;/p&gt;
+&lt;p&gt;You can also use &lt;code&gt;replace()&lt;/code&gt; on whole words and other multi-character strings.&lt;/p&gt;
 &lt;pre&gt;
 &lt;code class=&quot;language-js&quot;&gt;
   let phrase = 'the quick brown dog';
@@ -21,7 +21,7 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Note, however, that this only replaces the first instance of a letter or substring. If we want to replace both N’s in this string, we need another technique.&lt;/p&gt;
+&lt;p&gt;Unless you are using a regular expression, however, &lt;code&gt;replace()&lt;/code&gt; only replaces the first instance of a letter or substring. If we want to replace both N’s in this string, we need another technique.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-js&quot;&gt;
@@ -35,7 +35,7 @@
 
 &lt;p&gt;No good! The result above doesn’t make much sense if we don’t replace that second instance of ‘dog.’&lt;/p&gt;
 
-&lt;p&gt;So to replace all letters or substrings, we need another approach. Fortunately, we can use two methods called &lt;code&gt;split()&lt;/code&gt;, which acts on strings, and &lt;code&gt;join()&lt;/code&gt;, which acts on arrays.&lt;/p&gt;
+&lt;p&gt;So to replace all letters or substrings without the use of regular expressions, we need another approach. Fortunately, we can use two methods called &lt;code&gt;split()&lt;/code&gt;, which acts on strings, and &lt;code&gt;join()&lt;/code&gt;, which acts on arrays.&lt;/p&gt;
 
 &lt;p&gt;The &lt;code&gt;split()&lt;/code&gt; method is used to split a string into an array of substrings. How does it decide where to cut the string? It can use a specific character called a delimiter.&lt;/p&gt;
 
@@ -66,7 +66,7 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;Now once we &lt;code&gt;split()&lt;/code&gt; a string into an array of substrings, we can then use &lt;code&gt;join&lt;/code&gt; right away on the same line to finally do what &lt;code&gt;replace&lt;/code&gt; cannot: replace multiple instances of something.&lt;/p&gt;
+&lt;p&gt;Now once we &lt;code&gt;split()&lt;/code&gt; a string into an array of substrings, we can then use &lt;code&gt;join&lt;/code&gt; right away on the same line to finally replace multiple instances of something.&lt;/p&gt;
 
 &lt;p&gt;Let’s try this with one of the original cases wherein &lt;code&gt;replace&lt;/code&gt; only replaced one of the letters.&lt;/p&gt;
 
@@ -94,7 +94,7 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;So now we see that &lt;code&gt;split()&lt;/code&gt; and &lt;code&gt;join()&lt;/code&gt; can allow you to replace multiple instances of a character or multi-character substring in a string.  Let me know if you have any questions on this post, and I hope this helps you with your programming.&lt;/p&gt;</content><author><name></name></author><summary type="html">Javascript’s string object has a replace function that allows you to replace characters.</summary></entry><entry><title type="html">Responsive Comic Textbox</title><link href="/2020/09/07/flex-comics-1.html" rel="alternate" type="text/html" title="Responsive Comic Textbox" /><published>2020-09-07T00:00:00-04:00</published><updated>2020-09-07T00:00:00-04:00</updated><id>/2020/09/07/flex-comics-1</id><content type="html" xml:base="/2020/09/07/flex-comics-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;So now we see that &lt;code&gt;split()&lt;/code&gt; and &lt;code&gt;join()&lt;/code&gt; can allow you to replace multiple instances of a character or multi-character substring in a string.  Let me know if you have any questions on this post, and I hope this helps you with your programming.&lt;/p&gt;</content><author><name></name></author><summary type="html">Javascript’s string object has a replace() method that allows you to replace characters.</summary></entry><entry><title type="html">Responsive Comic Textbox</title><link href="/2020/09/07/flex-comics-1.html" rel="alternate" type="text/html" title="Responsive Comic Textbox" /><published>2020-09-07T00:00:00-04:00</published><updated>2020-09-07T00:00:00-04:00</updated><id>/2020/09/07/flex-comics-1</id><content type="html" xml:base="/2020/09/07/flex-comics-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;!--Displaying comics in a way that fits with the web medium can be quite a puzzle. Sequential art has always had to fit into their container, be it the Sunday 4-panel strip, the pages of a graphic novel, or a comic book. 
 

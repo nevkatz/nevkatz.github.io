@@ -23,15 +23,15 @@
 <meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Using split() and join() to replace characters" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Javascript’s string object has a replace function that allows you to replace characters." />
-<meta property="og:description" content="Javascript’s string object has a replace function that allows you to replace characters." />
+<meta name="description" content="Javascript’s string object has a replace() method that allows you to replace characters." />
+<meta property="og:description" content="Javascript’s string object has a replace() method that allows you to replace characters." />
 <link rel="canonical" href="/2021/02/19/split-join-replace.html" />
 <meta property="og:url" content="/2021/02/19/split-join-replace.html" />
 <meta property="og:site_name" content="Nevin’s Dev Spot" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-02-19T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Using split() and join() to replace characters","dateModified":"2021-02-19T00:00:00-05:00","datePublished":"2021-02-19T00:00:00-05:00","url":"/2021/02/19/split-join-replace.html","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/02/19/split-join-replace.html"},"description":"Javascript’s string object has a replace function that allows you to replace characters.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"Using split() and join() to replace characters","dateModified":"2021-02-19T00:00:00-05:00","datePublished":"2021-02-19T00:00:00-05:00","url":"/2021/02/19/split-join-replace.html","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/02/19/split-join-replace.html"},"description":"Javascript’s string object has a replace() method that allows you to replace characters.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/css/prism.css">
@@ -66,7 +66,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Javascript’s string object has a <code>replace</code> function that allows you to replace characters.</p>
+    <p>Javascript’s string object has a <code>replace()</code> method that allows you to replace characters.</p>
 
 <pre>
 <code class="language-js">
@@ -78,7 +78,7 @@
 </code>
 </pre>
 
-<p>You can also use <code>replace</code> on whole words and other multi-character strings.</p>
+<p>You can also use <code>replace()</code> on whole words and other multi-character strings.</p>
 <pre>
 <code class="language-js">
   let phrase = 'the quick brown dog';
@@ -89,7 +89,7 @@
 </code>
 </pre>
 
-<p>Note, however, that this only replaces the first instance of a letter or substring. If we want to replace both N’s in this string, we need another technique.</p>
+<p>Unless you are using a regular expression, however, <code>replace()</code> only replaces the first instance of a letter or substring. If we want to replace both N’s in this string, we need another technique.</p>
 
 <pre>
 <code class="language-js">
@@ -103,7 +103,7 @@
 
 <p>No good! The result above doesn’t make much sense if we don’t replace that second instance of ‘dog.’</p>
 
-<p>So to replace all letters or substrings, we need another approach. Fortunately, we can use two methods called <code>split()</code>, which acts on strings, and <code>join()</code>, which acts on arrays.</p>
+<p>So to replace all letters or substrings without the use of regular expressions, we need another approach. Fortunately, we can use two methods called <code>split()</code>, which acts on strings, and <code>join()</code>, which acts on arrays.</p>
 
 <p>The <code>split()</code> method is used to split a string into an array of substrings. How does it decide where to cut the string? It can use a specific character called a delimiter.</p>
 
@@ -134,7 +134,7 @@
 </code>
 </pre>
 
-<p>Now once we <code>split()</code> a string into an array of substrings, we can then use <code>join</code> right away on the same line to finally do what <code>replace</code> cannot: replace multiple instances of something.</p>
+<p>Now once we <code>split()</code> a string into an array of substrings, we can then use <code>join</code> right away on the same line to finally replace multiple instances of something.</p>
 
 <p>Let’s try this with one of the original cases wherein <code>replace</code> only replaced one of the letters.</p>
 
