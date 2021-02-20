@@ -101,7 +101,7 @@
 </code>
 </pre>
 
-<p>No good! While I have no issue with dogs and cats living together, the result above still doesn’t make much sense.</p>
+<p>No good! The result above doesn’t make much sense if we don’t replace that second instance of ‘dog.’</p>
 
 <p>So to replace all letters or substrings, we need another approach. Fortunately, we can use two methods called <code>split()</code>, which acts on strings, and <code>join()</code>, which acts on arrays.</p>
 
@@ -134,7 +134,9 @@
 </code>
 </pre>
 
-<p>Now let’s do this with one of the original cases wherein <code>replace</code> only replaced one of the letters.</p>
+<p>Now once we <code>split()</code> a string into an array of substrings, we can then use <code>join</code> right away on the same line to finally do what <code>replace</code> cannot: replace multiple instances of something.</p>
+
+<p>Let’s try this with one of the original cases wherein <code>replace</code> only replaced one of the letters.</p>
 
 <pre>
 <code class="language-js">
@@ -148,7 +150,7 @@
 
 <p>And even though I don’t run into many Keviks these days, the logic works the way it should.</p>
 
-<p>And let’s try it with the dog and cat example.</p>
+<p>Let’s try it with the dog and cat example.</p>
 
 <pre>
 <code class="language-js">
@@ -160,7 +162,7 @@
 </code>
 </pre>
 
-<p>So now we see that <code>split()</code> and <code>join()</code> can allow you to replace multiple instances of a character or multi-character substring in a string.</p>
+<p>So now we see that <code>split()</code> and <code>join()</code> can allow you to replace multiple instances of a character or multi-character substring in a string.  Let me know if you have any questions on this post, and I hope this helps you with your programming.</p>
 
 
   </div><a class="u-url" href="/2021/02/19/split-join-replace.html" hidden></a>
