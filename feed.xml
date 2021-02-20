@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-19T21:08:13-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Spot</title><subtitle>Art and coding are two sides of the same coin.</subtitle><entry><title type="html">Responsive Comic Textbox</title><link href="/2020/09/07/flex-comics-1.html" rel="alternate" type="text/html" title="Responsive Comic Textbox" /><published>2020-09-07T00:00:00-04:00</published><updated>2020-09-07T00:00:00-04:00</updated><id>/2020/09/07/flex-comics-1</id><content type="html" xml:base="/2020/09/07/flex-comics-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-19T22:03:21-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Spot</title><subtitle>Art and coding are two sides of the same coin.</subtitle><entry><title type="html">Using split() and join() to replace characters</title><link href="/2021/02/19/split-join-replace.html" rel="alternate" type="text/html" title="Using split() and join() to replace characters" /><published>2021-02-19T00:00:00-05:00</published><updated>2021-02-19T00:00:00-05:00</updated><id>/2021/02/19/split-join-replace</id><content type="html" xml:base="/2021/02/19/split-join-replace.html">&lt;p&gt;Javascript’s string object has a &lt;code&gt;replace&lt;/code&gt; function that allows you to replace characters.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-js&quot;&gt;
+  let name = 'nevin';
+  let new_name = name.replace('n','k');
+  console.log(new_name);
+
+  // output: 'kevin'
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;You can also use &lt;code&gt;replace&lt;/code&gt; on whole words and other multi-character strings.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-js&quot;&gt;
+  let phrase = 'the quick brown dog';
+  let new_phrase = phrase.replace('dog','cat');
+  console.log(new_phrase);
+
+  // output: 'the quick brown cat'
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Note, however, that this only replaces the first instance of a letter or substring. If we want to replace both N’s in this string, we need another technique.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-js&quot;&gt;
+  let phrase = 'the quick blue dog is the quickest of all the dogs';
+  let new_phrase = phrase.replace('dog','cat');
+  console.log(new_phrase);
+
+  // output: 'the quick blue cat is the quickest of all the dogs'
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;No good! While I have no issue with dogs and cats living together, the result above still doesn’t make much sense.&lt;/p&gt;
+
+&lt;p&gt;So to replace all letters or substrings, we need another approach. Fortunately, we can use two methods called &lt;code&gt;split()&lt;/code&gt;, which acts on strings, and &lt;code&gt;join()&lt;/code&gt;, which acts on arrays.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;split()&lt;/code&gt; method is used to split a string into an array of substrings. How does it decide where to cut the string? It can use a specific character called a delimiter.&lt;/p&gt;
+
+&lt;p&gt;In the code below, we are using the dash (&lt;code&gt;-&lt;/code&gt;) as a delimiter so that &lt;code&gt;split()&lt;/code&gt; will cut the string at each dash.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-js&quot;&gt;
+  let string = 'terrible-stubborn-insidious-very-bad-bug';
+  let array = string.split('-');
+  console.log(array);
+
+  // output: ['terrible','stubborn','insidious','very','bad','bug'];
+
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;join()&lt;/code&gt; method works on arrays and can be thought of as the opposite of &lt;code&gt;split()&lt;/code&gt;. It takes a delimiter as an argument and this time joins strings together using that delimiter.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code&gt;join()&lt;/code&gt;, we can stitch the above array back together with a new delimiter. So let’s try a different delimiter, such as an underscore (&lt;code&gt;_&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-js&quot;&gt;
+  let array = ['terrible','stubborn','insidious','very','bad','bug'];
+  let string = array.join('_');
+  console.log(string);
+
+  // output: 'terrible_stubborn_insidious_very_bad_bug';
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now let’s do this with one of the original cases wherein &lt;code&gt;replace&lt;/code&gt; only replaced one of the letters.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-js&quot;&gt;
+  let name = 'nevin';
+  let new_name = name.split('n').join('k');
+  console.log(new_name);
+
+  // output: 'kevik'
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;And even though I don’t run into many Keviks these days, the logic works the way it should.&lt;/p&gt;
+
+&lt;p&gt;And let’s try it with the dog and cat example.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;language-js&quot;&gt;
+  let phrase = 'the quick blue dog is the quickest of all the dogs';
+  let new_phrase = phrase.split('dog').join('cat');
+  console.log(new_phrase);
+
+  // output: 'the quick blue cat is the quickest of all the cats'
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;So now we see that &lt;code&gt;split()&lt;/code&gt; and &lt;code&gt;join()&lt;/code&gt; can allow you to replace multiple instances of a character or multi-character substring in a string.&lt;/p&gt;</content><author><name></name></author><summary type="html">Javascript’s string object has a replace function that allows you to replace characters.</summary></entry><entry><title type="html">Responsive Comic Textbox</title><link href="/2020/09/07/flex-comics-1.html" rel="alternate" type="text/html" title="Responsive Comic Textbox" /><published>2020-09-07T00:00:00-04:00</published><updated>2020-09-07T00:00:00-04:00</updated><id>/2020/09/07/flex-comics-1</id><content type="html" xml:base="/2020/09/07/flex-comics-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;!--Displaying comics in a way that fits with the web medium can be quite a puzzle. Sequential art has always had to fit into their container, be it the Sunday 4-panel strip, the pages of a graphic novel, or a comic book. 
 
@@ -3485,75 +3579,4 @@ init();
 
 &lt;h4 id=&quot;closing&quot;&gt;Closing&lt;/h4&gt;
 
-&lt;p&gt;It is important to consider how updates to an application affect your users, particularly with respect to important data that pre-update versions of the app are handling. To ensure a smooth transition, build in logic that smoothly migrates the data into a format that the new app version can work with, and be sure to test the upgrade process before releasing your app into the field. Thanks for reading!&lt;/p&gt;</content><author><name></name></author><summary type="html">Bridging the Gap Between Versions</summary></entry><entry><title type="html">Technical Project Director vs. Technical Lead</title><link href="/2019/11/17/tech-lead-project-dir.html" rel="alternate" type="text/html" title="Technical Project Director vs. Technical Lead" /><published>2019-11-17T00:00:00-05:00</published><updated>2019-11-17T00:00:00-05:00</updated><id>/2019/11/17/tech-lead-project-dir</id><content type="html" xml:base="/2019/11/17/tech-lead-project-dir.html">&lt;h3 id=&quot;my-experience-with-both-roles&quot;&gt;My experience with both roles&lt;/h3&gt;
-
-&lt;p&gt;As I was finishing my work towards my software engineering certificate in 2016, my title shifted to technical project director and I started taking on more management roles on a range of projects. I tried out the role for about two years, and while I continued to build apps and websites during this time, my focus shifted by necessity towards management during a portion of each day. While I had previously been focused primarily on front-end web development and on building Drupal sites, my role grew to include managing budgets, scheduling meetings, and leading teams of content writers, web developers, and quality assurance specialists. In short, my focus was less on any specific thing I was building and more on shepherding the deliverables to the finish line and on making sure the overall products met the needs of the client.&lt;/p&gt;
-
-&lt;p&gt;Ultimately, I decided that I gravitated more towards making things than management, and that the logistical and budgetary aspects of management roles diverted too much time away from the app and web development that colleagues and clients still relied on me for. So while I have since switched back to a technical lead role on my current projects, I enjoyed my time as a technical project director and can speak to the similarities and differences between the two roles.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-is-the-distinction&quot;&gt;What is the distinction?&lt;/h3&gt;
-
-&lt;p&gt;While the distinction between technical project director and technical lead can vary across projects and organizations, the technical project director is primarily concerned with delivering a successful product and communicating with clients, while the technical lead stays focused on growing the components of a given website, course, or application, and on managing the work of any other developers on the team.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-technical-project-director&quot;&gt;The technical project director&lt;/h3&gt;
-
-&lt;p&gt;Let’s say that a team is developing an online course for a client. The technical project director will either be the primary contact or one of the primary contacts with the client, and will schedule meetings and calls. They also may write the initial proposal to a client, manage timeline and budget, and check in on timelines. Their primary role is by necessity “high-level,” meaning that it focuses on big-picture concerns rather than technical details and coding.&lt;/p&gt;
-
-&lt;p&gt;The technical project director would usually handle the following:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;figure out how much budget to allocate to particular roles and tasks&lt;/li&gt;
-  &lt;li&gt;determine the objective and agenda of meetings&lt;/li&gt;
-  &lt;li&gt;figure out who should be at each meeting&lt;/li&gt;
-  &lt;li&gt;establish a place where project resources are stored&lt;/li&gt;
-  &lt;li&gt;help developers establish a workflow and system of communication&lt;/li&gt;
-  &lt;li&gt;check in with devs on the progress of particular tasks&lt;/li&gt;
-  &lt;li&gt;work with clients, designers, and developers to finalize designs&lt;/li&gt;
-  &lt;li&gt;setting deadlines for content writing staff, designers, developers, and QA staff&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-technical-lead&quot;&gt;The technical lead&lt;/h3&gt;
-
-&lt;p&gt;The technical lead typically manages budget less but may still keep track of how much time developers and designers are spending on particular tasks. As a technical lead, I often would work in between technical project directors and other technical staff, communicating with the technical project director(s) about overall goals and timelines, and then talking with tech staff about how those break down into smaller tasks.&lt;/p&gt;
-
-&lt;p&gt;A technical would usually handle the following:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;make recommendations on what modules or plugins to try on a given project&lt;/li&gt;
-  &lt;li&gt;make the call on when a given request calls for an already-built plugin or new custom code&lt;/li&gt;
-  &lt;li&gt;determine and manage the process for deploying a set of changes to a live website or production-level app&lt;/li&gt;
-  &lt;li&gt;take the lead on writing a custom code solution&lt;/li&gt;
-  &lt;li&gt;inform the technical project director about the status of particular tasks&lt;/li&gt;
-  &lt;li&gt;coordinate the work of other developers&lt;/li&gt;
-  &lt;li&gt;keep the team current on app and web development best practices&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;where-both-roles-intersect&quot;&gt;Where both roles intersect&lt;/h3&gt;
-
-&lt;p&gt;Depending on team size and the roles and skill sets within that team, the technical lead may also have to be the technical project director. I have been on projects where it has been my role to check on budget as well as complete the primary coding work. So depending on the tech lead’s skill set, he/she may share coding or other “boots-on-the-ground” technical roles. That said, tech leads can also restrict themselves to the “high level” aspects of the project — fielding client requests, checking on designs before they go to developers, assisting with quality assurance, and entering requests into a tracking system - and leave the coding to the developers.&lt;/p&gt;
-
-&lt;p&gt;These are some roles that tech leads and technical project directors may both share:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;lead or co-lead teams of developers&lt;/li&gt;
-  &lt;li&gt;determine the best tech solution for a project based on feedback from vendors&lt;/li&gt;
-  &lt;li&gt;check hours spent on particular tasks against budget and timeline&lt;/li&gt;
-  &lt;li&gt;inform designers on the necessary content of design specs file formats their designs would need to be in&lt;/li&gt;
-  &lt;li&gt;controlling the level of change on a project by determining which client requests are within the scope of a given project&lt;/li&gt;
-  &lt;li&gt;Help to prepare clients to use and/or maintain the app or website&lt;/li&gt;
-  &lt;li&gt;Check what has been built against the assignment specs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;tools-to-explore&quot;&gt;Tools to explore&lt;/h3&gt;
-
-&lt;p&gt;For each role, it definitely helps to learn project management and quality assurance tools, such as the following:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Pivotal Tracker&lt;/li&gt;
-  &lt;li&gt;Trello&lt;/li&gt;
-  &lt;li&gt;Monday.com&lt;/li&gt;
-  &lt;li&gt;Asana&lt;/li&gt;
-  &lt;li&gt;DoneDone&lt;/li&gt;
-  &lt;li&gt;Rally&lt;/li&gt;
-  &lt;li&gt;Microsoft Excel&lt;/li&gt;
-  &lt;li&gt;Microsoft SharePoint&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Both technical project director and technical lead roles are terrific for someone who likes to work closely with people and gravitates towards organization and time management. If your role is primarily that of a coder, you may want to try managing a project to get a sense of this other perspective and see how you like the role. For now, I have decided that a technical lead role is a better fit for me, and my experiences in both roles have in the long run made me a more effective developer.&lt;/p&gt;</content><author><name></name></author><summary type="html">My experience with both roles</summary></entry></feed>
+&lt;p&gt;It is important to consider how updates to an application affect your users, particularly with respect to important data that pre-update versions of the app are handling. To ensure a smooth transition, build in logic that smoothly migrates the data into a format that the new app version can work with, and be sure to test the upgrade process before releasing your app into the field. Thanks for reading!&lt;/p&gt;</content><author><name></name></author><summary type="html">Bridging the Gap Between Versions</summary></entry></feed>
