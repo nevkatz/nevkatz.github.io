@@ -575,8 +575,10 @@ ul.bullet-hidden li {
 
 /* site header */
 header.site-header {
-  border-top-color: #00486a;
-  background-color: #00486a;
+  border-top-color: #008080;
+  /*darken($miniport_blue,10%);*/
+  background-color: #086161;
+  /*darken($miniport_blue,10%);*/
   border-bottom: 0px solid transparent; }
   header.site-header a.site-title,
   header.site-header a,
@@ -845,7 +847,7 @@ pre {
   margin-right: -50vw;
   background-color: white;
   color: white;
-  background-color: #00486a; }
+  background-color: #0c88c3; }
 
 #main-page-intro {
   margin: 0px auto 0px auto;
