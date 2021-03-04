@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-02-19T22:24:00-05:00</updated><id>/feed.xml</id><title type="html">Nevin’s Dev Spot</title><subtitle>Art and coding are two sides of the same coin.</subtitle><entry><title type="html">Using split() and join() to replace characters</title><link href="/2021/02/19/split-join-replace.html" rel="alternate" type="text/html" title="Using split() and join() to replace characters" /><published>2021-02-19T00:00:00-05:00</published><updated>2021-02-19T00:00:00-05:00</updated><id>/2021/02/19/split-join-replace</id><content type="html" xml:base="/2021/02/19/split-join-replace.html">&lt;p&gt;Javascript’s string object has a &lt;code&gt;replace()&lt;/code&gt; method that allows you to replace characters.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-04T10:51:46-05:00</updated><id>/feed.xml</id><title type="html">nevkatz media</title><subtitle>Art and coding are two sides of the same coin.</subtitle><entry><title type="html">Node JS and Non-Blocking I/O</title><link href="/2021/03/04/node-js-intro.html" rel="alternate" type="text/html" title="Node JS and Non-Blocking I/O" /><published>2021-03-04T00:00:00-05:00</published><updated>2021-03-04T00:00:00-05:00</updated><id>/2021/03/04/node-js-intro</id><content type="html" xml:base="/2021/03/04/node-js-intro.html">&lt;h3 id=&quot;journey-into-node-js&quot;&gt;Journey into Node JS!&lt;/h3&gt;
+
+&lt;p&gt;Suppose you want a program that can handle server-side operations, like writing to a database or a file system, but you feel that content management systems like WordPress and Drupal have more features than you need — and may not be worth the maintenance and setup steps.&lt;/p&gt;
+
+&lt;p&gt;Or suppose you want to try writing a desktop application that can output files, and speak Javascript as your native tongue.&lt;/p&gt;
+
+&lt;p&gt;If you’re in this situation, I recommend exploring Node JS — a lightweight open-source platform for developing server-side applications with Javascript.&lt;/p&gt;
+
+&lt;p&gt;As a developer who has either used Drupal content management systems or Android / I/OS apps to interact with databases and file systems, I am finding Node JS to be an exciting foray into using Javascript to run server-side applications using a lightweight solution.&lt;/p&gt;
+
+&lt;h3 id=&quot;requirements&quot;&gt;Requirements&lt;/h3&gt;
+
+&lt;p&gt;Using Node JS requires a familiarity with the command line, and if your machine does not already have it, you will need to &lt;a href=&quot;https://nodejs.org/en/download/package-manager/&quot;&gt;install&lt;/a&gt; it on your machine.&lt;/p&gt;
+
+&lt;p&gt;Once you have Node installed, running a &lt;a href=&quot;https://nodejs.org/en/docs/guides/getting-started-guide/&quot;&gt;Hello World&lt;/a&gt; program is pretty straightforward. But before getting into the syntax, let’s look at what Node JS is and why it is unique.&lt;/p&gt;
+
+&lt;h3 id=&quot;node-js&quot;&gt;Node JS&lt;/h3&gt;
+
+&lt;p&gt;Node JS, originally released in 2009 by Ryan Dahl, helps to redefine Javascript’s place in the world by making it efficient at running server-side applications.&lt;/p&gt;
+
+&lt;p&gt;While it was not the first Javascript server side platform — that credit goes to Netscape’s LiveWire Pro Web in 1996 - it is set apart by being event-driven - in other words, driven events such as user user clicks - is able to do the things a server must do efficiently. It also is scalable, efficient, and easy to learn.&lt;/p&gt;
+
+&lt;p&gt;And with the right modules, such as the Node JS &lt;a href=&quot;https://nodejs.org/api/fs.html&quot; target=&quot;_blank&quot;&gt;File System&lt;/a&gt; and &lt;a href=&quot;https://nodejs.org/api/http.html&quot;&gt;http&lt;/a&gt;, and &lt;a href=&quot;https://www.w3schools.com/nodejs/nodejs_mysql.asp&quot;&gt;MySQL&lt;/a&gt;, can enable server programs to interact with the file system, a database, and the browser client.&lt;/p&gt;
+
+&lt;p&gt;Of all of Node’s features, the file system capability is currently what draws me it. While Node is widely used for websites and web applications, I am right now interested in using it to create local desktop applications that can create and modify files and file systems.&lt;/p&gt;
+
+&lt;h3 id=&quot;intro-to-blocking-and-non-blocking-io&quot;&gt;Intro to Blocking and Non-blocking I/O&lt;/h3&gt;
+
+&lt;p&gt;One “under the hood” feature that makes Node JS useful is non-blocking I/O, or non-blocking input/output.&lt;/p&gt;
+
+&lt;p&gt;What does this mean? I/O, or input/output, refers to a program interacting with the outside world, either by receiving or sending information. An I/O interaction usually occurs in the context of a &lt;strong&gt;thread&lt;/strong&gt;, or a singular sequential flow of control in a program. Some steps in a thread may involve an I/O operation, while others may involve operations within the program. During an I/O operation, the program sends out a request, and gets a response.&lt;/p&gt;
+
+&lt;h3 id=&quot;blocking-versus-non-blocking&quot;&gt;Blocking versus Non-Blocking&lt;/h3&gt;
+
+&lt;p&gt;If an I/O operation &lt;em&gt;blocks&lt;/em&gt;, it means that after a program sends an I/O request, nothing happens in a given thread until a response is received and the operation is complete. If it is non-blocking, it means that the thread can keep going with something else while it waits for a response.&lt;/p&gt;
+
+&lt;p&gt;In my case, I am primarily interested in I/O operations occuring between the server program and the browser client, as well as the server program and the file system.&lt;/p&gt;
+
+&lt;p&gt;Before we look at the details of Non-Blocking I/O, let’s first take a closer look at threads and the processes they reside in.&lt;/p&gt;
+
+&lt;h3 id=&quot;threads-and-processes&quot;&gt;Threads and Processes&lt;/h3&gt;
+
+&lt;p&gt;When a program and its resources are loaded into memory and begins to run, it is called a &lt;strong&gt;process&lt;/strong&gt;. Within this process, there are one or more units of execution called &lt;strong&gt;threads&lt;/strong&gt;. These can be thought of as mini-processes within a process. In processes with multiple threads, these threads share the same memory.&lt;/p&gt;
+
+&lt;h3 id=&quot;single-threaded-versus-multi-threaded&quot;&gt;Single-Threaded versus Multi-Threaded&lt;/h3&gt;
+
+&lt;p&gt;Different programming languages have different ways of handling processes and threads. Some, like Javascript, can run just one unit of execution at a time, and are called &lt;strong&gt;single-threaded.&lt;/strong&gt; Others, like Java and C#, can multi-task and have multiple threads running within one process.&lt;/p&gt;
+
+&lt;h3 id=&quot;blocking-io&quot;&gt;Blocking I/O&lt;/h3&gt;
+
+&lt;p&gt;While Java can follow multiple instructions at a time, it also uses &lt;strong&gt;blocking I/O&lt;/strong&gt;, which means that a thread that is reading or writing a file is blocked until it finishes inputting info from a file or outputting information to a file. In other words, it stops what it is doing until the file input/output process is complete before moving on.&lt;/p&gt;
+
+&lt;h3 id=&quot;non-blocking-io&quot;&gt;Non-blocking I/O&lt;/h3&gt;
+
+&lt;p&gt;If blocking I/O were to happen in Node JS file system operation, it would be super slow, because you would be blocking your only thread in the program. So instead, Node JS has &lt;strong&gt;non-blocking I/O&lt;/strong&gt;, which allows it to send out a request to the file system and move on to another operation while it waits for a response to that request.&lt;/p&gt;
+
+&lt;h3 id=&quot;non-blocking-operations-in-node-js-are-asynchronous&quot;&gt;Non-blocking operations in Node JS are asynchronous&lt;/h3&gt;
+
+&lt;p&gt;As an aside, non-blocking operations in Javascript are asynchronous (or async for short), which means that the request-and-response sequence does not require continual attention by the program or occur as consecutive steps. You can start learning about async request at &lt;a href=&quot;https://www.w3schools.com/js/js_asynchronous.asp&quot; target=&quot;_blank&quot;&gt;w3schools&lt;/a&gt;, including and we will ahve&lt;/p&gt;
+
+&lt;h3 id=&quot;hope-this-helps&quot;&gt;Hope this helps!&lt;/h3&gt;
+
+&lt;p&gt;This has been a quick look at Node JS and non-blocking I/O. More information about blocking and non-blocking I/O can be found at the &lt;a href=&quot;https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/&quot; target=&quot;_blank&quot;&gt;Node JS&lt;/a&gt; website.&lt;/p&gt;</content><author><name></name></author><summary type="html">Journey into Node JS!</summary></entry><entry><title type="html">Using split() and join() to replace characters</title><link href="/2021/02/19/split-join-replace.html" rel="alternate" type="text/html" title="Using split() and join() to replace characters" /><published>2021-02-19T00:00:00-05:00</published><updated>2021-02-19T00:00:00-05:00</updated><id>/2021/02/19/split-join-replace</id><content type="html" xml:base="/2021/02/19/split-join-replace.html">&lt;p&gt;Javascript’s string object has a &lt;code&gt;replace()&lt;/code&gt; method that allows you to replace characters.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-js&quot;&gt;
@@ -3548,39 +3610,4 @@ init();
 
 &lt;h4 id=&quot;closing&quot;&gt;Closing&lt;/h4&gt;
 
-&lt;p&gt;So my journey with PowerShell has begun, and over the course of the past month, I have created an Powershell script that does its job fast. My goal over the next month will be to start testing in a Windows 10 environment (using Mac Parallels) and make it as easy as possible to use by content creators, who will have to transition from point-and-click GUIs to text-based interfaces. I am also working on adding functionality for swapping in large video files during and after the download process.&lt;/p&gt;</content><author><name></name></author><summary type="html">I did not know Powershell existed</summary></entry><entry><title type="html">Protecting User Data During an Upgrade</title><link href="/2020/01/02/legacy-testing.html" rel="alternate" type="text/html" title="Protecting User Data During an Upgrade" /><published>2020-01-02T00:00:00-05:00</published><updated>2020-01-02T00:00:00-05:00</updated><id>/2020/01/02/legacy-testing</id><content type="html" xml:base="/2020/01/02/legacy-testing.html">&lt;h3 id=&quot;bridging-the-gap-between-versions&quot;&gt;Bridging the Gap Between Versions&lt;/h3&gt;
-
-&lt;p&gt;At some point in software development, you may have an application in the field holding data that needs to be upgraded — and your next build may need to change how that data is stored or pushed up to the cloud. The last thing you would want would be for the data to be corrupted during the upgrade, or for the app to break due to looking for data in the wrong place - so building with backwards compatibility in mind and writing code that helps bridge the gap between old and new app versions is essential.&lt;/p&gt;
-
-&lt;h4 id=&quot;defining-terms&quot;&gt;Defining Terms&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Backwards compatibility can mean a number of things, but in this case, it means that an application needs to be able to interact with older data, potentially in a different format, that was produced by an earlier version of the app.&lt;/li&gt;
-  &lt;li&gt;The term “legacy code” also has a lot of meanings, but in this case, I use it to refer to code that helps with maintaining and updating this older data.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;example-1-lists&quot;&gt;Example 1: Lists&lt;/h4&gt;
-
-&lt;p&gt;Suppose you have an app that stores inventories for different stores across a range of cities, with multiple stores in each city. The app needs to retrieve data on these stores when it starts up. Initially, the app stored data for all the stores in one file. But as use scales up, it becomes important to distribute all the data across many files and have one file for each city.&lt;/p&gt;
-
-&lt;p&gt;Without legacy code, an app updating to the new version may ignore the original single list file and look only for the new per-city files. If it ignores that original file, it will not be able to retrieve any data when it starts up. So it is important to write code that bridges the gap between the two versions and makes sure that the old data is still accessible in the new version. For instance, the app could perform a one-time operation where it looks for the single list file first, extracts its data, and distributes the data across a new set of per-city files.&lt;/p&gt;
-
-&lt;h4 id=&quot;example-2-when-to-update-records&quot;&gt;Example 2: When to update records&lt;/h4&gt;
-
-&lt;p&gt;Figuring out when your app should make a legacy update when it is running is an important step. Suppose your app originally stored a bunch of records for stores without storing postal codes, but the new app depends on postal codes being stored. You have a choice as to whether you want to update all your store records automatically when the app first launches, or take a “lazy” approach and update a store record when the app first needs to load that store. The one-time update process would have to require the update time to be manageable for the user, while the lazy as-needed process would require you to make sure that other processes, such as data uploads, do not depend on all the stores being updated.&lt;/p&gt;
-
-&lt;h4 id=&quot;make-data-backups&quot;&gt;Make Data Backups&lt;/h4&gt;
-
-&lt;p&gt;If the data is altered during a legacy upgrade, it is best to write logic that backs up the original data. This way you can restore the data to its original state if the data gets corrupted during the upgrade.&lt;/p&gt;
-
-&lt;h4 id=&quot;communicate-limitations&quot;&gt;Communicate Limitations&lt;/h4&gt;
-
-&lt;p&gt;If a build you release is not able to handle legacy data yet and app versions in use are still supporting earlier versions with legacy data, it is ideal to keep the new version internal to your team until you can be sure an upgrade can run smoothly. If you do release it for use beyond your team, be sure to post its upgrade limitations and list it as a development build.&lt;/p&gt;
-
-&lt;h4 id=&quot;legacy-testing&quot;&gt;Legacy Testing&lt;/h4&gt;
-
-&lt;p&gt;To test how well an app with legacy data will upgrade to the new version, I recommend setting up your application with the old version, entering some data, and then upgrading to the new version. Additionally, you will need to also run setup tests on the new version by itself to make sure that the app also functions properly when just starting out as the new version.&lt;/p&gt;
-
-&lt;h4 id=&quot;closing&quot;&gt;Closing&lt;/h4&gt;
-
-&lt;p&gt;It is important to consider how updates to an application affect your users, particularly with respect to important data that pre-update versions of the app are handling. To ensure a smooth transition, build in logic that smoothly migrates the data into a format that the new app version can work with, and be sure to test the upgrade process before releasing your app into the field. Thanks for reading!&lt;/p&gt;</content><author><name></name></author><summary type="html">Bridging the Gap Between Versions</summary></entry></feed>
+&lt;p&gt;So my journey with PowerShell has begun, and over the course of the past month, I have created an Powershell script that does its job fast. My goal over the next month will be to start testing in a Windows 10 environment (using Mac Parallels) and make it as easy as possible to use by content creators, who will have to transition from point-and-click GUIs to text-based interfaces. I am also working on adding functionality for swapping in large video files during and after the download process.&lt;/p&gt;</content><author><name></name></author><summary type="html">I did not know Powershell existed</summary></entry></feed>
