@@ -70,37 +70,47 @@
 
 <p>Suppose you want a program that can handle server-side operations, like writing to a database or a file system, but you feel that content management systems like WordPress and Drupal have more features than you need — and may not be worth the maintenance and setup steps.</p>
 
-<p>Or suppose you want to try writing a desktop application that can output files, and speak Javascript as your native tongue.</p>
+<p>Or suppose you speak Javascript as your native tongue. but want to try writing a desktop application that can output files.</p>
 
-<p>If you’re in this situation, I recommend exploring Node JS — a lightweight open-source platform for developing server-side applications with Javascript.</p>
+<p>If you find yourself in this situation or a variant thereof, I recommend exploring Node JS — a lightweight open-source platform for developing server-side applications with Javascript.</p>
 
-<p>As a developer who has either used Drupal content management systems or Android / I/OS apps to interact with databases and file systems, I am finding Node JS to be an exciting foray into using Javascript to run server-side applications using a lightweight solution.</p>
+<p>As a developer who has mainly used Drupal content management systems or Android apps to interact with databases and file systems, I am finding Node JS to be an exciting foray into using Javascript to run server-side applications using a lightweight solution.</p>
 
 <h3 id="requirements">Requirements</h3>
 
-<p>Using Node JS requires a familiarity with the command line, and if your machine does not already have it, you will need to <a href="https://nodejs.org/en/download/package-manager/">install</a> it on your machine.</p>
+<p>Using Node JS requires a familiarity with the command line, and if your machine does not already have it, you will need to <a href="https://nodejs.org/en/download/package-manager/" target="_blank">install</a> it on your machine.</p>
 
-<p>Once you have Node installed, running a <a href="https://nodejs.org/en/docs/guides/getting-started-guide/">Hello World</a> program is pretty straightforward. But before getting into the syntax, let’s look at what Node JS is and why it is unique.</p>
+<h3 id="hello-world">Hello World</h3>
 
-<h3 id="node-js">Node JS</h3>
+<p>Once you have Node installed, running a <a href="https://nodejs.org/en/docs/guides/getting-started-guide/" target="_blank">Hello World</a> program is pretty straightforward. Putting that out there now because for me, getting something to work is usually my first step on the journey. That said, this post focuses mainly on what Node JS is and why it is unique.</p>
+
+<h3 id="background">Background</h3>
 
 <p>Node JS, originally released in 2009 by Ryan Dahl, helps to redefine Javascript’s place in the world by making it efficient at running server-side applications.</p>
 
-<p>While it was not the first Javascript server side platform — that credit goes to Netscape’s LiveWire Pro Web in 1996 - it is set apart by being event-driven - in other words, driven events such as user user clicks - is able to do the things a server must do efficiently. It also is scalable, efficient, and easy to learn.</p>
+<p>While it was not the first Javascript server side platform — that credit goes to Netscape’s LiveWire Pro Web in 1996 - it is set apart by being event-driven - in other words, being drivable by events such as user clicks. It is also distinguished by being able to do interact with clients, files, and databases efficiently without holding up other tasks.</p>
 
-<p>And with the right modules, such as the Node JS <a href="https://nodejs.org/api/fs.html" target="_blank">File System</a> and <a href="https://nodejs.org/api/http.html">http</a>, and <a href="https://www.w3schools.com/nodejs/nodejs_mysql.asp">MySQL</a>, can enable server programs to interact with the file system, a database, and the browser client.</p>
+<p>And with the right modules, such as <a href="https://nodejs.org/api/fs.html" target="_blank">fs (file system)</a>, <a href="https://nodejs.org/api/http.html" target="_blank">http</a>, and <a href="https://www.w3schools.com/nodejs/nodejs_mysql.asp" target="_blank">MySQL</a>, can enable server programs to interact with the file system, a database, and the browser client.</p>
 
-<p>Of all of Node’s features, the file system capability is currently what draws me it. While Node is widely used for websites and web applications, I am right now interested in using it to create local desktop applications that can create and modify files and file systems.</p>
+<h3 id="what-draws-me-to-node">What draws me to Node</h3>
+
+<p>Of all of Node’s features, the file system capability is currently what draws me to it. While Node is widely used for websites and web applications, I am right now interested in using it to create local desktop applications that can create and modify files, create directories — essentially taking what a user creates and making useful content packages out of it.</p>
 
 <h3 id="intro-to-blocking-and-non-blocking-io">Intro to Blocking and Non-blocking I/O</h3>
 
 <p>One “under the hood” feature that makes Node JS useful is non-blocking I/O, or non-blocking input/output.</p>
 
-<p>What does this mean? I/O, or input/output, refers to a program interacting with the outside world, either by receiving or sending information. An I/O interaction usually occurs in the context of a <strong>thread</strong>, or a singular sequential flow of control in a program. Some steps in a thread may involve an I/O operation, while others may involve operations within the program. During an I/O operation, the program sends out a request, and gets a response.</p>
+<p>What does this mean?</p>
+
+<p>I/O, or input/output, refers to a program interacting with the outside world, either by receiving or sending information.</p>
+
+<p>An I/O interaction usually occurs in the context of a <strong>thread</strong>, or a singular sequential flow of control in a program.</p>
+
+<p>While some steps in a thread may involve an I/O operation, others may involve operations within the program. During an I/O operation, the program sends out a request, and gets a response.</p>
 
 <h3 id="blocking-versus-non-blocking">Blocking versus Non-Blocking</h3>
 
-<p>If an I/O operation <em>blocks</em>, it means that after a program sends an I/O request, nothing happens in a given thread until a response is received and the operation is complete. If it is non-blocking, it means that the thread can keep going with something else while it waits for a response.</p>
+<p>If an I/O operation is <em>blocking</em>, it means that after a program sends an I/O request, nothing happens in a given thread until a response is received and the operation is complete. If it is <em>non-blocking</em>, it means that the thread can keep going with something else while it waits for a response.</p>
 
 <p>In my case, I am primarily interested in I/O operations occuring between the server program and the browser client, as well as the server program and the file system.</p>
 
@@ -116,15 +126,17 @@
 
 <h3 id="blocking-io">Blocking I/O</h3>
 
-<p>While Java can follow multiple instructions at a time, it also uses <strong>blocking I/O</strong>, which means that a thread that is reading or writing a file is blocked until it finishes inputting info from a file or outputting information to a file. In other words, it stops what it is doing until the file input/output process is complete before moving on.</p>
+<p>While Java can follow multiple instructions at a time, it also uses <strong>blocking I/O</strong>, which means that a thread that is reading or writing a file is blocked until it finishes that file task. In other words, it stops what it is doing until the file input/output process is complete before moving on.</p>
+
+<p>And that’s fine if you have Java’s multiple threads, but on a single-threaded Javascript application, it would hold everything up and make your program less efficient than it could be.</p>
 
 <h3 id="non-blocking-io">Non-blocking I/O</h3>
 
-<p>If blocking I/O were to happen in Node JS file system operation, it would be super slow, because you would be blocking your only thread in the program. So instead, Node JS has <strong>non-blocking I/O</strong>, which allows it to send out a request to the file system and move on to another operation while it waits for a response to that request.</p>
+<p>Because blocking I/O introduces this inefficiency, Node JS has <strong>non-blocking I/O</strong>, which allows it to send out a request to the file system and move on to another operation while it waits for a response to that request.</p>
 
 <h3 id="non-blocking-operations-in-node-js-are-asynchronous">Non-blocking operations in Node JS are asynchronous</h3>
 
-<p>As an aside, non-blocking operations in Javascript are asynchronous (or async for short), which means that the request-and-response sequence does not require continual attention by the program or occur as consecutive steps. You can start learning about async request at <a href="https://www.w3schools.com/js/js_asynchronous.asp" target="_blank">w3schools</a>, including and we will ahve</p>
+<p>As an aside, non-blocking operations in Javascript are asynchronous (or async for short), which means that the request-and-response sequence does not require continual attention by the program or occur as consecutive steps. You can start learning about async requests at <a href="https://www.w3schools.com/js/js_asynchronous.asp" target="_blank">w3schools</a>, and a post here on async requests will be coming soon.</p>
 
 <h3 id="hope-this-helps">Hope this helps!</h3>
 
@@ -149,7 +161,7 @@
           <li class="p-name"><!-- nevkatz media --></li><li><a class="u-email" href="mailto:nevkatz@gmail.com">nevkatz@gmail.com</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">nevkatz</span></a></li><li><a href="https://www.twitter.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">nevkatz</span></a></li></ul>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">nevkatz</span></a></li><li><a href="https://www.linkedin.com/in/nevin-katz-7744244"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">nevin-katz-7744244</span></a></li><li><a href="https://www.twitter.com/nevkatz"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">nevkatz</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">
@@ -162,7 +174,7 @@
 
   </div>
    <div id="copyright">
-    <p>Copyright &copy; 2019 Nevin Katz. All Rights Reserved.</p>
+    <p>Copyright &copy; 2021 Nevin Katz. All Rights Reserved.</p>
    </div>
 
 </footer>
