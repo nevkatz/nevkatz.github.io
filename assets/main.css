@@ -576,10 +576,8 @@ ul.bullet-hidden li {
 
 /* site header */
 header.site-header {
-  border-top-color: #008080;
-  /*darken($miniport_blue,10%);*/
-  background-color: #086161;
-  /*darken($miniport_blue,10%);*/
+  border-top-color: #11415b;
+  background-color: #11415b;
   border-bottom: 0px solid transparent; }
   header.site-header a.site-title,
   header.site-header a,
@@ -758,16 +756,21 @@ div.banner {
   margin-bottom: 20px; }
 
 svg#dragons-sky {
-  height: 304px;
+  height: 200px;
   width: 100%;
   max-width: 740px;
   background-color: transparent;
   position: relative;
   left: calc(50% - 370px); }
 
+div#dragon-container-lite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; }
+
 img#dragon {
-  top: 20px;
-  max-width: 620px;
+  max-width: 450px;
   width: 100%;
   position: relative;
   transition: 0.4s ease; }
@@ -827,18 +830,6 @@ div#copyright {
 pre {
   margin-bottom: 20px; }
 
-/* intro */
-/*#main-page-intro {
-  margin: 0px auto 30px auto; 
-  width: 220px;
-  padding: 50px;
-  text-align: center;
-  position: relative;
-  background-image: url('/assets/images/shapes/intro-ellipse.svg'); 
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #00486a;
-}*/
 #intro-container {
   width: 100vw;
   position: relative;
@@ -848,7 +839,8 @@ pre {
   margin-right: -50vw;
   background-color: white;
   color: white;
-  background-color: #0c79ad; }
+  background-color: #f9fafb;
+  color: black; }
 
 #main-page-intro {
   margin: 0px auto 0px auto;
@@ -888,4 +880,11 @@ pre {
 .social-media-list span.username {
   display: none; }
 
-/* #bec3df */
+ul.pager {
+  margin-left: 0px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between; }
+
+body[data-title="NevKatz Media"] ul.pager {
+  justify-content: flex-end; }
