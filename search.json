@@ -1,0 +1,283 @@
+[
+  
+    {
+
+      "title"    : "Asynchronous Requests",
+      "url"      : "/2021/03/06/async-node-js.html",
+      "category" : "javascript",
+      "tags"     : "async, nodejs",
+      "date"     : "2021-03-06 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "Node JS and Non-Blocking I/O",
+      "url"      : "/2021/03/04/node-js-intro.html",
+      "category" : "nodejs",
+      "tags"     : "io, async, javascript",
+      "date"     : "2021-03-04 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "Using split() and join() to replace characters",
+      "url"      : "/2021/02/19/split-join-replace.html",
+      "category" : "javascript",
+      "tags"     : "js, arrays",
+      "date"     : "2021-02-19 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "Responsive Comic Textbox",
+      "url"      : "/2020/09/07/flex-comics-1.html",
+      "category" : "css",
+      "tags"     : "mobile, comics",
+      "date"     : "2020-09-07 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "CSS Theme Switcher with VueJS",
+      "url"      : "/2020/05/10/vue-theme-switcher.html",
+      "category" : "vue",
+      "tags"     : "css-styles, js",
+      "date"     : "2020-05-10 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Creating a Star Rating Widget",
+      "url"      : "/2020/01/18/star-rating.html",
+      "category" : "css",
+      "tags"     : "vector, styles",
+      "date"     : "2020-01-18 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "Code breakdown of creature mouth animation",
+      "url"      : "/2020/01/08/greensock-explanation.html",
+      "category" : "svg",
+      "tags"     : "animation, styles",
+      "date"     : "2020-01-08 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "First Demo with Greensock&#39;s SVG animation library",
+      "url"      : "/2020/01/07/greensock-test-1.html",
+      "category" : "svg",
+      "tags"     : "styles, images, animation",
+      "date"     : "2020-01-07 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "A Responsive Comic Panel Layout with CSS Grid",
+      "url"      : "/2020/01/06/css-grid-intro.html",
+      "category" : "css",
+      "tags"     : "styles, css-grid, comics, mobile",
+      "date"     : "2020-01-06 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "Four Ways to Get Up and Running with VueJS",
+      "url"      : "/2020/01/05/get-started-with-vue.html",
+      "category" : "vue",
+      "tags"     : "cli, javascript",
+      "date"     : "2020-01-05 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "My Powershell Journey Begins",
+      "url"      : "/2020/01/04/powershell-intro.html",
+      "category" : "powershell",
+      "tags"     : "cli, cms, drupal",
+      "date"     : "2020-01-04 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "Protecting User Data During an Upgrade",
+      "url"      : "/2020/01/02/legacy-testing.html",
+      "category" : "apps",
+      "tags"     : "qa",
+      "date"     : "2020-01-02 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "Technical Project Director vs. Technical Lead",
+      "url"      : "/2019/11/17/tech-lead-project-dir.html",
+      "category" : "careers",
+      "tags"     : "project-management",
+      "date"     : "2019-11-17 00:00:00 -0500"
+
+    } ,
+  
+    {
+
+      "title"    : "Careers in Educational Technology and Media",
+      "url"      : "/2019/10/29/edtech-roles.html",
+      "category" : "",
+      "tags"     : "edtech",
+      "date"     : "2019-10-29 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Working with a large codebase",
+      "url"      : "/2019/10/08/big-codebase.html",
+      "category" : "apps",
+      "tags"     : "docs",
+      "date"     : "2019-10-08 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Animating an SVG Mouth Expression with Greensock",
+      "url"      : "/2019/09/17/tween.html",
+      "category" : "svg",
+      "tags"     : "images, animation",
+      "date"     : "2019-09-17 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Animating SVG Mouth Expressions with Greensock",
+      "url"      : "/2019/09/17/greensock.html",
+      "category" : "svg",
+      "tags"     : "images",
+      "date"     : "2019-09-17 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "SVG Character Sheet: Fuzzy Alien Critter",
+      "url"      : "/2019/09/17/critter-character-sheet.html",
+      "category" : "svg",
+      "tags"     : "images",
+      "date"     : "2019-09-17 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Unmasking Decoupled Drupal",
+      "url"      : "/2019/09/13/decoupled-drupal-vue.html",
+      "category" : "drupal",
+      "tags"     : "cms, web",
+      "date"     : "2019-09-13 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Creating an animated emoji with clean SVG code",
+      "url"      : "/2019/09/05/surprised-face.html",
+      "category" : "svg",
+      "tags"     : "images, css, animation",
+      "date"     : "2019-09-05 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Optimizing an SVG Image with SVG OMG",
+      "url"      : "/2019/09/04/svg-omg.html",
+      "category" : "svg",
+      "tags"     : "images",
+      "date"     : "2019-09-04 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Where coding meets cartooning&amp;#58; Facial Expressions with SVGs",
+      "url"      : "/2019/09/03/facial-expressions-1.html",
+      "category" : "svg",
+      "tags"     : "images",
+      "date"     : "2019-09-03 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "iPhone X landscape and the notch",
+      "url"      : "/2019/08/28/notch.html",
+      "category" : "css",
+      "tags"     : "mobile",
+      "date"     : "2019-08-28 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Drawing a Face with SVG",
+      "url"      : "/2019/08/08/circle-to-face.html",
+      "category" : "svg",
+      "tags"     : "images",
+      "date"     : "2019-08-08 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Drawing a Circle with SVG",
+      "url"      : "/2019/08/07/svg-circle-buildup.html",
+      "category" : "",
+      "tags"     : "svg, images",
+      "date"     : "2019-08-07 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Intro to SVGs",
+      "url"      : "/2019/08/06/svg-intro.html",
+      "category" : "svg",
+      "tags"     : "images",
+      "date"     : "2019-08-06 00:00:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "My journey with Jekyll",
+      "url"      : "/2019/08/05/jekyll-intro-2.html",
+      "category" : "jekyll",
+      "tags"     : "static",
+      "date"     : "2019-08-05 19:33:00 -0400"
+
+    } ,
+  
+    {
+
+      "title"    : "Intro to Jekyll",
+      "url"      : "/2019/08/04/jekyll-intro.html",
+      "category" : "jekyll",
+      "tags"     : "static",
+      "date"     : "2019-08-04 19:32:00 -0400"
+
+    } 
+  
+]

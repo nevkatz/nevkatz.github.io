@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-05T00:11:11-05:00</updated><id>/feed.xml</id><title type="html">NevKatz Media</title><subtitle>Art and coding are two sides of the same coin.</subtitle><entry><title type="html">Node JS and Non-Blocking I/O</title><link href="/2021/03/04/node-js-intro.html" rel="alternate" type="text/html" title="Node JS and Non-Blocking I/O" /><published>2021-03-04T00:00:00-05:00</published><updated>2021-03-04T00:00:00-05:00</updated><id>/2021/03/04/node-js-intro</id><content type="html" xml:base="/2021/03/04/node-js-intro.html">&lt;h3 id=&quot;journey-into-node-js&quot;&gt;Journey into Node JS!&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-06T21:36:45-05:00</updated><id>/feed.xml</id><title type="html">Nevin Katz Jr</title><subtitle>Developer &amp; Illustrator</subtitle><entry><title type="html">Asynchronous Requests</title><link href="/2021/03/06/async-node-js.html" rel="alternate" type="text/html" title="Asynchronous Requests" /><published>2021-03-06T00:00:00-05:00</published><updated>2021-03-06T00:00:00-05:00</updated><id>/2021/03/06/async-node-js</id><content type="html" xml:base="/2021/03/06/async-node-js.html">&lt;h3 id=&quot;the-significance-of-async&quot;&gt;The significance of async&lt;/h3&gt;
+
+&lt;p&gt;At some point, one of your Javascript programs will need to interact with the outside world - by shaking hands with another system, fetching content, or sending data somewhere.&lt;/p&gt;
+
+&lt;p&gt;Being a single-threaded programming language, a Javascript program needs a way to interact with the outside world without holding everything up. To achieve this, it uses asynchronous operations, which are used in both the traditional client-side Javascript, as well as in server-side Javascript programs, such as those running on Node JS.&lt;/p&gt;
+
+&lt;h3 id=&quot;trying-out-asynchronous-requests&quot;&gt;Trying out asynchronous requests&lt;/h3&gt;
+
+&lt;p&gt;A helpful introduction to async requests in Javascript is available at &lt;a href=&quot;https://www.w3schools.com/js/js_asynchronous.asp&quot; target=&quot;_blank&quot;&gt;w3schools&lt;/a&gt;. A good way to get started is by trying a &lt;code&gt;setTimeout&lt;/code&gt; function, which is by nature asynchronous. A more complex async request can be tried with client-side Javascript using the &lt;code&gt;XMLHttpRequest&lt;/code&gt; operation.&lt;/p&gt;
+
+&lt;h3 id=&quot;recognizing-async-requests&quot;&gt;Recognizing async requests&lt;/h3&gt;
+
+&lt;p&gt;When learning about async functions, it can be helpful to understand them in Javascript and recognize where they show up.&lt;/p&gt;
+
+&lt;h3 id=&quot;callbacks&quot;&gt;Callbacks&lt;/h3&gt;
+
+&lt;p&gt;One of the earliest ways of handling async requests in Javascript has been with callbacks.&lt;/p&gt;
+
+&lt;p&gt;While the request-response sequence of asynchronous requests happen outside of Javascript’s thread, the program needs to be ready to do something once a response is received. To handle these responses, Javascript uses &lt;strong&gt;callbacks&lt;/strong&gt;, or functions that kick off once a response to an async request is received. Usually the callback will take the data produced by the response and do something with it.&lt;/p&gt;
+
+&lt;p&gt;A helpful introduction to callbacks is available on this &lt;a href=&quot;https://www.w3schools.com/js/js_callback.asp&quot; target=&quot;_blank&quot;&gt;w3Schools&lt;/a&gt; tutorial. I recommend trying these particular examples with “vanilla Javascript” on the client-side without Node JS.&lt;/p&gt;
+
+&lt;p&gt;That said, callbacks are also used in Node JS, and are discussed in this post on &lt;a href=&quot;https://nodejs.org/en/knowledge/getting-started/control-flow/what-are-callbacks/&quot; target=&quot;_blank&quot;&gt;NodeJS.org&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;promises-and-async--await&quot;&gt;Promises and Async / Await&lt;/h3&gt;
+
+&lt;p&gt;Async requests are are also handled by &lt;code&gt;Promise objects&lt;/code&gt;, which are described in detail by Eric Elliot in this &lt;a href=&quot;https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261&quot; target=&quot;_blank&quot;&gt;terrific post.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Promise objects still require callbacks, but in a &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#creating_a_promise_around_an_old_callback_api&quot; target=&quot;_blank&quot;&gt;different way&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The relatively new &lt;code&gt;async / await&lt;/code&gt; syntax, added to Javascript in 2017, is also designed to effectively handle asynchronous requests with a syntactically straightforward approach. Async / await is used both in client-side Javascript and in Node JS, as described in this &lt;a href=&quot;https://blog.risingstack.com/mastering-async-await-in-nodejs&quot; target=&quot;_blank&quot;&gt;Rising Stack&lt;/a&gt; post by Tamas Kadlecsik and János Kubisch.&lt;/p&gt;
+
+&lt;p&gt;I use &lt;code&gt;async / await&lt;/code&gt; requests in my apps for writing to and reading from the file system, and am excited to be able to do this with Node JS.&lt;/p&gt;</content><author><name></name></author><category term="javascript" /><category term="async" /><category term="nodejs" /><summary type="html">The significance of async</summary></entry><entry><title type="html">Node JS and Non-Blocking I/O</title><link href="/2021/03/04/node-js-intro.html" rel="alternate" type="text/html" title="Node JS and Non-Blocking I/O" /><published>2021-03-04T00:00:00-05:00</published><updated>2021-03-04T00:00:00-05:00</updated><id>/2021/03/04/node-js-intro</id><content type="html" xml:base="/2021/03/04/node-js-intro.html">&lt;h3 id=&quot;journey-into-node-js&quot;&gt;Journey into Node JS!&lt;/h3&gt;
 
 &lt;p&gt;Suppose you want a program that can handle server-side operations, like writing to a database or a file system, but you feel that content management systems like WordPress and Drupal have more features than you need — and may not be worth the maintenance and setup steps.&lt;/p&gt;
 
@@ -72,7 +104,7 @@
 
 &lt;h3 id=&quot;hope-this-helps&quot;&gt;Hope this helps!&lt;/h3&gt;
 
-&lt;p&gt;This has been a quick look at Node JS and non-blocking I/O. More information about blocking and non-blocking I/O can be found at the &lt;a href=&quot;https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/&quot; target=&quot;_blank&quot;&gt;Node JS&lt;/a&gt; website.&lt;/p&gt;</content><author><name></name></author><summary type="html">Journey into Node JS!</summary></entry><entry><title type="html">Using split() and join() to replace characters</title><link href="/2021/02/19/split-join-replace.html" rel="alternate" type="text/html" title="Using split() and join() to replace characters" /><published>2021-02-19T00:00:00-05:00</published><updated>2021-02-19T00:00:00-05:00</updated><id>/2021/02/19/split-join-replace</id><content type="html" xml:base="/2021/02/19/split-join-replace.html">&lt;p&gt;Javascript’s string object has a &lt;code&gt;replace()&lt;/code&gt; method that allows you to replace characters.&lt;/p&gt;
+&lt;p&gt;This has been a quick look at Node JS and non-blocking I/O. More information about blocking and non-blocking I/O can be found at the &lt;a href=&quot;https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/&quot; target=&quot;_blank&quot;&gt;Node JS&lt;/a&gt; website.&lt;/p&gt;</content><author><name></name></author><category term="nodejs" /><category term="io" /><category term="async" /><category term="javascript" /><summary type="html">Journey into Node JS!</summary></entry><entry><title type="html">Using split() and join() to replace characters</title><link href="/2021/02/19/split-join-replace.html" rel="alternate" type="text/html" title="Using split() and join() to replace characters" /><published>2021-02-19T00:00:00-05:00</published><updated>2021-02-19T00:00:00-05:00</updated><id>/2021/02/19/split-join-replace</id><content type="html" xml:base="/2021/02/19/split-join-replace.html">&lt;p&gt;Javascript’s string object has a &lt;code&gt;replace()&lt;/code&gt; method that allows you to replace characters.&lt;/p&gt;
 
 &lt;pre&gt;
 &lt;code class=&quot;language-js&quot;&gt;
@@ -170,7 +202,7 @@
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;So now we see that &lt;code&gt;split()&lt;/code&gt; and &lt;code&gt;join()&lt;/code&gt; can allow you to replace multiple instances of a character or multi-character substring in a string.  Let me know if you have any questions on this post, and I hope this helps you with your programming.&lt;/p&gt;</content><author><name></name></author><summary type="html">Javascript’s string object has a replace() method that allows you to replace characters.</summary></entry><entry><title type="html">Responsive Comic Textbox</title><link href="/2020/09/07/flex-comics-1.html" rel="alternate" type="text/html" title="Responsive Comic Textbox" /><published>2020-09-07T00:00:00-04:00</published><updated>2020-09-07T00:00:00-04:00</updated><id>/2020/09/07/flex-comics-1</id><content type="html" xml:base="/2020/09/07/flex-comics-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;So now we see that &lt;code&gt;split()&lt;/code&gt; and &lt;code&gt;join()&lt;/code&gt; can allow you to replace multiple instances of a character or multi-character substring in a string.  Let me know if you have any questions on this post, and I hope this helps you with your programming.&lt;/p&gt;</content><author><name></name></author><category term="javascript" /><category term="js" /><category term="arrays" /><summary type="html">Javascript’s string object has a replace() method that allows you to replace characters.</summary></entry><entry><title type="html">Responsive Comic Textbox</title><link href="/2020/09/07/flex-comics-1.html" rel="alternate" type="text/html" title="Responsive Comic Textbox" /><published>2020-09-07T00:00:00-04:00</published><updated>2020-09-07T00:00:00-04:00</updated><id>/2020/09/07/flex-comics-1</id><content type="html" xml:base="/2020/09/07/flex-comics-1.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;!--Displaying comics in a way that fits with the web medium can be quite a puzzle. Sequential art has always had to fit into their container, be it the Sunday 4-panel strip, the pages of a graphic novel, or a comic book. 
 
@@ -561,7 +593,7 @@ svg.balloon-tail path.tail-junction {
 .flex-textbox.top {
   border-bottom-width: 0px;
 }
-&lt;/style&gt;</content><author><name></name></author><summary type="html">Background</summary></entry><entry><title type="html">CSS Theme Switcher with VueJS</title><link href="/2020/05/10/vue-theme-switcher.html" rel="alternate" type="text/html" title="CSS Theme Switcher with VueJS" /><published>2020-05-10T00:00:00-04:00</published><updated>2020-05-10T00:00:00-04:00</updated><id>/2020/05/10/vue-theme-switcher</id><content type="html" xml:base="/2020/05/10/vue-theme-switcher.html">&lt;h3 id=&quot;building-a-theme-switcher-with-vue&quot;&gt;Building a Theme Switcher with Vue&lt;/h3&gt;
+&lt;/style&gt;</content><author><name></name></author><category term="css" /><category term="mobile" /><category term="comics" /><summary type="html">Background</summary></entry><entry><title type="html">CSS Theme Switcher with VueJS</title><link href="/2020/05/10/vue-theme-switcher.html" rel="alternate" type="text/html" title="CSS Theme Switcher with VueJS" /><published>2020-05-10T00:00:00-04:00</published><updated>2020-05-10T00:00:00-04:00</updated><id>/2020/05/10/vue-theme-switcher</id><content type="html" xml:base="/2020/05/10/vue-theme-switcher.html">&lt;h3 id=&quot;building-a-theme-switcher-with-vue&quot;&gt;Building a Theme Switcher with Vue&lt;/h3&gt;
 
 &lt;p&gt;If you are building a site for a client, you may want to give your client an idea of how different themes look on a particular site, site page, or site element. In this case, it can help to have a demo that allows your client to dynamically switch themes in order to see how they look at a glance and arrive at a decision.&lt;/p&gt;
 
@@ -1943,7 +1975,7 @@ body {
 
 &lt;p&gt;You can also view the demo on this &lt;a href=&quot;https://jsfiddle.net/nevkatz/nhymwqaf/&quot; target=&quot;_blank&quot;&gt;fiddle&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;I hope this was a helpful introduction to the use of Vue JS. As you can see, you can put together a cool style switcher with a minimal amount of Javascript. You also end up defining a lot of your logic in your html, which connects it closely to your Vue object without the need for undue repetition.&lt;/p&gt;</content><author><name></name></author><summary type="html">Building a Theme Switcher with Vue</summary></entry><entry><title type="html">Creating a Star Rating Widget</title><link href="/2020/01/18/star-rating.html" rel="alternate" type="text/html" title="Creating a Star Rating Widget" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>/2020/01/18/star-rating</id><content type="html" xml:base="/2020/01/18/star-rating.html">&lt;h3 id=&quot;building-stars-with-html-and-css&quot;&gt;Building Stars with HTML and CSS&lt;/h3&gt;
+&lt;p&gt;I hope this was a helpful introduction to the use of Vue JS. As you can see, you can put together a cool style switcher with a minimal amount of Javascript. You also end up defining a lot of your logic in your html, which connects it closely to your Vue object without the need for undue repetition.&lt;/p&gt;</content><author><name></name></author><category term="vue" /><category term="css-styles" /><category term="js" /><summary type="html">Building a Theme Switcher with Vue</summary></entry><entry><title type="html">Creating a Star Rating Widget</title><link href="/2020/01/18/star-rating.html" rel="alternate" type="text/html" title="Creating a Star Rating Widget" /><published>2020-01-18T00:00:00-05:00</published><updated>2020-01-18T00:00:00-05:00</updated><id>/2020/01/18/star-rating</id><content type="html" xml:base="/2020/01/18/star-rating.html">&lt;h3 id=&quot;building-stars-with-html-and-css&quot;&gt;Building Stars with HTML and CSS&lt;/h3&gt;
 
 &lt;p&gt;Recently I became interested in making a star rating tool, which are seen on all kinds of apps and websites. There are a number of resources on this and countless ways to pull this off. Below is one way of achieving it using CSS pseudoselectors and Flexbox.&lt;/p&gt;
 
@@ -2382,7 +2414,7 @@ div:not(.only-off) &gt; div.star-rating input:checked ~ label:before {
   &lt;li&gt;
     &lt;p&gt;If you are new to Flexbox, check out Samantha Ming’s &lt;a href=&quot;https://github.com/samanthaming/Flexbox30&quot;&gt;Flexbox in 30 days&lt;/a&gt; get a great introduction and dig deeper!&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Building Stars with HTML and CSS</summary></entry><entry><title type="html">Code breakdown of creature mouth animation</title><link href="/2020/01/08/greensock-explanation.html" rel="alternate" type="text/html" title="Code breakdown of creature mouth animation" /><published>2020-01-08T00:00:00-05:00</published><updated>2020-01-08T00:00:00-05:00</updated><id>/2020/01/08/greensock-explanation</id><content type="html" xml:base="/2020/01/08/greensock-explanation.html">&lt;h3 id=&quot;changing-facial-expressions-with-vanilla-js-and-gsap&quot;&gt;Changing facial expressions with Vanilla JS and GSAP&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="css" /><category term="vector" /><category term="styles" /><summary type="html">Building Stars with HTML and CSS</summary></entry><entry><title type="html">Code breakdown of creature mouth animation</title><link href="/2020/01/08/greensock-explanation.html" rel="alternate" type="text/html" title="Code breakdown of creature mouth animation" /><published>2020-01-08T00:00:00-05:00</published><updated>2020-01-08T00:00:00-05:00</updated><id>/2020/01/08/greensock-explanation</id><content type="html" xml:base="/2020/01/08/greensock-explanation.html">&lt;h3 id=&quot;changing-facial-expressions-with-vanilla-js-and-gsap&quot;&gt;Changing facial expressions with Vanilla JS and GSAP&lt;/h3&gt;
 
 &lt;p&gt;My &lt;a href=&quot;/2020/01/07/greensock-test-1.html&quot; target=&quot;_blank&quot;&gt;post&lt;/a&gt; before this one featured my first demo of the GSAP (Greensock Animation API) library for animation of SVG (Scalar Vector Graphics) and included a quick explanation of why I used it. Here is the demo again - click on the buttons (the default is set to “happy”) and you should be able to see the critter change expressions.&lt;/p&gt;
 
@@ -2891,7 +2923,7 @@ init();
 
 &lt;h4 id=&quot;thats-a-wrap&quot;&gt;That’s a wrap&lt;/h4&gt;
 
-&lt;p&gt;I hope that helps you understand the underlying code, as well as a few Vanilla JS techniques and how to use the Greensock library. If you are interested in going further, I recommend creating a few test SVG’s, perhaps optimizing them with SVG OMG, and then inlining them in an HTML document. Then import the Greensock library in a JS file and try a few simple tweens to get going. Good luck!&lt;/p&gt;</content><author><name></name></author><summary type="html">Changing facial expressions with Vanilla JS and GSAP</summary></entry><entry><title type="html">First Demo with Greensock’s SVG animation library</title><link href="/2020/01/07/greensock-test-1.html" rel="alternate" type="text/html" title="First Demo with Greensock's SVG animation library" /><published>2020-01-07T00:00:00-05:00</published><updated>2020-01-07T00:00:00-05:00</updated><id>/2020/01/07/greensock-test-1</id><content type="html" xml:base="/2020/01/07/greensock-test-1.html">&lt;h3 id=&quot;delving-into-greensock-with-a-moody-creature&quot;&gt;Delving into Greensock with a Moody Creature&lt;/h3&gt;
+&lt;p&gt;I hope that helps you understand the underlying code, as well as a few Vanilla JS techniques and how to use the Greensock library. If you are interested in going further, I recommend creating a few test SVG’s, perhaps optimizing them with SVG OMG, and then inlining them in an HTML document. Then import the Greensock library in a JS file and try a few simple tweens to get going. Good luck!&lt;/p&gt;</content><author><name></name></author><category term="svg" /><category term="animation" /><category term="styles" /><summary type="html">Changing facial expressions with Vanilla JS and GSAP</summary></entry><entry><title type="html">First Demo with Greensock’s SVG animation library</title><link href="/2020/01/07/greensock-test-1.html" rel="alternate" type="text/html" title="First Demo with Greensock's SVG animation library" /><published>2020-01-07T00:00:00-05:00</published><updated>2020-01-07T00:00:00-05:00</updated><id>/2020/01/07/greensock-test-1</id><content type="html" xml:base="/2020/01/07/greensock-test-1.html">&lt;h3 id=&quot;delving-into-greensock-with-a-moody-creature&quot;&gt;Delving into Greensock with a Moody Creature&lt;/h3&gt;
 
 &lt;p&gt;This is my first trial run using the GSAP (Greensock Animation API) library for animation of SVG (Scalar Vector Graphics). SVG’s are super-sharp images with underlying code that is structured a lot like HTML.  When you “inline” an SVG, or include the SVG code directly in the HTML of a webpage, you can use CSS and Javascript to animate its parts.&lt;/p&gt;
 
@@ -3225,7 +3257,7 @@ function init() {
 init();
 &lt;/script&gt;&lt;/code&gt;
 &lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html">Delving into Greensock with a Moody Creature</summary></entry><entry><title type="html">A Responsive Comic Panel Layout with CSS Grid</title><link href="/2020/01/06/css-grid-intro.html" rel="alternate" type="text/html" title="A Responsive Comic Panel Layout with CSS Grid" /><published>2020-01-06T00:00:00-05:00</published><updated>2020-01-06T00:00:00-05:00</updated><id>/2020/01/06/css-grid-intro</id><content type="html" xml:base="/2020/01/06/css-grid-intro.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="svg" /><category term="styles" /><category term="images" /><category term="animation" /><summary type="html">Delving into Greensock with a Moody Creature</summary></entry><entry><title type="html">A Responsive Comic Panel Layout with CSS Grid</title><link href="/2020/01/06/css-grid-intro.html" rel="alternate" type="text/html" title="A Responsive Comic Panel Layout with CSS Grid" /><published>2020-01-06T00:00:00-05:00</published><updated>2020-01-06T00:00:00-05:00</updated><id>/2020/01/06/css-grid-intro</id><content type="html" xml:base="/2020/01/06/css-grid-intro.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
 
 &lt;p&gt;CSS Grid is a terrific web technique for two-dimensional layouts, and I see a lot of potential for formatting web comics. Below I have a quick demo of the type of nine-panel layout that responds to screen widths. At screen widths above 667px, you’ll see 3 x 3 panel arrangement that you may see in a graphic novel. At widths between 501px and 667px, it has a two column layout. And at widths below, all the panels stack within one column.&lt;/p&gt;
 
@@ -3505,7 +3537,7 @@ init();
 
 &lt;p&gt;In his book &lt;a href=&quot;https://www.amazon.com/Reinventing-Comics-Evolution-Art-Form/dp/0060953500&quot; target=&quot;_blank&quot;&gt;Reinventing Comics&lt;/a&gt;, author Scott McCloud discusses the web medium as creating the potential for an “infinite canvas.” Because it was written before the advent of smartphones, its predictions do not completely mirror the current day - though the book does speak to the vast potential of comics as a digital medium.&lt;/p&gt;
 
-&lt;p&gt;To learn about my comics-based science science resource books, &lt;em&gt;Dr. Birdley Teaches Science&lt;/em&gt;, and see some examples of how I present illustrations on the web, check out &lt;a href=&quot;http://www.birdleymedia.com&quot; target=&quot;_blank&quot;&gt;birdleymedia.com&lt;/a&gt;. I have had a longstanding interest in using comics as an educational medium and it is exciting to begin experimenting with their use on the web.&lt;/p&gt;</content><author><name></name></author><summary type="html">Getting Started</summary></entry><entry><title type="html">Four Ways to Get Up and Running with VueJS</title><link href="/2020/01/05/get-started-with-vue.html" rel="alternate" type="text/html" title="Four Ways to Get Up and Running with VueJS" /><published>2020-01-05T00:00:00-05:00</published><updated>2020-01-05T00:00:00-05:00</updated><id>/2020/01/05/get-started-with-vue</id><content type="html" xml:base="/2020/01/05/get-started-with-vue.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
+&lt;p&gt;To learn about my comics-based science science resource books, &lt;em&gt;Dr. Birdley Teaches Science&lt;/em&gt;, and see some examples of how I present illustrations on the web, check out &lt;a href=&quot;http://www.birdleymedia.com&quot; target=&quot;_blank&quot;&gt;birdleymedia.com&lt;/a&gt;. I have had a longstanding interest in using comics as an educational medium and it is exciting to begin experimenting with their use on the web.&lt;/p&gt;</content><author><name></name></author><category term="css" /><category term="styles" /><category term="css-grid" /><category term="comics" /><category term="mobile" /><summary type="html">Getting Started</summary></entry><entry><title type="html">Four Ways to Get Up and Running with VueJS</title><link href="/2020/01/05/get-started-with-vue.html" rel="alternate" type="text/html" title="Four Ways to Get Up and Running with VueJS" /><published>2020-01-05T00:00:00-05:00</published><updated>2020-01-05T00:00:00-05:00</updated><id>/2020/01/05/get-started-with-vue</id><content type="html" xml:base="/2020/01/05/get-started-with-vue.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
 
 &lt;p&gt;VueJS is a terrific Javascript framework used across the world for building user interfaces. Whether you are new to web development or a seasoned veteran, you can find a way to set it up that works for you. Below I have listed four different setup methods for getting started with VueJS so you can start learning and experimenting.&lt;/p&gt;
 
@@ -3535,91 +3567,4 @@ init();
 
 &lt;p&gt;As I get started, the most useful Vue dependency I have installed so far has been router, which enables you to build multi-page apps. If you build using the Vue GUI, the application will recommend installing this for single-page applications.&lt;/p&gt;
 
-&lt;p&gt;Good luck getting started with Vue!&lt;/p&gt;</content><author><name></name></author><summary type="html">Getting Started</summary></entry><entry><title type="html">My Powershell Journey Begins</title><link href="/2020/01/04/powershell-intro.html" rel="alternate" type="text/html" title="My Powershell Journey Begins" /><published>2020-01-04T00:00:00-05:00</published><updated>2020-01-04T00:00:00-05:00</updated><id>/2020/01/04/powershell-intro</id><content type="html" xml:base="/2020/01/04/powershell-intro.html">&lt;h3 id=&quot;i-did-not-know-powershell-existed&quot;&gt;I did not know Powershell existed&lt;/h3&gt;
-
-&lt;p&gt;…until a couple months ago. It fell under my radar for the first time during a meeting. I had been pondering how to write a small desktop application that allowed Drupal website content creators to pull down the lessons they had created on an authoring website and package them into a nice, neat folder that could be loaded onto Android tablets for use by our app.&lt;/p&gt;
-
-&lt;h4 id=&quot;the-goal&quot;&gt;The Goal&lt;/h4&gt;
-
-&lt;p&gt;I told my colleagues that my application would live on a local machine and should work like this:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;pull down files from the Drupal site&lt;/li&gt;
-  &lt;li&gt;create new files when needed&lt;/li&gt;
-  &lt;li&gt;build out its directory structure as it hummed along&lt;/li&gt;
-  &lt;li&gt;gave the content person reasonable indications of download progress&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;While I had been thinking about building it in C#, which would have been quite a learning curve for me, a colleague of mine suggested that I try building it in a language called Powershell. While it is a tool typically used by web admins, and while the final product would have to be a text-based interface, it is fast, can work on both Macs and PCs, and has the functionality necessary to get the job done efficiently.&lt;/p&gt;
-
-&lt;h4 id=&quot;some-background&quot;&gt;Some Background&lt;/h4&gt;
-
-&lt;p&gt;For those of you who are new to this stuff, a &lt;em&gt;shell&lt;/em&gt; is a textual user interface that allows you to use different services of your computer’s operating system (OS) and run specific programs.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Windows Powershell&lt;/em&gt; is a shell environment built on the .NET framework that was originally developed by Microsoft for administrative and other “under-the-hood” tasks. It has its own scripting language — the commands you can use are called &lt;em&gt;cmdlets&lt;/em&gt; - and has been an integral part of the Windows OS for some time now. A new version of it, called &lt;em&gt;Powershell Core&lt;/em&gt;, is cross-platform and will run on Macs with an OS of 10.12 and above. &lt;em&gt;Powershell Core&lt;/em&gt; is the version I use, as I currently work mainly in a Mac environment.&lt;/p&gt;
-
-&lt;p&gt;There are quite a few differences between Windows Powershell and Powershell Core, and to me the most notable difference is that Windows Powershell has quite a few more cmdlets (aka commands.) The differences between the two are discussed in detail on this &lt;a href=&quot;http://techgenix.com/powershell-core/&quot; target=&quot;_blank&quot;&gt;techgenix.com&lt;/a&gt; post.&lt;/p&gt;
-
-&lt;h4 id=&quot;the-interface&quot;&gt;The Interface&lt;/h4&gt;
-
-&lt;p&gt;Because Powershell is a shell application, it will run within a Mac’s terminal app, and for Windows, it runs with its own interpreter that can read and execute its code line-by-line. The interface is all textual and a powershell script you write will not have a graphic user interface (GUI) out-of the-box (or at all, if you are on a Mac). So to some users, the interface of a powershell application will be reminiscent of the old-school computers from the pre-GUI days.&lt;/p&gt;
-
-&lt;p&gt;If you are building for Windows, you can build a GUI for a Powershell application but you don’t have to if your users are fine using the textual UI. That said, the GUI packages are not yet available for Powershell Core - so a cross-platform application or non-Windows application should not have a GUI. You can learn more about when a GUI may be appropriate via this &lt;a href=&quot;https://poshland.pro/3-scenarios-gui-powershell-script/&quot;&gt;poshland.pro&lt;/a&gt; article.&lt;/p&gt;
-
-&lt;h4 id=&quot;what-i-have-learned-thus-far&quot;&gt;What I have learned thus far&lt;/h4&gt;
-
-&lt;p&gt;With some guidance from colleagues, I downloaded PowerShell Core and started exploring. The very first thing I tried to do was a simple GET request to a JSON file living on my Drupal site. I was thrilled at how fast I was able to get it to work!&lt;/p&gt;
-
-&lt;p&gt;As I evolved my script, I primarily added the following logic:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;making an asynchronous GET request to a JSON file&lt;/li&gt;
-  &lt;li&gt;saving the file to my desktop&lt;/li&gt;
-  &lt;li&gt;using a &lt;code&gt;while&lt;/code&gt; loop checking on file size to check download completion&lt;/li&gt;
-  &lt;li&gt;converting between JSON text and a JSON object&lt;/li&gt;
-  &lt;li&gt;iterating through a JSON object using a &lt;code&gt;for&lt;/code&gt; loop&lt;/li&gt;
-  &lt;li&gt;creating a directory&lt;/li&gt;
-  &lt;li&gt;listing the files in the directory&lt;/li&gt;
-  &lt;li&gt;converting a string to an array with a delimiter (ex. ‘/’)&lt;/li&gt;
-  &lt;li&gt;creating and modifying an array and a JSON object&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;takeaways&quot;&gt;Takeaways&lt;/h4&gt;
-
-&lt;p&gt;Below are some of my takeaways thus far.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;You can run powershell cmdlets and define variables directly in the interface.&lt;/strong&gt; You can type them in one-by-one and see how they work.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Familiar programming conventions.&lt;/strong&gt; All the typical programming conventions I have needed, including all the standard loops I use (while, for, foreach, etc.), as well as array logic, server requests, File I/O, and JSON logic, are there.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Powershell is dynamically typed.&lt;/strong&gt; You can also cast variables as particular types, which is handy.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Pipeline syntax is available&lt;/strong&gt; and can make code shorter (but sometimes less clear.) I have not used these much in my script, but it is a strong point of Powershell. You can find a super quick example here at &lt;a href=&quot;https://ss64.com/ps/syntax-pipeline.html&quot;&gt;ss64.com&lt;/a&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Powershell is very JSON-friendly.&lt;/strong&gt; If you ask it to print a JSON object, it will actually print some or all of its properties. Switching between JSON Objects and the equivalent strings is easy. Because my script is pulling info from the Drupal site and interpreting it, this particular script is heavy on JSON, so having this functionality is terrific.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;There is tons of documentation out there!&lt;/strong&gt; The is tons of great documentation and from what I can tell, the language has stabilized. Just be vigilant about ditinguishing code that uses Windows-specific commands.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;The language has been easy to pick up.&lt;/strong&gt; While I have coded in C, Objective-C, OCaml, and PHP, my primary day-to-day programming language is Javascript. That said, learning powershell syntax has been straightforward. Like all languages, it has its own syntax.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt; Testing is quick.&lt;/strong&gt; There is no compilation step, no browser to refresh, and no device to send the code to - so you can do a lot of rapid testing.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Asynchronous requests are supported.&lt;/strong&gt; As with Javascript, you have to be careful about distinguishing between synchronous and asynchronous commands. Unlike JS, which uses callbacks and promises, it can be tricky to tell whether an async process has completed, so you may need to write some code to check for completion.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;You can run a script that uses multiple files.&lt;/strong&gt; As my codebase gets larger, I am finding it helpful to have files containing helper functions. You can include this with a dot and the relative filepath: &lt;code&gt;. ./myfile.ps1&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;closing&quot;&gt;Closing&lt;/h4&gt;
-
-&lt;p&gt;So my journey with PowerShell has begun, and over the course of the past month, I have created an Powershell script that does its job fast. My goal over the next month will be to start testing in a Windows 10 environment (using Mac Parallels) and make it as easy as possible to use by content creators, who will have to transition from point-and-click GUIs to text-based interfaces. I am also working on adding functionality for swapping in large video files during and after the download process.&lt;/p&gt;</content><author><name></name></author><summary type="html">I did not know Powershell existed</summary></entry></feed>
+&lt;p&gt;Good luck getting started with Vue!&lt;/p&gt;</content><author><name></name></author><category term="vue" /><category term="cli" /><category term="javascript" /><summary type="html">Getting Started</summary></entry></feed>
