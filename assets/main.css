@@ -1068,9 +1068,9 @@ body[data-title="Page Not Found"] h1 {
 body[data-title="Page Not Found"] p {
   text-align: center; }
 
-#mc_embed_signup div#mce-responses {
-  margin-left: 0px;
-  padding-left: 0px; }
-  #mc_embed_signup div#mce-responses div.response {
+body[data-title="Nevin Katz"] #mc_embed_signup div#mce-responses {
+  margin-left: 0px !important;
+  padding-left: 0px !important; }
+  body[data-title="Nevin Katz"] #mc_embed_signup div#mce-responses div.response {
     margin-top: 0px;
     padding-top: 0px; }
