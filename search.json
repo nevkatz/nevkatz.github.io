@@ -45,7 +45,7 @@
       "title"    : "CSS Theme Switcher with VueJS",
       "url"      : "/2020/05/10/vue-theme-switcher.html",
       "category" : "vue",
-      "tags"     : "css-styles, js",
+      "tags"     : "css, javascript",
       "date"     : "2020-05-10 00:00:00 -0400"
 
     } ,
@@ -134,7 +134,7 @@
 
       "title"    : "Careers in Educational Technology and Media",
       "url"      : "/2019/10/29/edtech-roles.html",
-      "category" : "",
+      "category" : "careers",
       "tags"     : "edtech",
       "date"     : "2019-10-29 00:00:00 -0400"
 
@@ -244,8 +244,8 @@
 
       "title"    : "Drawing a Circle with SVG",
       "url"      : "/2019/08/07/svg-circle-buildup.html",
-      "category" : "",
-      "tags"     : "svg, images",
+      "category" : "svg",
+      "tags"     : "images, css",
       "date"     : "2019-08-07 00:00:00 -0400"
 
     } ,

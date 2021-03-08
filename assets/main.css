@@ -851,21 +851,6 @@ div#copyright {
   svg#dragons-sky {
     max-width: none;
     left: 0px; } }
-/* category links */
-.tags,
-.category {
-  margin: 6px 0px; }
-  .tags a,
-  .category a {
-    font-weight: bold;
-    font-size: 14px; }
-
-.tags a {
-  color: maroon; }
-
-.category a {
-  color: #5b9d49; }
-
 @media screen and (max-width: 620px) {
   div#dragon-container {
     width: 130%;
@@ -883,8 +868,7 @@ pre {
   background-color: white;
   color: white;
   background-color: #f9fafb;
-  color: black;
-  transition: 0.2s ease; }
+  color: black; }
 
 #main-page-intro {
   margin: 0px auto 0px auto;
@@ -951,7 +935,7 @@ body[data-title="NevKatz Media"] ul.pager {
 
 /* top matter */
 div#top-nav {
-  margin-right: 10px; }
+  margin-right: 20px; }
 
 /* search */
 div.trigger {
@@ -1021,7 +1005,6 @@ div#categories ul {
     div#categories ul {
       grid-template-columns: 1fr 1fr; } }
   div#categories ul li {
-    background-color: lightblue;
     display: flex; }
     div#categories ul li a {
       display: flex;
@@ -1029,12 +1012,58 @@ div#categories ul {
       align-items: center;
       padding: 0px;
       text-align: center;
-      background-color: #2a7ae2;
+      background-color: #0273b7;
       color: white;
       width: 100%;
-      min-height: 60px;
-      transition: 0.2s ease; }
+      min-height: 40px;
+      transition: 0.2s ease;
+      /*li:first-child a {
+        border-radius: 5px 0px 0px 0px;
+      }
+      li:last-child a {
+        border-radius: 5px 0px 0px 0px;
+      }
+      li:nth-child(6) a {
+        border-radius: 0px 0px 0px 5px;
+      }*/ }
       div#categories ul li a:hover {
         text-decoration: none;
-        background-color: #5796e8;
+        background-color: #0393e9;
         transition: 0.2s ease; }
+
+div.category,
+div.tags {
+  background-repeat: no-repeat;
+  padding-left: 22px;
+  margin: 6px 0px; }
+  div.category a,
+  div.tags a {
+    font-weight: bold;
+    font-size: 14px; }
+
+div.tags {
+  background-image: url("/assets/images/icons/tag-o.svg");
+  background-size: 18px;
+  background-position: 0px 4px; }
+  div.tags a {
+    color: #800000; }
+
+div.category {
+  background-image: url("/assets/images/icons/hexagon-o.svg");
+  background-size: 16px;
+  background-position: 0px 6px; }
+  div.category a {
+    color: #5b9d49; }
+
+body[data-title="Page Not Found"] .container {
+  margin: 10px auto;
+  max-width: 600px;
+  text-align: center; }
+body[data-title="Page Not Found"] h1 {
+  margin: 30px 0;
+  font-size: 4em;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-align: center; }
+body[data-title="Page Not Found"] p {
+  text-align: center; }
