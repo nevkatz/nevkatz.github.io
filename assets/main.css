@@ -547,12 +547,40 @@ header.site-header {
   header.site-header nav.site-nav a.page-link {
     color: white;
     text-decoration: none;
-    transition: 0.3s ease; }
+    transition: 0.3s background-color ease; }
   header.site-header a:hover,
   header.site-header nav.site-nav a.page-link:hover {
     color: #cce2f8;
-    transition: 0.3s ease; }
+    transition: 0.3s background-color ease; }
 
+div.category-nav {
+  background-color: #1e5f82; }
+  div.category-nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    max-width: 740px;
+    margin: 0px auto;
+    padding: 2px 0px; }
+    div.category-nav ul li {
+      width: 20%; }
+      div.category-nav ul li a {
+        display: block;
+        text-align: center;
+        border-left: 1px solid #79a5bd; }
+    div.category-nav ul li:last-child a {
+      border-right: 1px solid #79a5bd; }
+
+@media screen and (max-width: 761px) {
+  div.category-nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; }
+    div.category-nav ul li {
+      width: 100%; }
+    div.category-nav ul li:nth-child(n+4) {
+      border-top: 1px solid #79a5bd; }
+    div.category-nav ul li:last-child a {
+      border-right: 0px; } }
 /* header logo on left */
 a.site-title {
   font-family: 'Kalam';
@@ -670,6 +698,7 @@ h1.post-title {
   font-weight: bold;
   text-align: center; }
 
+div#mc_embed_signup,
 ul.post-list li,
 div.post-content {
   background-color: #ffffff;
