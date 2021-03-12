@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-10T21:23:13-05:00</updated><id>/feed.xml</id><title type="html">Nevin Katz</title><subtitle>Web &amp; App Developer</subtitle><entry><title type="html">Asynchronous Requests</title><link href="/2021/03/06/async-node-js.html" rel="alternate" type="text/html" title="Asynchronous Requests" /><published>2021-03-06T00:00:00-05:00</published><updated>2021-03-06T00:00:00-05:00</updated><id>/2021/03/06/async-node-js</id><content type="html" xml:base="/2021/03/06/async-node-js.html">&lt;h3 id=&quot;the-significance-of-async&quot;&gt;The significance of async&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-12T09:54:59-05:00</updated><id>/feed.xml</id><title type="html">Nevin Katz</title><subtitle>Web &amp; App Developer</subtitle><entry><title type="html">14 Tips for your first Drupal Database Migration</title><link href="/2021/03/06/drupal-migration-takeaways.html" rel="alternate" type="text/html" title="14 Tips for your first Drupal Database Migration" /><published>2021-03-06T00:00:00-05:00</published><updated>2021-03-06T00:00:00-05:00</updated><id>/2021/03/06/drupal-migration-takeaways</id><content type="html" xml:base="/2021/03/06/drupal-migration-takeaways.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;Perhaps you have built your share of Drupal 7 sites or have inherited a few. You feel the end-of-life date of Drupal 7 looming in November 2022, and you don’t want that to mean the end of your D7 sites. While starting a new D9 site from scratch is an option, you know that re-creating all that contnet will be a time sync, and it would sure be better to migrate your databaes to Drupal 9. While enlisting help from the outside carries with it cost and overhead, the prospect of doing it yourself seems daunting.&lt;/p&gt;
+
+&lt;p&gt;As someone who initially felt this way, I wanted to share with you a few tips I gleaned from migrating my Drupal site database to Drupal 9, using these &lt;a href=&quot;https://www.drupal.org/docs/upgrading-drupal/upgrade-using-web-browser)&quot; target=&quot;_blank&quot;&gt;Drupal migration docs&lt;/a&gt; as a guide and Drupal 9’s native migration modules.&lt;/p&gt;
+
+&lt;h3 id=&quot;14-tips&quot;&gt;14 Tips&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;In most cases, migrate directly to 9.&lt;/strong&gt; Drupal 8 loses support in November 2021, and Drupal 9 is very similar to Drupal 9 - just more streamlined with fewer modules that are ready. While migrating from 8 to 9 is less of a challenge, it can still be daunting if your Drupal 8 site has deprecated modules or APIs. Migrating directly to 9 will save you a second significant upgrade.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Try your migration locally first.&lt;/strong&gt; I found it easiest to migrate my sites locally using the command line. I didn’t need to log into a server and found it easier to control the file system using a GUI or the command line - whatever was most convenient.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Try migrating with Lando.&lt;/strong&gt; &lt;a href=&quot;https://lando.dev/&quot; target=&quot;_blank&quot;&gt;Lando&lt;/a&gt; is a free command-line tool for setting a range of dev environments that uses &lt;a href=&quot;https://www.docker.com/&quot; target=&quot;_blank&quot;&gt;Docker&lt;/a&gt; as its container. It sets up your settings.php file automagically with initial username, password, and database name that are easy to remember and find — using either &lt;code&gt;lando info&lt;/code&gt; or docker. The &lt;code&gt;.lando.yml&lt;/code&gt; file did not need any special configuration. I set up both my D7 and D9 sites with Lando, and once I used &lt;code&gt;lando info&lt;/code&gt; to grab the hostname and database credentials, connecting my D9 site to the D7 site went off without a hitch.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Use Git to version control your work.&lt;/strong&gt; I have both my old and new site wired to a Git repository, and use a .gitignore file to block out the usual files that I don’t want my local and remote sites to share. For me, these include &lt;code&gt;settings.php&lt;/code&gt;, the &lt;code&gt;files&lt;/code&gt; directory, and the notorious &lt;code&gt;.DS_Store&lt;/code&gt; files that auto populate on a Mac.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Become familiar with Drupal 9’s environment requirements.&lt;/strong&gt; For instance, you’ll see from these &lt;a href=&quot;https://www.drupal.org/docs/understanding-drupal/how-drupal-9-was-made-and-what-is-included/environment-requirements-of&quot; target=&quot;_blank&quot;&gt;Drupal docs&lt;/a&gt; that Drupal requires PHP 7.3 and Apache 2.4.7. Lando will configure your PHP automatically, but other local setup tools may not.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Use the Drupal 9 migration modules.&lt;/strong&gt; In &lt;code&gt;Extent&lt;/code&gt;, turn on all the Migration modules. Once they are on, go to &lt;code&gt;sitename/upgrade&lt;/code&gt; to get started.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Use a Drupal 9 database that is as close as possible to a starter database.&lt;/strong&gt; No content, no content types, no taxonomy, and CERTAINLY no views. Only turn on the modules you’ll need. I turned on &lt;strong&gt;entity&lt;/strong&gt; and the Drupal migration modules.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Double-check your database credentials and files location.&lt;/strong&gt; You will need to enter these on the second migration screen. Again, you can access these with &lt;code&gt;lando info&lt;/code&gt; if you go that route.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Download the Drupal 9 modules you need but only turn on the ones that have upgrade paths.&lt;/strong&gt; I have found that turning on ones I do not immediately need can cause issues.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Be wary of turning on D9 alpha or beta modules before the migration. If you need to turn on contrib modules besides the migration ones, I recommend keeping your &lt;code&gt;composer.json&lt;/code&gt; minimum version set to &lt;code&gt;stable&lt;/code&gt; for the migration, as alpha or beta releases can have unintended consequences during the migration process.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Turn off as many D7 modules as you can that will not be upgraded.&lt;/strong&gt; After you connect to your D7 database, you will be provided with a list of D7 modules that will not be upgraded. While it is best to either turn these modules off, some of them, like the video module, can be stubborn about being disabled. For these, I deleting the associated fields or other site assets may help you to prevent migration errors.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Make database backups frequently.&lt;/strong&gt; Chances are, you will want to run your migration multiple times. For each time that represents a milestone, make a database backup. You can do this using &lt;code&gt;lando db-export &amp;lt;databasepath&amp;gt;&lt;/code&gt; at the root of your site.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Develop strategies for content that may not automatically move over.&lt;/strong&gt; For me, this included content handled by the &lt;strong&gt;field collection&lt;/strong&gt; and &lt;strong&gt;video&lt;/strong&gt; modules. This is where you may want to try running bulk operations or custom scripts for copying content into other D7 fields that migrate successfully.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Be ready to build!&lt;/strong&gt; Don’t expect layouts and views to move over, and anticipate rebuilding your theme. Remember, migrating the database is just the first step. After you successfully migrate, you will have to rebuild the front-end and configurations. This is a great opportunity to consider what parts of your theme and site architecture may be ready for updates.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;At the time of this post, I am no specialist at Drupal database migrations. And that’s why I think this list of takeaways might be helpful. The experts already have their database migration routines down, but since my time has been mainly focused on front-end web development and Android apps in recent years, I am one of the Drupal developer who is still figuring stuff out.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading, and I hope these tips help with your Drupal migrations.&lt;/p&gt;
+
+&lt;!--For so long, Drupal database migrations have felt like arcane sorcery that I did not want to go near. It was the one step in a migration that felt like a gap in my skill set. But after a colleague of mine pulled one off, I wanted to try it. After a number of attempts, I emerged with a successfully migrated Drupal database.--&gt;</content><author><name></name></author><category term="drupal" /><category term="web" /><category term="database" /><summary type="html">Background</summary></entry><entry><title type="html">Asynchronous Requests</title><link href="/2021/03/06/async-node-js.html" rel="alternate" type="text/html" title="Asynchronous Requests" /><published>2021-03-06T00:00:00-05:00</published><updated>2021-03-06T00:00:00-05:00</updated><id>/2021/03/06/async-node-js</id><content type="html" xml:base="/2021/03/06/async-node-js.html">&lt;h3 id=&quot;the-significance-of-async&quot;&gt;The significance of async&lt;/h3&gt;
 
 &lt;p&gt;At some point, one of your Javascript programs will need to interact with the outside world - by shaking hands with another system, fetching content, or sending data somewhere.&lt;/p&gt;
 
@@ -3537,34 +3596,4 @@ init();
 
 &lt;p&gt;In his book &lt;a href=&quot;https://www.amazon.com/Reinventing-Comics-Evolution-Art-Form/dp/0060953500&quot; target=&quot;_blank&quot;&gt;Reinventing Comics&lt;/a&gt;, author Scott McCloud discusses the web medium as creating the potential for an “infinite canvas.” Because it was written before the advent of smartphones, its predictions do not completely mirror the current day - though the book does speak to the vast potential of comics as a digital medium.&lt;/p&gt;
 
-&lt;p&gt;To learn about my comics-based science science resource books, &lt;em&gt;Dr. Birdley Teaches Science&lt;/em&gt;, and see some examples of how I present illustrations on the web, check out &lt;a href=&quot;http://www.birdleymedia.com&quot; target=&quot;_blank&quot;&gt;birdleymedia.com&lt;/a&gt;. I have had a longstanding interest in using comics as an educational medium and it is exciting to begin experimenting with their use on the web.&lt;/p&gt;</content><author><name></name></author><category term="css" /><category term="styles" /><category term="css-grid" /><category term="comics" /><category term="mobile" /><summary type="html">Getting Started</summary></entry><entry><title type="html">Four Ways to Get Up and Running with VueJS</title><link href="/2020/01/05/get-started-with-vue.html" rel="alternate" type="text/html" title="Four Ways to Get Up and Running with VueJS" /><published>2020-01-05T00:00:00-05:00</published><updated>2020-01-05T00:00:00-05:00</updated><id>/2020/01/05/get-started-with-vue</id><content type="html" xml:base="/2020/01/05/get-started-with-vue.html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h3&gt;
-
-&lt;p&gt;VueJS is a terrific Javascript framework used across the world for building user interfaces. Whether you are new to web development or a seasoned veteran, you can find a way to set it up that works for you. Below I have listed four different setup methods for getting started with VueJS so you can start learning and experimenting.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(1) Adding the Vue library via &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tags&lt;/strong&gt; My introduction to Vue was over a year ago when I discovered how to add the codebase the way I would add any other JS library — simply by adding the link to the library within &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tags at the bottom of my html pages.&lt;/p&gt;
-
-&lt;p&gt;I used this method of integrating VueJS in my course all the time on JS Fiddle — here is a quick &lt;a href=&quot;https://jsfiddle.net/nevkatz/y0hq7ues/&quot; target=&quot;_blank&quot;&gt;Hello World&lt;/a&gt; example in Fiddle, and of course, you could also try it in a CodePen sandbox as well.&lt;/p&gt;
-
-&lt;p&gt;As far as how to get to the VueJS library, you can download it directly or use a CDN (here is &lt;a href=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js&quot; target=&quot;_blank&quot;&gt;Vue 2.3.4 on CloudFlare&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;This method is equivalent to the way you would add jQuery or some other JS library. To learn more, check out Sarah Drasner’s &lt;a href=&quot;https://www.smashingmagazine.com/2018/02/jquery-vue-javascript/&quot; target=&quot;_blank&quot;&gt;Replacing jQuery With Vue.js: No Build Step Necessary&lt;/a&gt; piece.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(2) Running a local server using the Vue CLI tool.&lt;/strong&gt; You can download and set up the Command-Line Interface (CLI) tool at &lt;a href=&quot;https://cli.vuejs.org&quot; target=&quot;_blank&quot;&gt;cli.vuejs.org&lt;/a&gt; and create a project completely from the command line. You’ll need Node JS and npm to get started, and I also recommend checking out Daniel Cook’s terrific &lt;a href=&quot;https://itnext.io/getting-started-vue-js-and-visual-studio-code-6990f92e918a&quot; target=&quot;_blank&quot;&gt;Getting Started: Vue.js and Visual Studio Code&lt;/a&gt;, which can be adapted to other Integrated Development Environments (IDE’s) or text editors like Sublime Text.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(3) Using the GUI tool after starting it from the command line.&lt;/strong&gt; Once you have downloaded the CLI, you can also use Vue’s Graphic User Interface (GUI) to create and configure a project by typing &lt;code&gt;vue ui&lt;/code&gt; from the command line — and as with teh CLI method, you can edit your code with your favorite text editor or IDE and see your results take place in a browser. The  &lt;a href=&quot;https://medium.com/the-vue-point/vue-cli-3-0-is-here-c42bebe28fbb&quot; target=&quot;_blank&quot;&gt;Vue 3 CLI&lt;/a&gt; just came out in August, which has a very intuitive screen flow and an awesome set of options for getting started. To explore this method, I followed the second half of &lt;a href=&quot;https://reactgo.com/vue-cli3-tutorial-creating-project/&quot; target=&quot;_blank&quot;&gt;Vue CLI 3 Tutorial: How to create Vue project&lt;/a&gt;, which worked well for me.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;(4) Running from the command line with webpack.&lt;/strong&gt; You can also build a Vue application with a utility known as webpack. To get started, check out Daniel Cook’s &lt;a href=&quot;https://itnext.io/vuejs-and-webpack-4-from-scratch-part-1-94c9c28a534a&quot; target=&quot;_blank&quot;&gt;Vue.js and Webpack 4 From Scratch, Part 1&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;take-an-intro-course&quot;&gt;Take an Intro Course&lt;/h4&gt;
-
-&lt;p&gt;Vue can sometimes feel like a new language, and it can be challenging to build learning momentum without a structured learning path. Over the past couple months, I have been taking an excellent Udemy Course called &lt;a href=&quot;https://www.udemy.com/course/vuejs-2-the-complete-guide/&quot;&gt;VueJS 2 — The Complete Guide&lt;/a&gt; with Maximilian Schwarzmüller. The course starts with the JS Fiddle approach, so the on-ramp is straightforward. If you are new to Vue and want to learn how to use it in your projects, I recommend taking a course like this.&lt;/p&gt;
-
-&lt;h4 id=&quot;learn-the-components-model&quot;&gt;Learn the Components Model&lt;/h4&gt;
-
-&lt;p&gt;You can assemble a Vue app using components, which reside in .vue files. Each component consists of its own template markup, CSS, and JS code. If you already distribute your CSS styles and JS code across multiple files, this may be a helpful model for you to learn.&lt;/p&gt;
-
-&lt;h4 id=&quot;try-building-multi-page-apps&quot;&gt;Try building Multi-Page Apps&lt;/h4&gt;
-
-&lt;p&gt;As I get started, the most useful Vue dependency I have installed so far has been router, which enables you to build multi-page apps. If you build using the Vue GUI, the application will recommend installing this for single-page applications.&lt;/p&gt;
-
-&lt;p&gt;Good luck getting started with Vue!&lt;/p&gt;</content><author><name></name></author><category term="vue" /><category term="cli" /><category term="javascript" /><summary type="html">Getting Started</summary></entry></feed>
+&lt;p&gt;To learn about my comics-based science science resource books, &lt;em&gt;Dr. Birdley Teaches Science&lt;/em&gt;, and see some examples of how I present illustrations on the web, check out &lt;a href=&quot;http://www.birdleymedia.com&quot; target=&quot;_blank&quot;&gt;birdleymedia.com&lt;/a&gt;. I have had a longstanding interest in using comics as an educational medium and it is exciting to begin experimenting with their use on the web.&lt;/p&gt;</content><author><name></name></author><category term="css" /><category term="styles" /><category term="css-grid" /><category term="comics" /><category term="mobile" /><summary type="html">Getting Started</summary></entry></feed>
