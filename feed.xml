@@ -1,44 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-12T19:00:34-05:00</updated><id>/feed.xml</id><title type="html">Nevin Katz</title><subtitle>Web &amp; App Developer</subtitle><entry><title type="html">12 Tips for Drupal Database Migrations</title><link href="/2021/03/12/drupal-migration-takeaways.html" rel="alternate" type="text/html" title="12 Tips for Drupal Database Migrations" /><published>2021-03-12T00:00:00-05:00</published><updated>2021-03-12T00:00:00-05:00</updated><id>/2021/03/12/drupal-migration-takeaways</id><content type="html" xml:base="/2021/03/12/drupal-migration-takeaways.html">&lt;h3 id=&quot;migrating-from-drupal-7-to-drupal-8-or-9&quot;&gt;Migrating from Drupal 7 to Drupal 8 or 9&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-13T17:02:55-05:00</updated><id>/feed.xml</id><title type="html">Nevin Katz</title><subtitle>Web &amp; App Developer</subtitle><entry><title type="html">21 Tips for Drupal Database Migrations</title><link href="/2021/03/13/drupal-migration-takeaways.html" rel="alternate" type="text/html" title="21 Tips for Drupal Database Migrations" /><published>2021-03-13T00:00:00-05:00</published><updated>2021-03-13T00:00:00-05:00</updated><id>/2021/03/13/drupal-migration-takeaways</id><content type="html" xml:base="/2021/03/13/drupal-migration-takeaways.html">&lt;h3 id=&quot;migrating-from-drupal-7-to-drupal-8-or-9&quot;&gt;Migrating from Drupal 7 to Drupal 8 or 9&lt;/h3&gt;
 
-&lt;p&gt;With Drupal 7 losing support in November 2022, you may be looking to migrate a Drupal 7 site to Drupal 8 or 9 some time soon. If so, here are a few tips I gleaned from migrating my Drupal 7 site’s database to Drupal 9,&lt;/p&gt;
+&lt;p&gt;With Drupal 7 losing support in November 2022, you may be looking to migrate a Drupal 7 site to Drupal 8 or 9 some time soon. If so, here are a few tips I gleaned from migrating my Drupal 7 site’s database to Drupal 9 through my web browser.&lt;/p&gt;
+
+&lt;h3 id=&quot;general-tips&quot;&gt;General Tips&lt;/h3&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Study the documentation.&lt;/strong&gt; To prepare, I used these &lt;a href=&quot;https://www.drupal.org/docs/upgrading-drupal/upgrade-using-web-browser&quot; target=&quot;_blank&quot;&gt;Drupal migration docs&lt;/a&gt; as a guide. They provided a helpful walkthrough of the process and screenshots of the key stages.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Study the documentation.&lt;/strong&gt; To prepare, I studied Drupal’s &lt;a href=&quot;https://www.drupal.org/docs/upgrading-drupal/upgrade-using-web-browser&quot; target=&quot;_blank&quot;&gt;Upgrade Using Web Browser&lt;/a&gt; guide, and referred to this resource often during the migration. The guide provided a helpful walkthrough of the process with screenshots of the key stages. While there are other approaches that may be better suited to complex migrations, this approach covers the essentials and is often a fine one to try at the outset.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;In most cases, migrate directly to Drupal 9.&lt;/strong&gt; Because Drupal 8 loses support in November 2021, you will not be able to stay with it for long. And Drupal 9 is very similar to Drupal 8 - just more streamlined without the deprecated modules and APIs that some Drupal 8 sites may allow. While migrating from 8 to 9 is less of a challenge than migrating from 7 to 8, it can still be arduous if you end up migrating from D7 to D8 and end up using some deprecated modules or APIs.   So migrating directly to 9 can save you a second upgrade.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;In most cases, migrate directly to Drupal 9.&lt;/strong&gt; Because Drupal 8 &lt;a href=&quot;https://www.drupal.org/about/core/policies/core-release-cycles/drupal-core-release-cycle-major-minor-and-patch-releases#drupal-8-eol&quot; target=&quot;_blank&quot;&gt;loses support&lt;/a&gt; in November 2021, you would not be able to stay with it for long at this point. And Drupal 9 is very similar to Drupal 8 - just more streamlined without the deprecated modules and APIs that some Drupal 8 sites may allow. While migrating from D8 to D9 is &lt;a href=&quot;https://www.drupal.org/node/2941566&quot; target=&quot;_blank&quot;&gt;less of a challenge&lt;/a&gt; than migrating from D7 to D8, it can still be arduous if you end up migrating from D7 to D8 and are using some modules that D8 supports but D9 will not. So migrating directly to D9 can potentially save you time and cost.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Try migrating locally with Lando.&lt;/strong&gt; &lt;a href=&quot;https://lando.dev/&quot; target=&quot;_blank&quot;&gt;Lando&lt;/a&gt; is a free command-line tool for setting a range of dev environments that uses &lt;a href=&quot;https://www.docker.com/&quot; target=&quot;_blank&quot;&gt;Docker&lt;/a&gt; as its container. It sets up your settings.php file automatically with initial username, password, and database name that are easy to remember and find using either &lt;code&gt;lando info&lt;/code&gt; or docker. I set up both my D7 and D9 sites with Lando, and once I used the command &lt;code&gt;lando info&lt;/code&gt; to grab the hostname and database credentials, connecting my D9 site to the D7 site went off without a hitch.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Try migrating locally with Lando.&lt;/strong&gt; &lt;a href=&quot;https://lando.dev/&quot; target=&quot;_blank&quot;&gt;Lando&lt;/a&gt; is a free open-source command-line tool for setting up a range of dev environments. It is built on top of &lt;a href=&quot;https://www.docker.com/&quot; target=&quot;_blank&quot;&gt;Docker&lt;/a&gt; tech, and if you download it, you will end up downloading Docker as well if you do not already have it. When used with Drupal, Lando spins off your database and sets up your &lt;code&gt;settings.php&lt;/code&gt; file automatically with the initial username, password, and database name. These credentials are easy to find, using either &lt;code&gt;lando info&lt;/code&gt; from the command line or Docker’s dashboard. I set up both my D7 and D9 sites with Lando, and once I used &lt;code&gt;lando info&lt;/code&gt; to view my D7 site’s hostname and database credentials, connecting my D9 site to the D7 site’s database went off without a hitch.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Use Git to version control your work.&lt;/strong&gt; I have both my old and new site wired to a Git repository, and use a .gitignore file to block out the usual files that I don’t want my local and remote sites to share. For me, these include &lt;code&gt;settings.php&lt;/code&gt;, the &lt;code&gt;files&lt;/code&gt; directory, and the &lt;code&gt;.DS_Store&lt;/code&gt; files that auto populate on a Mac.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Use Git to version-control your work.&lt;/strong&gt; If you are &lt;a href=&quot;https://www.freecodecamp.org/news/what-is-git-and-how-to-use-it-c341b049ae61/&quot; target=&quot;_blank&quot;&gt;new to Git&lt;/a&gt;, this is a good time to start using it. I have both my old D7 and new D9 sites wired to separate Git repositories, which I use for file version-control. After initiating a git repository in your site directory, you can create a &lt;code&gt;.gitignore&lt;/code&gt; file to ensure that Git will not track files that you do not want local and remote versions of your site to share. For me, these include &lt;code&gt;settings.php&lt;/code&gt; and the &lt;code&gt;files&lt;/code&gt; directory. You can deploy a Git-wired site by pushing it to a cloud service like Github, Acquia Cloud, Bitbucket, and then pulling it to your server.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Become familiar with Drupal 9’s environment requirements.&lt;/strong&gt; For instance, you’ll see from these &lt;a href=&quot;https://www.drupal.org/docs/understanding-drupal/how-drupal-9-was-made-and-what-is-included/environment-requirements-of&quot; target=&quot;_blank&quot;&gt;Drupal docs&lt;/a&gt; that Drupal requires PHP 7.3 and Apache 2.4.7. Lando will configure your PHP automatically, but other local setup tools may not.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Plan to make database backups frequently.&lt;/strong&gt; As you prepare your D7 and D9 sites, make database backups of both sites so that you can keep snapshots of your progress. Making backups will allow you to roll back either site to an earlier database version if necessary. If you are using Lando, you can export and import using &lt;code&gt;lando db-export &amp;lt;databasepath&amp;gt;&lt;/code&gt; and &lt;code&gt;lando db-import &amp;lt;databasepath&amp;gt;&lt;/code&gt; while at the root of your site.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;drupal-7-setup&quot;&gt;Drupal 7 Setup&lt;/h3&gt;
+
+&lt;ol start=&quot;6&quot;&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Develop a plan for controlling change on your live site.&lt;/strong&gt; You typically cannot repeat a second migration once your initial migration has occurred, so to ensure that all the essential content moves over in one go, talk with your team about when the best time to migrate the site is — as well as whether configuration, content, users, and other aspects of your D7 site should be frozen at a particular time. If content updates do need to cease, discuss when and for how long. Once migration begins, it is ideal if nothing further is changed on the live Drupal 7 site, but if content upgrades do happen, discuss how they would be added to the Drupal 9 site.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Use the Drupal 9 migration modules.&lt;/strong&gt; On Drupal 9’s &lt;strong&gt;Extend&lt;/strong&gt; panel, turn on all the Migration modules: Migrate, Migrate Drupal, and Migrate UI. 
- Once they are on, go to &lt;code&gt;sitename/upgrade&lt;/code&gt; to get started.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Identify the status of each Drupal 7 module.&lt;/strong&gt; Research the modules your D7 site has and categorize them. Some may be compatible with Drupal 9, some may have been moved to Drupal core, and some may not be compatible. Additionally, some modules that are compatible with Drupal 9 may still be in alpha and beta states, in which case they are likely not to have upgrade paths.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Use a fresh Drupal 9 database with no content or configuration.&lt;/strong&gt; Don’t add any content or content types, and don’t try to configure anything. Only turn on the modules you think you’ll need. Besides enabling the migration modules, I also turned on Entity module.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Create a pre-migration instance of your Drupal 7 site.&lt;/strong&gt; While you may have a working local copy of your D7 site, it is best to create a new instance that can be more streamlined with fewer modules turned on. It will likely look different from your fully-functioning local version, and that’s usually fine — as ultimately, it is just a place from which the D9 instance will pull data and files.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Only enable stable Drupal 9 modules.&lt;/strong&gt; Be wary of turning on D9 alpha or beta modules before the migration. You can ensure that you only download stable modules by keeping your &lt;code&gt;composer.json&lt;/code&gt; minimum version set to &lt;code&gt;stable&lt;/code&gt;. If you choose to download  alpha or beta releases, you’ll want to keep them off before the migration as they could adversely affect your site’s database.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;It is best to turn off Drupal 7 modules that do not have upgrade paths.&lt;/strong&gt; Doing so will simplify your upgrade and prevent errors, though it may also mean having to delete the associated fields, configurations, or other site assets in order to prevent migration errors. In these cases, you will need to take additional steps to make sure the Drupal 9 site ends up with these fields and configurations, either by manually re-adding them or by using custom code to support their migration.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Turn off as many D7 modules as you can that will not be upgraded.&lt;/strong&gt; After you connect to your D7 database, you will be provided with a list of D7 modules that will not be upgraded. Once you see the list, you may want to go back and restart the migration with these D7 modules turned off. While it is best to either turn these modules off, some of them, like the video module, can be stubborn about being disabled. For these, I deleting the associated fields or other site assets may help you to prevent migration errors.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Clear the Drupal 7 database log before importing it locally.&lt;/strong&gt; Before making your migration instance and after backing up your D7 database, I recommend clearing the database log in &lt;code&gt;admin/reports/dblog&lt;/code&gt;. For me, it made my database dump smaller and easier to import into my pre-migration site instance, as the watchdog table held far less data that way.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;drupal-9-setup&quot;&gt;Drupal 9 Setup&lt;/h3&gt;
+
+&lt;ol start=&quot;12&quot;&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Become familiar with Drupal 9’s environment requirements.&lt;/strong&gt; This will help you make sure your local production environment and remote server are set up properly. For instance, you will see from the &lt;a href=&quot;https://www.drupal.org/docs/understanding-drupal/how-drupal-9-was-made-and-what-is-included/environment-requirements-of&quot; target=&quot;_blank&quot;&gt;Environment requirements of Drupal 9&lt;/a&gt; that D9 requires PHP 7.3 and Apache 2.4.7. With respect to local setup, Lando should configure the correct PHP version automatically, but other local setup tools may not.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Make database backups frequently.&lt;/strong&gt; As you prepare your D7 and D9 sites, make database backups so that you can keep snapshots of your progress, which will allow you to roll back your site if necessary. If you are using Lando, you can do this using &lt;code&gt;lando db-export &amp;lt;databasepath&amp;gt;&lt;/code&gt; while at the root of your site.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Use a fresh Drupal 9 database with no content or configuration.&lt;/strong&gt; Refrain from adding any content or content types, and do not configure anything. Only turn on the modules you think you will need. Besides enabling the migration modules, I also turned on the &lt;a href=&quot;https://www.drupal.org/project/entity&quot; target=&quot;_blank&quot;&gt;Entity&lt;/a&gt; module.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Develop strategies for content that may not automatically move over.&lt;/strong&gt; For me, this included content handled by the &lt;strong&gt;field collection&lt;/strong&gt; and &lt;strong&gt;video&lt;/strong&gt; modules, which were not upgraded. This is where you may want to try running custom scripts or simply re-adding content to your Drupal 9 site.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Only enable stable Drupal 9 modules.&lt;/strong&gt; Be wary of turning on D9 alpha or beta modules before the migration. You can ensure that you only download stable modules by keeping your &lt;code&gt;composer.json&lt;/code&gt; minimum version set to &lt;code&gt;stable&lt;/code&gt;. If you choose to download alpha or beta releases, you will want to keep them disabled until after the migration is complete — otherwise, they could adversely affect your site’s database before the migration begins.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Be ready to build.&lt;/strong&gt; After migrating the database, the rest of the migration is often a rebuild. Don’t expect layouts and views to move over, and anticipate rebuilding your theme using Drupal 8 templates and re-adding views and other configurations.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Enable the Drupal 9 migration modules.&lt;/strong&gt; On Drupal 9’s &lt;strong&gt;Extend&lt;/strong&gt; panel, turn on all the Migration modules: Migrate, Migrate Drupal, and Migrate UI. 
+ Once they are on, go to &lt;code&gt;&amp;lt;sitename&amp;gt;/upgrade&lt;/code&gt; to get started.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;troubleshooting-issues&quot;&gt;Troubleshooting Issues&lt;/h3&gt;
+
+&lt;ol start=&quot;16&quot;&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Check the list of modules that will not be upgraded.&lt;/strong&gt; After you connect to your D7 database, you will likely still see a list of D7 modules that will not be upgraded. Once you see the list, you may want to turn off additional modules and restart the migration.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Take notes during and after the migration.&lt;/strong&gt; During the migration, you will see messages conveying both progress and any errors. The messages will change quickly, so if you see errors, I recommend copying and pasting representative ones into a text editor. After the migration, check the database logs on your D9 site at &lt;code&gt;/admin/reports/dblog&lt;/code&gt; to study errors, warnings, and other messages further.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Develop strategies for content that may not automatically move over.&lt;/strong&gt; For me, this included content handled by the field collection and video modules, which were not upgraded. This is where you may want to either manuallly re-add the content on your D9 site or try running custom scripts or simply re-adding content to your Drupal 9 site.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;If necessary, consider more complex approaches.&lt;/strong&gt; If you have stubborn upgrade errors produced by parts of your site that you really need, there are more complex migration approaches that offer more options and flexibility while requiring additional coding, additional modules, and a more complex Lando configuration. One such method was presented in this &lt;a href=&quot;https://thinktandem.io/blog/2020/04/28/lando-migration-webinar-part-1-followup/&quot; target=&quot;_blank&quot;&gt;Lando Migration Webinar&lt;/a&gt; by &lt;a href=&quot;https://thinktandem.io/tag/johno/&quot; target=&quot;_blank&quot;&gt;John Ouellet&lt;/a&gt;, who is well versed in Drupal migrations. I do recommend watching this webinar to get a sense of this type of approach, especially if the process here, which focuses mainly on the essentials, does not move over enough of your content or configuration.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;big-picture&quot;&gt;Big Picture&lt;/h3&gt;
+
+&lt;ol start=&quot;20&quot;&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Plan your post-data migration site build.&lt;/strong&gt; After migrating the database, the rest of the migration is often a rebuild. Do not expect views or all your layouts to make it over, and anticipate rebuilding your theme using a Drupal 9 starter sub-theme. Plan to re-adding views and other configurations. This part of the process will largely be akin to building a new site.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Consider using migration as an opportunity to rethink your site.&lt;/strong&gt; Even though  building a D9 site with the same design and site architecture as your D7 version can help to make your upgrade plan straightforward, the fact that you have to rebuild your site pages and theme anyway means that there is an opportunity to rethink design, navigation, and other site aspects — so decide whether you want to use your migration as an opportunity to give your site a new look.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 

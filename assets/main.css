@@ -660,6 +660,9 @@ body.home .page-content {
 .post-content h3:nth-child(n+2) {
   margin-top: 20px; }
 
+.post-content ol {
+  margin-left: 26px; }
+
 h4 {
   font-size: 18px;
   font-weight: bold;
@@ -1103,3 +1106,23 @@ body[data-title="Nevin Katz"] #mc_embed_signup div#mce-responses {
   body[data-title="Nevin Katz"] #mc_embed_signup div#mce-responses div.response {
     margin-top: 0px;
     padding-top: 0px; }
+
+#mc-flex-container {
+  display: flex;
+  align-items: flex-end; }
+
+#mc-input-container {
+  width: calc(100% - 140px);
+  margin-right: 10px; }
+
+#mc_embed_signup input.button#mc-embedded-subscribe {
+  margin-bottom: 0px;
+  padding: 0px;
+  width: 130px;
+  background-color: #2a7ae2; }
+
+#mc_embed_signup #mc-embedded-subscribe-form h2 {
+  font-weight: normal; }
+
+#mc_embed_signup #mc-embedded-subscribe-form p {
+  font-size: 16px; }
