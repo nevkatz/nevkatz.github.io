@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-13T17:15:42-05:00</updated><id>/feed.xml</id><title type="html">Nevin Katz</title><subtitle>Web &amp; App Developer</subtitle><entry><title type="html">21 Tips for Drupal Database Migrations</title><link href="/2021/03/13/drupal-migration-takeaways.html" rel="alternate" type="text/html" title="21 Tips for Drupal Database Migrations" /><published>2021-03-13T00:00:00-05:00</published><updated>2021-03-13T00:00:00-05:00</updated><id>/2021/03/13/drupal-migration-takeaways</id><content type="html" xml:base="/2021/03/13/drupal-migration-takeaways.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-03-13T17:29:31-05:00</updated><id>/feed.xml</id><title type="html">Nevin Katz</title><subtitle>Web &amp; App Developer</subtitle><entry><title type="html">20 Tips for Drupal Database Migrations</title><link href="/2021/03/13/drupal-migration-takeaways.html" rel="alternate" type="text/html" title="20 Tips for Drupal Database Migrations" /><published>2021-03-13T00:00:00-05:00</published><updated>2021-03-13T00:00:00-05:00</updated><id>/2021/03/13/drupal-migration-takeaways</id><content type="html" xml:base="/2021/03/13/drupal-migration-takeaways.html">&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;With Drupal 7 losing support in November 2022, you may be looking to migrate a Drupal 7 site to Drupal 8 or 9 some time soon. If so, here are a few tips I gleaned from migrating my Drupal 7 site’s database to Drupal 9 through my web browser.&lt;/p&gt;
 
@@ -44,7 +44,7 @@
 
 &lt;h3 id=&quot;drupal-9-setup&quot;&gt;Drupal 9 Setup&lt;/h3&gt;
 
-&lt;ol start=&quot;12&quot;&gt;
+&lt;ol start=&quot;11&quot;&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;Become familiar with Drupal 9’s environment requirements.&lt;/strong&gt; This will help you make sure your local production environment and remote server are set up properly. For instance, you will see from the &lt;a href=&quot;https://www.drupal.org/docs/understanding-drupal/how-drupal-9-was-made-and-what-is-included/environment-requirements-of&quot; target=&quot;_blank&quot;&gt;Environment requirements of Drupal 9&lt;/a&gt; that D9 requires PHP 7.3 and Apache 2.4.7. With respect to local setup, Lando should configure the correct PHP version automatically, but other local setup tools may not.&lt;/p&gt;
   &lt;/li&gt;
@@ -62,7 +62,7 @@
 
 &lt;h3 id=&quot;troubleshooting-issues&quot;&gt;Troubleshooting Issues&lt;/h3&gt;
 
-&lt;ol start=&quot;16&quot;&gt;
+&lt;ol start=&quot;15&quot;&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;Check the list of modules that will not be upgraded.&lt;/strong&gt; After you connect to your D7 database, you will likely still see a list of D7 modules that will not be upgraded. Once you see the list, you may want to turn off additional modules and restart the migration.&lt;/p&gt;
   &lt;/li&gt;
@@ -79,7 +79,7 @@
 
 &lt;h3 id=&quot;big-picture&quot;&gt;Big Picture&lt;/h3&gt;
 
-&lt;ol start=&quot;20&quot;&gt;
+&lt;ol start=&quot;19&quot;&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;Plan your post-data migration site build.&lt;/strong&gt; After migrating the database, the rest of the migration is often a rebuild. Do not expect views or all your layouts to make it over, and anticipate rebuilding your theme using a Drupal 9 starter sub-theme. Plan to re-adding views and other configurations. This part of the process will largely be akin to building a new site.&lt;/p&gt;
   &lt;/li&gt;

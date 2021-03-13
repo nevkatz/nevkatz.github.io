@@ -23,9 +23,9 @@
   
   <meta itemprop="tags" content="web,database">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>21 Tips for Drupal Database Migrations | Nevin Katz</title>
+<title>20 Tips for Drupal Database Migrations | Nevin Katz</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="21 Tips for Drupal Database Migrations" />
+<meta property="og:title" content="20 Tips for Drupal Database Migrations" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Background" />
 <meta property="og:description" content="Background" />
@@ -35,13 +35,13 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-03-13T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"21 Tips for Drupal Database Migrations","dateModified":"2021-03-13T00:00:00-05:00","datePublished":"2021-03-13T00:00:00-05:00","url":"/2021/03/13/drupal-migration-takeaways.html","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/03/13/drupal-migration-takeaways.html"},"description":"Background","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"20 Tips for Drupal Database Migrations","dateModified":"2021-03-13T00:00:00-05:00","datePublished":"2021-03-13T00:00:00-05:00","url":"/2021/03/13/drupal-migration-takeaways.html","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/03/13/drupal-migration-takeaways.html"},"description":"Background","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- this is where the CSS is. -->
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/css/prism.css">
   <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin Katz" /></head>
-<body data-title="21 Tips for Drupal Database Migrations" ><header class="site-header" role="banner">
+<body data-title="20 Tips for Drupal Database Migrations" ><header class="site-header" role="banner">
 
   <div class="wrapper"><div id="header-logo">
     <a class="site-title" rel="author" href="/">
@@ -86,7 +86,7 @@
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">21 Tips for Drupal Database Migrations</h1>
+    <h1 class="post-title p-name" itemprop="name headline">20 Tips for Drupal Database Migrations</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2021-03-13T00:00:00-05:00" itemprop="datePublished">Mar 13, 2021
       </time></p>
@@ -139,7 +139,7 @@
 
 <h3 id="drupal-9-setup">Drupal 9 Setup</h3>
 
-<ol start="12">
+<ol start="11">
   <li>
     <p><strong>Become familiar with Drupal 9’s environment requirements.</strong> This will help you make sure your local production environment and remote server are set up properly. For instance, you will see from the <a href="https://www.drupal.org/docs/understanding-drupal/how-drupal-9-was-made-and-what-is-included/environment-requirements-of" target="_blank">Environment requirements of Drupal 9</a> that D9 requires PHP 7.3 and Apache 2.4.7. With respect to local setup, Lando should configure the correct PHP version automatically, but other local setup tools may not.</p>
   </li>
@@ -157,7 +157,7 @@
 
 <h3 id="troubleshooting-issues">Troubleshooting Issues</h3>
 
-<ol start="16">
+<ol start="15">
   <li>
     <p><strong>Check the list of modules that will not be upgraded.</strong> After you connect to your D7 database, you will likely still see a list of D7 modules that will not be upgraded. Once you see the list, you may want to turn off additional modules and restart the migration.</p>
   </li>
@@ -174,7 +174,7 @@
 
 <h3 id="big-picture">Big Picture</h3>
 
-<ol start="20">
+<ol start="19">
   <li>
     <p><strong>Plan your post-data migration site build.</strong> After migrating the database, the rest of the migration is often a rebuild. Do not expect views or all your layouts to make it over, and anticipate rebuilding your theme using a Drupal 9 starter sub-theme. Plan to re-adding views and other configurations. This part of the process will largely be akin to building a new site.</p>
   </li>
