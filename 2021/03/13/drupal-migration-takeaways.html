@@ -40,7 +40,8 @@
 <!-- this is where the CSS is. -->
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/css/prism.css">
-  <link rel="stylesheet" href="/assets/css/styles.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin Katz" /></head>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="icon" href="/assets/images/icons/favicon.svg"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nevin Katz" /></head>
 <body data-title="20 Tips for Drupal Database Migrations" ><header class="site-header" role="banner">
 
   <div class="wrapper"><div id="header-logo">
@@ -95,13 +96,17 @@
   <div class="post-content e-content" itemprop="articleBody">
     <h3 id="background">Background</h3>
 
-<p>With Drupal 7 losing support in November 2022, you may be looking to migrate a Drupal 7 site to Drupal 8 or 9 some time soon. If so, here are a few tips I gleaned from migrating my Drupal 7 site’s database to Drupal 9 through my web browser.</p>
+<p>Picture it. You are happily working away on your Drupal 7 site when you see a webinar announcement, an email, or a calendar note reminding you of the inevitable: Drupal 7 is losing support in November 2022.</p>
+
+<p>Whether you are new to Drupal or a seasoned Drupal veteran, the migration process, which consists of a database migration and oftentimes a new site build, can be a completely new mountain to climb.</p>
+
+<p>If you are looking to migrate a Drupal 7 site to Drupal 8 or 9 some time soon and would like some guidance on making a plan, here are a few tips I gleaned on the database part from my own migration experiences. In this case, the focus is on migrating a Drupal 7 site’s database to Drupal 9 through the web browser, though I do allude to more complex methods towards the end.</p>
 
 <h3 id="general-tips">General Tips</h3>
 
 <ol>
   <li>
-    <p><strong>Study the documentation.</strong> To prepare, I studied Drupal’s <a href="https://www.drupal.org/docs/upgrading-drupal/upgrade-using-web-browser" target="_blank">Upgrade Using Web Browser</a> guide, and referred to this resource often during the migration. The guide provided a helpful walkthrough of the process with screenshots of the key stages. While there are other approaches that may be better suited to complex migrations, this approach covers the essentials and is often a fine one to try at the outset.</p>
+    <p><strong>Study the documentation.</strong> To prepare, I studied Drupal’s <a href="https://www.drupal.org/docs/upgrading-drupal/upgrade-using-web-browser" target="_blank">Upgrade Using Web Browser</a> guide, and referred to this resource often during the migration. The guide provided a helpful walkthrough of the process with screenshots of the key stages. Note that this particular guide is best for relatively simple sites, and there are other approaches that may be better suited to complex migrations.</p>
   </li>
   <li>
     <p><strong>In most cases, migrate directly to Drupal 9.</strong> Because Drupal 8 <a href="https://www.drupal.org/about/core/policies/core-release-cycles/drupal-core-release-cycle-major-minor-and-patch-releases#drupal-8-eol" target="_blank">loses support</a> in November 2021, you would not be able to stay with it for long at this point. And Drupal 9 is very similar to Drupal 8 - just more streamlined without the deprecated modules and APIs that some Drupal 8 sites may allow. While migrating from D8 to D9 is <a href="https://www.drupal.org/node/2941566" target="_blank">less of a challenge</a> than migrating from D7 to D8, it can still be arduous if you end up migrating from D7 to D8 and are using some modules that D8 supports but D9 will not. So migrating directly to D9 can potentially save you time and cost.</p>
@@ -147,7 +152,7 @@
     <p><strong>Use a fresh Drupal 9 database with no content or configuration.</strong> Refrain from adding any content or content types, and do not configure anything. Only turn on the modules you think you will need. Besides enabling the migration modules, I also turned on the <a href="https://www.drupal.org/project/entity" target="_blank">Entity</a> module.</p>
   </li>
   <li>
-    <p><strong>Only enable stable Drupal 9 modules.</strong> Be wary of turning on D9 alpha or beta modules before the migration. You can ensure that you only download stable modules by keeping your <code>composer.json</code> minimum version set to <code>stable</code>. If you choose to download alpha or beta releases, you will want to keep them disabled until after the migration is complete — otherwise, they could adversely affect your site’s database before the migration begins.</p>
+    <p><strong>Be careful about Drupal 9 modules that are not yet stable.</strong> Sometimes, turning on modules in their alpha or beta states can cause issues with your database.  You can ensure that you only download stable modules by keeping your <code>composer.json</code> minimum version set to <code>stable</code>, but this may not always be practical if your site relies heavily on modules in their alpha and beta states. If it is important for your site to use a module that only has an alpha or beta releases for Drupal 9, downloading it and keeping disabled should not affect your database. If you need to enable it and test it, make a database backup before doing so since enabling them could adversely affect your site’s database before the migration.</p>
   </li>
   <li>
     <p><strong>Enable the Drupal 9 migration modules.</strong> On Drupal 9’s <strong>Extend</strong> panel, turn on all the Migration modules: Migrate, Migrate Drupal, and Migrate UI. 
@@ -168,7 +173,11 @@
     <p><strong>Develop strategies for content that may not automatically move over.</strong> For me, this included content handled by the Field Collection and Video modules, which were not upgraded. This is where you may want to either manuallly re-add the content on your D9 site or try running custom scripts or simply re-adding content to your Drupal 9 site.</p>
   </li>
   <li>
-    <p><strong>If necessary, consider more complex approaches.</strong> If you have stubborn upgrade errors produced by parts of your site that you really need, there are more complex migration approaches that offer more options and flexibility while requiring additional coding, additional modules, and a more complex Lando configuration. One such method was presented in this <a href="https://thinktandem.io/blog/2020/04/28/lando-migration-webinar-part-1-followup/" target="_blank">Lando Migration Webinar</a> by <a href="https://thinktandem.io/tag/johno/" target="_blank">John Ouellet</a>, who is well versed in Drupal migrations. I do recommend watching this webinar to get a sense of this type of approach, especially if the process here, which focuses mainly on the essentials, does not move over enough of your content or configuration.</p>
+    <p><strong>If necessary, consider more complex approaches.</strong> If you have a complex site, or if you have stubborn upgrade errors produced by parts of your site that you really need, there are more complex migration approaches that offer more options and flexibility while requiring additional coding, additional modules, and a more complex Lando configuration.</p>
+    <ul>
+      <li>One method involves using two additonal modules: <a href="https://www.drupal.org/project/migrate_plus" target="_blank">Migrate Plus</a> and <a href="https://www.drupal.org/project/migrate_tools" target="blank">Migrate Tools</a>, using <a href="https://www.drush.org/latest/" target="_blank">Drush</a>. (With Lando, running a drush command should be prefixed by <code>lando drush</code> rather than just <code>drush</code>.) While figuring out the order of steps can be a learning curve, it enables more granular control of your migration.</li>
+      <li>Another method was presented in this <a href="https://thinktandem.io/blog/2020/04/28/lando-migration-webinar-part-1-followup/" target="_blank">Lando Migration Webinar</a> by <a href="https://thinktandem.io/tag/johno/" target="_blank">John Ouellet</a>, who is well versed in Drupal migrations. I do recommend watching this webinar to get a sense of this type of approach, especially if the process here, which focuses mainly on the essentials, does not move over enough of your content or configuration.</li>
+    </ul>
   </li>
 </ol>
 
