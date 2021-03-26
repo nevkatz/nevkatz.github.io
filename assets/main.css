@@ -713,12 +713,18 @@ div.post-content {
   padding: 20px;
   box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1); }
 
+#mc-input-container label,
+#mc_embed_signup #mc-embedded-subscribe-form p,
 ul.post-list li p,
 div.post-content p,
 div.post-content li {
   font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 18px;
   line-height: 28px; }
+
+#mc-input-container label {
+  font-size: 16px;
+  line-height: 20px; }
 
 div.section-separator {
   background-color: #f5f7f9;
@@ -1083,7 +1089,8 @@ div.tags {
   div.category a,
   div.tags a {
     font-weight: bold;
-    font-size: 14px; }
+    font-size: 14px;
+    margin-right: 6px; }
 
 div.tags {
   background-image: url("/assets/images/icons/tag-o.svg");
@@ -1135,6 +1142,3 @@ body[data-title="Nevin Katz"] #mc_embed_signup div#mce-responses {
 
 #mc_embed_signup #mc-embedded-subscribe-form h2 {
   font-weight: normal; }
-
-#mc_embed_signup #mc-embedded-subscribe-form p {
-  font-size: 16px; }
