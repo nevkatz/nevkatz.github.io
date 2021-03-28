@@ -718,7 +718,7 @@ div.post-content {
 ul.post-list li p,
 div.post-content p,
 div.post-content li {
-  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: -system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 18px;
   line-height: 28px; }
 
