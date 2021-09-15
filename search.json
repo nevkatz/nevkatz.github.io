@@ -172,26 +172,6 @@
   
     {
 
-      "title"    : "Animating SVG Mouth Expressions with Greensock",
-      "url"      : "/2019/09/17/greensock.html",
-      "category" : "svg",
-      "tags"     : "images",
-      "date"     : "2019-09-17 00:00:00 -0400"
-
-    } ,
-  
-    {
-
-      "title"    : "SVG Character Sheet: Fuzzy Alien Critter",
-      "url"      : "/2019/09/17/critter-character-sheet.html",
-      "category" : "svg",
-      "tags"     : "images",
-      "date"     : "2019-09-17 00:00:00 -0400"
-
-    } ,
-  
-    {
-
       "title"    : "Unmasking Decoupled Drupal",
       "url"      : "/2019/09/13/decoupled-drupal-vue.html",
       "category" : "drupal",
